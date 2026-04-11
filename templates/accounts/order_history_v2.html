@@ -1,0 +1,103 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/accounts/order_history_v2.css' %}">
+
+<div class="orders-page">
+    <div class="orders-shell">
+        <div class="orders-heading">
+            <div>
+                <p class="orders-eyebrow">Your Purchases</p>
+                <h2>Order History</h2>
+            </div>
+            <a href="/" class="orders-link">Continue Shopping</a>
+        </div>
+
+        {% for order in orders %}
+        <article class="order-card">
+            <div class="order-card-head">
+                <div>
+                    <span class="label">ORDER PLACED</span>
+                    <span class="value">{{ order.created_at|date:"d F Y" }}</span>
+                </div>
+                <div>
+                    <span class="label">TOTAL</span>
+                    <span class="value">Rs. {{ order.total_price }}</span>
+                </div>
+                <div>
+                    <span class="label">ORDER #</span>
+                    <span class="value">{{ order.order_id|default:order.id }}</span>
+                </div>
+                <div class="order-actions-head">
+                    <a href="{% url 'view_invoice' order.id %}" class="ghost-link">View Invoice</a>
+                </div>
+            </div>
+
+            <div class="order-card-body">
+                <div class="status-wrap">
+                    <h3 class="status-text {% if order.is_completed_status %}success{% else %}pending{% endif %}">
+                        {{ order.display_status }}
+                    </h3>
+                    {% if order.is_completed_status %}
+                        <p>Delivered successfully. You can now rate your products.</p>
+                    {% elif order.status == 'Cancelled' %}
+                        <p>This order was cancelled.</p>
+                    {% else %}
+                        <p>Your order is still moving through our delivery pipeline.</p>
+                    {% endif %}
+                </div>
+
+                <div class="items-grid">
+                    {% for item in order.display_items %}
+                    <div class="ordered-item">
+                        <div class="ordered-item-media">
+                            {% if item.product_image_url %}
+                                <img src="{{ item.product_image_url }}" alt="{{ item.product_name }}">
+                            {% else %}
+                                <div class="image-placeholder">VASU</div>
+                            {% endif %}
+                        </div>
+                        <div class="ordered-item-body">
+                            <a href="{{ item.product_url }}" class="item-name">{{ item.product_name }}</a>
+                            <p class="item-meta">Quantity: {{ item.quantity }} | Price: Rs. {{ item.price }}</p>
+
+                            <div class="item-actions">
+                                {% if order.can_rate %}
+                                    <a href="{% url 'rate_order_item' order.id item.id %}" class="rating-btn">
+                                        {% if item.existing_rating %}
+                                            Edit Rating ({{ item.existing_rating.rating }}/5)
+                                        {% else %}
+                                            Rate Product
+                                        {% endif %}
+                                    </a>
+                                    {% if item.existing_rating %}
+                                        <span class="rating-pill">
+                                            {{ item.existing_rating.get_approval_status_display }}
+                                        </span>
+                                    {% endif %}
+                                {% elif item.existing_rating %}
+                                    <span class="rating-pill">Rated {{ item.existing_rating.rating }}/5 | {{ item.existing_rating.get_approval_status_display }}</span>
+                                {% else %}
+                                    <span class="muted-note">Rating unlocks after delivery.</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p class="muted-note">No products found for this order.</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+        {% empty %}
+        <div class="empty-orders">
+            <h3>No orders yet</h3>
+            <p>Your future VASU orders will appear here with invoice and rating actions.</p>
+            <a href="/" class="rating-btn">Start Shopping</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,224 @@
+/* =================== Global Styles =================== */
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: Montserrat, Arial, sans-serif;
+}
+
+.container-1 {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-1 .position-relative {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.container-1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Links overlay areas on banners */
+.container-1 .position-relative a {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    z-index: 2;
+}
+
+.container-1 .position-relative a:first-child {
+    left: 0;
+}
+
+.container-1 .position-relative a:last-child {
+    right: 0;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.grid-item {
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.02);
+}
+
+.caption-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.caption-desc {
+    font-size: 0.95rem;
+    color: #666;
+    margin-top: 4px;
+    line-height: 1.5;
+}
+
+/* =================== Product Grid =================== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+}
+
+.product-grid a {
+    text-decoration: none;
+    color: #000;
+}
+
+.product-card {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+/* =================== Product Image Hover =================== */
+.product-image-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.product-image-wrapper img {
+    width: 100%;
+    transition: opacity 0.3s ease-in-out;
+    display: block;
+}
+
+.product-image-wrapper .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.product-image-wrapper:hover .hover-image {
+    opacity: 1;
+}
+
+.product-image-wrapper:hover .main-image {
+    opacity: 0;
+}
+
+/* =================== Product Text =================== */
+.brand {
+    font-weight: bold;
+    font-size: 13px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.product-name {
+    font-size: 12px;
+    color: #444;
+}
+
+.price {
+    font-size: 13px;
+    color: #111;
+}
+
+/* =================== Heading =================== */
+h5 {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 50px;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+/* =================== Responsive =================== */
+@media (max-width: 991px) {
+    .container-1 {
+        padding: 0 10px;
+    }
+
+    .container-1 img {
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-1 .row-1,
+    .container-1 .row-2,
+    .container-1 .row-3 {
+        padding: 0 10px 15px 10px;
+    }
+
+    .container-1 img {
+        border-radius: 3px;
+    }
+
+    .container-1 .position-relative a {
+        width: 50%;
+        height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        padding: 10px 15px;
+    }
+
+    .caption-title {
+        font-size: 1rem;
+    }
+
+    .caption-desc {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+

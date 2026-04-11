@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Checkout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        // Django से भेजे गए cart data को यहाँ प्राप्त करें
+        const initialCartData = JSON.parse('{{ cart_items_json|safe }}');
+
+        // --- Custom Components (no change) ---
+        const Card = ({ children, className = '' }) => (
+            <div className={`bg-white rounded-lg shadow-lg p-6 ${className}`}>
+                {children}
+            </div>
+        );
+
+        const CardHeader = ({ children, className = '' }) => (
+            <div className={`mb-4 ${className}`}>
+                {children}
+            </div>
+        );
+
+        const CardTitle = ({ children, className = '' }) => (
+            <h2 className={`text-3xl font-bold text-center ${className}`}>
+                {children}
+            </h2>
+        );
+
+        const CardDescription = ({ children, className = '' }) => (
+            <p className={`text-center text-gray-600 ${className}`}>
+                {children}
+            </p>
+        );
+
+        const CardContent = ({ children, className = '' }) => (
+            <div className={className}>
+                {children}
+            </div>
+        );
+
+        const CardFooter = ({ children, className = '' }) => (
+            <div className={`flex justify-center mt-4 ${className}`}>
+                {children}
+            </div>
+        );
+
+        const Label = ({ htmlFor, children, className = '' }) => (
+            <label htmlFor={htmlFor} className={`block font-medium ${className}`}>
+                {children}
+            </label>
+        );
+
+        const Input = ({ id, type = 'text', value, onChange, placeholder, required, className = '' }) => (
+            <input
+                id={id}
+                type={type}
+                value={value}
+                onChange={onChange}
+                placeholder={placeholder}
+                required={required}
+                className={`w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${className}`}
+            />
+        );
+
+        const Button = ({ children, onClick, type = 'button', disabled, className = '' }) => (
+            <button
+                type={type}
+                onClick={onClick}
+                disabled={disabled}
+                className={`w-full bg-blue-600 text-white font-bold py-3 rounded-md hover:bg-blue-700 transition duration-300 ${className} ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+            >
+                {children}
+            </button>
+        );
+
+        const RadioGroup = ({ children, defaultValue, onValueChange, className = '' }) => {
+            const [selected, setSelected] = useState(defaultValue);
+            const handleChange = (e) => {
+                const value = e.target.value;
+                setSelected(value);
+                if (onValueChange) {
+                    onValueChange(value);
+                }
+            };
+
+            const childrenWithProps = React.Children.map(children, child => {
+                if (React.isValidElement(child)) {
+                    return React.cloneElement(child, {
+                        ...child.props,
+                        checked: selected === child.props.value,
+                        onChange: handleChange
+                    });
+                }
+                return child;
+            });
+            return <div className={className}>{childrenWithProps}</div>;
+        };
+
+        const RadioGroupItem = ({ value, id, checked, onChange, children, className = '' }) => (
+            <label htmlFor={id} className={`flex flex-col items-center justify-between rounded-lg border-2 p-4 cursor-pointer ${checked ? 'border-blue-500 bg-blue-50' : 'border-gray-200'}`}>
+                <input
+                    type="radio"
+                    id={id}
+                    value={value}
+                    checked={checked}
+                    onChange={onChange}
+                    className="sr-only"
+                />
+                {children}
+            </label>
+        );
+        
+        const Table = ({ children, className = '' }) => <table className={`w-full text-left table-auto ${className}`}>{children}</table>;
+        const TableHeader = ({ children, className = '' }) => <thead className={`border-b-2 ${className}`}>{children}</thead>;
+        const TableHead = ({ children, className = '' }) => <th className={`py-2 ${className}`}>{children}</th>;
+        const TableBody = ({ children, className = '' }) => <tbody className={className}>{children}</tbody>;
+        const TableRow = ({ children, className = '' }) => <tr className={className}>{children}</tr>;
+        const TableCell = ({ children, className = '' }) => <td className={`py-2 ${className}`}>{children}</td>;
+        const Separator = ({ className = '' }) => <hr className={`my-4 border-gray-200 ${className}`} />;
+
+        // --- Main App Component ---
+        const App = () => {
+            const { useState, useEffect } = React;
+            
+            // State variables for Firebase and user authentication
+            const [shippingInfo, setShippingInfo] = useState({
+                fullName: '',
+                mobile: '',
+                address: '',
+                city: '',
+                state: '',
+                zipCode: ''
+            });
+            
+            const [currentStep, setCurrentStep] = useState('form');
+            const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('card');
+            const [cartItems, setCartItems] = useState([]);
+            const [totalPrice, setTotalPrice] = useState(0);
+
+            // Fetch initial data (simulated)
+            useEffect(() => {
+                // Now, we use the data passed from Django
+                setCartItems(initialCartData);
+                calculateTotalPrice(initialCartData);
+            }, []);
+
+            const calculateTotalPrice = (items) => {
+                const subtotal = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+                const shipping = 100;
+                setTotalPrice(subtotal + shipping);
+            };
+
+            const handleShippingChange = (e) => {
+                const { id, value } = e.target;
+                setShippingInfo(prev => ({ ...prev, [id]: value }));
+            };
+
+            const handlePlaceOrder = async (e) => {
+                e.preventDefault();
+                setCurrentStep('placingOrder');
+                
+                const orderData = {
+                    fullName: shippingInfo.fullName,
+                    mobile: shippingInfo.mobile,
+                    address: shippingInfo.address,
+                    city: shippingInfo.city,
+                    state: shippingInfo.state,
+                    zipCode: shippingInfo.zipCode,
+                    paymentMethod: selectedPaymentMethod,
+                    cartItems,
+                };
+                
+                console.log("Sending data to server:", orderData);
+
+                try {
+                    const response = await fetch('/api/place-order/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRFToken': 'your-csrf-token-here'
+                        },
+                        body: JSON.stringify(orderData)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Server error: ${response.status} - ${errorData.error}`);
+                    }
+                    
+                    const result = await response.json();
+                    console.log("Order successful!", result);
+
+                    if (result.success) {
+                       setCurrentStep('success');
+                       // Clear the cart on the frontend after successful order
+                       setCartItems([]);
+                    }
+
+                } catch (error) {
+                    console.error("Error placing order:", error);
+                    // Use a custom message box instead of alert
+                    const errorMessage = document.createElement('div');
+                    errorMessage.className = "fixed top-10 right-10 bg-red-500 text-white p-4 rounded-lg shadow-lg z-50";
+                    errorMessage.textContent = error.message;
+                    document.body.appendChild(errorMessage);
+                    setTimeout(() => {
+                      errorMessage.remove();
+                    }, 5000);
+                    setCurrentStep('form');
+                }
+            };
+            
+            // Renders the main checkout form
+            const renderCheckoutForm = () => (
+                <Card className="w-full max-w-4xl p-6">
+                    <CardHeader>
+                        <CardTitle>Checkout</CardTitle>
+                        <CardDescription>Please fill out the form to complete your purchase.</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <form id="checkout-form" onSubmit={handlePlaceOrder}>
+                            {/* Shipping Information Section */}
+                            <div className="space-y-4 mb-8">
+                                <h3 className="text-xl font-semibold border-b pb-2">Shipping Information</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="fullName">Full Name</Label>
+                                        <Input id="fullName" value={shippingInfo.fullName} onChange={handleShippingChange} placeholder="Enter your full name" required />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="mobile">Mobile No.</Label>
+                                        <Input id="mobile" type="tel" value={shippingInfo.mobile} onChange={handleShippingChange} placeholder="Receiver's mobile number" required />
+                                    </div>
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="address">Address</Label>
+                                    <Input id="address" value={shippingInfo.address} onChange={handleShippingChange} placeholder="Enter your full address" required />
+                                </div>
+                                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <div className="space-y-2">
+                                        <Label htmlFor="city">City</Label>
+                                        <Input id="city" value={shippingInfo.city} onChange={handleShippingChange} placeholder="Enter your city" required />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="state">State</Label>
+                                        <Input id="state" value={shippingInfo.state} onChange={handleShippingChange} placeholder="Enter your state" required />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <Label htmlFor="zipCode">Zip Code</Label>
+                                        <Input id="zipCode" value={shippingInfo.zipCode} onChange={handleShippingChange} placeholder="Enter your zip code" required />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Payment Method Section */}
+                            <div className="space-y-4 mb-8">
+                                <h3 className="text-xl font-semibold border-b pb-2">Choose a Payment Method</h3>
+                                <RadioGroup defaultValue="card" onValueChange={setSelectedPaymentMethod} className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                    <RadioGroupItem value="card" id="card">
+                                        <i className="fa-solid fa-credit-card text-3xl mb-2"></i>
+                                        <span>Debit/Credit Card</span>
+                                    </RadioGroupItem>
+                                    <RadioGroupItem value="upi" id="upi">
+                                        <i className="fa-solid fa-wallet text-3xl mb-2"></i>
+                                        <span>UPI</span>
+                                    </RadioGroupItem>
+                                    <RadioGroupItem value="qrcode" id="qrcode">
+                                        <i className="fa-solid fa-qrcode text-3xl mb-2"></i>
+                                        <span>QR Code</span>
+                                    </RadioGroupItem>
+                                </RadioGroup>
+
+                                {selectedPaymentMethod === 'card' && (
+                                    <div className="space-y-4">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="space-y-2">
+                                                <Label htmlFor="cardName">Name on Card</Label>
+                                                <Input id="cardName" placeholder="Name as it appears on card" required />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <Label htmlFor="cardNumber">Card Number</Label>
+                                                <Input id="cardNumber" placeholder="Card number" required />
+                                            </div>
+                                        </div>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="space-y-2">
+                                                <Label htmlFor="expiry">Expiry Date</Label>
+                                                <Input id="expiry" placeholder="MM/YY" required />
+                                            </div>
+                                            <div className="space-y-2">
+                                                <Label htmlFor="cvv">CVV</Label>
+                                                <Input id="cvv" placeholder="CVV" required />
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                                {selectedPaymentMethod === 'upi' && (
+                                    <div className="space-y-4">
+                                        <div className="space-y-2">
+                                            <Label htmlFor="upiId">Enter your UPI ID</Label>
+                                            <Input id="upiId" placeholder="e.g., yourname@upi" required />
+                                        </div>
+                                        <p className="text-center text-sm text-gray-500">Or use one of the apps below</p>
+                                        <div className="flex justify-center space-x-6">
+                                            {/* UPI app images will be empty as URLs are not supported */}
+                                            <div className="flex flex-col items-center">
+                                                <i className="fa-brands fa-google-pay text-4xl mb-1"></i>
+                                                <span className="text-xs">Google Pay</span>
+                                            </div>
+                                            <div className="flex flex-col items-center">
+                                                <i className="fa-brands fa-paypal text-4xl mb-1"></i>
+                                                <span className="text-xs">PhonePe</span>
+                                            </div>
+                                            <div className="flex flex-col items-center">
+                                                <i className="fa-brands fa-amazon-pay text-4xl mb-1"></i>
+                                                <span className="text-xs">Paytm</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                                {selectedPaymentMethod === 'qrcode' && (
+                                    <div className="text-center space-y-4">
+                                        <p className="text-lg font-medium">Scan the QR code to pay</p>
+                                        {/* Placeholder for QR Code */}
+                                        <div className="w-48 h-48 mx-auto bg-gray-200 border border-gray-300 rounded-lg flex items-center justify-center">
+                                            <i className="fa-solid fa-qrcode text-6xl text-gray-500"></i>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+
+                            {/* Order Summary Section */}
+                            <div className="space-y-4 mb-8">
+                                <h3 className="text-xl font-semibold border-b pb-2">Order Summary</h3>
+                                <Table>
+                                    <TableHeader>
+                                        <TableRow>
+                                            <TableHead>Item</TableHead>
+                                            <TableHead className="text-right">Price</TableHead>
+                                            <TableHead className="text-right">Quantity</TableHead>
+                                            <TableHead className="text-right">Total</TableHead>
+                                        </TableRow>
+                                    </TableHeader>
+                                    <TableBody>
+                                        {cartItems.map(item => (
+                                            <TableRow key={item.id}>
+                                                <TableCell>{item.name}</TableCell>
+                                                <TableCell className="text-right">₹{item.price.toFixed(2)}</TableCell>
+                                                <TableCell className="text-right">{item.quantity}</TableCell>
+                                                <TableCell className="text-right">₹{(item.price * item.quantity).toFixed(2)}</TableCell>
+                                            </TableRow>
+                                        ))}
+                                        <TableRow>
+                                            <TableCell colSpan="3" className="text-right font-medium">Shipping</TableCell>
+                                            <TableCell className="text-right">₹100.00</TableCell>
+                                        </TableRow>
+                                        <TableRow className="font-bold">
+                                            <TableCell colSpan="3" className="text-right font-bold text-lg">Total</TableCell>
+                                            <TableCell className="text-right font-bold text-lg">₹{totalPrice.toFixed(2)}</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </div>
+
+                            <Button type="submit">
+                                {currentStep === 'placingOrder' ? (
+                                    <span><i className="fas fa-spinner fa-spin mr-2"></i> Placing your order...</span>
+                                ) : (
+                                    'Place Order'
+                                )}
+                            </Button>
+                        </form>
+                    </CardContent>
+                </Card>
+            );
+
+            // Renders the loading state
+            const renderLoadingState = () => (
+                <div className="flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg">
+                    <i className="fas fa-spinner fa-spin text-5xl text-blue-500 mb-4"></i>
+                    <p className="mt-4 text-xl text-gray-600">Placing your order...</p>
+                </div>
+            );
+
+            // Renders the success page
+            const renderSuccessPage = () => (
+                <Card className="w-full max-w-xl p-8 text-center">
+                    <CardHeader>
+                        <i className="fas fa-check-circle text-7xl text-green-500 mb-4"></i>
+                        <CardTitle className="text-green-700">Order Confirmed!</CardTitle>
+                        <CardDescription className="text-lg">
+                            Thank you for your purchase. Your order has been placed successfully.
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                        <Separator />
+                        <p className="text-sm text-gray-500">
+                            Your order details have been saved.
+                        </p>
+                    </CardContent>
+                    <CardFooter>
+                        <Button onClick={() => window.location.reload()}>Place another order</Button>
+                    </CardFooter>
+                </Card>
+            );
+
+            // Main render logic based on the current step
+            return (
+                <div className="flex flex-col items-center justify-center min-h-screen p-4">
+                    {currentStep === 'form' && renderCheckoutForm()}
+                    {currentStep === 'placingOrder' && renderLoadingState()}
+                    {currentStep === 'success' && renderSuccessPage()}
+                </div>
+            );
+        };
+
+        const rootElement = document.getElementById('root');
+        ReactDOM.render(<App />, rootElement);
+    </script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #fff;
+    color: #111;
+}
+
+.super-container {
+    max-width: 95%;
+    margin: auto;
+    padding: 0 15px;
+}
+
+/* Top Line */
+.top-line {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+}
+
+.top-left img {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+}
+
+.top-right a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+}
+
+.top-right a:hover {
+    text-decoration: underline;
+}
+
+/* Top Header */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 25px 12px 30px;
+    background-color: #fff;
+    flex-wrap: wrap;
+}
+
+.top-left a,
+.top-right a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 35px; 
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding-left: 300px;
+    text-align: center;
+    flex: 1;
+}
+
+.top-header .top-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    padding: 4px 6px;
+    max-width: 200px;
+    flex: 1;
+    min-width: 150px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 12px;
+    padding: 4px;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-size: 14px;
+}
+
+/* Main Navigation */
+.main-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+.main-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Floating Buttons */
+.chat-btn{
+    text-decoration: none;
+    background-color: #be9c88b6;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+}
+
+.floating-buttons button {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
+}
+
+.floating-buttons button:hover {
+    background: #444;
+}
+
+#topBtn {
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 25px;
+    z-index: 999;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 12px 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+#topBtn:hover {
+    background-color: #444;
+}
+
+/* App Banner */
+.app-banner {
+    background-color: #be9c88b6;
+    padding: 20px 30px;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.app-banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.app-text {
+    font-size: 14px;
+    line-height: 1.6;
+    flex: 1 1 300px;
+}
+
+.app-store-badge {
+    width: 120px;
+}
+
+/* Footer */
+.footer {
+    background-color: #f9f6f2;
+    color: #000;
+    font-size: 12px;
+}
+
+.survey-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    background-color: #efe4da;
+    border-top: 1px solid #ddd;
+    font-weight: 500;
+    flex-wrap: wrap;
+}
+
+.survey-banner a {
+    color: #000;
+    font-size: 12px;
+    text-decoration: underline;
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 30px;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    gap: 20px;
+}
+
+.footer-col {
+    flex: 1 1 180px;
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.footer-col a {
+    text-decoration: none;
+    color: #000;
+    margin-bottom: 6px;
+    font-size: 13px;
+}
+
+.footer-col a:hover {
+    text-decoration: underline;
+}
+
+.footer-col p {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.newsletter {
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.newsletter input {
+    padding: 10px;
+    border: 1px solid #aaa;
+    flex: 1 1 180px;
+    font-size: 10px;
+}
+
+.newsletter button {
+    padding: 10px 16px;
+    background: #fff;
+    border: 1px solid #aaa;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.footer-bottom {
+    border-top: 1px solid #eee;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    background-color: #fff;
+    display: flex;
+    color: #353434;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#p {
+    padding-top: 10px;
+    padding-left: 0;
+    text-align: left;
+    flex: 1;
+}
+
+.footer-links {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-right: 0;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.footer-links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .top-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo {
+        text-align: center;
+        width: 100%;
+    }
+
+    .top-header .top-right {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .main-nav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        gap: 15px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .app-banner {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .top-line {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        text-align: center;
+    }
+
+    .search-container input {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .top-left a,
+    .top-right a {
+        font-size: 12px;
+    }
+
+    .footer-columns {
+        padding: 0 15px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+        padding: 0;
+    }
+}

@@ -1,0 +1,239 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/accounts/backoffice.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="backoffice-shell">
+    <div class="backoffice-wrap">
+        <section class="backoffice-hero">
+            <div class="backoffice-eyebrow">{{ dashboard_eyebrow }}</div>
+            <h1>{{ dashboard_title }}</h1>
+            <p>{{ dashboard_description }}</p>
+            <div class="backoffice-actions">
+                <a class="backoffice-btn backoffice-btn-primary" href="{% url back_url_name %}">{{ back_label }}</a>
+                {% if show_vendor_column %}
+                <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'payment_management_dashboard' %}">Payment Dashboard</a>
+                {% else %}
+                <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'vendor_payment_dashboard' %}">Payment Dashboard</a>
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="stat-grid">
+            {% for card in summary_cards %}
+            <article class="stat-card">
+                <span>{{ card.label }}</span>
+                <strong>{{ card.value }}</strong>
+                <small class="stat-subtext">{{ card.subtext }}</small>
+            </article>
+            {% endfor %}
+        </section>
+
+        <section class="backoffice-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Filter by destination and status</h2>
+                    <p>Search any order and narrow the queue using state, district, country, payment mode, or fulfillment stage.</p>
+                </div>
+            </div>
+            <form method="get" class="payment-filter-grid">
+                <input
+                    type="search"
+                    name="q"
+                    value="{{ filters.search_query }}"
+                    class="backoffice-input"
+                    placeholder="Order ID, customer, email, address"
+                >
+                <input
+                    type="text"
+                    name="state"
+                    value="{{ filters.state }}"
+                    class="backoffice-input"
+                    placeholder="State"
+                >
+                <input
+                    type="text"
+                    name="district"
+                    value="{{ filters.district }}"
+                    class="backoffice-input"
+                    placeholder="District"
+                >
+                <input
+                    type="text"
+                    name="country"
+                    value="{{ filters.country }}"
+                    class="backoffice-input"
+                    placeholder="Country"
+                >
+                <select name="payment_method" class="backoffice-input">
+                    <option value="">All payment modes</option>
+                    {% for value, label in payment_method_choices %}
+                    <option value="{{ value }}" {% if filters.payment_method == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+                <select name="fulfillment_status" class="backoffice-input">
+                    <option value="">All item statuses</option>
+                    {% for value, label in fulfillment_status_choices %}
+                    <option value="{{ value }}" {% if filters.fulfillment_status == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+                <div class="inline-actions">
+                    <button type="submit" class="backoffice-btn backoffice-btn-primary">Apply Filters</button>
+                    {% if show_vendor_column %}
+                    <a class="backoffice-btn backoffice-btn-secondary light" href="{% url 'admin_order_management_dashboard' %}">Reset</a>
+                    {% else %}
+                    <a class="backoffice-btn backoffice-btn-secondary light" href="{% url 'vendor_order_management_dashboard' %}">Reset</a>
+                    {% endif %}
+                </div>
+            </form>
+            <div class="note-strip">
+                Address search works against full address, city, district, state, and country so that dispatch planning and delivery routing stay easier.
+            </div>
+        </section>
+
+        <section class="backoffice-panel" style="margin-top: 1.2rem;">
+            <div class="panel-header">
+                <div>
+                    <h2>Order fulfillment queue</h2>
+                    <p>Each card shows one customer order with the items you can manage inside it.</p>
+                </div>
+            </div>
+
+            {% if order_groups %}
+            <div class="payment-order-grid">
+                {% for group in order_groups %}
+                <article class="payment-order-card">
+                    <div class="payment-order-head">
+                        <div>
+                            <span class="backoffice-badge badge-muted">Order #{{ group.order.order_id|default:group.order.id }}</span>
+                            <h3>{{ group.order.full_name }}</h3>
+                            <p>{{ group.order.user.display_name }} | {{ group.order.created_at|date:"d M Y, h:i A" }}</p>
+                        </div>
+                        <div class="payment-order-amount">Rs. {{ group.visible_total }}</div>
+                    </div>
+
+                    <div class="payment-detail-grid">
+                        <div class="detail-cell">
+                            <span class="detail-label">Order Status</span>
+                            <span class="backoffice-badge {{ group.order.order_badge_class }}">{{ group.order.status }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Payment Mode</span>
+                            <span class="backoffice-badge {{ group.order.method_badge_class }}">{{ group.order.get_payment_method_display }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Delivery Partner</span>
+                            <span>{{ group.order.delivery_partner_name }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">City</span>
+                            <span>{{ group.order.city }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">District</span>
+                            <span>{{ group.order.district|default:group.order.city }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">State</span>
+                            <span>{{ group.order.state }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Country</span>
+                            <span>{{ group.order.country }}</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-meta-strip">
+                        <span><strong>Address:</strong> {{ group.order.address }}</span>
+                        <span><strong>Zip:</strong> {{ group.order.zip_code }}</span>
+                        <span><strong>Mobile:</strong> {{ group.order.mobile }}</span>
+                        <span><strong>Payment Ref:</strong> {{ group.order.payment_reference|default:"-" }}</span>
+                    </div>
+
+                    {% if show_delivery_assignment %}
+                    <form method="post" action="{% url 'assign_delivery_partner' group.order.id %}" class="payment-update-form assignment-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.get_full_path|default:'' }}">
+                        <div class="payment-form-grid">
+                            <div>
+                                <label class="detail-label" for="delivery-partner-{{ group.order.id }}">Assign Delivery Partner</label>
+                                <select id="delivery-partner-{{ group.order.id }}" name="delivery_partner_id" class="backoffice-input">
+                                    <option value="">Unassigned</option>
+                                    {% for partner in delivery_partners %}
+                                    <option value="{{ partner.id }}" {% if group.order.delivery_partner_id == partner.id %}selected{% endif %}>
+                                        {{ partner.display_name }} ({{ partner.email }})
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <div class="inline-actions payment-actions">
+                            <button type="submit" class="backoffice-btn backoffice-btn-secondary light">Save Assignment</button>
+                        </div>
+                    </form>
+                    {% endif %}
+
+                    <div class="managed-item-grid">
+                        {% for item in group.items %}
+                        <article class="managed-item-card">
+                            <div class="managed-item-head">
+                                <div>
+                                    <h4>{{ item.product_name }}</h4>
+                                    <p>Qty {{ item.quantity }} | Rs. {{ item.price }} each | Line total Rs. {{ item.line_total }}</p>
+                                    {% if show_vendor_column %}
+                                    <p>Vendor: {{ item.vendor.display_name|default:"Unassigned" }}</p>
+                                    {% endif %}
+                                </div>
+                                <span class="backoffice-badge {{ item.fulfillment_badge_class }}">{{ item.get_fulfillment_status_display }}</span>
+                            </div>
+
+                            <div class="managed-item-media">
+                                {% if item.product_image_url %}
+                                <img src="{{ item.product_image_url }}" alt="{{ item.product_name }}" loading="lazy">
+                                {% else %}
+                                <div class="managed-item-media-empty">No product image available</div>
+                                {% endif %}
+                            </div>
+
+                            <form method="post" action="{% url 'update_order_item_status' item.id %}" class="payment-update-form">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ request.get_full_path|default:'' }}">
+                                <div class="item-form-grid">
+                                    <div>
+                                        <label class="detail-label" for="fulfillment-status-{{ item.id }}">Item Status</label>
+                                        <select id="fulfillment-status-{{ item.id }}" name="fulfillment_status" class="backoffice-input">
+                                            {% for value, label in fulfillment_status_choices %}
+                                            <option value="{{ value }}" {% if item.fulfillment_status == value %}selected{% endif %}>{{ label }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="payment-notes-field">
+                                        <label class="detail-label" for="status-notes-{{ item.id }}">Status Notes</label>
+                                        <textarea
+                                            id="status-notes-{{ item.id }}"
+                                            name="status_notes"
+                                            class="backoffice-input"
+                                            placeholder="Add acceptance, rejection, dispatch, or delivery notes."
+                                        >{{ item.status_notes }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="inline-actions payment-actions">
+                                    <button type="submit" class="backoffice-btn backoffice-btn-primary">Update Item</button>
+                                </div>
+                            </form>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty-state">No orders matched the current filters.</div>
+            {% endif %}
+        </section>
+    </div>
+</section>
+{% endblock %}

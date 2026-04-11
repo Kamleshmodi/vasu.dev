@@ -1,0 +1,52 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+{% block content %}
+{% load humanize %}
+
+<link rel="stylesheet" href="{% static 'css/cart/wishlist.css' %}">
+<div class="wishlist-container">
+    <div class="wishlist-header">
+        <h1>Your Wishlist</h1>
+    </div>
+    
+    {% for item in wishlist_items %}
+        {% if item.content_object %}
+        <div class="wishlist-item">
+            <div class="item-image">
+                <img src="{{ item.content_object.front_image.url }}" alt="{{ item.content_object.product_name }}">
+            </div>
+            <div class="item-details">
+                <h3>{{ item.content_object.product_name }}</h3>
+                <p class="item-meta">{{ item.content_object.brand }} • {{ item.content_object.category.category_name }}</p>
+                <p class="item-price">
+                    Rs. {{ item.display_price|default:item.content_object.price|intcomma }}
+                    {% if item.is_on_sale %}
+                    <span class="item-price-original">Rs. {{ item.original_price|intcomma }}</span>
+                    {% endif %}
+                </p>
+                <p class="item-gender">Catalog: {{ item.content_object.gender }}</p>
+            </div>
+            <div class="item-actions">
+                <form method="post" action="{% url 'wishlist_remove' gender=item.content_object.gender|lower product_id=item.content_object.id %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="remove-btn">
+                        <i class="fas fa-trash-alt"></i> Remove
+                    </button>
+                </form>
+                <form method="post" action="{% url 'add_to_cart' gender=item.content_object.gender|lower product_id=item.content_object.id %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="add-to-cart-btn">
+                        <i class="fas fa-shopping-cart"></i> Add to Cart
+                    </button>
+                </form>
+            </div>
+        </div>
+        {% endif %}
+    {% empty %}
+        <div class="empty-wishlist-message">
+            <p>Your wishlist is empty.</p>
+            <a href="{% url 'home' %}" class="continue-shopping-btn">Continue Shopping</a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

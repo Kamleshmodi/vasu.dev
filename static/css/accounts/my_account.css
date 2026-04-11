@@ -1,0 +1,117 @@
+/* Main Container */
+.account-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.page-title {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* Grid System: Desktop par 2 column, Mobile par 1 column */
+.account-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Do barabar hisse */
+    gap: 30px;
+}
+
+/* Card Styling like Amazon Tiles */
+.info-card {
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+/* Card Header */
+.card-header {
+    background-color: #f7fafa;
+    padding: 15px 20px;
+    border-bottom: 1px solid #d5d9d9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.edit-link {
+    color: #007185; /* Amazon Link Color */
+    text-decoration: none;
+    font-size: 14px;
+}
+.edit-link:hover {
+    color: #c7511f;
+    text-decoration: underline;
+}
+
+/* Card Body */
+.card-body {
+    padding: 20px;
+}
+
+/* Personal Info Rows */
+.info-row {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 2px;
+}
+
+.info-value {
+    font-size: 16px;
+    color: #111;
+}
+
+/* Address Styling */
+.address-box {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.addr-name {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.no-address {
+    text-align: center;
+    padding: 20px 0;
+    color: #777;
+}
+
+.add-addr-btn {
+    margin-top: 10px;
+    background-color: #fff;
+    border: 1px solid #d5d9d9;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(213,217,217,.5);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .account-grid {
+        grid-template-columns: 1fr; /* Mobile par ek ke neeche ek */
+    }
+}

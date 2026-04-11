@@ -1,0 +1,128 @@
+{% extends 'mens/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/mens/product_detail.css' %}">
+
+<div class="product-detail-container">
+    <div class="gallery-section">
+        <div class="image-zoom-wrapper">
+            <img id="zoomImage" src="{{ product.front_image.url }}" alt="{{ product.product_name }}">
+        </div>
+
+        <div class="thumbnail-row">
+            <img class="thumb" src="{{ product.front_image.url }}" onclick="switchImage(this)">
+            {% if product.back_image %}
+            <img class="thumb" src="{{ product.back_image.url }}" onclick="switchImage(this)">
+            {% endif %}
+            {% for extra_image in product.gallery_images.all %}
+            {% if extra_image.image %}
+            <img class="thumb" src="{{ extra_image.image.url }}" onclick="switchImage(this)">
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h2>{{ product.brand }}</h2>
+        <h1>{{ product.product_name }}</h1>
+        {% if product.is_on_sale %}
+        <p class="price"><span style="text-decoration: line-through; color: #7a7a7a; margin-right: 8px;">Rs. {{ product.original_price|intcomma }}</span><span>Rs. {{ product.price|intcomma }}</span><span style="color: #147a30; margin-left: 6px;">({{ product.discount_percentage|floatformat:0 }}% OFF)</span></p>
+        {% else %}
+        <p class="price">Rs. {{ product.price|intcomma }}</p>
+        {% endif %}
+
+        <p class="color">Color: {{ product.variations.first.color }}</p>
+
+        {% if not product.is_available %}
+        <p class="out-of-stock">Sorry, this item is no longer available</p>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="selectors">
+                <label for="size">Size:</label>
+                <select name="size" required>
+                    {% for variation in product.variations.all %}
+                    <option value="{{ variation.size }}">{{ variation.size }}</option>
+                    {% endfor %}
+                </select>
+
+                <label for="color">Color:</label>
+                <select name="color" required>
+                    {% for variation in product.variations.all %}
+                    {% if variation.color %}
+                    <option value="{{ variation.color }}">{{ variation.color }}</option>
+                    {% endif %}
+                    {% endfor %}
+                </select>
+
+            </div>
+
+            <div class="action-buttons">
+                <button type="submit" formaction="{% url 'add_to_cart' gender='mens' product_id=product.id %}" formmethod="post" class="add-to-bag-button">
+                    Add to Bag
+                </button>
+                <button type="submit" formaction="{% url 'wishlist_add' gender='mens' product_id=product.id %}" formmethod="post" class="wishlist-button">
+                    Wishlist
+                </button>
+            </div>
+        </form>
+
+        <div class="shipping-links">
+            <a href="#">Free international shipping on orders over Rs. 8000</a>
+            <a href="#">Live Chat</a>
+        </div>
+
+        <div class="product-description">
+            <h3>Details</h3>
+            <p style="white-space:pre-line;">{{ product.description|linebreaksbr }}</p>
+        </div>
+
+        <div class="product-description">
+            <h3>Customer Ratings</h3>
+            {% if review_count %}
+                <p style="font-weight: 600;">{{ average_rating|floatformat:1 }}/5 from {{ review_count }} review{{ review_count|pluralize }}</p>
+                {% for review in recent_reviews %}
+                    <div style="border: 1px solid #e5e5e5; border-radius: 12px; padding: 12px 14px; margin-bottom: 12px;">
+                        <p style="margin: 0 0 6px; font-weight: 600;">{{ review.rating }}/5{% if review.title %} - {{ review.title }}{% endif %}</p>
+                        <p style="margin: 0 0 6px; color: #666;">{{ review.review|default:"Customer shared a positive shopping experience." }}</p>
+                        {% if review.review_image %}
+                        <img src="{{ review.review_image.url }}" alt="{{ review.product_name }}" style="width: min(160px, 100%); border-radius: 10px; margin: 8px 0;">
+                        {% endif %}
+                        <small style="color: #888;">{{ review.user.username }} on {{ review.updated_at|date:"d M Y" }}</small>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>No ratings yet. Delivered customers will be able to share feedback here.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchImage(element) {
+        const zoomImage = document.getElementById('zoomImage');
+        zoomImage.src = element.src;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const zoomImage = document.getElementById("zoomImage");
+
+        zoomImage.addEventListener("mousemove", function(e) {
+            const bounds = zoomImage.getBoundingClientRect();
+            const x = (e.clientX - bounds.left) / bounds.width * 100;
+            const y = (e.clientY - bounds.top) / bounds.height * 100;
+            zoomImage.style.transform = "scale(2.2)";
+            zoomImage.style.transformOrigin = `${x}% ${y}%`;
+        });
+
+        zoomImage.addEventListener("mouseleave", function() {
+            zoomImage.style.transform = "scale(1)";
+        });
+    });
+</script>
+
+{% endblock %}
+

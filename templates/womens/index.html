@@ -1,0 +1,162 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/womens/wnew.css' %}">
+<div class="container">
+    <div class="container-1">
+        <div class="row-1">
+            <div class="position-relative" style="width: 100%; padding: 10px 0 10px 0;">
+                <img src="{% static 'image/womens/home/w1.avif' %}" alt="Banner 1" class="img-fluid w-100">
+                <a href="/new/" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+                <a href="/new/" style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="position-relative" style="width: 100%; padding: 10px 0 10px 0;">
+                <img src="{% static 'image/womens/home/w2.avif' %}" class="img-fluid w-100" alt="Banner 2">
+                <a href="/new/" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+                <a href="/new/" style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+            </div>
+        </div>
+        <div class="row-3">
+            <div class="position-relative" style="width: 100%; padding: 10px 0 10px 0;">
+                <img src="{% static 'image/womens/home/w3.webp' %}" class="img-fluid w-100" alt="Banner 3">
+                <a href="/new/" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+                <a href="/new/" style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <a href="/new/">
+                <img src="{% static 'image/womens/home/w5.avif' %}" alt="New Arrivals">
+            </a>
+            <div class="caption-title">New Arrivals</div>
+            <div class="caption-desc">Discover the latest arrivals to add to your new-season wardrobe.</div>
+        </div>
+
+        <div class="grid-item">
+            <a href="/new/">
+                <img src="{% static 'image/womens/home/w6.avif' %}" alt="Soft Girl Summer">
+            </a>
+            <div class="caption-title">Soft Girl Summer</div>
+            <div class="caption-desc">Easy living starts with this collection of romantic, ethereal pastel shades.</div>
+        </div>
+
+        <div class="grid-item">
+            <a href="/new/">
+                <img src="{% static 'image/womens/home/w7.avif' %}" alt="Sale">
+            </a>
+            <div class="caption-title">SALE</div>
+            <div class="caption-desc">Take up to 65% OFF new designer markdowns</div>
+        </div>
+    </div>
+
+    <div class="featured-section">
+        <h5 style="text-align: center; margin-top: 20px;">FEATURED ITEMS</h5>
+        <div class="product-grid" style="margin-top: 20px;">
+            
+            <a href="/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/womens/home/w8_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/womens/home/w8.avif' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">Saint Laurent</div>
+                    <div class="product-name">Tank Top</div>
+                    <div class="price">₹55,963.62</div>
+                </div>
+            </a>
+
+            <a href="/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/womens/home/w9_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/womens/home/w9.avif' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">The Attico</div>
+                    <div class="product-name">Mini Dress</div>
+                    <div class="price">₹64,561.87</div>
+                </div>
+            </a>
+
+            <a href="/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/womens/home/w10_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/womens/home/w10.avif' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">Alexandre Vauthier</div>
+                    <div class="product-name">Polka Dot Mini Dress</div>
+                    <div class="price">₹1,29,123.74</div>
+                </div>
+            </a>
+
+            <a href="/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/womens/home/w11_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/womens/home/w11.avif' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">The Attico</div>
+                    <div class="product-name">Mini Dress</div>
+                    <div class="price">₹47,345.37</div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="product-grid">
+            <a href="/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/womens/home/w12_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/womens/home/w12.avif' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">THE ATTICO</div>
+                    <div class="product-name">Indie Flat Thong Sandal</div>
+                    <div class="price">₹50,788.67</div>
+                </div>
+            </a>
+
+            <a href="/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/womens/home/w13_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/womens/home/w13.avif' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">Saint Laurent</div>
+                    <div class="product-name">Talha Flat Sandal</div>
+                    <div class="price">₹85,221.67</div>
+                </div>
+            </a>
+
+            <a href="/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/womens/home/w14_1.webp' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/womens/home/w14.avif' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">THE ATTICO</div>
+                    <div class="product-name">Zebra Printed Short</div>
+                    <div class="price">₹32,280.94</div>
+                </div>
+            </a>
+
+            <a href="/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/womens/home/w15_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/womens/home/w15.avif' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">Saint Laurent</div>
+                    <div class="product-name">Mathis Flat Sandal</div>
+                    <div class="price">₹68,866.00</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

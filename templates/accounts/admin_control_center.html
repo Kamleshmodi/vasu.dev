@@ -1,0 +1,373 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/accounts/backoffice.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="backoffice-shell marketplace-shell">
+    <div class="backoffice-wrap compact-admin marketplace-admin">
+        <section class="backoffice-hero hero-marketplace">
+            <div class="hero-marketplace-grid">
+                <div class="hero-marketplace-copy">
+                    <div class="backoffice-eyebrow">Admin Control Center</div>
+                    <h1>Marketplace Operations Hub</h1>
+                    <p>
+                        Oversee accounts, catalog, payments, orders, and reviews from one marketplace-style admin surface.
+                        The layout is tightened for faster scanning and cleaner daily operations.
+                    </p>
+                    <div class="hero-chip-row">
+                        <span class="hero-chip">Accounts</span>
+                        <span class="hero-chip">Catalog</span>
+                        <span class="hero-chip">Orders</span>
+                        <span class="hero-chip">Reviews</span>
+                    </div>
+                    <div class="backoffice-actions">
+                        <a class="backoffice-btn backoffice-btn-primary" href="{% url 'admin:index' %}">Open Django Admin</a>
+                        <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'payment_management_dashboard' %}">Payment Dashboard</a>
+                        <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'admin_order_management_dashboard' %}">Order Management</a>
+                        <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'vendor_dashboard' %}">Vendor View</a>
+                        <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'my_account' %}">My Account</a>
+                    </div>
+                </div>
+                <aside class="hero-marketplace-panel">
+                    <span class="hero-panel-label">Ops Snapshot</span>
+                    <div class="hero-panel-grid">
+                        <div class="hero-panel-metric">
+                            <span>Vendors</span>
+                            <strong>{{ summary.vendors }}</strong>
+                        </div>
+                        <div class="hero-panel-metric">
+                            <span>Orders</span>
+                            <strong>{{ summary.orders }}</strong>
+                        </div>
+                        <div class="hero-panel-metric">
+                            <span>Catalog</span>
+                            <strong>{{ summary.women_products|add:summary.men_products }}</strong>
+                        </div>
+                        <div class="hero-panel-metric">
+                            <span>Ratings</span>
+                            <strong>{{ summary.ratings }}</strong>
+                        </div>
+                    </div>
+                    <div class="hero-panel-note">
+                        Use the search panels below for deep lookup. The activity area intentionally stays capped to the latest four products.
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="stat-grid">
+            <article class="stat-card">
+                <span>Customers</span>
+                <strong>{{ summary.customers }}</strong>
+                <small class="stat-subtext">Registered shopper accounts across the storefront.</small>
+            </article>
+            <article class="stat-card">
+                <span>Vendors</span>
+                <strong>{{ summary.vendors }}</strong>
+                <small class="stat-subtext">Seller accounts currently participating in the catalog.</small>
+            </article>
+            <article class="stat-card">
+                <span>Delivery Partners</span>
+                <strong>{{ summary.delivery_partners }}</strong>
+                <small class="stat-subtext">Fulfillment users available for assignment and tracking.</small>
+            </article>
+            <article class="stat-card">
+                <span>Admins</span>
+                <strong>{{ summary.admins }}</strong>
+                <small class="stat-subtext">High-access users with marketplace control permissions.</small>
+            </article>
+            <article class="stat-card">
+                <span>Total Orders</span>
+                <strong>{{ summary.orders }}</strong>
+                <small class="stat-subtext">Order count tracked from checkout through fulfillment.</small>
+            </article>
+            <article class="stat-card">
+                <span>Delivered</span>
+                <strong>{{ summary.delivered_orders }}</strong>
+                <small class="stat-subtext">Orders already completed and eligible for customer rating.</small>
+            </article>
+            <article class="stat-card">
+                <span>Ratings</span>
+                <strong>{{ summary.ratings }}</strong>
+                <small class="stat-subtext">Total reviews currently stored in the moderation system.</small>
+            </article>
+            <article class="stat-card">
+                <span>Women's Products</span>
+                <strong>{{ summary.women_products }}</strong>
+                <small class="stat-subtext">Listings in the women's catalog.</small>
+            </article>
+            <article class="stat-card">
+                <span>Men's Products</span>
+                <strong>{{ summary.men_products }}</strong>
+                <small class="stat-subtext">Listings in the men's catalog.</small>
+            </article>
+        </section>
+
+        <section class="dashboard-grid">
+            <div class="panel-stack">
+                <section class="backoffice-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h2>User Roles</h2>
+                            <p>Search and manage the latest four matching users instead of loading a heavy full list.</p>
+                        </div>
+                        <form method="get" class="panel-search-form">
+                            {% if product_query %}
+                            <input type="hidden" name="product_q" value="{{ product_query }}">
+                            {% endif %}
+                            <input
+                                type="search"
+                                name="user_q"
+                                value="{{ user_query }}"
+                                class="backoffice-input panel-search-input"
+                                placeholder="Search user, email, username, role"
+                            >
+                            <button type="submit" class="backoffice-btn backoffice-btn-primary">Search</button>
+                            {% if user_query %}
+                            <a class="backoffice-btn backoffice-btn-secondary light" href="?{% if product_query %}product_q={{ product_query|urlencode }}{% endif %}">Clear</a>
+                            {% endif %}
+                        </form>
+                    </div>
+
+                    <div class="variation-table-wrap">
+                        <table class="backoffice-table">
+                            <thead>
+                                <tr>
+                                    <th>User</th>
+                                    <th>Current Role</th>
+                                    <th>Access Control</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if accounts %}
+                                {% for account in accounts %}
+                                <tr>
+                                    <td>
+                                        <strong>{{ account.display_name }}</strong><br>
+                                        <span>{{ account.email }}</span><br>
+                                        <span>@{{ account.username }}</span>
+                                    </td>
+                                    <td>
+                                        <span class="backoffice-badge {% if account.account_type == 'admin' %}badge-admin{% elif account.account_type == 'vendor' %}badge-vendor{% elif account.account_type == 'delivery_partner' %}badge-delivery{% else %}badge-customer{% endif %}">
+                                            {{ account.get_account_type_display }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <form method="post" action="{% url 'admin_update_account_role' account.id %}" class="account-role-form">
+                                            {% csrf_token %}
+                                            <select name="account_type" class="backoffice-input">
+                                                {% for value, label in role_choices %}
+                                                <option value="{{ value }}" {% if account.account_type == value %}selected{% endif %}>{{ label }}</option>
+                                                {% endfor %}
+                                            </select>
+                                            <button type="submit" class="backoffice-btn backoffice-btn-primary">Update</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                {% else %}
+                                <tr>
+                                    <td colspan="3">No users matched your current search.</td>
+                                </tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="backoffice-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h2>Recent Product Activity</h2>
+                            <p>Showing only the latest four products here. Use search whenever you need to find anything else.</p>
+                        </div>
+                        <form method="get" class="panel-search-form">
+                            {% if user_query %}
+                            <input type="hidden" name="user_q" value="{{ user_query }}">
+                            {% endif %}
+                            <input
+                                type="search"
+                                name="product_q"
+                                value="{{ product_query }}"
+                                class="backoffice-input panel-search-input"
+                                placeholder="Search product, brand, vendor, category"
+                            >
+                            <button type="submit" class="backoffice-btn backoffice-btn-primary">Search</button>
+                            {% if product_query %}
+                            <a class="backoffice-btn backoffice-btn-secondary light" href="?{% if user_query %}user_q={{ user_query|urlencode }}{% endif %}">Clear</a>
+                            {% endif %}
+                        </form>
+                    </div>
+
+                    {% if product_cards %}
+                    <div class="product-grid">
+                        {% for card in product_cards %}
+                        <article class="product-card">
+                            <img src="{% if card.image_url %}{{ card.image_url }}{% else %}{% static 'image/logo/logo-transparent.png' %}{% endif %}" alt="{{ card.product.product_name }}" onerror="this.onerror=null;this.src='{% static 'image/logo/logo-transparent.png' %}';">
+                            <div class="product-card-head">
+                                <span class="backoffice-badge badge-muted">{{ card.catalog_label }}</span>
+                                {% if card.sale_status %}
+                                <span class="backoffice-badge {{ card.sale_status.badge_class }}">{{ card.sale_status.label }}</span>
+                                {% endif %}
+                            </div>
+                            <h3>{{ card.product.product_name }}</h3>
+                            <p class="product-card-subtitle">{{ card.vendor_name }} • {{ card.product.category.category_name }}</p>
+                            <div class="product-price-row">
+                                <div class="price-block">
+                                    <span>List Price</span>
+                                    <strong>Rs. {{ card.product.price|floatformat:2 }}</strong>
+                                </div>
+                                <div class="price-block {% if card.sale %}accent{% endif %}">
+                                    <span>{% if card.sale %}Sale Price{% else %}Current Price{% endif %}</span>
+                                    <strong>Rs. {% if card.sale %}{{ card.sale.sale_price|floatformat:2 }}{% else %}{{ card.product.price|floatformat:2 }}{% endif %}</strong>
+                                </div>
+                            </div>
+                            <p class="product-card-note">
+                                {% if card.sale_status %}
+                                {{ card.sale_status.summary }}
+                                {% else %}
+                                No active sale campaign is attached to this item.
+                                {% endif %}
+                            </p>
+                            <div class="product-meta">
+                                <span class="meta-chip">{{ card.activity_label }}</span>
+                                <span class="meta-chip">{{ card.modified_date|date:"d M Y, h:i A" }}</span>
+                                <span class="meta-chip">{{ card.stock_total }} stock</span>
+                                <span class="meta-chip">{{ card.review_count }} review{{ card.review_count|pluralize }}</span>
+                            </div>
+                            <div class="inline-actions">
+                                <a class="backoffice-btn backoffice-btn-primary" href="{{ card.edit_url }}?source=admin">Manage</a>
+                                <a class="backoffice-btn backoffice-btn-secondary light" href="{{ card.edit_url }}?source=admin#sale-settings">Sale / Discount</a>
+                                <a class="backoffice-btn backoffice-btn-secondary light" href="{{ card.detail_url }}">View</a>
+                                <form method="post" action="{{ card.delete_url }}" onsubmit="return confirm('Delete {{ card.product.product_name|escapejs }}?');">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="return_to" value="admin">
+                                    <button type="submit" class="backoffice-btn backoffice-btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="empty-state">No catalog products matched your current search.</div>
+                    {% endif %}
+                </section>
+            </div>
+
+            <div class="panel-stack">
+                <section class="backoffice-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Quick Links</h3>
+                            <p>One-click access to the most used marketplace admin sections.</p>
+                        </div>
+                    </div>
+                    <div class="quick-links">
+                        <a class="backoffice-btn backoffice-btn-secondary light" href="{% url 'payment_management_dashboard' %}">Payments</a>
+                        <a class="backoffice-btn backoffice-btn-secondary light" href="{% url 'admin_order_management_dashboard' %}">Order Management</a>
+                        <a class="backoffice-btn backoffice-btn-secondary light" href="{% url 'admin:appaccounts_account_changelist' %}">Accounts</a>
+                        <a class="backoffice-btn backoffice-btn-secondary light" href="{% url 'admin:aapstore_order_changelist' %}">Orders</a>
+                        <a class="backoffice-btn backoffice-btn-secondary light" href="{% url 'admin:appwomens_newproduct_changelist' %}">Women's Catalog</a>
+                        <a class="backoffice-btn backoffice-btn-secondary light" href="{% url 'admin:appmens_newproduct_changelist' %}">Men's Catalog</a>
+                        <a class="backoffice-btn backoffice-btn-secondary light" href="{% url 'admin:aapstore_productrating_changelist' %}">Ratings</a>
+                    </div>
+                    <div class="note-strip">
+                        Any user moved to the Admin role here will receive project-level admin permissions, including Django admin access.
+                    </div>
+                </section>
+
+                <section class="backoffice-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Recent Orders</h3>
+                            <p>A tighter operational view of the latest customer orders and current fulfillment state.</p>
+                        </div>
+                    </div>
+                    {% if recent_orders %}
+                    <div class="mini-list">
+                        {% for order in recent_orders %}
+                        <div class="mini-list-item">
+                            <strong>Order #{{ order.order_id|default:order.id }} | {{ order.user.display_name }}</strong>
+                            <span>{{ order.status }} | Rs. {{ order.total_price }} | {{ order.created_at|date:"d M Y, h:i A" }}</span>
+                            <span>Delivery Partner: {{ order.delivery_partner.display_name|default:"Unassigned" }}</span>
+                            {% if order.status != 'Delivered' and order.status != 'Cancelled' %}
+                            <form method="post" action="/admin-control/orders/{{ order.id }}/delivered/" class="inline-actions" style="margin-top: 8px;">
+                                {% csrf_token %}
+                                <button type="submit" class="backoffice-btn backoffice-btn-primary">Mark Delivered</button>
+                            </form>
+                            {% elif order.status == 'Delivered' %}
+                            <span class="backoffice-badge badge-muted" style="margin-top: 8px; width: fit-content;">Delivered</span>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="empty-state">Order summaries will appear here once new orders arrive.</div>
+                    {% endif %}
+                </section>
+
+                <section class="backoffice-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Pending Review Approval</h3>
+                            <p>Approve only valid text and real product photos. Reject anything misleading or unrelated.</p>
+                        </div>
+                    </div>
+                    {% if pending_ratings %}
+                    <div class="mini-list">
+                        {% for rating in pending_ratings %}
+                        <div class="mini-list-item">
+                            <strong>{{ rating.product_name }} | {{ rating.rating }}/5</strong>
+                            <span>{{ rating.user.display_name }} | Order #{{ rating.order.order_id|default:rating.order.id }}</span>
+                            {% if rating.title %}
+                            <span>Title: {{ rating.title }}</span>
+                            {% endif %}
+                            {% if rating.review %}
+                            <span>Review: {{ rating.review }}</span>
+                            {% endif %}
+                            {% if rating.review_image %}
+                            <div class="admin-review-preview">
+                                <img src="{{ rating.review_image.url }}" alt="{{ rating.product_name }}">
+                            </div>
+                            {% endif %}
+                            <form method="post" action="{% url 'admin_moderate_rating' rating.id %}" class="inline-actions" style="margin-top: 10px;">
+                                {% csrf_token %}
+                                <button type="submit" name="decision" value="approve" class="backoffice-btn backoffice-btn-primary">Yes</button>
+                                <button type="submit" name="decision" value="reject" class="backoffice-btn backoffice-btn-danger">No</button>
+                            </form>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="empty-state">No reviews are waiting for approval right now.</div>
+                    {% endif %}
+                </section>
+
+                <section class="backoffice-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Approved Reviews</h3>
+                            <p>Monitor product quality with reviews that are already live on the storefront.</p>
+                        </div>
+                    </div>
+                    {% if recent_ratings %}
+                    <div class="mini-list">
+                        {% for rating in recent_ratings %}
+                        <div class="mini-list-item">
+                            <strong>{{ rating.product_name }} | {{ rating.rating }}/5</strong>
+                            <span>{{ rating.user.display_name }} | Order #{{ rating.order.order_id|default:rating.order.id }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="empty-state">Product ratings will appear here.</div>
+                    {% endif %}
+                </section>
+            </div>
+        </section>
+    </div>
+</section>
+{% endblock %}

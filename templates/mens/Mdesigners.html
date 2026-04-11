@@ -1,0 +1,100 @@
+{% extends 'mens/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/mens/designers/MDesigners.css' %}">
+
+<div class="page-layout">
+    <aside class="left-sidebar">
+        <div class="breadcrumb">
+            <a href="{% url 'mens_home' %}">Mens</a> /
+            <a href="{% url 'mens_designers' %}">Designers</a>
+        </div>
+        <h4 style="padding-bottom: 10px; font-size: 15px; text-spacing-trim: inherit; padding-top: 10px;">ALL DESIGNERS</h4>
+
+        <div class="filter-block">
+            <ul>
+                <li><a href="{% url 'mens_designers' %}">All Designers</a></li>
+                {% for letter, designers in grouped_designers %}
+                    <li>
+                        <a href="#section-{% if letter == '#' %}num{% else %}{{ letter }}{% endif %}">{{ letter }} ({{ designers|length }})</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </aside>
+
+    <main class="right-main">
+        <div class="designers-banner">
+            <h4 style="font-size: 12px; text-spacing-trim: inherit; padding-top: 10px;">ALL DESIGNERS</h4>
+        </div>
+
+        <div class="product-grid alphabet-nav" id="alphabet-nav">
+            <span><a href="#section-num">#</a></span>
+            <span><a href="#section-A">A</a></span>
+            <span><a href="#section-B">B</a></span>
+            <span><a href="#section-C">C</a></span>
+            <span><a href="#section-D">D</a></span>
+            <span><a href="#section-E">E</a></span>
+            <span><a href="#section-F">F</a></span>
+            <span><a href="#section-G">G</a></span>
+            <span><a href="#section-H">H</a></span>
+            <span><a href="#section-I">I</a></span>
+            <span><a href="#section-J">J</a></span>
+            <span><a href="#section-K">K</a></span>
+            <span><a href="#section-L">L</a></span>
+            <span><a href="#section-M">M</a></span>
+            <span><a href="#section-N">N</a></span>
+            <span><a href="#section-O">O</a></span>
+            <span><a href="#section-P">P</a></span>
+            <span><a href="#section-Q">Q</a></span>
+            <span><a href="#section-R">R</a></span>
+            <span><a href="#section-S">S</a></span>
+            <span><a href="#section-T">T</a></span>
+            <span><a href="#section-U">U</a></span>
+            <span><a href="#section-V">V</a></span>
+            <span><a href="#section-W">W</a></span>
+            <span><a href="#section-X">X</a></span>
+            <span><a href="#section-Y">Y</a></span>
+            <span><a href="#section-Z">Z</a></span>
+        </div>
+
+        <div class="designers-banner__content">
+            {% if grouped_designers %}
+                {% for letter, designers in grouped_designers %}
+                    <hr>
+                    <h3 id="section-{% if letter == '#' %}num{% else %}{{ letter }}{% endif %}">{{ letter }}</h3>
+                    <div class="designers-grid">
+                        {% for designer in designers %}
+                            <a class="designer-item {% if selected_designer_id == designer.id|stringformat:'s' %}active-designer{% endif %}" href="{% url 'mens_new' %}?designer={{ designer.id }}">
+                                <span class="icon">{% if selected_designer_id == designer.id|stringformat:'s' %}♥{% else %}♡{% endif %}</span> {{ designer.name }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            {% else %}
+                <hr>
+                <h3>No Designers Found</h3>
+            {% endif %}
+
+            {% if selected_designer %}
+                <hr>
+                <h3 class="selected-designer-title">{{ selected_designer.name }} PRODUCTS</h3>
+                <div class="designers-grid">
+                    {% for product in selected_products %}
+                        <a class="designer-item" href="{% url 'product_detail_men' product.slug %}">
+                            <span class="icon">♡</span> {{ product.product_name }}
+                        </a>
+                    {% empty %}
+                        <div class="designer-item">No products found for this designer.</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <hr>
+        </div>
+    </main>
+</div>
+
+{% endblock %}

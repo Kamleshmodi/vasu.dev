@@ -1,0 +1,293 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    body {
+        background-color: #f1f3f6; /* Light Grey Background */
+    }
+
+    .edit-container {
+        margin: 50px auto;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .form-card {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .form-header {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 15px;
+    }
+
+    .form-header h2 {
+        margin: 0;
+        color: #2874f0; /* Brand Blue */
+        font-size: 24px;
+    }
+
+    /* Grid System for Side-by-Side inputs */
+    .form-row {
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Labels Styling */
+    label {
+        font-size: 14px;
+        font-weight: 600;
+        color: #555;
+        margin-bottom: 8px;
+    }
+
+    /* Input Fields Styling */
+    input[type="text"], 
+    input[type="email"], 
+    input[type="number"], 
+    select, 
+    textarea {
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        background-color: #fff;
+        width: 100%; /* Full width of container */
+        box-sizing: border-box; /* Padding doesn't increase width */
+    }
+
+    /* Interactive Focus Effect */
+    input:focus, select:focus, textarea:focus {
+        border-color: #2874f0;
+        box-shadow: 0 0 5px rgba(40, 116, 240, 0.2);
+        outline: none;
+    }
+
+    /* Image Upload Styling */
+    .file-upload-wrapper {
+        border: 2px dashed #ccc;
+        padding: 20px;
+        text-align: center;
+        background: #fafafa;
+        border-radius: 6px;
+        margin-bottom: 20px;
+    }
+
+    /* Save Button */
+    .btn-save {
+        background-color: #2874f0;
+        color: white;
+        padding: 14px 30px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-save:hover {
+        background-color: #0056b3;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    
+    .section-title {
+        font-size: 16px;
+        color: #878787;
+        margin-bottom: 15px;
+        margin-top: 30px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    
+    /* Current Image Preview */
+    .current-img-box {
+        margin-bottom: 10px;
+    }
+    .current-img-box img {
+        width: 80px; 
+        height: 80px; 
+        border-radius: 50%; 
+        object-fit: cover; 
+        border: 2px solid #eee;
+    }
+    .postal-status {
+        margin-top: 8px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .postal-status.valid {
+        color: #1f7a1f;
+    }
+    .postal-status.invalid {
+        color: #c0392b;
+    }
+
+    @media (max-width: 768px) {
+        .edit-container {
+            margin: 24px auto;
+            padding: 0 14px;
+        }
+
+        .form-card {
+            padding: 24px 18px;
+        }
+
+        .form-row {
+            flex-direction: column;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .form-header h2 {
+            font-size: 20px;
+        }
+
+        .btn-save {
+            padding: 13px 18px;
+            font-size: 15px;
+        }
+    }
+</style>
+
+<div class="edit-container container py-4">
+    <div class="form-card">
+        <div class="form-header">
+            <h2>Update Your Profile</h2>
+            <p style="color: #666; font-size: 14px;">Manage your personal details and shipping address.</p>
+        </div>
+
+        <form
+            method="POST"
+            enctype="multipart/form-data"
+            data-address-cascade
+            data-options-url="{% url 'address_options_api' %}"
+            data-validation-url="{% url 'validate_postal_code_api' %}"
+            data-initial-state="{{ profile_form.initial.state|default:profile.state }}"
+            data-initial-district="{{ profile_form.initial.district|default:profile.district }}"
+            data-initial-city="{{ profile_form.initial.city|default:profile.city }}"
+        >
+            {% csrf_token %}
+            
+            <div class="section-title">Personal Information</div>
+            
+            <div class="form-row row g-3">
+                <div class="form-group col-md-6">
+                    <label>Username</label>
+                    {{ user_form.username }} 
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Email Address</label>
+                    {{ user_form.email }}
+                </div>
+            </div>
+
+            <div class="section-title">Profile Picture</div>
+            <div class="file-upload-wrapper">
+                {% if profile.profile_picture %}
+                    <div class="current-img-box">
+                        <img src="{{ profile.profile_picture.url }}" alt="Current Profile">
+                        <p style="font-size: 12px; color: green;">Current Image</p>
+                    </div>
+                {% endif %}
+                {{ profile_form.profile_picture }}
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
+
+            <div class="section-title">Address Details</div>
+            {% if profile_form.non_field_errors %}
+                <div style="color:#c0392b; font-size:13px; margin-bottom:14px;">{{ profile_form.non_field_errors|join:', ' }}</div>
+            {% endif %}
+
+            <div class="form-group mb-3">
+                <label>Address Line 1</label>
+                {{ profile_form.address_line_1 }}
+                {% if profile_form.address_line_1.errors %}
+                    <div style="color:#c0392b; font-size:13px; margin-top:6px;">{{ profile_form.address_line_1.errors|join:', ' }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group mb-3">
+                <label>Address Line 2 (Optional)</label>
+                {{ profile_form.address_line_2 }}
+                {% if profile_form.address_line_2.errors %}
+                    <div style="color:#c0392b; font-size:13px; margin-top:6px;">{{ profile_form.address_line_2.errors|join:', ' }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-row row g-3">
+                <div class="form-group col-md-6">
+                    <label>Country</label>
+                    {{ profile_form.country }}
+                    {% if profile_form.country.errors %}
+                        <div style="color:#c0392b; font-size:13px; margin-top:6px;">{{ profile_form.country.errors|join:', ' }}</div>
+                    {% endif %}
+                </div>
+                <div class="form-group col-md-6">
+                    <label>State</label>
+                    {{ profile_form.state }}
+                    {% if profile_form.state.errors %}
+                        <div style="color:#c0392b; font-size:13px; margin-top:6px;">{{ profile_form.state.errors|join:', ' }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form-row row g-3">
+                <div class="form-group col-md-6">
+                    <label>District</label>
+                    {{ profile_form.district }}
+                    {% if profile_form.district.errors %}
+                        <div style="color:#c0392b; font-size:13px; margin-top:6px;">{{ profile_form.district.errors|join:', ' }}</div>
+                    {% endif %}
+                </div>
+                <div class="form-group col-md-6">
+                    <label>City</label>
+                    {{ profile_form.city }}
+                    {% if profile_form.city.errors %}
+                        <div style="color:#c0392b; font-size:13px; margin-top:6px;">{{ profile_form.city.errors|join:', ' }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form-row row g-3 align-items-start">
+                <div class="form-group col-md-6">
+                    <label>PIN Code</label>
+                    {{ profile_form.postal_code }}
+                    <div class="postal-status" data-address-role="postal-status"></div>
+                    {% if profile_form.postal_code.errors %}
+                        <div style="color:#c0392b; font-size:13px; margin-top:6px;">{{ profile_form.postal_code.errors|join:', ' }}</div>
+                    {% endif %}
+                </div>
+                <div class="form-group col-md-6">
+                    <label>&nbsp;</label>
+                    <div style="font-size:13px; color:#666; padding-top:12px;">
+                        Select country, state, district, city and enter a valid Indian PIN code for delivery.
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-save">Save Changes</button>
+        </form>
+    </div>
+</div>
+
+<script src="{% static 'js/address_cascade.js' %}"></script>
+{% endblock %}

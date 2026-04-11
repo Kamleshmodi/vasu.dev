@@ -1,0 +1,22 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/womens/kendall_edit.css' %}">
+
+<div class="kendall-container">
+    <h2 class="season">SPRING 2025</h2>
+
+    {% for item in editions %}
+    <div class="kendall-image-block">
+        <h6 class="edition-number">{{ item.edition_number }}</h6>
+        <h3 class="main-title">{{ item.edition_name }}</h3>
+        <p class="subtitle">{{ item.edition_description }}</p>
+        <a href="#" class="shop-now">SHOP NOW</a>
+        <a href="#" class="img_link">
+            <img src="{{ item.edition_image.url }}" alt="{{ item.edition_name }}">
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

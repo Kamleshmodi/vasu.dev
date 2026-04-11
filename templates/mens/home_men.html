@@ -1,0 +1,160 @@
+{% extends 'mens/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="container-1">
+        <div class="row-1">
+            <div class="position-relative mens-banner">
+                <img src="{% static 'image/mens/home/m1.avif' %}" alt="Banner 1" class="img-fluid w-100">
+                <a href="/mens/new/" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+                <a href="/mens/new/" style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+            </div>
+        </div>
+
+        <div class="row-2">
+            <div class="position-relative mens-banner">
+                <img src="{% static 'image/mens/home/m2.avif' %}" class="img-fluid w-100" alt="Banner 2">
+                <a href="/mens/new/" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+                <a href="/mens/new/" style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+                <a href="/mens/new/" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+            </div>
+        </div>
+
+        <div class="row-3">
+            <div class="position-relative mens-banner">
+                <img src="{% static 'image/mens/home/m3.avif' %}" class="img-fluid w-100" alt="Banner 3">
+                <a href="/mens/new/" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+                <a href="/mens/new/" style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 2;"> </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container mens-feature-grid">
+        <div class="grid-item">
+            <a href="/mens/new/">
+                <img src="{% static 'image/mens/home/m4.avif' %}" alt="New Arrivals">
+            </a>
+            <div class="caption-title">New Arrivals</div>
+            <div class="caption-desc">A first look at the latest designer styles.</div>
+        </div>
+        <div class="grid-item">
+            <a href="/mens/new/">
+                <img src="{% static 'image/mens/home/m5.avif' %}" alt="Soft Girl Summer">
+            </a>
+            <div class="caption-title">Soft Girl Summer</div>
+            <div class="caption-desc">Make a splash with these standout swimwear styles.</div>
+        </div>
+
+        <div class="grid-item">
+            <a href="/mens/new/">
+                <img src="{% static 'image/mens/home/m6.avif' %}" alt="Sale">
+            </a>
+            <div class="caption-title">SALE</div>
+            <div class="caption-desc">Shop the sale.</div>
+        </div>
+    </div>
+
+    <div class="featured-section">
+        <h5 style="text-align: center; margin-top: 20px;">FEATURED ITEMS</h5>
+        <div class="product-grid mens-product-grid">
+            <a href="/mens/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/mens/home/m7_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/mens/home/m7.webp' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">Amiri</div>
+                    <div class="product-name">Design Studio Tee</div>
+                    <div class="price">₹56,301.57</div>
+                </div>
+            </a>
+
+            <a href="/mens/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/mens/home/m8_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/mens/home/m8.webp' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">Kidsuper</div>
+                    <div class="product-name">Cirque Du Soleil No Head Tee</div>
+                    <div class="price">₹5,630.16</div>
+                </div>
+            </a>
+
+            <a href="/mens/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/mens/home/m9_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/mens/home/m9.webp' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">Amiri</div>
+                    <div class="product-name">Polo</div>
+                    <div class="price">₹42,442.72</div>
+                </div>
+            </a>
+
+            <a href="/mens/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/mens/home/m10_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/mens/home/m10.avif' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">MM6 Maison Margiela</div>
+                    <div class="product-name">X Salomon Specture 2</div>
+                    <div class="price">₹35,080.21</div>
+                </div>
+            </a>
+        </div>
+        
+        <div class="product-grid mens-product-grid">
+            <a href="/mens/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/mens/home/m11_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/mens/home/m12.webp' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">MM6 Maison Margiela</div>
+                    <div class="product-name">x Salomon Long Sleeve T-Shirt</div>
+                    <div class="price">₹31,615.50</div>
+                </div>
+            </a>
+
+            <a href="/mens/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/mens/home/m12_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/mens/home/m12.webp' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">jw anderson</div>
+                    <div class="product-name">Window Embroidery T-Shirt</div>
+                    <div class="price">₹14,291.94</div>
+                </div>
+            </a>
+
+            <a href="/mens/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/mens/home/m13_1.avif' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/mens/home/m13.webp' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">Thom Browne</div>
+                    <div class="product-name">Short Sleeve Tee</div>
+                    <div class="price">₹36,379.48</div>
+                </div>
+            </a>
+
+            <a href="/mens/new/">
+                <div class="product-card">
+                    <div class="product-image-wrapper">
+                        <img src="{% static 'image/mens/home/m14_1.webp' %}" class="main-image" alt="Front Image">
+                        <img src="{% static 'image/mens/home/m14.webp' %}" class="hover-image" alt="Back Image">
+                    </div>
+                    <div class="brand">Story Mfs.</div>
+                    <div class="product-name">Grateful Long Sleeve Tee</div>
+                    <div class="price">₹15,677.82</div>
+                </div>
+            </a>
+        </div>
+    </div>
+{% endblock %}

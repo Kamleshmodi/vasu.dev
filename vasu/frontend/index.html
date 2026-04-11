@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Checkout</title>
+    <!-- Tailwind CSS CDN को लोड करें, ताकि स्टाइलिंग काम करे -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font-Awesome Icons को लोड करें -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- React और ReactDOM को CDN से लोड करें -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel को लोड करें, जो JSX को JavaScript में ट्रांसपाइल करेगा -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- Firebase SDK को लोड करें -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+    
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- यह वह div है जहाँ आपका React app रेंडर होगा -->
+    <div id="root"></div>
+
+    <!-- हमारा JSX/JavaScript कोड -->
+    <script type="text/babel">
+        // Firebase को यहाँ इनिशियलाइज़ (initialize) करें
+        const firebaseConfig = {}; // आपको यहाँ अपनी Firebase कॉन्फ़िगरेशन जोड़नी होगी
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // Main App Component
+        const App = () => {
+            const { useState, useEffect } = React;
+            
+            // State variables
+            const [shippingInfo, setShippingInfo] = useState({
+                fullName: '',
+                mobile: '',
+                address: '',
+                city: '',
+                state: '',
+                zipCode: ''
+            });
+            const [currentStep, setCurrentStep] = useState('form');
+            const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('card');
+            const [cartItems, setCartItems] = useState([]);
+            const [totalPrice, setTotalPrice] = useState(0);
+
+            // Firebase Authentication और Firestore Data Fetching
+            useEffect(() => {
+                const fetchInitialData = async () => {
+                    // Anonymously साइन-इन करें
+                    let user;
+                    try {
+                        const userCredential = await auth.signInAnonymously();
+                        user = userCredential.user;
+                        console.log("User signed in with UID:", user.uid);
+                    } catch (error) {
+                        console.error("Error signing in anonymously:", error);
+                        return;
+                    }
+
+                    // डेमो के लिए कार्ट आइटम
+                    const sampleCartItems = [
+                        { id: '1', name: 'Premium T-Shirt', price: 500, quantity: 1 },
+                        { id: '2', name: 'Designer Jeans', price: 1500, quantity: 1 }
+                    ];
+                    setCartItems(sampleCartItems);
+                    calculateTotalPrice(sampleCartItems);
+                };
+                fetchInitialData();
+            }, []);
+
+            const calculateTotalPrice = (items) => {
+                const subtotal = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+                const shipping = 100;
+                setTotalPrice(subtotal + shipping);
+            };
+
+            const handleShippingChange = (e) => {
+                const { id, value } = e.target;
+                setShippingInfo(prev => ({ ...prev, [id]: value }));
+            };
+
+            const handlePlaceOrder = async (e) => {
+                e.preventDefault();
+                setCurrentStep('placingOrder');
+                try {
+                    // डेमो के लिए, हम सिर्फ़ एक setTimeout का उपयोग कर रहे हैं।
+                    // असली ऐप में, आप यहाँ सर्वर पर ऑर्डर पोस्ट करेंगे।
+                    await new Promise(resolve => setTimeout(resolve, 2000));
+                    setCurrentStep('success');
+                } catch (error) {
+                    console.error("Error placing order:", error);
+                    setCurrentStep('form');
+                }
+            };
+
+            const renderCheckoutForm = () => (
+                <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl">
+                    <h2 className="text-3xl font-bold text-center mb-2">Checkout</h2>
+                    <p className="text-gray-600 text-center mb-6">Please fill out the form to complete your purchase.</p>
+                    <form onSubmit={handlePlaceOrder}>
+                        <div className="space-y-6 mb-8">
+                            <h3 className="text-xl font-semibold border-b pb-2">Shipping Information</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="space-y-2">
+                                    <label htmlFor="fullName" className="block font-medium">Full Name</label>
+                                    <input id="fullName" value={shippingInfo.fullName} onChange={handleShippingChange} className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your full name" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="mobile" className="block font-medium">Mobile No.</label>
+                                    <input id="mobile" type="tel" value={shippingInfo.mobile} onChange={handleShippingChange} className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Receiver's mobile number" required />
+                                </div>
+                            </div>
+                            <div className="space-y-2">
+                                <label htmlFor="address" className="block font-medium">Address</label>
+                                <input id="address" value={shippingInfo.address} onChange={handleShippingChange} className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your full address" required />
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div className="space-y-2">
+                                    <label htmlFor="city" className="block font-medium">City</label>
+                                    <input id="city" value={shippingInfo.city} onChange={handleShippingChange} className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your city" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="state" className="block font-medium">State</label>
+                                    <input id="state" value={shippingInfo.state} onChange={handleShippingChange} className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your state" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="zipCode" className="block font-medium">Zip Code</label>
+                                    <input id="zipCode" value={shippingInfo.zipCode} onChange={handleShippingChange} className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your zip code" required />
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Payment Method Section */}
+                        <div className="space-y-6 mb-8">
+                            <h3 className="text-xl font-semibold border-b pb-2">Choose a Payment Method</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <label className={`flex flex-col items-center justify-between rounded-lg border-2 p-4 cursor-pointer ${selectedPaymentMethod === 'card' ? 'border-blue-500 bg-blue-50' : 'border-gray-200'}`}>
+                                    <input type="radio" name="payment" value="card" checked={selectedPaymentMethod === 'card'} onChange={() => setSelectedPaymentMethod('card')} className="sr-only" />
+                                    <i className="fa-solid fa-credit-card text-3xl mb-2"></i>
+                                    <span>Debit/Credit Card</span>
+                                </label>
+                                <label className={`flex flex-col items-center justify-between rounded-lg border-2 p-4 cursor-pointer ${selectedPaymentMethod === 'upi' ? 'border-blue-500 bg-blue-50' : 'border-gray-200'}`}>
+                                    <input type="radio" name="payment" value="upi" checked={selectedPaymentMethod === 'upi'} onChange={() => setSelectedPaymentMethod('upi')} className="sr-only" />
+                                    <i className="fa-solid fa-wallet text-3xl mb-2"></i>
+                                    <span>UPI</span>
+                                </label>
+                                <label className={`flex flex-col items-center justify-between rounded-lg border-2 p-4 cursor-pointer ${selectedPaymentMethod === 'qrcode' ? 'border-blue-500 bg-blue-50' : 'border-gray-200'}`}>
+                                    <input type="radio" name="payment" value="qrcode" checked={selectedPaymentMethod === 'qrcode'} onChange={() => setSelectedPaymentMethod('qrcode')} className="sr-only" />
+                                    <i className="fa-solid fa-qrcode text-3xl mb-2"></i>
+                                    <span>QR Code</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        {/* Order Summary Section */}
+                        <div className="space-y-6 mb-8">
+                            <h3 className="text-xl font-semibold border-b pb-2">Order Summary</h3>
+                            <table className="w-full text-left table-auto">
+                                <thead className="border-b-2">
+                                    <tr>
+                                        <th className="py-2">Item</th>
+                                        <th className="py-2 text-right">Price</th>
+                                        <th className="py-2 text-right">Quantity</th>
+                                        <th className="py-2 text-right">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {cartItems.map(item => (
+                                        <tr key={item.id}>
+                                            <td className="py-2">{item.name}</td>
+                                            <td className="py-2 text-right">₹{item.price.toFixed(2)}</td>
+                                            <td className="py-2 text-right">{item.quantity}</td>
+                                            <td className="py-2 text-right">₹{(item.price * item.quantity).toFixed(2)}</td>
+                                        </tr>
+                                    ))}
+                                    <tr className="font-semibold">
+                                        <td colSpan="3" className="py-2 text-right">Shipping</td>
+                                        <td className="py-2 text-right">₹100.00</td>
+                                    </tr>
+                                    <tr className="font-bold text-lg">
+                                        <td colSpan="3" className="py-2 text-right">Total</td>
+                                        <td className="py-2 text-right">₹{totalPrice.toFixed(2)}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <button type="submit" className="w-full bg-blue-600 text-white font-bold py-3 rounded-md hover:bg-blue-700 transition duration-300">
+                            {currentStep === 'placingOrder' ? (
+                                <i className="fas fa-spinner fa-spin mr-2"></i>
+                            ) : (
+                                'Place Order'
+                            )}
+                        </button>
+                    </form>
+                </div>
+            );
+
+            const renderLoadingState = () => (
+                <div className="flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg">
+                    <i className="fas fa-spinner fa-spin text-5xl text-blue-500 mb-4"></i>
+                    <p className="mt-4 text-xl text-gray-600">Placing your order...</p>
+                </div>
+            );
+
+            const renderSuccessPage = () => (
+                <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-xl text-center">
+                    <i className="fas fa-check-circle text-7xl text-green-500 mb-4"></i>
+                    <h2 className="text-3xl font-bold text-green-700 mb-2">Order Confirmed!</h2>
+                    <p className="text-gray-600 text-lg mb-4">Thank you for your purchase. Your order has been placed successfully.</p>
+                    <button onClick={() => window.location.reload()} className="mt-4 bg-blue-600 text-white font-bold py-2 px-6 rounded-md hover:bg-blue-700 transition duration-300">
+                        Place another order
+                    </button>
+                </div>
+            );
+
+            return (
+                <div className="flex justify-center items-center min-h-screen p-4">
+                    {currentStep === 'form' && renderCheckoutForm()}
+                    {currentStep === 'placingOrder' && renderLoadingState()}
+                    {currentStep === 'success' && renderSuccessPage()}
+                </div>
+            );
+        };
+
+        // React App को रेंडर करें
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

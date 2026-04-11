@@ -1,0 +1,139 @@
+/* General Layout */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    color: #333;
+}
+
+/* Order Card Container */
+.order-card {
+    border: 1px solid #d5d9d9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: white;
+    overflow: hidden; /* Corners round rakhne ke liye */
+}
+
+/* Gray Header Strip */
+.order-header {
+    background-color: #f0f2f2;
+    padding: 14px 18px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #d5d9d9;
+    font-size: 12px;
+    color: #565959;
+}
+
+.header-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 3px;
+}
+
+.value {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+.view-invoice {
+    text-decoration: none;
+    color: #007185;
+}
+.view-invoice:hover {
+    text-decoration: underline;
+    color: #c7511f;
+}
+
+/* Body Content */
+.order-body {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Status Styling */
+.status-text {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Colors for Status */
+.status-text.success {
+    color: #067D62; /* Green like JioMart/Amazon delivered */
+}
+
+.status-text.pending {
+    color: #B12704; /* Orange/Red for attention */
+}
+
+.delivery-date {
+    margin: 0;
+    color: #565959;
+    font-size: 14px;
+}
+
+/* Buttons */
+.order-actions {
+    margin-top: 15px;
+}
+
+.btn-primary {
+    background-color: #FFD814; /* Amazon Yellow Button */
+    border: 1px solid #FCD200;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 10px;
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+}
+
+.btn-primary:hover {
+    background-color: #F7CA00;
+}
+
+.btn-secondary {
+    background-color: white;
+    border: 1px solid #D5D9D9;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    color: black;
+    box-shadow: 0 2px 5px rgba(213,217,217,.5);
+}
+
+.btn-secondary:hover {
+    background-color: #F7FAFA;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .order-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .order-body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}

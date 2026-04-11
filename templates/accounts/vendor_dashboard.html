@@ -1,0 +1,253 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/accounts/backoffice.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="backoffice-shell marketplace-shell">
+    <div class="backoffice-wrap marketplace-vendor">
+        <section class="backoffice-hero hero-marketplace">
+            <div class="hero-marketplace-grid">
+                <div class="hero-marketplace-copy">
+                    <div class="backoffice-eyebrow">Vendor Command Center</div>
+                    <h1>{{ request.user.display_name }}</h1>
+                    <p>
+                        Run catalog, pricing, orders, and customer trust from one tighter seller console.
+                        The layout is tuned to feel closer to large marketplace dashboards while staying simple for daily use.
+                    </p>
+                    <div class="hero-chip-row">
+                        <span class="hero-chip">Catalog Control</span>
+                        <span class="hero-chip">Fast Offers</span>
+                        <span class="hero-chip">Order Visibility</span>
+                        <span class="hero-chip">Review Watch</span>
+                    </div>
+                    <div class="backoffice-actions">
+                        <a class="backoffice-btn backoffice-btn-primary" href="{% url 'vendor_product_create' 'women' %}">Add Women's Product</a>
+                        <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'vendor_product_create' 'men' %}">Add Men's Product</a>
+                        <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'vendor_order_management_dashboard' %}">Order Management</a>
+                        <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'vendor_payment_dashboard' %}">Payment Dashboard</a>
+                        <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'my_account' %}">My Account</a>
+                    </div>
+                </div>
+                <aside class="hero-marketplace-panel">
+                    <span class="hero-panel-label">Store Health</span>
+                    <div class="hero-panel-grid">
+                        <div class="hero-panel-metric">
+                            <span>Listings</span>
+                            <strong>{{ dashboard_stats.total_products }}</strong>
+                        </div>
+                        <div class="hero-panel-metric">
+                            <span>Live</span>
+                            <strong>{{ dashboard_stats.active_products }}</strong>
+                        </div>
+                        <div class="hero-panel-metric">
+                            <span>Low Stock</span>
+                            <strong>{{ dashboard_stats.low_stock_products }}</strong>
+                        </div>
+                        <div class="hero-panel-metric">
+                            <span>Reviews</span>
+                            <strong>{{ dashboard_stats.review_count }}</strong>
+                        </div>
+                    </div>
+                    <div class="hero-panel-note">
+                        Keep sale pricing, stock, and recent customer sentiment in sync from the panels below.
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="stat-grid">
+            <article class="stat-card">
+                <span>Total Products</span>
+                <strong>{{ dashboard_stats.total_products }}</strong>
+                <small class="stat-subtext">Full catalog currently mapped to your vendor account.</small>
+            </article>
+            <article class="stat-card">
+                <span>Active Listings</span>
+                <strong>{{ dashboard_stats.active_products }}</strong>
+                <small class="stat-subtext">Products that are visible and available on the storefront.</small>
+            </article>
+            <article class="stat-card">
+                <span>Low Stock</span>
+                <strong>{{ dashboard_stats.low_stock_products }}</strong>
+                <small class="stat-subtext">Fastest items to replenish before they stop converting.</small>
+            </article>
+            <article class="stat-card">
+                <span>Total Reviews</span>
+                <strong>{{ dashboard_stats.review_count }}</strong>
+                <small class="stat-subtext">Approved customer feedback now attached to your products.</small>
+            </article>
+            <article class="stat-card">
+                <span>Avg Rating</span>
+                <strong>{% if dashboard_stats.average_rating %}{{ dashboard_stats.average_rating|floatformat:1 }} / 5{% else %}New{% endif %}</strong>
+                <small class="stat-subtext">Quality signal shoppers see before they decide to buy.</small>
+            </article>
+        </section>
+
+        <section class="dashboard-grid">
+            <div class="panel-stack">
+                <section class="backoffice-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h2>Your Inventory</h2>
+                            <p>Each product card lets you edit, price, discount, and preview the live storefront listing.</p>
+                        </div>
+                    </div>
+
+                    {% if product_cards %}
+                    <div class="product-grid">
+                        {% for card in product_cards %}
+                        <article class="product-card">
+                            <img src="{% if card.image_url %}{{ card.image_url }}{% else %}{% static 'image/logo/logo-transparent.png' %}{% endif %}" alt="{{ card.product.product_name }}" onerror="this.onerror=null;this.src='{% static 'image/logo/logo-transparent.png' %}';">
+                            <div class="product-card-head">
+                                <span class="backoffice-badge badge-muted">{{ card.catalog_label }}</span>
+                                {% if card.sale_status %}
+                                <span class="backoffice-badge {{ card.sale_status.badge_class }}">{{ card.sale_status.label }}</span>
+                                {% endif %}
+                            </div>
+                            <h3>{{ card.product.product_name }}</h3>
+                            <p class="product-card-subtitle">{{ card.product.brand }} • {{ card.product.category.category_name }}</p>
+                            <div class="product-price-row">
+                                <div class="price-block">
+                                    <span>List Price</span>
+                                    <strong>Rs. {{ card.product.price|floatformat:2 }}</strong>
+                                </div>
+                                <div class="price-block {% if card.sale %}accent{% endif %}">
+                                    <span>{% if card.sale %}Sale Price{% else %}Current Price{% endif %}</span>
+                                    <strong>Rs. {% if card.sale %}{{ card.sale.sale_price|floatformat:2 }}{% else %}{{ card.product.price|floatformat:2 }}{% endif %}</strong>
+                                </div>
+                            </div>
+                            <p class="product-card-note">
+                                {% if card.sale_status %}
+                                {{ card.sale_status.summary }}
+                                {% else %}
+                                No active sale campaign is attached to this item.
+                                {% endif %}
+                            </p>
+                            <div class="product-meta">
+                                <span class="meta-chip">{{ card.stock_total }} in stock</span>
+                                <span class="meta-chip">{{ card.variation_count }} variation{{ card.variation_count|pluralize }}</span>
+                                <span class="meta-chip">
+                                    {% if card.average_rating %}
+                                    {{ card.average_rating|floatformat:1 }} stars
+                                    {% else %}
+                                    No rating yet
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <div class="inline-actions">
+                                <a class="backoffice-btn backoffice-btn-primary" href="{{ card.edit_url }}">Edit</a>
+                                <a class="backoffice-btn backoffice-btn-secondary light" href="{{ card.edit_url }}#sale-settings">Sale / Discount</a>
+                                <a class="backoffice-btn backoffice-btn-secondary light" href="{{ card.detail_url }}">View</a>
+                                <form method="post" action="{{ card.delete_url }}" onsubmit="return confirm('Delete {{ card.product.product_name|escapejs }}?');">
+                                    {% csrf_token %}
+                                    <button type="submit" class="backoffice-btn backoffice-btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </article>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="empty-state">
+                        No vendor products are live yet. Add your first item from the Women's or Men's catalog above.
+                    </div>
+                    {% endif %}
+                </section>
+            </div>
+
+            <div class="panel-stack">
+                <section class="backoffice-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Brand Profile</h3>
+                            <p>These details are used for storefront presentation and internal admin review.</p>
+                        </div>
+                    </div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-grid">
+                            {% for field in profile_form %}
+                            <div class="{% if field.name == 'bio' %}full-span{% endif %}">
+                                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                {{ field }}
+                                {% if field.help_text %}
+                                <div class="form-help">{{ field.help_text }}</div>
+                                {% endif %}
+                                {% for error in field.errors %}
+                                <div class="field-errors">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% for error in profile_form.non_field_errors %}
+                        <div class="non-field-errors">{{ error }}</div>
+                        {% endfor %}
+                        <div class="backoffice-actions">
+                            <button type="submit" class="backoffice-btn backoffice-btn-primary">Save Vendor Profile</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="backoffice-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Recent Orders</h3>
+                            <p>A compact snapshot of the latest orders related to your products.</p>
+                        </div>
+                    </div>
+                    {% if recent_orders %}
+                    <div class="mini-list">
+                        {% for order in recent_orders %}
+                        <div class="mini-list-item">
+                            <strong>Order #{{ order.order_id|default:order.id }} • {{ order.full_name }}</strong>
+                            <span>{{ order.status }} • {{ order.created_at|date:"d M Y, h:i A" }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="empty-state">No order records have been found for your products yet.</div>
+                    {% endif %}
+                </section>
+
+                <section class="backoffice-panel">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Latest Ratings</h3>
+                            <p>Monitor recent customer feedback without leaving the dashboard.</p>
+                        </div>
+                    </div>
+                    {% if recent_ratings %}
+                    <div class="review-card-grid">
+                        {% for rating in recent_ratings %}
+                        <article class="review-card">
+                            <div class="review-card-head">
+                                <div>
+                                    <strong>{{ rating.product_name }}</strong>
+                                    <span class="review-meta">
+                                        {{ rating.user.display_name }}{% if rating.title %} | {{ rating.title }}{% endif %}
+                                    </span>
+                                </div>
+                                <span class="review-rating">{{ rating.rating }}/5</span>
+                            </div>
+                            {% if rating.review %}
+                            <p class="review-body">{{ rating.review }}</p>
+                            {% endif %}
+                            {% if rating.review_image %}
+                            <div class="review-media-preview">
+                                <img src="{{ rating.review_image.url }}" alt="{{ rating.product_name }}">
+                            </div>
+                            {% endif %}
+                        </article>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="empty-state">Customer reviews will appear here once they come in.</div>
+                    {% endif %}
+                </section>
+            </div>
+        </section>
+    </div>
+</section>
+{% endblock %}

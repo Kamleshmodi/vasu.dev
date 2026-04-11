@@ -1,0 +1,148 @@
+.logo {
+    font-weight: 900;
+    font-size: 35px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.page-layout {
+    display: flex;
+    gap: 20px;
+    padding: 0px 80px 0px 80px;
+    font-family: 'Inter', sans-serif;
+}
+
+.left-sidebar {
+    width: 150px;
+    font-size: 12px;
+}
+
+.left-sidebar .breadcrumb {
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 6px;
+}
+
+.left-sidebar h2 {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.filter-block {
+    margin-bottom: 30px;
+}
+
+.filter-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-block ul li {
+    margin-bottom: 10px;
+}
+
+.filter-block ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+.filter-block ul li a:hover {
+    text-decoration: underline;
+}
+
+.right-main {
+    flex: 1;
+}
+
+.designers-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.alphabet-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 15px 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    scrollbar-width: none;
+    /* For Firefox */
+}
+
+.alphabet-nav::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari */
+}
+
+.alphabet-nav span {
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s ease-in-out;
+}
+
+.alphabet-nav span:hover {
+    text-decoration: underline;
+}
+
+#alphabet-nav {
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+h3 {
+    font-size: 14px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #000000;
+}
+
+hr {
+    margin: 10px 0;
+    margin-right: 60px;
+    border: 0.5px solid #363232;
+}
+
+.designers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px 40px;
+    margin-top: 10px;
+}
+
+.designer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+}
+
+.icon {
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.designer-item:hover {
+    text-decoration: underline;
+}

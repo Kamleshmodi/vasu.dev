@@ -1,0 +1,151 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+{% block content %}
+{% load humanize %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="{% static 'css/cart/add_to_cart.css' %}">
+
+<div class="cart-container">
+    <div class="cart-header">
+        <h1>Your Cart</h1>
+    </div>
+    
+    {% for item in cart_items %}
+      {% if item.content_object %}
+        <div class="cart-item">
+            <div class="item-image">
+                <img src="{{ item.content_object.front_image.url }}" alt="{{ item.content_object.product_name }}">
+            </div>
+            <div class="item-details">
+                <h3>{{ item.content_object.product_name }}</h3>
+                <p class="item-meta">{{ item.content_object.brand }} • {{ item.content_object.category.category_name }}</p>
+                <p class="item-price">
+                    Rs. {{ item.display_price|default:item.content_object.price|intcomma }}
+                    {% if item.is_on_sale %}
+                    <span class="item-price-original">
+                        Rs. {{ item.original_price|intcomma }}
+                    </span>
+                    {% endif %}
+                </p>
+                <p class="item-total">Line Total: Rs. {{ item.line_total|intcomma }}</p>
+                
+                <div class="quantity-control" 
+                     data-item-id="{{ item.id }}" 
+                     data-stock="{{ item.total_stock }}"
+                     data-price="{{ item.display_price|default:item.content_object.price }}">
+                    
+                    <button class="quantity-btn decrease-btn">-</button>
+                    <span class="quantity-value">{{ item.quantity }}</span>
+                    <button class="quantity-btn increase-btn">+</button>
+                </div>
+            </div>
+            <div class="item-actions">
+                <form method="post" action="{% url 'remove_from_cart' gender=item.content_object.gender|lower product_id=item.content_object.id %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="remove-btn">
+                        <i class="fas fa-trash-alt"></i> Remove
+                    </button>
+                </form>
+            </div>
+        </div>
+      {% endif %}
+    {% empty %}
+        <div class="empty-cart-message">
+            <p>Your cart is empty.</p>
+            <a href="{% url 'womens_home' %}" class="continue-shopping-btn">Continue Shopping</a>
+        </div>
+    {% endfor %}
+    
+    {% if cart_items %}
+    <div class="cart-footer">
+        <div class="cart-summary">
+            <!-- ID diya gaya hai taaki JS ise update kar sake -->
+            <p>Total: <span id="cart-total">Rs. {{ total_price|intcomma }}</span></p>
+        </div>
+        <div class="checkout-actions">
+            <a href="{% url 'checkout' %}" class="checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const csrftoken = getCookie('csrftoken');
+
+    document.querySelectorAll('.quantity-control').forEach(control => {
+        const increaseBtn = control.querySelector('.increase-btn');
+        const decreaseBtn = control.querySelector('.decrease-btn');
+        const quantityValueSpan = control.querySelector('.quantity-value');
+        const itemId = control.dataset.itemId;
+        const stock = parseInt(control.dataset.stock, 10);
+
+        increaseBtn.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityValueSpan.textContent, 10);
+            if (currentQuantity < stock) {
+                updateQuantity(itemId, 'increase');
+            } else {
+                alert(`Cannot add more. Stock limit of ${stock} reached.`);
+            }
+        });
+
+        decreaseBtn.addEventListener('click', () => {
+            let currentQuantity = parseInt(quantityValueSpan.textContent, 10);
+            if (currentQuantity > 1) {
+                updateQuantity(itemId, 'decrease');
+            }
+        });
+    });
+
+    function updateQuantity(itemId, action) {
+        fetch(`/cart/update/${itemId}/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken
+            },
+            body: JSON.stringify({ action: action })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Find the specific quantity span and update it
+                const controlDiv = document.querySelector(`.quantity-control[data-item-id='${itemId}']`);
+                if(controlDiv) {
+                    const quantitySpan = controlDiv.querySelector('.quantity-value');
+                    quantitySpan.textContent = data.new_quantity;
+                }
+                
+                // Update the total price
+                const totalSpan = document.getElementById('cart-total');
+                const updatedTotal = Number(data.new_total || 0);
+                totalSpan.textContent = 'Rs. ' + updatedTotal.toLocaleString('en-IN', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+            } else {
+                alert(data.error || 'Could not update quantity.');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Function to get CSRF token from cookies
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+});
+</script>
+{% endblock %}

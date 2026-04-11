@@ -1,0 +1,1537 @@
+:root {
+    --backoffice-bg: #f6f1e8;
+    --backoffice-surface: #fffdf9;
+    --backoffice-ink: #1c1917;
+    --backoffice-muted: #6b6257;
+    --backoffice-line: #ddd2c4;
+    --backoffice-accent: #8a5c2f;
+    --backoffice-accent-dark: #70461f;
+    --backoffice-soft: #efe4d6;
+    --backoffice-danger: #9a3f35;
+    --backoffice-success: #1f6d51;
+}
+
+.backoffice-shell {
+    background:
+        radial-gradient(circle at top left, rgba(138, 92, 47, 0.15), transparent 24rem),
+        linear-gradient(180deg, #faf6ef 0%, #f4ede2 100%);
+    min-height: 100vh;
+    padding: 2.5rem 0 4rem;
+}
+
+.backoffice-wrap {
+    width: min(1180px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.backoffice-wrap-wide {
+    width: min(1540px, calc(100% - 1rem));
+}
+
+.backoffice-hero {
+    background: linear-gradient(135deg, rgba(28, 25, 23, 0.96), rgba(73, 51, 29, 0.92));
+    color: #fff;
+    border-radius: 28px;
+    padding: 2.2rem;
+    box-shadow: 0 24px 50px rgba(28, 25, 23, 0.18);
+    margin-bottom: 1.75rem;
+}
+
+.backoffice-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.76);
+    margin-bottom: 0.9rem;
+}
+
+.backoffice-hero h1 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.04em;
+}
+
+.backoffice-hero p {
+    margin: 0.9rem 0 0;
+    max-width: 42rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.7;
+}
+
+.backoffice-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.backoffice-btn {
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 0.82rem 1.2rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    cursor: pointer;
+}
+
+.backoffice-btn:hover {
+    transform: translateY(-1px);
+}
+
+.backoffice-btn-primary {
+    background: var(--backoffice-accent);
+    color: #fff;
+    box-shadow: 0 14px 28px rgba(138, 92, 47, 0.24);
+}
+
+.backoffice-btn-primary:hover {
+    background: var(--backoffice-accent-dark);
+    color: #fff;
+}
+
+.backoffice-btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: #fff;
+}
+
+.backoffice-btn-secondary.light {
+    background: #fff;
+    border-color: var(--backoffice-line);
+    color: var(--backoffice-ink);
+}
+
+.backoffice-btn-danger {
+    background: rgba(154, 63, 53, 0.12);
+    border-color: rgba(154, 63, 53, 0.28);
+    color: var(--backoffice-danger);
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-card {
+    background: var(--backoffice-surface);
+    border: 1px solid rgba(221, 210, 196, 0.75);
+    border-radius: 22px;
+    padding: 1.2rem 1.15rem;
+    box-shadow: 0 10px 20px rgba(28, 25, 23, 0.04);
+}
+
+.stat-card span {
+    display: block;
+    color: var(--backoffice-muted);
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.55rem;
+}
+
+.stat-card strong {
+    display: block;
+    color: var(--backoffice-ink);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.stat-subtext {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--backoffice-muted);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1.2rem;
+}
+
+.dashboard-grid.compact {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.backoffice-panel {
+    background: var(--backoffice-surface);
+    border: 1px solid rgba(221, 210, 196, 0.75);
+    border-radius: 24px;
+    padding: 1.35rem;
+    box-shadow: 0 12px 24px rgba(28, 25, 23, 0.05);
+    overflow: hidden;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.panel-search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    width: min(100%, 28rem);
+}
+
+.panel-search-input {
+    min-width: 220px;
+    flex: 1 1 220px;
+}
+
+.panel-header h2,
+.panel-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--backoffice-ink);
+}
+
+.panel-header p {
+    margin: 0.3rem 0 0;
+    color: var(--backoffice-muted);
+    line-height: 1.6;
+    font-size: 0.94rem;
+}
+
+.backoffice-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.backoffice-table th,
+.backoffice-table td {
+    padding: 0.9rem 0.6rem;
+    border-bottom: 1px solid rgba(221, 210, 196, 0.7);
+    vertical-align: top;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.backoffice-table th {
+    color: var(--backoffice-muted);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.backoffice-table tr:last-child td {
+    border-bottom: none;
+}
+
+.backoffice-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.36rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.badge-vendor,
+.badge-delivered,
+.badge-live {
+    background: rgba(31, 109, 81, 0.12);
+    color: var(--backoffice-success);
+}
+
+.badge-delivery {
+    background: rgba(34, 92, 134, 0.12);
+    color: #225c86;
+}
+
+.badge-admin,
+.badge-processing {
+    background: rgba(138, 92, 47, 0.14);
+    color: var(--backoffice-accent-dark);
+}
+
+.badge-customer,
+.badge-muted,
+.badge-shipped {
+    background: rgba(107, 98, 87, 0.12);
+    color: var(--backoffice-muted);
+}
+
+.badge-cancelled,
+.badge-danger {
+    background: rgba(154, 63, 53, 0.12);
+    color: var(--backoffice-danger);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.product-card {
+    border: 1px solid rgba(221, 210, 196, 0.75);
+    border-radius: 22px;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(247, 242, 235, 0.96));
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 0.9rem;
+    background: #f3ece1;
+}
+
+.product-card h3 {
+    font-size: 1.06rem;
+    margin: 0 0 0.35rem;
+    color: var(--backoffice-ink);
+}
+
+.product-card p {
+    color: var(--backoffice-muted);
+    margin: 0.2rem 0;
+    line-height: 1.6;
+    font-size: 0.93rem;
+}
+
+.product-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.8rem 0 1rem;
+}
+
+.meta-chip {
+    background: var(--backoffice-soft);
+    color: var(--backoffice-ink);
+    border-radius: 999px;
+    padding: 0.38rem 0.7rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.panel-stack {
+    display: grid;
+    gap: 1.2rem;
+}
+
+.marketplace-shell {
+    background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 24rem),
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.1), transparent 22rem),
+        linear-gradient(180deg, #f6f8fc 0%, #edf2f8 100%);
+}
+
+.marketplace-vendor,
+.marketplace-admin {
+    --backoffice-surface: #ffffff;
+    --backoffice-ink: #172033;
+    --backoffice-muted: #607086;
+    --backoffice-line: #dde3ec;
+    --backoffice-accent: #2563eb;
+    --backoffice-accent-dark: #1d4ed8;
+    --backoffice-soft: #eff4fb;
+    --backoffice-danger: #b42318;
+    --backoffice-success: #067647;
+}
+
+.marketplace-vendor .backoffice-hero,
+.marketplace-admin .backoffice-hero {
+    background:
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.22), transparent 14rem),
+        linear-gradient(135deg, #101828 0%, #17315f 54%, #1d4ed8 100%);
+    border-radius: 30px;
+    padding: 1.8rem 1.9rem;
+    box-shadow: 0 26px 48px rgba(17, 24, 39, 0.18);
+}
+
+.hero-marketplace-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.9fr);
+    gap: 1.2rem;
+    align-items: stretch;
+}
+
+.hero-marketplace-copy {
+    min-width: 0;
+}
+
+.marketplace-vendor .backoffice-eyebrow,
+.marketplace-admin .backoffice-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.7rem;
+}
+
+.marketplace-vendor .backoffice-hero h1,
+.marketplace-admin .backoffice-hero h1 {
+    font-size: clamp(1.7rem, 3.2vw, 2.55rem);
+    font-weight: 700;
+    line-height: 1.05;
+}
+
+.marketplace-vendor .backoffice-hero p,
+.marketplace-admin .backoffice-hero p {
+    margin-top: 0.75rem;
+    max-width: 46rem;
+    font-size: 0.93rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.84);
+}
+
+.hero-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 0.95rem;
+}
+
+.hero-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.42rem 0.78rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #f8fafc;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.marketplace-vendor .backoffice-actions,
+.marketplace-admin .backoffice-actions {
+    gap: 0.6rem;
+    margin-top: 1.15rem;
+}
+
+.marketplace-vendor .backoffice-btn,
+.marketplace-admin .backoffice-btn {
+    padding: 0.72rem 1.02rem;
+    font-size: 0.84rem;
+    font-weight: 700;
+    border-radius: 999px;
+}
+
+.hero-marketplace-panel {
+    display: grid;
+    align-content: start;
+    gap: 0.9rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-panel-label {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.hero-panel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+}
+
+.hero-panel-metric {
+    padding: 0.8rem 0.85rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+.hero-panel-metric span {
+    display: block;
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.72);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.hero-panel-metric strong {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 1.35rem;
+    line-height: 1;
+    color: #fff;
+}
+
+.hero-panel-note {
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.marketplace-vendor .stat-grid,
+.marketplace-admin .stat-grid {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.85rem;
+}
+
+.marketplace-vendor .stat-card,
+.marketplace-admin .stat-card {
+    padding: 1rem;
+    border-radius: 20px;
+    border-color: rgba(221, 227, 236, 0.9);
+    box-shadow: 0 12px 24px rgba(17, 24, 39, 0.05);
+}
+
+.marketplace-vendor .stat-card span,
+.marketplace-admin .stat-card span {
+    margin-bottom: 0.45rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+}
+
+.marketplace-vendor .stat-card strong,
+.marketplace-admin .stat-card strong {
+    font-size: 1.45rem;
+}
+
+.marketplace-vendor .dashboard-grid,
+.marketplace-admin .dashboard-grid {
+    gap: 1rem;
+}
+
+.marketplace-vendor .backoffice-panel,
+.marketplace-admin .backoffice-panel {
+    border-radius: 22px;
+    padding: 1.05rem;
+    border-color: rgba(221, 227, 236, 0.9);
+    box-shadow: 0 14px 26px rgba(17, 24, 39, 0.05);
+}
+
+.marketplace-vendor .panel-header,
+.marketplace-admin .panel-header {
+    gap: 0.8rem;
+    margin-bottom: 0.85rem;
+}
+
+.marketplace-vendor .panel-header h2,
+.marketplace-vendor .panel-header h3,
+.marketplace-admin .panel-header h2,
+.marketplace-admin .panel-header h3 {
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+.marketplace-vendor .panel-header p,
+.marketplace-admin .panel-header p,
+.marketplace-vendor .mini-list-item span,
+.marketplace-admin .mini-list-item span,
+.marketplace-vendor .note-strip,
+.marketplace-admin .note-strip,
+.marketplace-vendor .form-help,
+.marketplace-admin .form-help {
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.marketplace-vendor .backoffice-table th,
+.marketplace-admin .backoffice-table th {
+    font-size: 0.72rem;
+}
+
+.marketplace-vendor .backoffice-table td,
+.marketplace-admin .backoffice-table td {
+    font-size: 0.86rem;
+    padding: 0.72rem 0.55rem;
+}
+
+.marketplace-vendor .product-grid,
+.marketplace-admin .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+    gap: 0.9rem;
+}
+
+.marketplace-vendor .product-card,
+.marketplace-admin .product-card {
+    padding: 0.9rem;
+    border-radius: 22px;
+    border-color: rgba(221, 227, 236, 0.92);
+    background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.05), transparent 10rem),
+        linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
+    box-shadow: 0 14px 28px rgba(17, 24, 39, 0.05);
+}
+
+.marketplace-vendor .product-card img,
+.marketplace-admin .product-card img {
+    height: 185px;
+    margin-bottom: 0.75rem;
+    border-radius: 18px;
+    background: #eef3f9;
+}
+
+.product-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.45rem;
+    margin-bottom: 0.55rem;
+}
+
+.marketplace-vendor .product-card h3,
+.marketplace-admin .product-card h3 {
+    margin-bottom: 0.25rem;
+    font-size: 0.98rem;
+    line-height: 1.3;
+}
+
+.product-card-subtitle {
+    margin: 0;
+    color: var(--backoffice-muted);
+    font-size: 0.8rem;
+    line-height: 1.45;
+}
+
+.product-price-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    margin: 0.78rem 0 0.6rem;
+}
+
+.price-block {
+    display: grid;
+    gap: 0.18rem;
+    padding: 0.72rem 0.78rem;
+    border-radius: 16px;
+    background: #f4f7fb;
+    border: 1px solid #e0e7f1;
+}
+
+.price-block span {
+    color: var(--backoffice-muted);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.price-block strong {
+    color: var(--backoffice-ink);
+    font-size: 0.96rem;
+    line-height: 1.2;
+}
+
+.price-block.accent {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.28);
+}
+
+.product-card-note {
+    margin: 0 0 0.7rem;
+    color: var(--backoffice-muted);
+    font-size: 0.78rem;
+    line-height: 1.48;
+    min-height: 2.3rem;
+}
+
+.marketplace-vendor .product-meta,
+.marketplace-admin .product-meta {
+    gap: 0.35rem;
+    margin: 0.65rem 0 0.8rem;
+}
+
+.marketplace-vendor .meta-chip,
+.marketplace-admin .meta-chip,
+.marketplace-vendor .backoffice-badge,
+.marketplace-admin .backoffice-badge {
+    font-size: 0.69rem;
+    padding: 0.28rem 0.55rem;
+}
+
+.marketplace-vendor .inline-actions,
+.marketplace-admin .inline-actions {
+    gap: 0.45rem;
+}
+
+.marketplace-vendor .quick-links,
+.marketplace-admin .quick-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.55rem;
+}
+
+.marketplace-vendor .quick-links .backoffice-btn,
+.marketplace-admin .quick-links .backoffice-btn {
+    justify-content: flex-start;
+}
+
+.marketplace-vendor .review-card-grid,
+.marketplace-admin .review-card-grid {
+    gap: 0.85rem;
+}
+
+.marketplace-vendor .review-card,
+.marketplace-admin .review-card {
+    padding: 0.9rem;
+    border-radius: 18px;
+}
+
+.marketplace-vendor .review-card-head strong,
+.marketplace-admin .review-card-head strong {
+    font-size: 0.92rem;
+}
+
+.marketplace-vendor .review-meta,
+.marketplace-admin .review-meta,
+.marketplace-vendor .review-body,
+.marketplace-admin .review-body {
+    font-size: 0.82rem;
+}
+
+.marketplace-vendor .empty-state,
+.marketplace-admin .empty-state {
+    border-radius: 20px;
+    padding: 1.15rem;
+    font-size: 0.84rem;
+}
+
+.compact-admin .backoffice-btn {
+    padding: 0.66rem 0.96rem;
+    font-size: 0.8rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.form-grid .full-span {
+    grid-column: 1 / -1;
+}
+
+.backoffice-input {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid var(--backoffice-line);
+    background: #fff;
+    color: var(--backoffice-ink);
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+}
+
+.backoffice-checkbox {
+    width: 1.05rem;
+    height: 1.05rem;
+    accent-color: var(--backoffice-accent);
+}
+
+textarea.backoffice-input {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-help {
+    margin-top: 0.4rem;
+    color: var(--backoffice-muted);
+    font-size: 0.82rem;
+}
+
+.field-errors,
+.non-field-errors {
+    margin-top: 0.45rem;
+    color: var(--backoffice-danger);
+    font-size: 0.82rem;
+}
+
+.variation-block {
+    margin-top: 1.5rem;
+}
+
+.sale-toggle-row {
+    display: grid;
+    gap: 0.45rem;
+    margin-bottom: 1rem;
+}
+
+.backoffice-checkbox-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--backoffice-ink);
+    font-weight: 600;
+}
+
+.sale-form-grid.is-hidden {
+    display: none;
+}
+
+.sale-note-strip {
+    margin-top: 1rem;
+}
+
+.variation-table-wrap {
+    overflow-x: auto;
+    border: 1px solid rgba(221, 210, 196, 0.75);
+    border-radius: 18px;
+}
+
+.variation-table {
+    min-width: 720px;
+}
+
+.variation-table td {
+    min-width: 120px;
+}
+
+.gallery-thumb-preview {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.gallery-thumb-preview img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(221, 210, 196, 0.9);
+    background: #f3ece1;
+}
+
+.gallery-thumb-preview span {
+    color: var(--backoffice-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.admin-review-preview {
+    margin-top: 0.8rem;
+}
+
+.admin-review-preview img {
+    width: min(180px, 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(221, 210, 196, 0.9);
+    object-fit: cover;
+}
+
+.review-media-preview {
+    margin-top: 0.8rem;
+    width: 100%;
+}
+
+.review-media-preview img {
+    display: block;
+    width: min(240px, 100%);
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid rgba(221, 210, 196, 0.9);
+    background: #f3ece1;
+}
+
+.review-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+.review-card {
+    border: 1px solid rgba(221, 210, 196, 0.75);
+    border-radius: 20px;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 242, 235, 0.94));
+    box-shadow: 0 10px 20px rgba(28, 25, 23, 0.05);
+}
+
+.review-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.review-card-head strong {
+    display: block;
+    color: var(--backoffice-ink);
+    font-size: 0.98rem;
+    line-height: 1.4;
+}
+
+.review-meta {
+    display: block;
+    margin-top: 0.28rem;
+    color: var(--backoffice-muted);
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+.review-rating {
+    flex-shrink: 0;
+    background: rgba(31, 109, 81, 0.12);
+    color: var(--backoffice-success);
+    border-radius: 999px;
+    padding: 0.38rem 0.72rem;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.review-body {
+    margin: 0.85rem 0 0;
+    color: var(--backoffice-ink);
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+.empty-state {
+    border: 1px dashed rgba(138, 92, 47, 0.35);
+    border-radius: 22px;
+    padding: 1.4rem;
+    background: rgba(255, 255, 255, 0.55);
+    color: var(--backoffice-muted);
+    text-align: center;
+}
+
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.account-role-form {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.account-role-form select {
+    min-width: 130px;
+}
+
+.mini-list {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.mini-list-item {
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid rgba(221, 210, 196, 0.7);
+}
+
+.mini-list-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.mini-list-item strong {
+    display: block;
+    color: var(--backoffice-ink);
+}
+
+.mini-list-item span {
+    display: block;
+    color: var(--backoffice-muted);
+    margin-top: 0.25rem;
+}
+
+.inline-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.delete-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--backoffice-danger);
+    font-size: 0.86rem;
+}
+
+.note-strip {
+    margin-top: 1rem;
+    padding: 0.95rem 1rem;
+    border-radius: 18px;
+    background: rgba(138, 92, 47, 0.08);
+    color: var(--backoffice-ink);
+    line-height: 1.7;
+    font-size: 0.92rem;
+}
+
+.payment-filter-grid,
+.payment-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.9rem;
+}
+
+.payment-breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.payment-breakdown-card {
+    border: 1px solid rgba(221, 210, 196, 0.75);
+    border-radius: 20px;
+    padding: 1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 242, 235, 0.94));
+}
+
+.payment-breakdown-card strong {
+    display: block;
+    margin-top: 0.85rem;
+    color: var(--backoffice-ink);
+    font-size: 1.35rem;
+}
+
+.payment-breakdown-card p {
+    margin: 0.35rem 0 0;
+    color: var(--backoffice-muted);
+}
+
+.progress-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 0.85rem;
+    color: var(--backoffice-muted);
+    font-size: 0.85rem;
+}
+
+.progress-track {
+    flex: 1;
+    height: 10px;
+    border-radius: 999px;
+    background: rgba(221, 210, 196, 0.7);
+    overflow: hidden;
+}
+
+.progress-fill {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--backoffice-accent), #c68b4f);
+}
+
+.payment-order-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.payment-order-card {
+    border: 1px solid rgba(221, 210, 196, 0.75);
+    border-radius: 22px;
+    padding: 1.1rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 242, 235, 0.94));
+}
+
+.payment-order-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.payment-order-head h3 {
+    margin: 0.6rem 0 0.25rem;
+    color: var(--backoffice-ink);
+    font-size: 1.12rem;
+}
+
+.payment-order-head p {
+    margin: 0;
+    color: var(--backoffice-muted);
+    line-height: 1.6;
+}
+
+.payment-order-amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--backoffice-ink);
+    white-space: nowrap;
+}
+
+.payment-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.detail-cell {
+    display: grid;
+    gap: 0.45rem;
+    padding: 0.9rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(221, 210, 196, 0.7);
+}
+
+.detail-cell code {
+    color: var(--backoffice-ink);
+    font-size: 0.9rem;
+    word-break: break-all;
+}
+
+.detail-label {
+    display: block;
+    color: var(--backoffice-muted);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.payment-meta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1rem;
+    padding: 0.95rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 18px;
+    background: rgba(138, 92, 47, 0.08);
+    color: var(--backoffice-ink);
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
+.payment-update-form {
+    padding-top: 0.2rem;
+    border-top: 1px solid rgba(221, 210, 196, 0.7);
+}
+
+.payment-notes-field {
+    grid-column: 1 / -1;
+}
+
+.payment-notes-field textarea {
+    min-height: 110px;
+}
+
+.payment-actions {
+    margin-top: 1rem;
+}
+
+.payment-view-only-note {
+    margin-top: 1rem;
+}
+
+.delivery-payment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.delivery-qr-card,
+.delivery-collection-card {
+    border: 1px solid rgba(221, 210, 196, 0.75);
+    border-radius: 20px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.delivery-qr-card h4,
+.delivery-collection-card h4 {
+    margin: 0 0 0.45rem;
+    color: var(--backoffice-ink);
+}
+
+.delivery-qr-card p,
+.delivery-collection-card p {
+    margin: 0.25rem 0;
+    color: var(--backoffice-muted);
+    line-height: 1.6;
+}
+
+.delivery-qr-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 0.8rem;
+    padding: 1rem;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(243, 236, 225, 0.9));
+    border: 1px solid rgba(221, 210, 196, 0.75);
+}
+
+.delivery-qr-preview img {
+    width: min(240px, 100%);
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+
+.delivery-qr-copy {
+    word-break: break-word;
+}
+
+.delivery-dashboard .backoffice-hero {
+    padding: 1.4rem 1.5rem;
+    border-radius: 22px;
+    margin-bottom: 1rem;
+}
+
+.delivery-dashboard .backoffice-hero h1 {
+    font-size: clamp(1.45rem, 2.5vw, 2.1rem);
+}
+
+.delivery-dashboard .backoffice-hero p,
+.delivery-dashboard .panel-header p,
+.delivery-dashboard .note-strip,
+.delivery-dashboard .payment-order-head p,
+.delivery-dashboard .managed-item-head p,
+.delivery-dashboard .delivery-collection-card p,
+.delivery-dashboard .delivery-qr-card p {
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.delivery-dashboard .backoffice-btn {
+    padding: 0.62rem 0.95rem;
+    font-size: 0.84rem;
+}
+
+.delivery-dashboard .stat-card {
+    padding: 0.9rem 0.95rem;
+}
+
+.delivery-dashboard .stat-card strong {
+    font-size: 1.35rem;
+}
+
+.delivery-dashboard .backoffice-panel {
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.delivery-dashboard .payment-filter-grid,
+.delivery-dashboard .payment-form-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.7rem;
+}
+
+.delivery-dashboard .backoffice-input {
+    padding: 0.72rem 0.85rem;
+    border-radius: 14px;
+    font-size: 0.84rem;
+}
+
+.delivery-dashboard .payment-order-grid {
+    grid-template-columns: repeat(auto-fit, minmax(680px, 1fr));
+    gap: 0.8rem;
+}
+
+.delivery-dashboard .payment-order-card {
+    padding: 0.85rem;
+    border-radius: 18px;
+}
+
+.delivery-dashboard .payment-order-head {
+    margin-bottom: 0.7rem;
+}
+
+.delivery-dashboard .payment-order-head h3 {
+    margin: 0.35rem 0 0.15rem;
+    font-size: 1rem;
+}
+
+.delivery-amount-stack {
+    text-align: right;
+}
+
+.delivery-amount-stack small {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--backoffice-muted);
+    font-size: 0.74rem;
+}
+
+.delivery-dashboard .payment-order-amount {
+    font-size: 1.05rem;
+}
+
+.delivery-dashboard .payment-detail-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.55rem;
+    margin-bottom: 0.7rem;
+}
+
+.delivery-dashboard .detail-cell {
+    padding: 0.62rem 0.7rem;
+    border-radius: 14px;
+    gap: 0.3rem;
+}
+
+.delivery-dashboard .detail-label {
+    font-size: 0.68rem;
+}
+
+.delivery-meta-strip {
+    margin-bottom: 0.75rem;
+    padding: 0.7rem 0.8rem;
+    gap: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+}
+
+.delivery-dashboard .delivery-payment-grid {
+    margin-bottom: 0.75rem;
+    grid-template-columns: minmax(220px, 280px) minmax(260px, 1fr);
+    align-items: start;
+}
+
+.delivery-dashboard .delivery-qr-card,
+.delivery-dashboard .delivery-collection-card {
+    padding: 0.8rem;
+    border-radius: 16px;
+}
+
+.delivery-dashboard .delivery-qr-preview {
+    margin: 0.55rem 0 0.5rem;
+    padding: 0.65rem;
+    border-radius: 14px;
+}
+
+.delivery-dashboard .delivery-qr-preview img {
+    width: min(170px, 100%);
+}
+
+.delivery-dashboard .managed-item-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.75rem;
+}
+
+.delivery-dashboard .managed-item-card {
+    padding: 0.75rem;
+    border-radius: 16px;
+}
+
+.delivery-dashboard .managed-item-head {
+    margin-bottom: 0.6rem;
+    gap: 0.55rem;
+}
+
+.delivery-dashboard .managed-item-head h4 {
+    font-size: 0.92rem;
+}
+
+.delivery-price-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.3rem;
+}
+
+.delivery-price-row span {
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    background: var(--backoffice-soft);
+    color: var(--backoffice-ink);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.price-mismatch-chip {
+    background: rgba(154, 63, 53, 0.12) !important;
+    color: var(--backoffice-danger) !important;
+}
+
+.mismatch-note {
+    margin-bottom: 0.75rem;
+    background: rgba(154, 63, 53, 0.08);
+    color: var(--backoffice-danger);
+}
+
+.delivery-dashboard .managed-item-media {
+    min-height: 150px;
+    margin-bottom: 0.65rem;
+    padding: 0.5rem;
+    border-radius: 14px;
+}
+
+.delivery-dashboard .managed-item-media img {
+    min-height: 120px;
+    max-height: 170px;
+}
+
+.delivery-dashboard .managed-item-media-empty {
+    min-height: 120px;
+}
+
+.delivery-dashboard .payment-notes-field textarea,
+.delivery-dashboard textarea.backoffice-input {
+    min-height: 72px;
+}
+
+.delivery-dashboard .payment-actions {
+    margin-top: 0.65rem;
+}
+
+.managed-item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.managed-item-card {
+    border: 1px solid rgba(221, 210, 196, 0.75);
+    border-radius: 20px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.managed-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.9rem;
+}
+
+.managed-item-head h4 {
+    margin: 0;
+    color: var(--backoffice-ink);
+    font-size: 1rem;
+}
+
+.managed-item-head p {
+    margin: 0.3rem 0 0;
+    color: var(--backoffice-muted);
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+.managed-item-media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.9rem;
+    min-height: 280px;
+    padding: 0.85rem;
+    border-radius: 18px;
+    border: 1px solid rgba(221, 210, 196, 0.75);
+    background:
+        radial-gradient(circle at top right, rgba(138, 92, 47, 0.12), transparent 12rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(243, 236, 225, 0.9));
+}
+
+.managed-item-media img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 240px;
+    max-height: 320px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 16px;
+    background: transparent;
+}
+
+.managed-item-media-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 240px;
+    border: 1px dashed rgba(221, 210, 196, 0.9);
+    border-radius: 16px;
+    color: var(--backoffice-muted);
+    background: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    padding: 1rem;
+}
+
+.item-form-grid {
+    display: grid;
+    gap: 0.9rem;
+}
+
+@media (max-width: 960px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-marketplace-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .backoffice-shell {
+        padding-top: 1.6rem;
+    }
+
+    .backoffice-hero,
+    .backoffice-panel,
+    .product-card {
+        border-radius: 18px;
+    }
+
+    .backoffice-wrap {
+        width: min(100% - 1rem, 1180px);
+    }
+
+    .backoffice-table th,
+    .backoffice-table td {
+        padding-inline: 0.35rem;
+    }
+
+    .panel-search-form {
+        width: 100%;
+    }
+
+    .review-media-preview img,
+    .admin-review-preview img {
+        width: 100%;
+    }
+
+    .review-card-head {
+        flex-direction: column;
+    }
+
+    .hero-panel-grid,
+    .product-price-row,
+    .marketplace-vendor .quick-links,
+    .marketplace-admin .quick-links {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-order-head {
+        flex-direction: column;
+    }
+
+    .backoffice-wrap-wide {
+        width: calc(100% - 0.5rem);
+    }
+
+    .delivery-dashboard .payment-order-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .delivery-dashboard .delivery-payment-grid {
+        grid-template-columns: 1fr;
+    }
+}

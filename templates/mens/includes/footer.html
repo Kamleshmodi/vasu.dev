@@ -1,0 +1,196 @@
+<div class="floating-buttons">
+        <button class="chat-btn" title="Chat" onclick="toggleChat()">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+
+        <button class="scroll-btn" title="Go to top" id="TopBtn" onclick="topFunction()">
+            <i class="fas fa-angle-down"></i> </button>
+    </div>
+
+    <div class="app-banner">
+        <div class="app-banner-content">
+            <div class="app-text">
+                <strong>VASU ON THE GO</strong><br />
+                Receive <strong>15% OFF</strong> your first in-app purchase. iPad App use code: <strong>VASUIPAD15</strong><br />
+                Restrictions may apply.
+            </div>
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store Badge" class="app-store-badge" />
+        </div>
+    </div>
+    <br><br>
+
+    <footer class="footer">
+        <div class="survey-banner">
+            <strong>HELP US IMPROVE</strong>
+            <span>Take a brief survey about today’s visit</span>
+            <a href="#">Begin Survey</a>
+        </div>
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h4>VASU</h4>
+                <a href="{% url 'need_help' %}">Customer Care</a>
+                <a href="{% url 'order_history' %}">Track Your Order</a>
+                <a href="{% url 'need_help' %}">Shipping & Returns</a>
+                <a href="{% url 'my_account' %}">Gift Certificates</a>
+                <a href="{% url 'womens_home' %}">About Us</a>
+                <a href="tel:7878065935">7878065935</a>
+                <a href="javascript:void(0);" onclick="toggleChat()">Live Chat</a>
+            </div>
+            <div class="footer-col">
+                <h4>&nbsp;</h4>
+                <a href="{% url 'womens_sale' %}">The Loyalty Program</a>
+                <a href="{% url 'womens_new' %}">Ambassador Program</a>
+                <a href="{% url 'womens_designers' %}">Affiliate</a>
+                <a href="{% url 'womens_shops' %}">Stores</a>
+                <a href="{% url 'my_account' %}">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h4>NEWSLETTER</h4>
+                <p>Be the first to know about new arrivals, sales & promos by submitting your email. You can opt out at any time. <a href="#">privacy policy</a></p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Sign up for our weekly emails">
+                    <button>&rarr;</button>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>JOIN US</h4>
+                <a href="https://facebook.com">Facebook</a>
+                <a href="https://instagram.com">Instagram</a>
+                <a href="https://youtube.com">YouTube</a>
+                <a href="#">X</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p id="p">2026 © Vasu Store, Inc. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Accessibility Statement</a>
+                <a href="#">Cookie Preferences</a>
+                <a href="#">CA Privacy Rights</a>
+                <a href="#">CA Supply Chains</a>
+                <a href="#">Your Privacy Choices - CA</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="chatPanel" class="chat-panel">
+        <div class="chat-header">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <span>VASU Support</span>
+            </div>
+            <span onclick="toggleChat()" style="cursor:pointer; font-size: 18px;">✖</span>
+        </div>
+
+        <div id="chatMessages" class="chat-messages">
+            <div class="message bot-message">
+                Hello! 👋 <br> 
+                How can I help you today? <br>
+                <small style="color: gray;">
+                    Try asking:<br>
+                    "How to order a product?"<br>
+                    "How can I track my order?"<br>
+                    "What are the payment options?"<br>
+                    "What is the return policy?"<br>
+                    "Show white sneakers"
+                </small>
+            </div>
+        </div>
+
+        <div class="chat-input-row">
+            <input id="chatInput" type="text" placeholder="Type your message..." autocomplete="off">
+            <button type="button" onclick="sendMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <script>
+        const API_URL = "/api/chatbot-search/"; 
+
+        function toggleChat() {
+            const panel = document.getElementById("chatPanel");
+            panel.classList.toggle("open");
+            
+            if (panel.classList.contains("open")) {
+                document.getElementById("chatInput").focus();
+            }
+        }
+
+        document.getElementById("chatInput").addEventListener("keydown", function (e) {
+            if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage();
+            }
+        });
+
+        function appendMessage(sender, text, type = "text") {
+            const box = document.getElementById("chatMessages");
+            const msgDiv = document.createElement("div");
+            msgDiv.classList.add("message");
+            msgDiv.classList.add(sender === "You" ? "user-message" : "bot-message");
+
+            if (type === "text") {
+                msgDiv.innerHTML = text;
+            } else if (type === "loading") {
+                msgDiv.innerHTML = `<span class="dot-typing"></span> Searching...`;
+                msgDiv.id = "botLoading"; 
+            }
+
+            box.appendChild(msgDiv);
+            box.scrollTop = box.scrollHeight; 
+        }
+
+        function appendProductCard(product) {
+            const box = document.getElementById("chatMessages");
+            const cardDiv = document.createElement("div");
+            cardDiv.classList.add("message", "bot-message", "product-card-chat");
+
+            const imageSrc = product.image ? product.image : '/static/images/no-image.png';
+
+            cardDiv.innerHTML = `
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <img src="${imageSrc}" alt="${product.name}" style="width: 50px; height: 60px; object-fit: cover; border-radius: 4px;">
+                    <div>
+                        <strong style="font-size: 13px; display: block;">${product.name}</strong>
+                        <span style="color: #28a745; font-weight: 600; font-size: 13px;">${product.price}</span>
+                    </div>
+                </div>
+                <a href="${product.link}" class="view-btn">View Details</a>
+            `;
+
+            box.appendChild(cardDiv);
+            box.scrollTop = box.scrollHeight;
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById("chatInput");
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            appendMessage("You", msg);
+            input.value = "";
+            appendMessage("Bot", "", "loading");
+
+            try {
+                const response = await fetch(`${API_URL}?query=${encodeURIComponent(msg)}`);
+                const data = await response.json();
+
+                const loadingMsg = document.getElementById("botLoading");
+                if (loadingMsg) loadingMsg.remove();
+
+                if (data.found && data.products && data.products.length > 0) {
+                    appendMessage("Bot", data.message || "Here are the products I found:");
+                    data.products.forEach(product => {
+                        appendProductCard(product);
+                    });
+                } else {
+                    appendMessage("Bot", data.message || "Sorry, I couldn't find any products matching your search.");
+                }
+
+            } catch (error) {
+                const loadingMsg = document.getElementById("botLoading");
+                if (loadingMsg) loadingMsg.remove();
+                appendMessage("Bot", "Server error. Please try again later.");
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

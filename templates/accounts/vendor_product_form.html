@@ -1,0 +1,343 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/accounts/backoffice.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="backoffice-shell">
+    <div class="backoffice-wrap">
+        <section class="backoffice-hero">
+            <div class="backoffice-eyebrow">{{ catalog_label }} Catalog</div>
+            <h1>{% if is_edit_mode %}Edit Product{% else %}Create Product{% endif %}</h1>
+            <p>
+                Manage product basics, images, and variations from one place. The storefront sync updates automatically after saving.
+            </p>
+            <div class="backoffice-actions">
+                <a class="backoffice-btn backoffice-btn-secondary" href="{% if return_to == 'admin' %}{% url 'admin_control_center' %}{% else %}{% url 'vendor_dashboard' %}{% endif %}">
+                    Back
+                </a>
+            </div>
+        </section>
+
+        <section class="backoffice-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Product Details</h2>
+                    <p>Maintain brand details, pricing, category, and catalog-specific images here.</p>
+                </div>
+            </div>
+
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% if return_to %}
+                <input type="hidden" name="return_to" value="{{ return_to }}">
+                {% endif %}
+
+                {% for error in form.non_field_errors %}
+                <div class="non-field-errors">{{ error }}</div>
+                {% endfor %}
+
+                <div class="form-grid">
+                    {% for field in form %}
+                    <div class="{% if field.name == 'product_description' or field.name == 'description' %}full-span{% endif %}">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field }}
+                        {% if is_edit_mode and field.name == 'front_image' and product.front_image %}
+                        <div class="form-help">Current front image: {{ product.front_image.name|cut:"photos/products/" }}</div>
+                        {% endif %}
+                        {% if is_edit_mode and field.name == 'back_image' and product.back_image %}
+                        <div class="form-help">Current back image: {{ product.back_image.name|cut:"photos/products/" }}</div>
+                        {% endif %}
+                        {% if field.help_text %}
+                        <div class="form-help">{{ field.help_text }}</div>
+                        {% endif %}
+                        {% for error in field.errors %}
+                        <div class="field-errors">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <section class="variation-block">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Variations & Stock</h3>
+                            <p>Define the section, size, color, and stock in each row. Size is required for clothing, footwear, and dresses.</p>
+                        </div>
+                        <button type="button" id="addVariationRow" class="backoffice-btn backoffice-btn-secondary light">Add New Variation</button>
+                    </div>
+
+                    {{ formset.management_form }}
+                    {% for error in formset.non_form_errors %}
+                    <div class="non-field-errors">{{ error }}</div>
+                    {% endfor %}
+
+                    <div class="variation-table-wrap">
+                        <table class="backoffice-table variation-table">
+                            <thead>
+                                <tr>
+                                    <th>Section</th>
+                                    <th>Size</th>
+                                    <th>Color</th>
+                                    <th>Stock</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody id="variationRows">
+                                {% for variation_form in formset.forms %}
+                                <tr class="variation-row">
+                                    {% for hidden in variation_form.hidden_fields %}
+                                    {{ hidden }}
+                                    {% endfor %}
+                                    <td>
+                                        {{ variation_form.category_type }}
+                                        {% for error in variation_form.category_type.errors %}
+                                        <div class="field-errors">{{ error }}</div>
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {{ variation_form.size }}
+                                        {% for error in variation_form.size.errors %}
+                                        <div class="field-errors">{{ error }}</div>
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {{ variation_form.color }}
+                                        {% for error in variation_form.color.errors %}
+                                        <div class="field-errors">{{ error }}</div>
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {{ variation_form.stock }}
+                                        {% for error in variation_form.stock.errors %}
+                                        <div class="field-errors">{{ error }}</div>
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {% if variation_form.DELETE %}
+                                        <label class="delete-checkbox">{{ variation_form.DELETE }} Remove</label>
+                                        {% else %}
+                                        <span class="form-help">Saved after create</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="variation-block">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Additional Images</h3>
+                            <p>Front and back images stay as the main two photos. Add any extra gallery images here.</p>
+                        </div>
+                        <button type="button" id="addGalleryRow" class="backoffice-btn backoffice-btn-secondary light">Add Image</button>
+                    </div>
+
+                    {{ gallery_formset.management_form }}
+                    {% for error in gallery_formset.non_form_errors %}
+                    <div class="non-field-errors">{{ error }}</div>
+                    {% endfor %}
+
+                    <div class="variation-table-wrap">
+                        <table class="backoffice-table variation-table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Current File</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+                            <tbody id="galleryRows">
+                                {% for image_form in gallery_formset.forms %}
+                                <tr class="gallery-row">
+                                    {% for hidden in image_form.hidden_fields %}
+                                    {{ hidden }}
+                                    {% endfor %}
+                                    <td>
+                                        {{ image_form.image }}
+                                        {% for error in image_form.image.errors %}
+                                        <div class="field-errors">{{ error }}</div>
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        {% if image_form.instance.pk and image_form.instance.image %}
+                                        <div class="gallery-thumb-preview">
+                                            <img src="{{ image_form.instance.image.url }}" alt="{{ product.product_name }}">
+                                            <span>{{ image_form.instance.image.name|cut:"photos/products/" }}</span>
+                                        </div>
+                                        {% else %}
+                                        <span class="form-help">Upload a new gallery image.</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        {% if image_form.DELETE %}
+                                        <label class="delete-checkbox">{{ image_form.DELETE }} Remove</label>
+                                        {% else %}
+                                        <span class="form-help">Saved after create</span>
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="variation-block" id="sale-settings">
+                    <div class="panel-header">
+                        <div>
+                            <h3>Sale & Discount</h3>
+                            <p>Admin can add any catalog product to the sale list here, and vendors can control discounts only for their own products.</p>
+                        </div>
+                    </div>
+
+                    {% for error in sale_form.non_field_errors %}
+                    <div class="non-field-errors">{{ error }}</div>
+                    {% endfor %}
+
+                    <div class="sale-toggle-row">
+                        <label class="backoffice-checkbox-row" for="{{ sale_form.is_enabled.id_for_label }}">
+                            {{ sale_form.is_enabled }}
+                            <span>{{ sale_form.is_enabled.label }}</span>
+                        </label>
+                        <div class="form-help">
+                            Turn this on to push the product into the storefront sale list. Turn it off anytime to remove the product from sale.
+                        </div>
+                        {% for error in sale_form.is_enabled.errors %}
+                        <div class="field-errors">{{ error }}</div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="form-grid sale-form-grid" id="saleFields">
+                        <div>
+                            <label for="{{ sale_form.discount_percentage.id_for_label }}">{{ sale_form.discount_percentage.label }}</label>
+                            {{ sale_form.discount_percentage }}
+                            <div class="form-help">Enter the percentage discount for this product.</div>
+                            {% for error in sale_form.discount_percentage.errors %}
+                            <div class="field-errors">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        <div>
+                            <label for="{{ sale_form.start_date.id_for_label }}">{{ sale_form.start_date.label }}</label>
+                            {{ sale_form.start_date }}
+                            <div class="form-help">This date controls when the discount starts appearing on the storefront.</div>
+                            {% for error in sale_form.start_date.errors %}
+                            <div class="field-errors">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                        <div>
+                            <label for="{{ sale_form.end_date.id_for_label }}">{{ sale_form.end_date.label }}</label>
+                            {{ sale_form.end_date }}
+                            <div class="form-help">After this date, the product automatically drops out of the sale list.</div>
+                            {% for error in sale_form.end_date.errors %}
+                            <div class="field-errors">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    {% if sale_instance %}
+                    <div class="note-strip sale-note-strip">
+                        Current list price: Rs. {{ product.price|floatformat:2 }} |
+                        current sale price: Rs. {{ sale_instance.sale_price|floatformat:2 }}
+                        {% if sale_status %}
+                        | {{ sale_status.summary }}
+                        {% endif %}
+                    </div>
+                    {% else %}
+                    <div class="note-strip sale-note-strip">
+                        No sale is attached to this product right now. Enable the toggle above to add it to the sale list with a discount.
+                    </div>
+                    {% endif %}
+                </section>
+
+                <div class="note-strip">
+                    Saving the product also updates vendor ownership, designer mapping, category-table sync, and sale pricing automatically.
+                </div>
+
+                <div class="backoffice-actions">
+                    <button type="submit" class="backoffice-btn backoffice-btn-primary">
+                        {% if is_edit_mode %}Save Changes{% else %}Create Product{% endif %}
+                    </button>
+                    <a class="backoffice-btn backoffice-btn-secondary light" href="{% if return_to == 'admin' %}{% url 'admin_control_center' %}{% else %}{% url 'vendor_dashboard' %}{% endif %}">
+                        Cancel
+                    </a>
+                </div>
+            </form>
+        </section>
+    </div>
+</section>
+
+<template id="emptyVariationRow">
+    <tr class="variation-row">
+        {% for hidden in formset.empty_form.hidden_fields %}
+        {{ hidden.as_widget }}
+        {% endfor %}
+        <td>{{ formset.empty_form.category_type }}</td>
+        <td>{{ formset.empty_form.size }}</td>
+        <td>{{ formset.empty_form.color }}</td>
+        <td>{{ formset.empty_form.stock }}</td>
+        <td>
+            <label class="delete-checkbox">{{ formset.empty_form.DELETE }} Remove</label>
+        </td>
+    </tr>
+</template>
+
+<template id="emptyGalleryRow">
+    <tr class="gallery-row">
+        {% for hidden in gallery_formset.empty_form.hidden_fields %}
+        {{ hidden.as_widget }}
+        {% endfor %}
+        <td>{{ gallery_formset.empty_form.image }}</td>
+        <td><span class="form-help">Upload a new gallery image.</span></td>
+        <td>
+            <label class="delete-checkbox">{{ gallery_formset.empty_form.DELETE }} Remove</label>
+        </td>
+    </tr>
+</template>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const bindDynamicRows = function (buttonId, tableBodyId, templateId, totalFormsId) {
+            const addButton = document.getElementById(buttonId);
+            const tableBody = document.getElementById(tableBodyId);
+            const emptyRowTemplate = document.getElementById(templateId);
+            const totalFormsInput = document.getElementById(totalFormsId);
+
+            if (!addButton || !tableBody || !emptyRowTemplate || !totalFormsInput) {
+                return;
+            }
+
+            addButton.addEventListener('click', function () {
+                const nextIndex = Number(totalFormsInput.value);
+                const rowMarkup = emptyRowTemplate.innerHTML.replace(/__prefix__/g, nextIndex);
+                tableBody.insertAdjacentHTML('beforeend', rowMarkup);
+                totalFormsInput.value = nextIndex + 1;
+            });
+        };
+
+        bindDynamicRows('addVariationRow', 'variationRows', 'emptyVariationRow', 'id_{{ formset.prefix }}-TOTAL_FORMS');
+        bindDynamicRows('addGalleryRow', 'galleryRows', 'emptyGalleryRow', 'id_{{ gallery_formset.prefix }}-TOTAL_FORMS');
+
+        const saleToggle = document.getElementById('{{ sale_form.is_enabled.id_for_label }}');
+        const saleFields = document.getElementById('saleFields');
+
+        const syncSaleFields = function () {
+            if (!saleToggle || !saleFields) {
+                return;
+            }
+
+            saleFields.classList.toggle('is-hidden', !saleToggle.checked);
+        };
+
+        if (saleToggle) {
+            saleToggle.addEventListener('change', syncSaleFields);
+            syncSaleFields();
+        }
+    });
+</script>
+{% endblock %}

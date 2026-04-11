@@ -1,0 +1,190 @@
+/* Chat Panel Wrapper */
+#chatPanel {
+    display: none; /* Initially hidden */
+    position: fixed; bottom: 80px; right: 20px;
+    width: 320px; height: 450px;
+    background: #fff; border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+}
+#chatPanel.open { display: flex; }
+
+/* Messages Area */
+#chatMessages {
+    flex: 1; padding: 15px;
+    overflow-y: auto; background: #f9f9f9;
+}
+
+/* Bubbles Styling */
+.message {
+    margin-bottom: 10px; padding: 10px 14px;
+    border-radius: 12px; font-size: 14px;
+    max-width: 80%; line-height: 1.4;
+    word-wrap: break-word;
+}
+.user-message {
+    background: #007bff; color: white;
+    align-self: flex-end; margin-left: auto; /* Right side */
+    border-bottom-right-radius: 2px;
+}
+.bot-message {
+    background: #e9ecef; color: #333;
+    align-self: flex-start; margin-right: auto; /* Left side */
+    border-bottom-left-radius: 2px;
+}
+
+/* Product Card Specific Styles */
+.product-card {
+    background: #fff; border: 1px solid #ddd;
+    padding: 10px; width: 100%; max-width: 90%;
+}
+.view-btn:hover { background: #0056b3; }
+
+/* Input Area */
+.chat-input-area {
+    padding: 10px; border-top: 1px solid #eee;
+    display: flex; gap: 5px; background: #fff;
+}
+#chatInput {
+    flex: 1; padding: 10px; border: 1px solid #ddd;
+    border-radius: 20px; outline: none;
+}
+
+/* --- Chat Button (Floating) --- */
+.chat-btn-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    font-weight: bold;
+}
+
+/* --- Chat Panel --- */
+.chat-panel {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 340px;
+    height: 480px;
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1001;
+    font-family: sans-serif;
+}
+
+.chat-panel.open {
+    display: flex;
+}
+
+/* --- Header --- */
+.chat-header {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* --- Messages Area --- */
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f4f7f6;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* --- Bubbles --- */
+.message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.bot-message {
+    background: #e9ecef;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.user-message {
+    background: #007bff;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+/* --- Product Card Styling --- */
+.product-card {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.view-btn:hover {
+    background: #0056b3;
+}
+
+/* --- Input Area --- */
+.chat-input-row {
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-row input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+.chat-input-row button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+/* --- Loading Animation --- */
+.dot-typing {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #333;
+    animation: typing 1s infinite linear;
+}
+
+@keyframes typing {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}

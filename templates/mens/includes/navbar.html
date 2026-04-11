@@ -1,0 +1,132 @@
+{% load static %}
+<script src="{% static 'js/chatbot.js' %}" defer></script>
+
+<div class="top-line">
+    <div class="top-right">
+        <div class="top-right-inner">
+            <span>
+                <img src="{% static 'image/logo/flag.png' %}" alt="logo" width="20px" height="20px" style="padding-top: 2px;">
+                &nbsp;|&nbsp; EN &nbsp;|&nbsp; INR
+            </span>
+            <span class="help-btn" onclick="toggleHelp()">Need Help? ▾</span>
+            <div class="help-dropdown" id="helpDropdown">
+<p><strong>Chat:</strong> 
+    <a href="javascript:void(0)" onclick="toggleChat()">Let's Chat!</a>
+</p>
+                <p><strong>Phone:</strong> <a href="tel:7878065935">7878065935</a></p>
+                <p><strong>Text Us:</strong> <a href="sms:7878065935">7878065935</a></p>
+                <p><strong>Email:</strong> <a href="mailto:vasu1115@outlook.com">vasu1115@outlook.com</a></p>
+            </div>
+
+<div
+    id="chatPanel"
+    class="chat-panel"
+    data-chatbot-api-url="{% url 'chatbot_search' %}"
+    data-chatbot-placeholder-image="{% static 'image/logo/logo-transparent.png' %}"
+>
+
+  <div class="chat-header">
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 20px;">💬</span> 
+        <span style="font-weight: bold;">Customer Support</span>
+    </div>
+    <span onclick="toggleChat()" style="cursor:pointer; color: white; font-size: 18px;">✖</span>
+  </div>
+
+  <div id="chatMessages" class="chat-messages">
+      <div class="message bot-message">
+          Hello! 👋 <br> 
+          How can I help you today? <br>
+                    <small style="color: gray;">
+                        Try asking:<br>
+                        "How to order a product?"<br>
+                        "How can I track my order?"<br>
+                        "What are the payment options?"<br>
+                        "What is the return policy?"<br>
+                        "Show white sneakers" or "show bags"
+                    </small>
+      </div>
+  </div>
+
+  <div class="chat-input-row">
+    <input id="chatInput" type="text" placeholder="Type your message..." autocomplete="off">
+        <button type="button" onclick="sendMessage()">Send</button>
+  </div>
+
+</div>
+
+            <div class="account-options">
+                {% if request.user.is_authenticated %}
+                <div class="account-dropdown">
+                    <button class="dropbtn"> My Account </button>
+                    <div class="dropdown-content">
+                        {% if request.user.is_vendor_account %}
+                        <a href="{% url 'vendor_dashboard' %}">Vendor Dashboard</a>
+                        {% endif %}
+                        {% if request.user.is_delivery_partner_account %}
+                        <a href="{% url 'delivery_dashboard' %}">Delivery Dashboard</a>
+                        {% endif %}
+                        {% if request.user.has_admin_access %}
+                        <a href="{% url 'admin_control_center' %}">Admin Control</a>
+                        <a href="{% url 'admin:index' %}">Django Admin</a>
+                        {% endif %}
+                        <a href="{% url 'order_history' %}">Order History</a>
+                        <a href="{% url 'cart_view' %}">Items On Hold</a>
+                        <a href="{% url 'my_account' %}">My Account</a>
+                        <a href="{% url 'wishlist_view' %}">View My Wishlist</a>
+                        <hr> <a href="{% url 'logout' %}">Sign Out</a>
+                    </div>
+                </div>
+                {% else %}
+                <a href="{% url 'login' %}">Sign In</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="super-container">
+    <header class="top-header">
+        <div class="top-left">
+            <a href="/">Womens</a>
+            <a href="/mens/">Mens</a>
+        </div>
+
+        <div class="logo-wrap">
+            <div class="logo">VASU</div>
+            <button class="mobile-nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
+        <div class="top-right">
+            <div class="search-container">
+                <form method="get" action="{% url 'mens_new' %}">
+                    <input type="text" name="q" value="{{ request.GET.q|default:'' }}" placeholder="Search..." />
+                    <button type="submit" class="search-btn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <a href="{% url 'wishlist_view' %}">Wish List ({{ wishlist_count }})</a>
+            <a href="{% url 'cart_view' %}">My Bag ({{ cart_count }})</a>
+        </div>
+    </header>
+
+
+    <!-- Main Navigation -->
+    <nav class="main-nav" data-main-nav>
+        <a href="/mens/new/" class="{% if request.path == '/mens/new/' %}active{% endif %}">NEW</a>
+        <a href="/mens/designers/" class="{% if request.path == '/mens/designers/' %}active{% endif %}">DESIGNERS</a>
+        <a href="/mens/clothing/" class="{% if request.path == '/mens/clothing/' %}active{% endif %}">CLOTHING</a>
+        <a href="/mens/shoes/" class="{% if request.path == '/mens/shoes/' %}active{% endif %}">SHOES</a>
+        <a href="/mens/bags/" class="{% if request.path == '/mens/bags/' %}active{% endif %}">BAGS</a>
+        <a href="/mens/accessories/" class="{% if request.path == '/mens/accessories/' %}active{% endif %}">ACCESSORIES</a>
+        <a href="/mens/sale/" class="{% if request.path == '/mens/sale/' %}active{% endif %}">SALE</a>
+        <a href="/mens/happening/" class="{% if request.path == '/mens/happening/' %}active{% endif %}">HAPPENING</a>
+    </nav>
+
+</div>

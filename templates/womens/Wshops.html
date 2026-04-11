@@ -1,0 +1,60 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/womens/Wshops.css' %}">
+
+<div class="page-layout">
+    <main class="right-main">
+
+        <!-- VASU Shops Section -->
+        <div class="product_grid_1">
+            <h3>Welcome To VASU Shops</h3>
+            <div class="product-grid">
+                {% for item in shop_items %}
+                <div class="product-item">
+                <a href="{% url 'product_detail' slug=item.product.slug %}">
+                        <div class="image-wrapper">
+                            <img class="main-image" src="{{ item.front_image.url }}" alt="{{ item.product_name }}">
+                            <img class="hover-image" src="{{ item.back_image.url }}" alt="{{ item.product_name }}">
+                        </div>
+                    </a>
+                    <h4>{{ item.product_name }}</h4>
+                    {% if item.product_description %}
+                    <p class="sub">{{ item.product_description }}</p>
+                    {% endif %}
+                    <p class="shop_now">Shop Now</p>
+                </div>
+                {% empty %}
+                <p>No shop items found.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Trends Section -->
+        <div class="product_grid_2">
+            <h3>Trends</h3>
+            <div class="product-grid">
+                {% for item in trending_items %}
+                <div class="product-item">
+                <a href="{% url 'product_detail' slug=item.product.slug %}">
+                        <div class="image-wrapper">
+                            <img class="main-image" src="{{ item.front_image.url }}" alt="{{ item.product_name }}">
+                            <img class="hover-image" src="{{ item.back_image.url }}" alt="{{ item.product_name }}">
+                        </div>
+                    </a>
+                    <h4>{{ item.product_name }}</h4>
+                    {% if item.product_description %}
+                    <p class="sub">{{ item.product_description }}</p>
+                    {% endif %}
+                    <p class="shop_now">Shop Now</p>
+                </div>
+                {% empty %}
+                <p>No trending items found.</p>
+                {% endfor %}
+            </div>
+        </div>
+
+    </main>
+</div>
+{% endblock %}

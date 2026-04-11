@@ -1,0 +1,319 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/accounts/backoffice.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="backoffice-shell">
+    <div class="backoffice-wrap">
+        <section class="backoffice-hero">
+            <div class="backoffice-eyebrow">{{ dashboard_eyebrow }}</div>
+            <h1>{{ dashboard_title }}</h1>
+            <p>{{ dashboard_description }}</p>
+            <div class="backoffice-actions">
+                <a class="backoffice-btn backoffice-btn-primary" href="{% url back_url_name %}">{{ back_label }}</a>
+                {% if can_manage_payments %}
+                <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'admin_order_management_dashboard' %}">Order Management</a>
+                {% else %}
+                <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'vendor_order_management_dashboard' %}">Order Management</a>
+                {% endif %}
+                {% if show_order_admin_link %}
+                <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'admin:aapstore_order_changelist' %}">Open Order Admin</a>
+                <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'admin:index' %}">Django Admin</a>
+                {% endif %}
+            </div>
+        </section>
+
+        <section class="stat-grid">
+            {% for card in summary_cards %}
+            <article class="stat-card">
+                <span>{{ card.label }}</span>
+                <strong>{{ card.value }}</strong>
+                <small class="stat-subtext">{{ card.subtext }}</small>
+            </article>
+            {% endfor %}
+        </section>
+
+        <section class="dashboard-grid compact">
+            <section class="backoffice-panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Filter Payment Records</h2>
+                        <p>Search by order, customer, payment reference, or narrow the view with status filters.</p>
+                    </div>
+                </div>
+                <form method="get" class="payment-filter-grid">
+                    <input
+                        type="search"
+                        name="q"
+                        value="{{ filters.search_query }}"
+                        class="backoffice-input"
+                        placeholder="Order ID, customer, username, reference"
+                    >
+                    <select name="payment_method" class="backoffice-input">
+                        <option value="">All payment modes</option>
+                        {% for value, label in payment_method_choices %}
+                        <option value="{{ value }}" {% if filters.payment_method == value %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                    <select name="payment_status" class="backoffice-input">
+                        <option value="">All payment statuses</option>
+                        {% for value, label in payment_status_choices %}
+                        <option value="{{ value }}" {% if filters.payment_status == value %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                    <select name="account_receipt_status" class="backoffice-input">
+                        <option value="">All account receipt statuses</option>
+                        {% for value, label in account_receipt_status_choices %}
+                        <option value="{{ value }}" {% if filters.account_receipt_status == value %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                    <select name="return_status" class="backoffice-input">
+                        <option value="">All return statuses</option>
+                        {% for value, label in return_status_choices %}
+                        <option value="{{ value }}" {% if filters.return_status == value %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                    <select name="refund_status" class="backoffice-input">
+                        <option value="">All refund statuses</option>
+                        {% for value, label in refund_status_choices %}
+                        <option value="{{ value }}" {% if filters.refund_status == value %}selected{% endif %}>{{ label }}</option>
+                        {% endfor %}
+                    </select>
+                    <div class="inline-actions">
+                        <button type="submit" class="backoffice-btn backoffice-btn-primary">Apply Filters</button>
+                        <a class="backoffice-btn backoffice-btn-secondary light" href="{% url dashboard_url_name %}">Reset</a>
+                    </div>
+                </form>
+            </section>
+
+            <section class="backoffice-panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Return and Refund Snapshot</h2>
+                        <p>Fast visibility into active return activity and refund completion progress.</p>
+                    </div>
+                </div>
+                <div class="payment-breakdown-grid">
+                    {% for item in refund_summary %}
+                    <article class="payment-breakdown-card">
+                        <span class="backoffice-badge {{ item.badge_class }}">{{ item.label }}</span>
+                        <strong>{{ item.count }}</strong>
+                    </article>
+                    {% endfor %}
+                </div>
+                <div class="note-strip">
+                    {% if can_manage_payments %}
+                    Refund status controls the payment summary automatically. If you mark a refund as completed,
+                    the order payment status is switched to refunded. Use the account receipt status to confirm whether
+                    money has actually reached your bank or merchant account.
+                    {% else %}
+                    This vendor view shows payment records only for orders that include your own products. Payment edits stay with admin control.
+                    {% endif %}
+                </div>
+            </section>
+        </section>
+
+        <section class="backoffice-panel" style="margin-top: 1.2rem;">
+            <div class="panel-header">
+                <div>
+                    <h2>Payment Mode Breakdown</h2>
+                    <p>See exactly how many orders and how much collection came through each payment channel.</p>
+                </div>
+            </div>
+            <div class="payment-breakdown-grid">
+                {% for item in payment_breakdown %}
+                <article class="payment-breakdown-card">
+                    <span class="backoffice-badge {{ item.badge_class }}">{{ item.label }}</span>
+                    <strong>{{ item.count }} order{{ item.count|pluralize }}</strong>
+                    <p>Rs. {{ item.total }}</p>
+                    <div class="progress-row">
+                        <div class="progress-track">
+                            <span class="progress-fill" style="width: {{ item.share }}%;"></span>
+                        </div>
+                        <span>{{ item.share }}%</span>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section class="backoffice-panel" style="margin-top: 1.2rem;">
+            <div class="panel-header">
+                <div>
+                    <h2>Order Payment Register</h2>
+                    <p>Review each order, confirm references, and update return or refund workflow from the same screen.</p>
+                </div>
+            </div>
+
+            {% if orders %}
+            <div class="payment-order-grid">
+                {% for order in orders %}
+                <article class="payment-order-card">
+                    <div class="payment-order-head">
+                        <div>
+                            <span class="backoffice-badge badge-muted">Order #{{ order.order_id|default:order.id }}</span>
+                            <h3>{{ order.full_name }}</h3>
+                            <p>{{ order.user.display_name }} | {{ order.created_at|date:"d M Y, h:i A" }}</p>
+                        </div>
+                        <div class="payment-order-amount">Rs. {{ order.dashboard_amount }}</div>
+                    </div>
+
+                    <div class="payment-detail-grid">
+                        <div class="detail-cell">
+                            <span class="detail-label">Order Status</span>
+                            <span class="backoffice-badge {% if order.status == 'Delivered' %}badge-delivered{% elif order.status == 'Cancelled' %}badge-cancelled{% elif order.status == 'Shipped' %}badge-shipped{% else %}badge-processing{% endif %}">
+                                {{ order.status }}
+                            </span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Payment Mode</span>
+                            <span class="backoffice-badge {{ order.method_badge_class }}">{{ order.get_payment_method_display }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Payment Status</span>
+                            <span class="backoffice-badge {{ order.payment_badge_class }}">{{ order.get_payment_status_display }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Received In Account</span>
+                            <span class="backoffice-badge {{ order.account_receipt_badge_class }}">{{ order.get_account_receipt_status_display }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Delivery Partner</span>
+                            <span>{{ order.delivery_partner_name }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Payment Reference</span>
+                            <code>{{ order.payment_reference|default:"-" }}</code>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Return Status</span>
+                            <span class="backoffice-badge {{ order.return_badge_class }}">{{ order.get_return_status_display }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Refund Status</span>
+                            <span class="backoffice-badge {{ order.refund_badge_class }}">{{ order.get_refund_status_display }}</span>
+                        </div>
+                    </div>
+
+                    {% if order.show_payment_meta %}
+                    <div class="payment-meta-strip">
+                        <span><strong>Account Receipt Ref:</strong> {{ order.account_receipt_reference|default:"-" }}</span>
+                        <span><strong>Account Confirmed:</strong> {% if order.account_receipt_confirmed_at %}{{ order.account_receipt_confirmed_at|date:"d M Y, h:i A" }}{% else %}-{% endif %}</span>
+                        <span><strong>Refund Amount:</strong> Rs. {{ order.refund_amount_value }}</span>
+                        <span><strong>Refund Ref:</strong> {{ order.refund_reference|default:"-" }}</span>
+                        <span><strong>Processed:</strong> {% if order.refund_processed_at %}{{ order.refund_processed_at|date:"d M Y, h:i A" }}{% else %}-{% endif %}</span>
+                        <span><strong>Notes:</strong> {{ order.payment_notes|default:"-" }}</span>
+                    </div>
+                    {% endif %}
+
+                    {% if can_manage_payments %}
+                    <form method="post" action="{% url 'admin_update_payment_record' order.id %}" class="payment-update-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.get_full_path|default:'' }}">
+                        <div class="payment-form-grid">
+                            <div>
+                                <label class="detail-label" for="payment-status-{{ order.id }}">Payment Status</label>
+                                <select id="payment-status-{{ order.id }}" name="payment_status" class="backoffice-input">
+                                    {% for value, label in payment_status_choices %}
+                                    <option value="{{ value }}" {% if order.payment_status == value %}selected{% endif %}>{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="detail-label" for="return-status-{{ order.id }}">Return Status</label>
+                                <select id="return-status-{{ order.id }}" name="return_status" class="backoffice-input">
+                                    {% for value, label in return_status_choices %}
+                                    <option value="{{ value }}" {% if order.return_status == value %}selected{% endif %}>{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="detail-label" for="account-receipt-status-{{ order.id }}">Received In Account</label>
+                                <select id="account-receipt-status-{{ order.id }}" name="account_receipt_status" class="backoffice-input">
+                                    {% for value, label in account_receipt_status_choices %}
+                                    <option value="{{ value }}" {% if order.account_receipt_status == value %}selected{% endif %}>{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="detail-label" for="refund-status-{{ order.id }}">Refund Status</label>
+                                <select id="refund-status-{{ order.id }}" name="refund_status" class="backoffice-input">
+                                    {% for value, label in refund_status_choices %}
+                                    <option value="{{ value }}" {% if order.refund_status == value %}selected{% endif %}>{{ label }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="detail-label" for="refund-amount-{{ order.id }}">Refund Amount</label>
+                                <input
+                                    id="refund-amount-{{ order.id }}"
+                                    type="number"
+                                    step="0.01"
+                                    min="0"
+                                    name="refund_amount"
+                                    value="{% if order.refund_amount %}{{ order.refund_amount }}{% endif %}"
+                                    class="backoffice-input"
+                                    placeholder="0.00"
+                                >
+                            </div>
+                            <div>
+                                <label class="detail-label" for="refund-reference-{{ order.id }}">Refund Reference</label>
+                                <input
+                                    id="refund-reference-{{ order.id }}"
+                                    type="text"
+                                    name="refund_reference"
+                                    value="{{ order.refund_reference }}"
+                                    class="backoffice-input"
+                                    placeholder="Bank / UTR / cash note"
+                                >
+                            </div>
+                            <div>
+                                <label class="detail-label" for="account-receipt-reference-{{ order.id }}">Account Receipt Ref</label>
+                                <input
+                                    id="account-receipt-reference-{{ order.id }}"
+                                    type="text"
+                                    name="account_receipt_reference"
+                                    value="{{ order.account_receipt_reference }}"
+                                    class="backoffice-input"
+                                    placeholder="Bank credit ref / settlement id"
+                                >
+                            </div>
+                            <div class="payment-notes-field">
+                                <label class="detail-label" for="payment-notes-{{ order.id }}">Admin Notes</label>
+                                <textarea
+                                    id="payment-notes-{{ order.id }}"
+                                    name="payment_notes"
+                                    class="backoffice-input"
+                                    placeholder="Add notes for refund, return pickup, customer confirmation, or manual settlement."
+                                >{{ order.payment_notes }}</textarea>
+                            </div>
+                        </div>
+                        <div class="inline-actions payment-actions">
+                            <button type="submit" class="backoffice-btn backoffice-btn-primary">Save Record</button>
+                        </div>
+                    </form>
+                    {% if order.status != 'Delivered' and order.status != 'Cancelled' %}
+                    <form method="post" action="{% url 'admin_mark_order_delivered' order.id %}" class="inline-actions payment-actions">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.get_full_path|default:'' }}">
+                        <button type="submit" class="backoffice-btn backoffice-btn-secondary light">Mark Delivered</button>
+                    </form>
+                    {% endif %}
+                    {% else %}
+                    <div class="note-strip payment-view-only-note">
+                        Vendor view only: payment and refund records are visible here, while finance updates stay in the admin payment dashboard.
+                    </div>
+                    {% endif %}
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty-state">No orders matched the current payment filters.</div>
+            {% endif %}
+        </section>
+    </div>
+</section>
+{% endblock %}

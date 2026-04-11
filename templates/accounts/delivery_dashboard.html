@@ -1,0 +1,273 @@
+{% extends 'womens/base.html' %}
+{% load static humanize %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/accounts/backoffice.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="backoffice-shell delivery-dashboard">
+    <div class="backoffice-wrap backoffice-wrap-wide">
+        <section class="backoffice-hero">
+            <div class="backoffice-eyebrow">{{ dashboard_eyebrow }}</div>
+            <h1>{{ dashboard_title }}</h1>
+            <p>{{ dashboard_description }}</p>
+            <div class="backoffice-actions">
+                <a class="backoffice-btn backoffice-btn-primary" href="{% url back_url_name %}">{{ back_label }}</a>
+                <a class="backoffice-btn backoffice-btn-secondary" href="{% url 'order_history' %}">Customer Order History</a>
+            </div>
+        </section>
+
+        <section class="stat-grid">
+            {% for card in summary_cards %}
+            <article class="stat-card">
+                <span>{{ card.label }}</span>
+                <strong>{{ card.value }}</strong>
+                <small class="stat-subtext">{{ card.subtext }}</small>
+            </article>
+            {% endfor %}
+        </section>
+
+        <section class="backoffice-panel">
+            <div class="panel-header">
+                <div>
+                    <h2>Filter Assigned Orders</h2>
+                    <p>Search by order, customer, address, mobile, or narrow the queue by delivery and payment status.</p>
+                </div>
+            </div>
+            <form method="get" class="payment-filter-grid">
+                <input
+                    type="search"
+                    name="q"
+                    value="{{ filters.search_query }}"
+                    class="backoffice-input"
+                    placeholder="Order ID, customer, mobile, address"
+                >
+                <select name="order_status" class="backoffice-input">
+                    <option value="">All order statuses</option>
+                    {% for value, label in order_status_choices %}
+                    <option value="{{ value }}" {% if filters.order_status == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+                <select name="payment_status" class="backoffice-input">
+                    <option value="">All payment statuses</option>
+                    {% for value, label in payment_status_choices %}
+                    <option value="{{ value }}" {% if filters.payment_status == value %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+                <div class="inline-actions">
+                    <button type="submit" class="backoffice-btn backoffice-btn-primary">Apply Filters</button>
+                    <a class="backoffice-btn backoffice-btn-secondary light" href="{% url 'delivery_dashboard' %}">Reset</a>
+                </div>
+            </form>
+            {% if not qr_is_available %}
+            <div class="note-strip">
+                Delivery QR disabled: set <code>PAYMENT_UPI_ID</code> in your environment to show auto-filled QR codes here.
+            </div>
+            {% else %}
+            <div class="note-strip">
+                COD customer wants to pay online? Open the QR below. Amount is already filled from the order total, so nobody needs to type it manually.
+            </div>
+            {% endif %}
+        </section>
+
+        <section class="backoffice-panel" style="margin-top: 1.2rem;">
+            <div class="panel-header">
+                <div>
+                    <h2>Assigned Delivery Queue</h2>
+                    <p>Status and payment updates from here will reflect back in the admin dashboards automatically.</p>
+                </div>
+            </div>
+
+            {% if orders %}
+            <div class="payment-order-grid delivery-order-grid">
+                {% for order in orders %}
+                <article class="payment-order-card delivery-order-card">
+                    <div class="payment-order-head">
+                        <div>
+                            <span class="backoffice-badge badge-muted">Order #{{ order.order_id|default:order.id }}</span>
+                            <h3>{{ order.full_name }}</h3>
+                            <p>{{ order.user.display_name }} | {{ order.created_at|date:"d M Y, h:i A" }}</p>
+                        </div>
+                        <div class="delivery-amount-stack">
+                            <div class="payment-order-amount">Rs. {{ order.amount_due|floatformat:2|intcomma }}</div>
+                            <small>Payable total</small>
+                        </div>
+                    </div>
+
+                    <div class="payment-detail-grid">
+                        <div class="detail-cell">
+                            <span class="detail-label">Order Status</span>
+                            <span class="backoffice-badge {{ order.order_badge_class }}">{{ order.status }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Payment Mode</span>
+                            <span class="backoffice-badge {{ order.method_badge_class }}">{{ order.get_payment_method_display }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Payment Status</span>
+                            <span class="backoffice-badge {{ order.payment_badge_class }}">{{ order.get_payment_status_display }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Received In Account</span>
+                            <span class="backoffice-badge {{ order.account_receipt_badge_class }}">{{ order.get_account_receipt_status_display }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">Mobile</span>
+                            <span>{{ order.mobile }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">City</span>
+                            <span>{{ order.city }}</span>
+                        </div>
+                        <div class="detail-cell">
+                            <span class="detail-label">State</span>
+                            <span>{{ order.state }}</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-meta-strip delivery-meta-strip">
+                        <span><strong>Address:</strong> {{ order.address }}</span>
+                        <span><strong>District:</strong> {{ order.district|default:order.city }}</span>
+                        <span><strong>Country:</strong> {{ order.country }}</span>
+                        <span><strong>Payment Ref:</strong> {{ order.payment_reference|default:"-" }}</span>
+                        <span><strong>Items Subtotal:</strong> Rs. {{ order.subtotal|floatformat:2|intcomma }}</span>
+                        <span><strong>Shipping:</strong> Rs. {{ order.shipping_amount|floatformat:2|intcomma }}</span>
+                    </div>
+
+                    {% if order.has_price_mismatch %}
+                    <div class="note-strip mismatch-note">
+                        Current catalog price and ordered price are different for one or more items. Collect the payable amount shown for this order, and use the item card chips below to compare both values.
+                    </div>
+                    {% endif %}
+
+                    {% if order.can_collect_cash %}
+                    <div class="delivery-payment-grid">
+                        <div class="delivery-qr-card">
+                            <h4>Collect COD Payment</h4>
+                            <p>Exact payable amount: <strong>Rs. {{ order.amount_due|floatformat:2|intcomma }}</strong></p>
+                            {% if order.can_collect_qr %}
+                            <div class="delivery-qr-preview">
+                                <img src="{{ order.delivery_qr_image_url }}" alt="QR for order {{ order.order_id|default:order.id }}">
+                            </div>
+                            <p class="delivery-qr-copy">UPI ID: <code>{{ upi_id }}</code></p>
+                            <p class="delivery-qr-copy">Customer can scan this and pay the exact order total instantly.</p>
+                            {% else %}
+                            <div class="empty-state">QR is not configured yet for this environment.</div>
+                            {% endif %}
+                        </div>
+
+                        <div class="delivery-collection-card">
+                            <h4>Save Collection</h4>
+                            <form method="post" action="{% url 'delivery_collect_payment' order.id %}" class="payment-update-form">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ request.get_full_path|default:'' }}">
+                                <input type="hidden" name="collection_mode" value="cash">
+                                <div class="inline-actions">
+                                    <button type="submit" class="backoffice-btn backoffice-btn-secondary light">Mark Cash Collected</button>
+                                </div>
+                            </form>
+
+                            {% if order.can_collect_qr %}
+                            <form method="post" action="{% url 'delivery_collect_payment' order.id %}" class="payment-update-form">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ request.get_full_path|default:'' }}">
+                                <input type="hidden" name="collection_mode" value="qrcode">
+                                <div class="item-form-grid">
+                                    <div>
+                                        <label class="detail-label" for="delivery-utr-{{ order.id }}">12-digit UTR</label>
+                                        <input
+                                            id="delivery-utr-{{ order.id }}"
+                                            type="text"
+                                            name="payment_reference"
+                                            maxlength="12"
+                                            class="backoffice-input"
+                                            placeholder="Enter QR payment reference"
+                                        >
+                                    </div>
+                                </div>
+                                <div class="inline-actions payment-actions">
+                                    <button type="submit" class="backoffice-btn backoffice-btn-primary">Confirm QR Payment</button>
+                                </div>
+                            </form>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% elif order.show_payment_notes %}
+                    <div class="note-strip">
+                        <strong>Payment Notes:</strong> {{ order.payment_notes|linebreaksbr }}
+                    </div>
+                    {% else %}
+                    <div class="note-strip">
+                        Customer payment and account receipt are tracked separately. QR/online payment may still need admin verification before it shows as received in account.
+                    </div>
+                    {% endif %}
+
+                    <div class="managed-item-grid" style="margin-top: 1rem;">
+                        {% for item in order.items_for_dashboard %}
+                        <article class="managed-item-card delivery-item-card">
+                            <div class="managed-item-head">
+                                <div>
+                                    <h4>{{ item.product_name }}</h4>
+                                    <div class="delivery-price-row">
+                                        <span>Ordered: Rs. {{ item.ordered_unit_price|floatformat:2|intcomma }}</span>
+                                        {% if item.has_price_mismatch %}
+                                        <span class="price-mismatch-chip">Catalog now: Rs. {{ item.current_catalog_price|floatformat:2|intcomma }}</span>
+                                        {% endif %}
+                                        <span>Qty {{ item.quantity }}</span>
+                                        <span>Line total: Rs. {{ item.line_total|floatformat:2|intcomma }}</span>
+                                    </div>
+                                    {% if item.vendor %}
+                                    <p>Vendor: {{ item.vendor.display_name }}</p>
+                                    {% endif %}
+                                </div>
+                                <span class="backoffice-badge {{ item.fulfillment_badge_class }}">{{ item.get_fulfillment_status_display }}</span>
+                            </div>
+
+                            <div class="managed-item-media">
+                                {% if item.product_image_url %}
+                                <img src="{{ item.product_image_url }}" alt="{{ item.product_name }}" loading="lazy">
+                                {% else %}
+                                <div class="managed-item-media-empty">No product image available</div>
+                                {% endif %}
+                            </div>
+
+                            <form method="post" action="{% url 'update_order_item_status' item.id %}" class="payment-update-form">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ request.get_full_path|default:'' }}">
+                                <div class="item-form-grid">
+                                    <div>
+                                        <label class="detail-label" for="fulfillment-status-{{ item.id }}">Delivery Status</label>
+                                        <select id="fulfillment-status-{{ item.id }}" name="fulfillment_status" class="backoffice-input">
+                                            {% for value, label in fulfillment_status_choices %}
+                                            <option value="{{ value }}" {% if item.fulfillment_status == value %}selected{% endif %}>{{ label }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                    <div class="payment-notes-field">
+                                        <label class="detail-label" for="status-notes-{{ item.id }}">Delivery Notes</label>
+                                        <textarea
+                                            id="status-notes-{{ item.id }}"
+                                            name="status_notes"
+                                            class="backoffice-input"
+                                            placeholder="Add cancellation reason, delivery note, or doorstep update."
+                                        >{{ item.status_notes }}</textarea>
+                                    </div>
+                                </div>
+                                <div class="inline-actions payment-actions">
+                                    <button type="submit" class="backoffice-btn backoffice-btn-primary">Update Status</button>
+                                </div>
+                            </form>
+                        </article>
+                        {% endfor %}
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="empty-state">No orders are assigned to you yet.</div>
+            {% endif %}
+        </section>
+    </div>
+</section>
+{% endblock %}

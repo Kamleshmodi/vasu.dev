@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>VASU : The Online Destination for Premier Luxury Fashion</title>
+    <link rel="icon" href="{% static 'image/logo/logo.png' %}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="top-bar">
+            <a href="/"><img class="login-header-logo" src="{% static 'image/logo/logo-transparent.png' %}" alt="logo"></a>
+            <div class="top-links">
+                Need assistance? <a href="tel:+919822422000">Call us</a> or <a href="#">Chat now</a>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <div class="auth-container login-active" id="auth-container">
+            <div class="auth-image-panel">
+                <img class="auth-panel-logo" src="{% static 'image/logo/logo-transparent.png' %}" alt="logo">
+                <p class="image-text">Welcome to VASU, your destination for luxury fashion.</p>
+            </div>
+
+            <div class="auth-forms-panel">
+                <div class="auth-form login-form active">
+                    <h2>SIGN IN TO MY ACCOUNT</h2>
+                    <form method="POST" action="{% url 'login_register' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="form_type" value="login">
+                        <input type="email" name="email" placeholder="Email" required value="{{ login_form.email.value|default:'' }}">
+                        {% if login_form.email.errors %}
+                        <p class="text-danger">{{ login_form.email.errors.0 }}</p>
+                        {% endif %}
+                        <input type="password" name="password" placeholder="Password" required>
+                        {% if login_form.password.errors %}
+                        <p class="text-danger">{{ login_form.password.errors.0 }}</p>
+                        {% endif %}
+                        {% if login_form.non_field_errors %}
+                        <p class="text-danger">{{ login_form.non_field_errors.0 }}</p>
+                        {% endif %}
+                        <div class="checkbox-container">
+                            <label><input type="checkbox" name="remember"> Remember me</label>
+                            <a href="{% url 'reset_password' %}" class="forgot-link">Forgot your password?</a>
+                        </div>
+                        <button type="submit" name="login_submit">Login</button>
+                    </form>
+                    <p class="toggle-link">Don't have an account? <a href="#" onclick="showRegisterForm()">Sign up here</a></p>
+                </div>
+
+                <div class="auth-form register-form">
+                    <h2>CREATE AN ACCOUNT</h2>
+                    <form method="POST" action="{% url 'login_register' %}">
+                        {% csrf_token %}
+                        <input type="text" name="username" placeholder="User Name" required value="{{ register_form.username.value|default:'' }}">
+                        {% if register_form.username.errors %}
+                        <p class="text-danger">{{ register_form.username.errors.0 }}</p>
+                        {% endif %}
+                        <input type="email" name="email" placeholder="Email Address" required value="{{ register_form.email.value|default:'' }}">
+                        {% if register_form.email.errors %}
+                        <p class="text-danger">{{ register_form.email.errors.0 }}</p>
+                        {% endif %}
+                        <input type="password" name="password1" placeholder="Create a Password" required>
+                        {% if register_form.password1.errors %}
+                        <p class="text-danger">{{ register_form.password1.errors.0 }}</p>
+                        {% endif %}
+                        <input type="password" name="password2" placeholder="Confirm Password" required>
+                        {% if register_form.password2.errors %}
+                        <p class="text-danger">{{ register_form.password2.errors.0 }}</p>
+                        {% endif %}
+                        <div class="gender-radio-group">
+                            {% for radio in register_form.gender %}
+                            <label>{{ radio.tag }} {{ radio.choice_label }}</label>
+                            {% endfor %}
+                        </div>
+                        {% if register_form.gender.errors %}
+                        <p class="text-danger">{{ register_form.gender.errors.0 }}</p>
+                        {% endif %}
+                        {% if register_form.non_field_errors %}
+                        <p class="text-danger">{{ register_form.non_field_errors.0 }}</p>
+                        {% endif %}
+                        <button type="submit" name="register_submit">Register</button>
+                    </form>
+                    <p class="toggle-link">Already have an account? <a href="#" onclick="showLoginForm()">Sign in here</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <p class="agreement-text">
+        By signing in or clicking "Agree and Continue", you agree to our <a href="#">Terms of Service</a>.
+        Please also read our <a href="#">Privacy Policy</a>.
+    </p>
+
+    {% if messages %}
+    <div id="popup" class="popup-message">
+        {% for message in messages %}
+        <p class="{{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+    </div>
+    <script>
+        const popup = document.getElementById('popup');
+        if (popup) {
+            popup.style.display = 'block';
+            setTimeout(() => popup.style.display = 'none', 3000);
+        }
+    </script>
+    {% endif %}
+
+    <footer class="footer">
+        <div class="survey-banner">
+            <strong>HELP US IMPROVE</strong>
+            <span>Take a brief survey about today’s visit</span>
+            <a href="#">Begin Survey</a>
+        </div>
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h4>VASU</h4>
+                <a href="#">Customer Care</a>
+                <a href="#">Track Your Order</a>
+                <a href="#">Shipping & Returns</a>
+                <a href="#">Gift Certificates</a>
+                <a href="#">About Us</a>
+                <a href="#">562-407-3230</a>
+                <a href="#">Live Chat</a>
+            </div>
+            <div class="footer-col">
+                <h4>&nbsp;</h4>
+                <a href="#">The Loyalty Program</a>
+                <a href="#">Ambassador Program</a>
+                <a href="#">Affiliate</a>
+                <a href="#">Stores</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h4>NEWSLETTER</h4>
+                <p>Be the first to know about new arrivals, sales & promos by submitting your email. You can opt out at any time. <a href="#">privacy policy</a></p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Sign up for our weekly emails">
+                    <button>&rarr;</button>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>JOIN US</h4>
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">X</a>
+                <a href="#">Pinterest</a>
+            </div>
+            <div class="footer-col">
+                <h4>OUR APPS</h4>
+                <a href="#">iPhone</a>
+                <a href="#">iPad</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p id="p">2025 © Eminent, Inc. (a Revolve Group company). All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Accessibility Statement</a>
+                <a href="#">Cookie Preferences</a>
+                <a href="#">CA Privacy Rights</a>
+                <a href="#">CA Supply Chains</a>
+                <a href="#">Your Privacy Choices - CA</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function syncMobileAuthLayout() {
+            const isMobile = window.innerWidth <= 768;
+            const loginForm = document.querySelector('.login-form');
+            const registerForm = document.querySelector('.register-form');
+
+            if (!loginForm || !registerForm) {
+                return;
+            }
+
+            if (isMobile) {
+                loginForm.style.display = loginForm.classList.contains('active') ? 'flex' : 'none';
+                registerForm.style.display = registerForm.classList.contains('active') ? 'flex' : 'none';
+            } else {
+                loginForm.style.display = '';
+                registerForm.style.display = '';
+            }
+        }
+
+        function showLoginForm() {
+            document.querySelector('.login-form').classList.add('active');
+            document.querySelector('.register-form').classList.remove('active');
+            document.getElementById('auth-container').classList.remove('register-active');
+            document.getElementById('auth-container').classList.add('login-active');
+            syncMobileAuthLayout();
+        }
+
+        function showRegisterForm() {
+            document.querySelector('.login-form').classList.remove('active');
+            document.querySelector('.register-form').classList.add('active');
+            document.getElementById('auth-container').classList.remove('login-active');
+            document.getElementById('auth-container').classList.add('register-active');
+            syncMobileAuthLayout();
+        }
+
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const hasRegisterErrors = "{{ register_form.errors|yesno:'true,false' }}" === 'true';
+
+            if (hasRegisterErrors) {
+                showRegisterForm();
+            } else {
+                showLoginForm();
+            }
+
+            window.addEventListener('resize', syncMobileAuthLayout);
+        });
+    </script>
+</body>
+
+</html>

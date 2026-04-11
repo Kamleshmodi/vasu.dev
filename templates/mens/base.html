@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>VASU : The Online Destination for Premier Luxury Fashion</title>
+    <link rel="icon" href="{% static 'image/logo/logo.png' %}" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mens/home/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mens/home/product.css' %}">
+    <script src="{% static 'js/home.js' %}" defer></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Paste this in <head> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% if messages %}
+<style>
+    /* Message Container (Top Right Corner) */
+    .msg-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Message Box Style */
+    .msg-toast {
+        min-width: 250px;
+        max-width: 350px;
+        padding: 15px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        color: #fff;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        animation: slideIn 0.5s ease-out, fadeOut 0.5s ease-in 4s forwards;
+        opacity: 0; /* Shuru mein hidden, animation se aayega */
+        animation-fill-mode: forwards; /* Animation ke baad gayab rahega */
+    }
+
+    /* Message Colors based on Type */
+    .msg-success { background-color: #28a745; border-left: 5px solid #1e7e34; }
+    .msg-error { background-color: #dc3545; border-left: 5px solid #bd2130; }
+    .msg-warning { background-color: #ffc107; color: #333; border-left: 5px solid #d39e00; }
+    .msg-info { background-color: #17a2b8; border-left: 5px solid #117a8b; }
+
+    /* Animations */
+    @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; visibility: hidden; }
+    }
+
+    /* Close Button */
+    .msg-close {
+        background: none;
+        border: none;
+        color: inherit;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 16px;
+        margin-left: 15px;
+        opacity: 0.7;
+    }
+    .msg-close:hover { opacity: 1; }
+</style>
+
+<div class="msg-container">
+    {% for message in messages %}
+        <div class="msg-toast msg-{{ message.tags }}" id="msg-toast-{{ forloop.counter }}">
+            <span>
+                {% if message.tags == 'success' %}✔ 
+                {% elif message.tags == 'error' %}✖ 
+                {% elif message.tags == 'warning' %}⚠ 
+                {% endif %}
+                {{ message }}
+            </span>
+            <button class="msg-close" onclick="document.getElementById('msg-toast-{{ forloop.counter }}').style.display='none'">&times;</button>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    setTimeout(function() {
+        const alerts = document.querySelectorAll('.msg-toast');
+        alerts.forEach(function(alert) {
+            alert.style.display = 'none';
+        });
+    }, 4500); // 4.5 seconds baad gayab ho jayega
+</script>
+{% endif %}
+    {% include 'mens/includes/navbar.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'mens/includes/footer.html' %}
+    
+</body>
+</html>

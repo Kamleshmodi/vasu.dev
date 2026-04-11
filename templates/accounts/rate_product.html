@@ -1,0 +1,114 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/accounts/product_rating.css' %}">
+
+<div class="rating-page">
+    <div class="rating-shell">
+        <div class="rating-summary-card">
+            <div class="product-preview">
+                {% if product_image_url %}
+                    <img src="{{ product_image_url }}" alt="{{ product.product_name }}">
+                {% else %}
+                    <div class="image-placeholder">VASU</div>
+                {% endif %}
+            </div>
+
+            <div class="product-copy">
+                <p class="eyebrow">Delivered Product</p>
+                <h1>{{ product.product_name }}</h1>
+                <p class="brand-line">{{ product.brand }}</p>
+                <p class="meta-line">Order # {{ order.order_id|default:order.id }}</p>
+                <p class="meta-line">Status: {{ order.status }}</p>
+                <a href="{{ product_url }}" class="ghost-link">View Product</a>
+            </div>
+        </div>
+
+        <div class="rating-form-card">
+            <div class="form-head">
+                <div>
+                    <p class="eyebrow">Share Your Feedback</p>
+                    <h2>{% if existing_rating %}Update Your Rating{% else %}Rate This Product{% endif %}</h2>
+                </div>
+                <a href="{% url 'order_history' %}" class="ghost-link">Back to Orders</a>
+            </div>
+
+            <form method="post" enctype="multipart/form-data" class="rating-form">
+                {% csrf_token %}
+
+                {% if form.non_field_errors %}
+                    <div class="form-errors">{{ form.non_field_errors }}</div>
+                {% endif %}
+
+                <div class="field-group">
+                    <label class="field-label">How would you rate this product?</label>
+                    <div class="star-picker">
+                        {% for value, label in form.fields.rating.choices %}
+                            <input
+                                type="radio"
+                                id="star-{{ value }}"
+                                name="{{ form.rating.html_name }}"
+                                value="{{ value }}"
+                                {% if form.rating.value|stringformat:"s" == value|stringformat:"s" %}checked{% endif %}
+                            >
+                            <label for="star-{{ value }}" title="{{ label }}">
+                                <i class="fa-solid fa-star"></i>
+                            </label>
+                        {% endfor %}
+                    </div>
+                    {% if form.rating.errors %}
+                        <p class="field-error">{{ form.rating.errors.0 }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="field-group">
+                    <label for="{{ form.title.id_for_label }}" class="field-label">Title</label>
+                    {{ form.title }}
+                    {% if form.title.errors %}
+                        <p class="field-error">{{ form.title.errors.0 }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="field-group">
+                    <label for="{{ form.review.id_for_label }}" class="field-label">Tell us more</label>
+                    {{ form.review }}
+                    {% if form.review.errors %}
+                        <p class="field-error">{{ form.review.errors.0 }}</p>
+                    {% endif %}
+                </div>
+
+                <div class="field-group">
+                    <label for="{{ form.review_image.id_for_label }}" class="field-label">Upload product photo from camera or gallery</label>
+                    {{ form.review_image }}
+                    <p class="field-help">You can attach one product image. Reviews stay hidden until admin approval.</p>
+                    {% if existing_rating and existing_rating.review_image %}
+                        <div class="review-image-preview">
+                            <img src="{{ existing_rating.review_image.url }}" alt="{{ product.product_name }}">
+                        </div>
+                    {% endif %}
+                    {% if form.review_image.errors %}
+                        <p class="field-error">{{ form.review_image.errors.0 }}</p>
+                    {% endif %}
+                </div>
+
+                {% if existing_rating %}
+                    <div class="moderation-note">
+                        Current review status: {{ existing_rating.get_approval_status_display }}.
+                        Saving changes will send it back for admin approval.
+                    </div>
+                {% else %}
+                    <div class="moderation-note">
+                        Your review will go to admin first. It becomes public only after approval.
+                    </div>
+                {% endif %}
+
+                <button type="submit" class="submit-btn">
+                    {% if existing_rating %}Update Rating{% else %}Submit Rating{% endif %}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'mens/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/mens/Mnew/MNhome.css' %}">
+<link rel="stylesheet" href="{% static 'css/mens/Mhappenings.css' %}">
+
+<div class="happenings-container">
+    <h2 class="season">WELCOME TO VASU HAPPENINGS</h2>
+    <div class="happenings-grid">
+        {% for item in happenings %}
+        <div class="happening-card">
+            <div class="image-box">
+                <a href="#">
+                    <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                </a>
+            </div>
+            <div class="content-box">
+                <h3 class="happening-title">{{ item.title }}</h3>
+                <p class="happening-desc">{{ item.description }}</p>
+                <a href="#" class="happening-link">READ MORE</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

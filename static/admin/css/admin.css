@@ -1,0 +1,15 @@
+.navbar-brand img {
+    height: 70px !important;  
+    width: auto !important;
+    max-height: none !important;
+    object-fit: contain;
+}
+
+
+.login-logo img {
+    height: 120px !important; 
+    width: auto !important;
+    max-height: none !important;
+    object-fit: contain;
+}
+

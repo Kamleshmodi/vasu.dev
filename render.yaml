@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: vasu-web
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt && bash build.sh"
+    startCommand: "gunicorn vasu.wsgi --log-file -"
+    healthCheckPath: /health/
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: USE_HTTPS_SECURITY
+        value: "True"
+      - key: PYTHON_VERSION
+        value: "3.12.10"
+      - key: ALLOWED_HOSTS
+        value: "vasu-web.onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://vasu-web.onrender.com"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: vasu-db
+          property: connectionString
+
+databases:
+  - name: vasu-db
+    plan: free
+    databaseName: vasu
+    user: vasu

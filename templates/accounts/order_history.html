@@ -1,0 +1,59 @@
+{% extends 'womens/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/accounts/order_history.css' %}">
+
+<div class="container mt-5">
+    <h2 class="mb-4">Your Orders</h2>
+
+    {% for order in orders %}
+    <div class="order-card">
+        <div class="order-header">
+            <div class="header-col">
+                <span class="label">ORDER PLACED</span>
+                <span class="value">{{ order.created_at|date:"d F Y" }}</span>
+            </div>
+            <div class="header-col">
+                <span class="label">TOTAL</span>
+                <span class="value">₹{{ order.total_price }}</span>
+            </div>
+            <div class="header-col">
+                <span class="label">ORDER # {{ order.id }}</span>
+                <a href="{% url 'view_invoice' order.id %}" class="view-invoice">View Invoice</a>
+            </div>
+        </div>
+
+        <div class="order-body">
+            <div class="order-status-section">
+                {% if order.status == 'Delivered' or order.status == 'Completed' %}
+                    <h4 class="status-text success">
+                        {{ order.status }} 
+                        <span class="check-icon">✔</span>
+                    </h4>
+                    <p class="delivery-date">Package was delivered successfully</p>
+                {% else %}
+                    <h4 class="status-text pending">
+                        {{ order.status }} 
+                        <span class="pending-icon">⏳</span>
+                    </h4>
+                    <p class="delivery-date">Arriving soon</p>
+                {% endif %}
+                
+                <div class="order-actions">
+                    <button class="btn-primary">Track Package</button>
+                    <button class="btn-secondary">View Order Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <div class="no-orders">
+        <p>You haven't placed any orders yet.</p>
+        <a href="/" class="btn-primary">Start Shopping</a>
+    </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

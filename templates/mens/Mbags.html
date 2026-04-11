@@ -1,0 +1,118 @@
+{% extends 'mens/base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/womens/wnew.css' %}">
+<script src="{% static 'js/men.js' %}"></script>
+
+<div class="page-layout">
+    <aside class="left-sidebar">
+        <div class="breadcrumb">
+            <a href="{% url 'mens_home' %}">Mens</a> /
+            <a href="{% url 'mens_shoes' %}">Bags</a>
+        </div>
+        <h1>BAGS</h1>
+        
+        <div class="filter-block">
+            <h5 class="filter-title">CATEGORY</h5>
+            <ul class="filter-options">
+                {% for category in categories %}
+                <li>
+                    <a href="?category={{ category.slug }}" class="{% if category.slug == selected_category %}active-category{% endif %}">
+                        {{ category.category_name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </aside>
+
+    <main class="right-main">
+        <div class="filter-toolbar1">
+            <div class="filters-left">
+                <span>Filter by:</span>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Designer ▾</button>
+                    <div class="dropdown-content">
+                        {% for designer in designers %}
+                        <a href="?designer={{ designer.id }}"
+                           class="{% if request.GET.designer == designer.id|stringformat:'s' %}active-category{% endif %}">
+                            {{ designer.name }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Color ▾</button>
+                    <div class="dropdown-content">
+                        {% for color in colors %}
+                        <a href="?color={{ color }}" class="{% if request.GET.color == color %}active-category{% endif %}">
+                            {{ color }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <form method="get" style="display:inline-block;">
+                    {% for key, value in request.GET.items %}
+                        {% if key != 'discount' %}
+                            <input type="hidden" name="{{ key }}" value="{{ value }}">
+                        {% endif %}
+                    {% endfor %}
+                    <select name="discount" onchange="this.form.submit();" class="dropbtn" aria-label="Discount filter">
+                        <option value="">Discount</option>
+                        <option value="on" {% if request.GET.discount == 'on' %}selected{% endif %}>On Sale</option>
+                        <option value="10" {% if request.GET.discount == '10' %}selected{% endif %}>10% or more</option>
+                        <option value="20" {% if request.GET.discount == '20' %}selected{% endif %}>20% or more</option>
+                        <option value="30" {% if request.GET.discount == '30' %}selected{% endif %}>30% or more</option>
+                        <option value="40" {% if request.GET.discount == '40' %}selected{% endif %}>40% or more</option>
+                        <option value="50" {% if request.GET.discount == '50' %}selected{% endif %}>50% or more</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+
+        <div class="filter-toolbar2">
+            <div class="filters-right">
+                <span>{{ item_count }} Items</span>
+                <form method="get" id="sortForm">
+                    <select name="sort" onchange="document.getElementById('sortForm').submit();">
+                        <option value="">Sort by Featured</option>
+                        <option value="price_low" {% if request.GET.sort == "price_low" %}selected{% endif %}>Price: Low to High</option>
+                        <option value="price_high" {% if request.GET.sort == "price_high" %}selected{% endif %}>Price: High to Low</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            {% for product, variations in products %}
+            <div class="product-item">
+                <div class="wishlist-icon" onclick="toggleWishlist(this)">
+                    <i class="far fa-heart"></i>
+                </div>
+                <a href="{% url 'product_detail_men' slug=product.slug %}">
+                    <div class="image-wrapper">
+                        <img class="main-image" src="{{ product.front_image.url }}" alt="{{ product.product_name }}">
+                        <img class="hover-image" src="{{ product.back_image.url }}" alt="{{ product.product_name }}">
+                    </div>
+                </a>
+                <h4>{{ product.designer }}</h4>
+                <p class="sub">{{ product.product_name }}</p>
+                {% if product.is_on_sale %}
+                <p class="price"><span style="text-decoration: line-through; color: #7a7a7a; margin-right: 8px;">Rs. {{ product.original_price|intcomma }}</span><span>Rs. {{ product.price|intcomma }}</span><span style="color: #147a30; margin-left: 6px;">({{ product.discount_percentage|floatformat:0 }}% OFF)</span></p>
+                {% else %}
+                <p class="price">Rs. {{ product.price|intcomma }}</p>
+                {% endif %}
+            </div>
+            {% empty %}
+            <p>No products found matching your filters.</p>
+            {% endfor %}
+        </div>
+    </main>
+</div>
+
+{% endblock %}
