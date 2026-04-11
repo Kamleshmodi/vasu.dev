@@ -4,9 +4,12 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
+from .views import health_check
 from . import views
 
 urlpatterns = [
+    path("healthz", health_check),
+    
     path('admin/', admin.site.urls),
     path('accounts/', include('appaccounts.urls')),
 
