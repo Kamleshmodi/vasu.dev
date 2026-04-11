@@ -76,8 +76,7 @@ def build_secret_key():
 
 SECRET_KEY = build_secret_key()
 
-ALLOWED_HOSTS = env_list('ALLOWED_HOSTS', ['127.0.0.1', 'localhost', 'testserver'])
-
+ALLOWED_HOSTS = ['*']
 
 def build_csrf_trusted_origins():
     configured_origins = env_list('CSRF_TRUSTED_ORIGINS')
