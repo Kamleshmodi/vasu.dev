@@ -17,6 +17,8 @@ from django.contrib.contenttypes.models import ContentType
 from django.urls import reverse
 from django.utils import timezone
 from django.views.decorators.http import require_GET, require_POST
+from django.http import HttpResponse
+
 
 
 # --- Local App Imports ---
@@ -94,6 +96,8 @@ SALE_MODEL_BY_PRODUCT_MODEL = {
     NewProductM: MenSaleItems,
 }
 
+def health_check(request):
+    return HttpResponse("OK")
 
 def to_money(value):
     return Decimal(str(value or 0)).quantize(MONEY_QUANTUM, rounding=ROUND_HALF_UP)
