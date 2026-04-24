@@ -1454,7 +1454,14 @@ def order_history(request):
 @login_required
 def my_account(request):
     profile, _ = UserProfile.objects.get_or_create(user=request.user)
-    return render(request, 'accounts/my_account.html', {'profile': profile})
+    recent_orders = build_order_context(
+        Order.objects.filter(user=request.user).order_by('-created_at')[:3],
+        request.user,
+    )
+    return render(request, 'accounts/my_account.html', {
+        'profile': profile,
+        'recent_orders': recent_orders,
+    })
 
 @login_required
 def view_invoice(request, order_id):

@@ -225,6 +225,64 @@
         </div>
 
     </div>
+
+    <div class="col-12 mt-4">
+    <div class="info-card">
+        <div class="card-header">
+            <h3>Order History</h3>
+            <a href="{% url 'order_history' %}" class="edit-btn">View All</a>
+        </div>
+        <div class="card-body">
+            {% if recent_orders %}
+            <style>
+                .order-summary-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+                .order-summary-table th { color: #878787; font-weight: 600; text-transform: uppercase; font-size: 12px; padding: 8px 10px; border-bottom: 1px solid #f0f0f0; text-align: left; }
+                .order-summary-table td { padding: 10px; border-bottom: 1px solid #f9f9f9; color: #212121; vertical-align: middle; }
+                .order-summary-table tr:last-child td { border-bottom: none; }
+                .status-badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+                .status-badge.delivered { background: #e6f4ea; color: #1a7e36; }
+                .status-badge.processing { background: #fff8e1; color: #b07c00; }
+                .status-badge.shipped { background: #e3f2fd; color: #1565c0; }
+                .status-badge.cancelled { background: #fdecea; color: #c62828; }
+                .order-summary-table a { color: #2874f0; text-decoration: none; font-weight: 500; }
+                .order-summary-table a:hover { text-decoration: underline; }
+            </style>
+            <table class="order-summary-table">
+                <thead>
+                    <tr>
+                        <th>Order #</th>
+                        <th>Date</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Invoice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in recent_orders %}
+                    <tr>
+                        <td>{{ order.order_id|default:order.id }}</td>
+                        <td>{{ order.created_at|date:"d M Y" }}</td>
+                        <td>₹{{ order.total_price }}</td>
+                        <td>
+                            <span class="status-badge {% if order.status == 'Delivered' %}delivered{% elif order.status == 'Shipped' %}shipped{% elif order.status == 'Cancelled' %}cancelled{% else %}processing{% endif %}">
+                                {{ order.status }}
+                            </span>
+                        </td>
+                        <td><a href="{% url 'view_invoice' order.id %}">View</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">
+                <p>No orders yet. <a href="/" style="color:#2874f0;">Start Shopping</a></p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+
+</div>
 </div>
 
 {% endblock %}
