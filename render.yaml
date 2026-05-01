@@ -1,31 +1,40 @@
 services:
   - type: web
-    name: vasu-web
+    name: vasu-dev
     runtime: python
     plan: free
-    buildCommand: "pip install -r requirements.txt && bash build.sh"
-    startCommand: "gunicorn vasu.wsgi --log-file -"
+    buildCommand: "bash build.sh"
+    preDeployCommand: "python manage.py migrate --noinput"
+    startCommand: "gunicorn vasu.wsgi:application --bind 0.0.0.0:$PORT --workers ${WEB_CONCURRENCY:-3} --log-file -"
     healthCheckPath: /health/
     envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
       - key: DEBUG
         value: "False"
       - key: USE_HTTPS_SECURITY
         value: "True"
-      - key: PYTHON_VERSION
-        value: "3.12.10"
-      - key: ALLOWED_HOSTS
-        value: "vasu-web.onrender.com"
-      - key: CSRF_TRUSTED_ORIGINS
-        value: "https://vasu-web.onrender.com"
       - key: SECRET_KEY
         generateValue: true
       - key: DATABASE_URL
-        fromDatabase:
-          name: vasu-db
-          property: connectionString
-
-databases:
-  - name: vasu-db
-    plan: free
-    databaseName: vasu
-    user: vasu
+        sync: false
+      - key: DB_SSL_REQUIRE
+        value: "True"
+      - key: DB_CONN_MAX_AGE
+        value: "600"
+      - key: DB_CONN_HEALTH_CHECKS
+        value: "True"
+      - key: ALLOWED_HOSTS
+        value: "vasu-dev.onrender.com,.onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://vasu-dev.onrender.com"
+      - key: WEB_CONCURRENCY
+        value: "3"
+      - key: SERVE_MEDIA_FILES
+        value: "True"
+      - key: GEMINI_CHAT_ENABLED
+        value: "False"
+      - key: GOOGLE_OAUTH_CLIENT_ID
+        sync: false
+      - key: GOOGLE_OAUTH_CLIENT_SECRET
+        sync: false

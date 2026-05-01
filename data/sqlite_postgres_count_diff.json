@@ -1,0 +1,277 @@
+{
+  "aapcategory_designer": {
+    "sqlite": 69,
+    "postgres": 69,
+    "match": true
+  },
+  "aapstore_cart": {
+    "sqlite": 1,
+    "postgres": 1,
+    "match": true
+  },
+  "aapstore_gender": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "aapstore_order": {
+    "sqlite": 18,
+    "postgres": 18,
+    "match": true
+  },
+  "aapstore_orderitem": {
+    "sqlite": 24,
+    "postgres": 24,
+    "match": true
+  },
+  "aapstore_product": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "aapstore_productrating": {
+    "sqlite": 4,
+    "postgres": 4,
+    "match": true
+  },
+  "aapstore_supportrequest": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "aapstore_userevent": {
+    "sqlite": 217,
+    "postgres": 217,
+    "match": true
+  },
+  "aapstore_userprofile": {
+    "sqlite": 9,
+    "postgres": 9,
+    "match": true
+  },
+  "aapstore_variation": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "aapstore_wishlist": {
+    "sqlite": 6,
+    "postgres": 6,
+    "match": true
+  },
+  "account_emailaddress": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "account_emailconfirmation": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "appaccounts_account": {
+    "sqlite": 17,
+    "postgres": 17,
+    "match": true
+  },
+  "appaccounts_account_groups": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "appaccounts_account_user_permissions": {
+    "sqlite": 164,
+    "postgres": 164,
+    "match": true
+  },
+  "appaccounts_vendorprofile": {
+    "sqlite": 3,
+    "postgres": 3,
+    "match": true
+  },
+  "appmens_accessories": {
+    "sqlite": 9,
+    "postgres": 9,
+    "match": true
+  },
+  "appmens_bags": {
+    "sqlite": 4,
+    "postgres": 4,
+    "match": true
+  },
+  "appmens_clothing": {
+    "sqlite": 88,
+    "postgres": 88,
+    "match": true
+  },
+  "appmens_dresses": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "appmens_footwear": {
+    "sqlite": 16,
+    "postgres": 16,
+    "match": true
+  },
+  "appmens_happenings": {
+    "sqlite": 9,
+    "postgres": 9,
+    "match": true
+  },
+  "appmens_hometemplate": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "appmens_newproduct": {
+    "sqlite": 39,
+    "postgres": 39,
+    "match": true
+  },
+  "appmens_productimage": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "appmens_productvariation": {
+    "sqlite": 122,
+    "postgres": 122,
+    "match": true
+  },
+  "appmens_saleitems": {
+    "sqlite": 4,
+    "postgres": 4,
+    "match": true
+  },
+  "appwomens_accessories": {
+    "sqlite": 2,
+    "postgres": 2,
+    "match": true
+  },
+  "appwomens_bags": {
+    "sqlite": 3,
+    "postgres": 3,
+    "match": true
+  },
+  "appwomens_beautyproducts": {
+    "sqlite": 1,
+    "postgres": 1,
+    "match": true
+  },
+  "appwomens_clothing": {
+    "sqlite": 7,
+    "postgres": 7,
+    "match": true
+  },
+  "appwomens_dresses": {
+    "sqlite": 7,
+    "postgres": 7,
+    "match": true
+  },
+  "appwomens_footwear": {
+    "sqlite": 7,
+    "postgres": 7,
+    "match": true
+  },
+  "appwomens_hometemplate": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "appwomens_kendalls_editions": {
+    "sqlite": 8,
+    "postgres": 8,
+    "match": true
+  },
+  "appwomens_newproduct": {
+    "sqlite": 17,
+    "postgres": 17,
+    "match": true
+  },
+  "appwomens_productimage": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "appwomens_productvariation": {
+    "sqlite": 21,
+    "postgres": 21,
+    "match": true
+  },
+  "appwomens_saleitems": {
+    "sqlite": 4,
+    "postgres": 4,
+    "match": true
+  },
+  "appwomens_shops": {
+    "sqlite": 6,
+    "postgres": 6,
+    "match": true
+  },
+  "auth_group": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "auth_group_permissions": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "auth_permission": {
+    "sqlite": 216,
+    "postgres": 216,
+    "match": true
+  },
+  "category": {
+    "sqlite": 137,
+    "postgres": 137,
+    "match": true
+  },
+  "django_admin_log": {
+    "sqlite": 504,
+    "postgres": 504,
+    "match": true
+  },
+  "django_content_type": {
+    "sqlite": 54,
+    "postgres": 54,
+    "match": true
+  },
+  "django_migrations": {
+    "sqlite": 114,
+    "postgres": 114,
+    "match": true
+  },
+  "django_session": {
+    "sqlite": 56,
+    "postgres": 56,
+    "match": true
+  },
+  "django_site": {
+    "sqlite": 1,
+    "postgres": 1,
+    "match": true
+  },
+  "socialaccount_socialaccount": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "socialaccount_socialapp": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "socialaccount_socialapp_sites": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  },
+  "socialaccount_socialtoken": {
+    "sqlite": 0,
+    "postgres": 0,
+    "match": true
+  }
+}

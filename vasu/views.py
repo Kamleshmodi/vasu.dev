@@ -1,12 +1,14 @@
 import json
+import mimetypes
 import re
 from collections import defaultdict
 from decimal import Decimal, ROUND_HALF_UP
+from pathlib import Path
 from urllib.parse import quote, urlencode
 
 # --- Django Core Imports ---
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import JsonResponse
+from django.http import FileResponse, Http404, JsonResponse
 from django.conf import settings
 from django.db import transaction
 from django.db.models import Avg, Count, Q, Sum
@@ -17,10 +19,14 @@ from django.contrib.contenttypes.models import ContentType
 from django.urls import reverse
 from django.utils import timezone
 from django.views.decorators.http import require_GET, require_POST
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.utils._os import safe_join
 
 
 # --- Local App Imports ---
-from .forms import UserForm, UserProfileForm
+from .forms import SupportRequestForm, UserForm, UserProfileForm
 from .ai_utils import ai_reply
 from .address_utils import (
     DELIVERY_COUNTRY,
@@ -54,7 +60,7 @@ from appaccounts.views import get_login_redirect_url
 
 # Aapstore Models (UserProfile ko yahan merge kar diya)
 from aapstore.models import (
-    Product, ProductRating, Wishlist, Cart, Variation, Gender, Order, OrderItem, UserProfile
+    Product, ProductRating, SupportRequest, Wishlist, Cart, Variation, Gender, Order, OrderItem, UserProfile, UserEvent
 )
 from aapcategory.models import Category, Designer
 
@@ -85,7 +91,6 @@ from appmens.models import (
     Happenings
 )
 
-SHIPPING_CHARGE = 100
 VALID_PAYMENT_METHODS = {choice.value for choice in Order.PaymentMethod}
 MONEY_QUANTUM = Decimal('0.01')
 ZERO_DECIMAL = Decimal('0.00')
@@ -93,7 +98,44 @@ SALE_MODEL_BY_PRODUCT_MODEL = {
     NewProductW: WomenSaleItems,
     NewProductM: MenSaleItems,
 }
+LEGAL_BUSINESS_NAME = 'VASU Store'
+LEGAL_CONTACT_EMAIL = 'vasu1115@outlook.com'
+LEGAL_SUPPORT_PHONE_DISPLAY = '+91 7878065935'
+LEGAL_SUPPORT_PHONE_TEL = '+917878065935'
+LEGAL_WEBSITE_HOST = 'www.vasustore.com'
+COOKIE_CONSENT_STORAGE_KEY = 'vasu_cookie_consent_v1'
 
+
+def _support_contact_email():
+    configured = str(getattr(settings, 'SUPPORT_EMAIL', '') or '').strip()
+    return configured or LEGAL_CONTACT_EMAIL
+
+
+def _get_request_ip(request):
+    forwarded_for = (request.META.get('HTTP_X_FORWARDED_FOR') or '').strip()
+    if forwarded_for:
+        return forwarded_for.split(',')[0].strip()
+    return (request.META.get('REMOTE_ADDR') or '').strip() or None
+
+
+def _normalize_event_name(raw_name):
+    normalized = re.sub(r'[^a-zA-Z0-9_\-:\s]', '', str(raw_name or '')).strip()
+    return normalized[:120]
+
+def health_check(request):
+    return HttpResponse("OK")
+
+
+@require_GET
+def robots_txt(request):
+    sitemap_url = request.build_absolute_uri(reverse('sitemap_index'))
+    lines = [
+        'User-agent: *',
+        'Allow: /',
+        'Disallow: /admin/',
+        f'Sitemap: {sitemap_url}',
+    ]
+    return HttpResponse('\n'.join(lines), content_type='text/plain')
 
 def to_money(value):
     return Decimal(str(value or 0)).quantize(MONEY_QUANTUM, rounding=ROUND_HALF_UP)
@@ -1009,8 +1051,140 @@ def Login(request):
         return redirect(get_login_redirect_url(request.user))
     return redirect('login_register')
 
+
+def _send_support_request_emails(support_request):
+    from_email = settings.DEFAULT_FROM_EMAIL
+    support_email = _support_contact_email()
+
+    admin_subject = f'[{support_request.ticket_id}] {support_request.get_request_type_display()} - {support_request.subject}'
+    admin_body = (
+        f'Ticket ID: {support_request.ticket_id}\n'
+        f'Type: {support_request.get_request_type_display()}\n'
+        f'Severity: {support_request.get_severity_display()}\n'
+        f'Status: {support_request.get_status_display()}\n'
+        f'Name: {support_request.name}\n'
+        f'Email: {support_request.email}\n'
+        f'Order: {getattr(getattr(support_request, "order", None), "order_id", "") or "N/A"}\n'
+        f'Page URL: {support_request.page_url or "N/A"}\n\n'
+        f'Message:\n{support_request.message}\n'
+    )
+    send_mail(admin_subject, admin_body, from_email, [support_email], fail_silently=False)
+
+    user_subject = f'We received your request ({support_request.ticket_id})'
+    user_body = (
+        f'Hi {support_request.name},\n\n'
+        f'Thanks for contacting VASU support. Your request has been logged.\n\n'
+        f'Ticket ID: {support_request.ticket_id}\n'
+        f'Type: {support_request.get_request_type_display()}\n'
+        f'Current Status: {support_request.get_status_display()}\n\n'
+        f'Our team will review and get back to you at this email.\n'
+        f'For urgent help, reach us at {support_email}.\n\n'
+        'Regards,\nVASU Support Team'
+    )
+    send_mail(user_subject, user_body, from_email, [support_request.email], fail_silently=False)
+
+
 def NeedHelp(request):
-    return render(request, 'need_help.html')
+    if request.method == 'POST':
+        form = SupportRequestForm(request.POST)
+        if form.is_valid():
+            support_request = form.save(commit=False)
+            support_request.reporter_user = request.user if request.user.is_authenticated else None
+            support_request.order = form.linked_order
+            support_request.ip_address = _get_request_ip(request)
+            support_request.user_agent = str(request.META.get('HTTP_USER_AGENT', '')).strip()[:255]
+            support_request.save()
+
+            try:
+                _send_support_request_emails(support_request)
+                messages.success(
+                    request,
+                    f'Thank you! Your request has been submitted. Ticket ID: {support_request.ticket_id}',
+                )
+            except Exception:
+                messages.warning(
+                    request,
+                    (
+                        f'Ticket {support_request.ticket_id} was created, but confirmation email could not be sent right now. '
+                        f'Please contact {_support_contact_email()} for urgent support.'
+                    ),
+                )
+
+            return redirect('need_help')
+
+        messages.error(request, 'Please correct the highlighted fields and submit again.')
+    else:
+        initial = {
+            'page_url': request.build_absolute_uri(),
+        }
+        if request.user.is_authenticated:
+            initial.update(
+                {
+                    'name': request.user.display_name,
+                    'email': request.user.email,
+                }
+            )
+        form = SupportRequestForm(initial=initial)
+
+    recent_requests = []
+    if request.user.is_authenticated:
+        recent_requests = list(
+            SupportRequest.objects.filter(reporter_user=request.user)
+            .order_by('-created_at')[:5]
+        )
+
+    return render(
+        request,
+        'need_help.html',
+        {
+            'support_form': form,
+            'support_email': _support_contact_email(),
+            'support_phone_display': LEGAL_SUPPORT_PHONE_DISPLAY,
+            'support_phone_tel': LEGAL_SUPPORT_PHONE_TEL,
+            'recent_support_requests': recent_requests,
+        },
+    )
+
+
+def build_legal_page_context(page_title, page_summary):
+    return {
+        'page_title': page_title,
+        'page_summary': page_summary,
+        'business_name': LEGAL_BUSINESS_NAME,
+        'contact_email': _support_contact_email(),
+        'support_phone_display': LEGAL_SUPPORT_PHONE_DISPLAY,
+        'support_phone_tel': LEGAL_SUPPORT_PHONE_TEL,
+        'website_host': LEGAL_WEBSITE_HOST,
+        'last_updated': timezone.localdate(),
+        'cookie_consent_storage_key': COOKIE_CONSENT_STORAGE_KEY,
+        'session_cookie_name': settings.SESSION_COOKIE_NAME,
+        'csrf_cookie_name': settings.CSRF_COOKIE_NAME,
+        'openai_chat_enabled': getattr(settings, 'OPENAI_CHAT_ENABLED', False),
+    }
+
+
+def privacy_policy(request):
+    context = build_legal_page_context(
+        'Privacy Policy',
+        'How VASU collects, uses, stores, and shares customer information across accounts, orders, reviews, and support flows.',
+    )
+    return render(request, 'legal/privacy_policy.html', context)
+
+
+def terms_of_service(request):
+    context = build_legal_page_context(
+        'Terms of Service',
+        'The core rules for browsing, ordering, creating accounts, and using marketplace and review features on VASU.',
+    )
+    return render(request, 'legal/terms_of_service.html', context)
+
+
+def cookie_policy(request):
+    context = build_legal_page_context(
+        'Cookie Policy',
+        'An overview of the necessary cookies VASU uses and how visitors can grant, refuse, or update optional cookie preferences.',
+    )
+    return render(request, 'legal/cookie_policy.html', context)
 
 
 # ===================================================================
@@ -1212,8 +1386,7 @@ def checkout(request):
     cart_items = decorate_orderable_items(Cart.objects.filter(user=request.user).select_related('content_type'))
     valid_cart_items = [item for item in cart_items if item.content_object and getattr(item.content_object, 'is_available', False)]
     subtotal = sum(item.line_total for item in valid_cart_items)
-    shipping_charge = to_money(SHIPPING_CHARGE)
-    total_price = to_money(subtotal + shipping_charge)
+    total_price = to_money(subtotal)
     upi_link = 'upi://pay?' + urlencode(
         {
             'pa': getattr(settings, 'PAYMENT_UPI_ID', '').strip() or '7878065935@ptyes',
@@ -1231,7 +1404,6 @@ def checkout(request):
         {
             'cart_items': valid_cart_items,
             'subtotal': to_money(subtotal),
-            'shipping_charge': shipping_charge,
             'total_price': total_price,
             'delivery_country_choices': get_delivery_country_choices(),
             'initial_address': initial_address,
@@ -1262,9 +1434,54 @@ def validate_postal_code_api(request):
         }
     )
 
+
+@require_POST
+@csrf_exempt
+def track_event_api(request):
+    if not getattr(settings, 'ANALYTICS_TRACKING_ENABLED', True):
+        return JsonResponse({'tracked': False, 'message': 'Analytics tracking is disabled.'}, status=503)
+
+    try:
+        payload = json.loads(request.body or '{}')
+    except json.JSONDecodeError:
+        return JsonResponse({'tracked': False, 'error': 'Invalid JSON payload.'}, status=400)
+
+    event_name = _normalize_event_name(payload.get('eventName'))
+    if not event_name:
+        return JsonResponse({'tracked': False, 'error': 'eventName is required.'}, status=400)
+
+    event_type = str(payload.get('eventType', UserEvent.EventType.USER_EVENT)).strip().lower()
+    if event_type not in {UserEvent.EventType.PAGE_VIEW, UserEvent.EventType.USER_EVENT}:
+        event_type = UserEvent.EventType.USER_EVENT
+
+    page_path = str(payload.get('pagePath') or '').strip()[:500]
+    referrer = str(payload.get('referrer') or request.META.get('HTTP_REFERER', '')).strip()[:500]
+    anonymous_id = str(payload.get('anonymousId') or '').strip()[:80]
+    properties = payload.get('properties', {})
+    if not isinstance(properties, dict):
+        properties = {}
+
+    if request.session.session_key is None:
+        request.session.save()
+
+    UserEvent.objects.create(
+        user=request.user if getattr(request.user, 'is_authenticated', False) else None,
+        event_type=event_type,
+        event_name=event_name,
+        page_path=page_path,
+        referrer=referrer,
+        session_key=(request.session.session_key or '')[:80],
+        anonymous_id=anonymous_id,
+        ip_address=_get_request_ip(request),
+        user_agent=str(request.META.get('HTTP_USER_AGENT', '')).strip()[:255],
+        properties=properties,
+    )
+
+    return JsonResponse({'tracked': True})
+
 @require_POST
 @login_required
-def place_order_api(request):
+def _legacy_place_order_api(request):
     """
     Order place karta hai aur kharide gaye products ka stock kam karta hai.
     """
@@ -1350,7 +1567,7 @@ def place_order_api(request):
 
         with transaction.atomic():
             subtotal = sum(item.line_total for item in valid_cart_items)
-            total_price = to_money(subtotal + to_money(SHIPPING_CHARGE))
+            total_price = to_money(subtotal)
             order = Order.objects.create(
                 user=request.user,
                 full_name=payload['full_name'],
@@ -1447,6 +1664,68 @@ def order_history(request):
     }
     return render(request, 'accounts/order_history_v2.html', context)
 
+
+@require_POST
+@login_required
+def cancel_order(request, order_id):
+    order = get_object_or_404(
+        Order.objects.prefetch_related('items__content_type'),
+        id=order_id,
+        user=request.user,
+    )
+
+    if order.status == Order.Status.DELIVERED:
+        messages.error(request, 'Delivered orders cannot be cancelled.')
+        return redirect('order_history')
+
+    if order.status == Order.Status.CANCELLED:
+        messages.info(request, 'This order is already cancelled.')
+        return redirect('order_history')
+
+    with transaction.atomic():
+        # Restore stock units to the first available variation bucket for each ordered product.
+        for item in order.items.all():
+            product = item.content_object
+            if not product:
+                continue
+
+            variation = product.variations.select_for_update().order_by('id').first()
+            if variation:
+                variation.stock = (variation.stock or 0) + (item.quantity or 0)
+                variation.save(update_fields=['stock'])
+
+        order.status = Order.Status.CANCELLED
+        if order.payment_method == Order.PaymentMethod.CASH:
+            order.payment_status = Order.PaymentStatus.FAILED
+            order.account_receipt_status = Order.AccountReceiptStatus.NOT_RECEIVED
+        else:
+            if order.payment_status == Order.PaymentStatus.PAID:
+                order.payment_status = Order.PaymentStatus.REFUND_IN_PROCESS
+            elif order.payment_status == Order.PaymentStatus.PENDING:
+                order.payment_status = Order.PaymentStatus.FAILED
+
+            if order.payment_status in {
+                Order.PaymentStatus.REFUND_IN_PROCESS,
+                Order.PaymentStatus.REFUNDED,
+            }:
+                order.refund_status = Order.RefundStatus.PENDING
+
+        cancellation_note = f'Customer cancelled order on {timezone.now().strftime("%d %b %Y %H:%M")}.'
+        existing_notes = (order.payment_notes or '').strip()
+        order.payment_notes = f'{existing_notes}\n{cancellation_note}'.strip() if existing_notes else cancellation_note
+        order.save(
+            update_fields=[
+                'status',
+                'payment_status',
+                'account_receipt_status',
+                'refund_status',
+                'payment_notes',
+            ]
+        )
+
+    messages.success(request, 'Your order has been cancelled successfully.')
+    return redirect('order_history')
+
 @login_required
 def my_account(request):
     profile, _ = UserProfile.objects.get_or_create(user=request.user)
@@ -1462,7 +1741,10 @@ def view_invoice(request, order_id):
     context = {
         'order': order,
         'order_items': order_items,
-        'shipping_charge': to_money(SHIPPING_CHARGE),
+        'support_email': _support_contact_email(),
+        'support_phone_display': LEGAL_SUPPORT_PHONE_DISPLAY,
+        'support_phone_tel': LEGAL_SUPPORT_PHONE_TEL,
+        'website_host': LEGAL_WEBSITE_HOST,
     }
     return render(request, 'accounts/invoice.html', context)
 
@@ -1664,14 +1946,23 @@ CHATBOT_SYNONYMS = {
     'beauty': ['beauty', 'cosmetic', 'cosmetics', 'makeup', 'skincare'],
 }
 
-CHATBOT_SUPPORT_RESPONSES = {
-    'order_help': "To order a product: 1) Open the product page, 2) Click Add to Cart, 3) Go to My Bag, 4) Click Checkout, 5) Enter address and choose payment, then place your order.",
-    'shipping': "Shipping: We provide pan-India delivery. Orders are usually delivered within 3 to 5 business days.",
-    'payment': "Payment options: Card, UPI, QR code, and Cash on Delivery are available at checkout.",
-    'return': "Return/Exchange: You can request return or exchange for eligible unused items within 7 days.",
-    'track': "To track your order, open My Account and check your Order History section.",
+CHATBOT_CATALOG_HINT_TERMS = set(CHATBOT_SYNONYMS.keys()) | {
+    synonym
+    for synonyms in CHATBOT_SYNONYMS.values()
+    for synonym in synonyms
+} | {
+    'product',
+    'products',
+    'brand',
+    'color',
+    'size',
+    'category',
+    'designer',
+    'women',
+    'womens',
+    'men',
+    'mens',
 }
-
 
 def build_chatbot_search_terms(query):
     normalized_query = re.sub(r'[^\w\s-]', ' ', (query or '').lower()).strip()
@@ -1695,6 +1986,19 @@ def get_chatbot_support_intent(query):
     if not normalized_query:
         return None
 
+    query_words = set(normalized_query.split())
+
+    if any(
+        phrase in normalized_query
+        for phrase in (
+            'good morning',
+            'good afternoon',
+            'good evening',
+            'good night',
+        )
+    ) or bool(query_words & {'hello', 'hi', 'hey', 'namaste'}):
+        return 'greeting'
+
     if any(
         phrase in normalized_query
         for phrase in (
@@ -1706,20 +2010,93 @@ def get_chatbot_support_intent(query):
             'place order',
             'order process',
             'checkout process',
+            'order kaise',
+            'kaise order',
+            'order karna',
+            'order karu',
+            'kaise kharide',
+            'buy kaise',
         )
     ):
         return 'order_help'
 
-    if any(word in normalized_query for word in ('shipping', 'delivery', 'deliver')):
+    if any(
+        word in normalized_query
+        for word in (
+            'vendor account',
+            'vendor',
+            'seller account',
+            'seller',
+            'become vendor',
+            'become seller',
+            'sell on vasu',
+            'admin contact',
+            'contact admin',
+        )
+    ):
+        return 'vendor_account'
+
+    if any(
+        word in normalized_query
+        for word in (
+            'shipping',
+            'delivery',
+            'deliver',
+            'dispatch',
+            'courier',
+            'kab milega',
+            'kab aayega',
+            'delivery time',
+        )
+    ):
         return 'shipping'
-    if any(word in normalized_query for word in ('payment', 'upi', 'card', 'cod', 'cash on delivery')):
+    if any(
+        word in normalized_query
+        for word in (
+            'payment',
+            'upi',
+            'card',
+            'cod',
+            'cash on delivery',
+            'pay',
+            'bhugtan',
+            'transaction',
+        )
+    ):
         return 'payment'
-    if any(word in normalized_query for word in ('return', 'exchange', 'refund')):
+    if any(
+        word in normalized_query
+        for word in (
+            'return',
+            'exchange',
+            'refund',
+            'wapas',
+            'replace',
+            'replacement',
+        )
+    ):
         return 'return'
-    if any(word in normalized_query for word in ('track', 'tracking', 'where is my order', 'order status')):
+    if any(
+        word in normalized_query
+        for word in (
+            'track',
+            'tracking',
+            'track order',
+            'where is my order',
+            'order status',
+            'order kaha',
+            'mera order kaha',
+        )
+    ):
         return 'track'
 
     return None
+
+
+def has_catalog_hint(cleaned_query, search_terms):
+    query_words = {word for word in (cleaned_query or '').split() if word}
+    term_words = {term for term in (search_terms or []) if term}
+    return bool((query_words | term_words) & CHATBOT_CATALOG_HINT_TERMS)
 
 
 def search_catalog_products(model_class, cleaned_query, search_terms, limit=4):
@@ -1797,18 +2174,16 @@ def chatbot_search(request):
         return JsonResponse({'found': False, 'message': 'How can I help you today?', 'products': []})
 
     support_intent = get_chatbot_support_intent(query)
-    if support_intent:
-        return JsonResponse(
-            {
-                'found': False,
-                'message': CHATBOT_SUPPORT_RESPONSES.get(support_intent, 'How can I help you today?'),
-                'products': [],
-            }
-        )
+    support_context = f'support_intent={support_intent}' if support_intent else ''
 
     cleaned_query, search_terms = build_chatbot_search_terms(query)
-    womens_products = search_catalog_products(NewProductW, cleaned_query, search_terms, limit=4)
-    mens_products = search_catalog_products(NewProductM, cleaned_query, search_terms, limit=4)
+    should_search_catalog = not support_intent or has_catalog_hint(cleaned_query, search_terms)
+    if should_search_catalog:
+        womens_products = search_catalog_products(NewProductW, cleaned_query, search_terms, limit=4)
+        mens_products = search_catalog_products(NewProductM, cleaned_query, search_terms, limit=4)
+    else:
+        womens_products = []
+        mens_products = []
 
     combined_results = []
     seen_products = set()
@@ -1832,10 +2207,25 @@ def chatbot_search(request):
         else 'No products found in the database matching this query.'
     )
 
+    assistant_context_parts = []
+    if support_context:
+        assistant_context_parts.append(support_context)
+        if support_intent == 'vendor_account':
+            assistant_context_parts.append('support_path=/need-help/')
+        if support_intent == 'greeting':
+            assistant_context_parts.append('smalltalk=true')
+            if getattr(settings, 'GEMINI_CHAT_ENABLED', False):
+                assistant_context_parts.append('require_ai=true')
+    if serialized_products:
+        assistant_context_parts.append('has_products=true')
+    assistant_context = ' '.join(assistant_context_parts)
+
+    final_message = ai_reply(query, ai_context, assistant_context=assistant_context)
+
     return JsonResponse(
         {
             'found': bool(serialized_products),
-            'message': ai_reply(query, ai_context),
+            'message': final_message,
             'products': serialized_products,
         }
     )
@@ -1846,9 +2236,35 @@ def health_check(request):
     return JsonResponse({'status': 'ok'})
 
 
+@require_GET
+def serve_media(request, path):
+    if not getattr(settings, 'SERVE_MEDIA_FILES', False):
+        raise Http404('Media serving is disabled.')
 
+    raw_path = str(path or '').replace('\\', '/').strip('/')
+    path_parts = [part for part in raw_path.split('/') if part and part != '.']
+    if not path_parts or '..' in path_parts:
+        raise Http404('Invalid media path.')
 
+    allowed_prefixes = tuple(getattr(settings, 'MEDIA_ALLOWED_PATH_PREFIXES', ()))
+    if allowed_prefixes and path_parts[0] not in allowed_prefixes:
+        raise Http404('Media path is not allowed.')
 
+    normalized_path = '/'.join(path_parts)
+    media_root = str(getattr(settings, 'MEDIA_ROOT', ''))
+    safe_path = safe_join(media_root, normalized_path)
+    media_file = Path(safe_path)
+    if not media_file.is_file():
+        raise Http404('Media file not found.')
+
+    content_type, encoding = mimetypes.guess_type(media_file.name)
+    response = FileResponse(
+        media_file.open('rb'),
+        content_type=content_type or 'application/octet-stream',
+    )
+    if encoding:
+        response['Content-Encoding'] = encoding
+    return response
 
 
 

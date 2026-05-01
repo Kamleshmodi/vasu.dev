@@ -1,0 +1,29 @@
+{% extends 'womens/base.html' %}
+{% block meta_title %}Privacy Policy | {{ business_name }}{% endblock %}
+{% block meta_description %}Read how {{ business_name }} collects, uses, stores, and protects account, order, support, and analytics information.{% endblock %}
+{% block og_title %}Privacy Policy | {{ business_name }}{% endblock %}
+{% block og_description %}Read how {{ business_name }} collects, uses, stores, and protects account, order, support, and analytics information.{% endblock %}
+{% block twitter_title %}Privacy Policy | {{ business_name }}{% endblock %}
+{% block twitter_description %}Read how {{ business_name }} collects, uses, stores, and protects account, order, support, and analytics information.{% endblock %}
+{% block content %}
+<section class="container py-5" style="max-width: 900px; line-height: 1.75;">
+    <h1 class="mb-3">{{ page_title }}</h1>
+    <p class="text-muted">Last updated: {{ last_updated }}</p>
+    <p>{{ page_summary }}</p>
+
+    <h2 class="h4 mt-4">Information We Collect</h2>
+    <p>We collect account, order, delivery, and support information needed to run {{ business_name }}. This includes name, email, phone, address, and order/payment metadata.</p>
+
+    <h2 class="h4 mt-4">How We Use Information</h2>
+    <p>Data is used for account login, order fulfillment, customer support, fraud prevention, and legal compliance. Optional analytics and marketing cookies are used only when consent is granted.</p>
+
+    <h2 class="h4 mt-4">Data Sharing</h2>
+    <p>We only share data with operational partners such as payment, hosting, and delivery providers where required to complete service.</p>
+
+    <h2 class="h4 mt-4">Your Rights</h2>
+    <p>You can request access, correction, or deletion of personal data by contacting us at <a href="mailto:{{ contact_email }}" data-track-event="support_email_clicked" data-track-props='{"location":"privacy_policy"}'>{{ contact_email }}</a>.</p>
+
+    <h2 class="h4 mt-4">Contact</h2>
+    <p>Email: <a href="mailto:{{ contact_email }}" data-track-event="support_email_clicked" data-track-props='{"location":"privacy_policy"}'>{{ contact_email }}</a><br>Phone: <a href="tel:{{ support_phone_tel }}" data-track-event="support_phone_clicked" data-track-props='{"location":"privacy_policy"}'>{{ support_phone_display }}</a></p>
+</section>
+{% endblock %}

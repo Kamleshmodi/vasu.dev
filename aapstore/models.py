@@ -308,6 +308,98 @@ class ProductRating(models.Model):
     def __str__(self):
         return f'{self.product_name} - {self.rating}/5'
 
+
+class UserEvent(models.Model):
+    class EventType(models.TextChoices):
+        PAGE_VIEW = 'page_view', 'Page View'
+        USER_EVENT = 'user_event', 'User Event'
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        related_name='analytics_events',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
+    event_type = models.CharField(max_length=20, choices=EventType.choices, default=EventType.USER_EVENT)
+    event_name = models.CharField(max_length=120)
+    page_path = models.CharField(max_length=500, blank=True)
+    referrer = models.CharField(max_length=500, blank=True)
+    session_key = models.CharField(max_length=80, blank=True)
+    anonymous_id = models.CharField(max_length=80, blank=True)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    user_agent = models.CharField(max_length=255, blank=True)
+    properties = models.JSONField(default=dict, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return f'{self.event_type}:{self.event_name} ({self.created_at:%Y-%m-%d %H:%M})'
+
+
+class SupportRequest(models.Model):
+    class RequestType(models.TextChoices):
+        SUPPORT = 'support', 'Support Question'
+        BUG = 'bug', 'Bug Report'
+        FEEDBACK = 'feedback', 'General Feedback'
+        FEATURE = 'feature', 'Feature Request'
+
+    class Severity(models.TextChoices):
+        LOW = 'low', 'Low'
+        MEDIUM = 'medium', 'Medium'
+        HIGH = 'high', 'High'
+        CRITICAL = 'critical', 'Critical'
+
+    class Status(models.TextChoices):
+        OPEN = 'open', 'Open'
+        IN_REVIEW = 'in_review', 'In Review'
+        RESOLVED = 'resolved', 'Resolved'
+        CLOSED = 'closed', 'Closed'
+
+    ticket_id = models.CharField(max_length=24, unique=True, blank=True)
+    reporter_user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        related_name='support_requests',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
+    order = models.ForeignKey(
+        Order,
+        related_name='support_requests',
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+    )
+    request_type = models.CharField(max_length=20, choices=RequestType.choices, default=RequestType.SUPPORT)
+    severity = models.CharField(max_length=12, choices=Severity.choices, default=Severity.MEDIUM)
+    status = models.CharField(max_length=20, choices=Status.choices, default=Status.OPEN)
+    name = models.CharField(max_length=120)
+    email = models.EmailField()
+    subject = models.CharField(max_length=180)
+    message = models.TextField(max_length=4000)
+    page_url = models.CharField(max_length=500, blank=True)
+    user_agent = models.CharField(max_length=255, blank=True)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    admin_notes = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if not self.ticket_id:
+            generated_id = f'SR-{self.pk + 10000}'
+            self.ticket_id = generated_id
+            SupportRequest.objects.filter(pk=self.pk).update(ticket_id=generated_id)
+
+    def __str__(self):
+        return f'{self.ticket_id or "SR"} - {self.subject}'
+
 from django.db import models
 from django.conf import settings 
 from django.db.models.signals import post_save
@@ -332,10 +424,16 @@ class UserProfile(models.Model):
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def create_user_profile(sender, instance, created, **kwargs):
+    if kwargs.get('raw'):
+        return
+
     if created:
         UserProfile.objects.create(user=instance)
 
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def save_user_profile(sender, instance, **kwargs):
+    if kwargs.get('raw'):
+        return
+
     if hasattr(instance, 'userprofile'):
         instance.userprofile.save()

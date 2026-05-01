@@ -30,7 +30,13 @@
                     <span class="value">{{ order.order_id|default:order.id }}</span>
                 </div>
                 <div class="order-actions-head">
-                    <a href="{% url 'view_invoice' order.id %}" class="ghost-link">View Invoice</a>
+                    <a href="{% url 'view_invoice' order.id %}" class="ghost-link" data-track-event="invoice_download_clicked" data-track-props='{"location":"order_history"}'>Download Invoice</a>
+                    {% if order.status != 'Delivered' and order.status != 'Cancelled' %}
+                    <form method="post" action="{% url 'cancel_order' order.id %}" class="cancel-order-form" onsubmit="return confirm('Are you sure you want to cancel this order?');">
+                        {% csrf_token %}
+                        <button type="submit" class="cancel-order-btn" data-track-event="order_cancel_clicked" data-track-props='{"location":"order_history","orderId":"{{ order.order_id|default:order.id }}"}'>Cancel Order</button>
+                    </form>
+                    {% endif %}
                 </div>
             </div>
 

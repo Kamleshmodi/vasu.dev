@@ -1,0 +1,1002 @@
+[
+{
+  "model": "appwomens.newproduct",
+  "pk": 3,
+  "fields": {
+    "product_name": "Ballet Flat",
+    "brand": "ALAIA",
+    "slug": "ballet-flat",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 3,
+    "price": "99610.47",
+    "front_image": "photos/products/ALIA-WZ250_V1_iGxqTkO.jpg",
+    "back_image": "photos/products/ALIA-WZ250_V1_SNWg4AR.jpg",
+    "is_available": true,
+    "category": 1,
+    "product_description": "Soft and stylish shoes",
+    "created_date": "2025-07-03T17:40:44.972Z",
+    "modified_date": "2025-10-10T15:29:39.284Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 4,
+  "fields": {
+    "product_name": "Flared Pant",
+    "brand": "BALENCIAGA",
+    "slug": "flared-pant",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 28,
+    "price": "90948.69",
+    "front_image": "photos/products/ROLA-WD151_V1.jpg",
+    "back_image": "photos/products/ROLA-WD151_V4.jpg",
+    "is_available": true,
+    "category": 104,
+    "product_description": "Balenciaga Flared Pant in a sleek black finish with a dramatic flared silhouette. Designed to add movement and polish to elevated day or evening looks. Style it with a fitted top, structured jacket, or heels for a sharp statement.",
+    "created_date": "2025-07-03T18:15:33.769Z",
+    "modified_date": "2026-03-31T23:49:43.420Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 5,
+  "fields": {
+    "product_name": "Thong Sandal",
+    "brand": "BALENCIAGA",
+    "slug": "thong-sandal",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 28,
+    "price": "34214.03",
+    "front_image": "photos/products/BALF-WZ827_V1.jpg",
+    "back_image": "photos/products/BALF-WZ827_V2.jpg",
+    "is_available": true,
+    "category": 73,
+    "product_description": "Soft and smooth slipars for womens",
+    "created_date": "2025-07-03T18:18:11.221Z",
+    "modified_date": "2025-10-10T17:27:26.851Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 6,
+  "fields": {
+    "product_name": "Washed Silk Georgette Top",
+    "brand": "BALENCIAGA",
+    "slug": "washed-silk-georgette-top",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 28,
+    "price": "255522.50",
+    "front_image": "photos/products/JIEF-WK13_V1.jpg",
+    "back_image": "photos/products/JIEF-WK13_V4.jpg",
+    "is_available": true,
+    "category": 28,
+    "product_description": "Washed Silk Georgette Top by Balenciaga with a fluid drape and refined black tone. The lightweight silhouette makes it easy to dress up with tailored separates or wear casually with denim and trousers. A polished piece for modern day-to-night styling.",
+    "created_date": "2025-07-03T18:23:25.926Z",
+    "modified_date": "2026-03-31T23:49:43.427Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 8,
+  "fields": {
+    "product_name": "Cropped Trouser",
+    "brand": "BALENCIAGA",
+    "slug": "cropped-trouser",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 14,
+    "price": "99999.00",
+    "front_image": "photos/products/ROLA-WP13_V1.jpg",
+    "back_image": "photos/products/ROLA-WP13_V5.jpg",
+    "is_available": true,
+    "category": 18,
+    "product_description": "Balenciaga Cropped Trouser cut in a clean black finish for a sharp, modern fit. The cropped length adds a contemporary edge while staying easy to pair with shirts, knits, or statement outerwear. Ideal for sleek workwear and elevated casual looks.",
+    "created_date": "2025-07-08T04:26:54.665Z",
+    "modified_date": "2026-03-31T23:49:43.433Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 9,
+  "fields": {
+    "product_name": "Coated Jersey Ruched Maxi Skirt",
+    "brand": "LAPOINTE",
+    "slug": "coated-jersey-ruched-maxi-skirt",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 8,
+    "price": "79000.00",
+    "front_image": "photos/products/LNTF-WQ23_V1.jpg",
+    "back_image": "photos/products/LNTF-WQ23_V5.jpg",
+    "is_available": true,
+    "category": 107,
+    "product_description": "Lapointe Coated Jersey Ruched Maxi Skirt with a sculpted silhouette and statement texture. The ruched detailing adds dimension while the longline shape creates an elegant finish. Pair it with fitted tops, boots, or heels for a standout evening look.",
+    "created_date": "2025-07-08T04:34:03.574Z",
+    "modified_date": "2026-03-31T23:49:43.438Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 10,
+  "fields": {
+    "product_name": "Coated Jersey Ruched Body Suite",
+    "brand": "LAPOINTE",
+    "slug": "coated-jersey-ruched-body-suite",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 14,
+    "price": "79000.00",
+    "front_image": "photos/products/LNTF-WS47_V1.jpg",
+    "back_image": "photos/products/LNTF-WS47_V5.jpg",
+    "is_available": true,
+    "category": 108,
+    "product_description": "Lapointe Coated Jersey Ruched Bodysuit designed for a close, flattering fit with modern edge. The ruched construction adds texture and shape, making it an effortless base for skirts, tailoring, or statement trousers. A sleek piece for confident day-to-night styling.",
+    "created_date": "2025-07-08T04:36:48.236Z",
+    "modified_date": "2026-03-31T23:49:43.443Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 11,
+  "fields": {
+    "product_name": "Jersey Asymmetric Draped Sarong Dress",
+    "brand": "Lapointe Coated",
+    "slug": "jersey-asymmetric-draped-sarong-dress",
+    "vendor": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "gender": "Women",
+    "designer": 40,
+    "price": "59000.00",
+    "front_image": "photos/products/LNTF-WD60_V1.jpg",
+    "back_image": "photos/products/LNTF-WD60_V4.jpg",
+    "is_available": true,
+    "category": 31,
+    "product_description": "Jersey Asymmetric Draped Sarong Dress by Lapointe Coated with fluid draping and an eye-catching asymmetric line. The silhouette is designed to flatter while bringing soft movement to the look. Style it for events, dinners, or elevated occasion dressing.",
+    "created_date": "2025-07-08T04:41:32.681Z",
+    "modified_date": "2026-04-10T16:01:38.462Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 12,
+  "fields": {
+    "product_name": "Embroidered Long Sleeve Top",
+    "brand": "Jean Paul Gaultier",
+    "slug": "embroidered-long-sleeve-top",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 19,
+    "price": "59000.00",
+    "front_image": "photos/products/JIEF-WS155_V1.jpg",
+    "back_image": "photos/products/JIEF-WS155_V5.jpg",
+    "is_available": true,
+    "category": 109,
+    "product_description": "Jean Paul Gaultier Embroidered Long Sleeve Top finished in black with elevated detail. The long sleeve silhouette makes it easy to layer or wear as a standalone statement piece. Pair it with tailored pants, denim, or skirts for a refined modern look.",
+    "created_date": "2025-07-08T04:46:27.238Z",
+    "modified_date": "2026-03-31T23:49:43.455Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 13,
+  "fields": {
+    "product_name": "Florence",
+    "brand": "Savette",
+    "slug": "florence",
+    "vendor": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "gender": "Women",
+    "designer": 40,
+    "price": "25999.00",
+    "front_image": "photos/products/SVEX-WY46_V1.jpg",
+    "back_image": "photos/products/SVEX-WY46_V2.jpg",
+    "is_available": true,
+    "category": 110,
+    "product_description": "Savette Florence hobo bag crafted for everyday sophistication with a clean, structured silhouette. Spacious enough for essentials while still feeling polished and easy to carry. A versatile accessory that works effortlessly from day plans to evening outings.",
+    "created_date": "2025-07-08T04:55:28.369Z",
+    "modified_date": "2026-04-10T16:00:47.722Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 14,
+  "fields": {
+    "product_name": "Symmetry Pochette Bag",
+    "brand": "Savette",
+    "slug": "symmetry-pochette-bag",
+    "vendor": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "gender": "Women",
+    "designer": 18,
+    "price": "15000.00",
+    "front_image": "photos/products/SVEX-WY40_V1.jpg",
+    "back_image": "photos/products/SVEX-WY40_V2.jpg",
+    "is_available": true,
+    "category": 4,
+    "product_description": "Savette Symmetry Pochette Bag with a compact silhouette and refined modern finish. Designed to carry your essentials while adding a sleek accent to both occasion and everyday styling. An easy choice for minimal, polished looks.",
+    "created_date": "2025-07-08T05:03:43.468Z",
+    "modified_date": "2026-04-10T16:00:09.651Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 15,
+  "fields": {
+    "product_name": "Garavani Bowow Sandal",
+    "brand": "Valentino",
+    "slug": "garavani-bowow-sandal",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 18,
+    "price": "12999.00",
+    "front_image": "photos/products/VENT-WZ984_V4.jpg",
+    "back_image": "photos/products/VENT-WZ984_V1.jpg",
+    "is_available": true,
+    "category": 71,
+    "product_description": "Valentino Garavani Bowow Sandal designed to bring playful detail and effortless elegance to warm-weather styling. The streamlined sandal profile pairs easily with dresses, denim, and tailored separates. A standout finishing touch for day events, vacations, or evening plans.",
+    "created_date": "2025-07-08T05:08:24.529Z",
+    "modified_date": "2026-03-31T23:49:43.480Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 17,
+  "fields": {
+    "product_name": "Leather Mini Dress",
+    "brand": "Givenchy",
+    "slug": "leather-mini-dress",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 31,
+    "price": "511045.00",
+    "front_image": "photos/products/GIVE-WD212_V1.jpg",
+    "back_image": "photos/products/GIVE-WD212_V3.jpg",
+    "is_available": true,
+    "category": 24,
+    "product_description": "Self: 100% lambskin\r\nLining: 100% viscose\r\nProfessional leather cleaning only\r\nFully lined\r\nHidden back zipper closure\r\nFront and back square neckline\r\nGenuine leather with fit and flare design\r\nPlease note: Belt is not included\r\nMade in Italy\r\nOur Style No. GIVE-WD212\r\nManufacturer Style No. BW22FH61UJ001\r\nModel is wearing size 38. View detailed measurements of this item.",
+    "created_date": "2025-07-10T05:42:55.782Z",
+    "modified_date": "2025-07-12T02:31:44.370Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 18,
+  "fields": {
+    "product_name": "Pleated Dress",
+    "brand": "ALAYA",
+    "slug": "pleated-dress",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 5,
+    "price": "52900.00",
+    "front_image": "photos/products/ALIA-WD246_V1.jpg",
+    "back_image": "photos/products/ALIA-WD246_V3.jpg",
+    "is_available": true,
+    "category": 1,
+    "product_description": "94% viscose, 6% polyester. \r\nDry clean only. \r\nUnlined. \r\nPull-on styling. \r\nPleated knit. \r\nSculptural midi fit. \r\nMade in Italy.  \r\nOur Style No. ALIA-WD246.  \r\nManufacturer Style No. 9R2673K078B.  \r\nModel is wearing size 36. View detailed measurements of this item.",
+    "created_date": "2025-07-11T15:57:57.952Z",
+    "modified_date": "2025-10-10T17:31:38.510Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 19,
+  "fields": {
+    "product_name": "The Tennis Sock",
+    "brand": "Comme Si",
+    "slug": "the-tennis-sock",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 25,
+    "price": "3151.79",
+    "front_image": "photos/products/CESF-WA52_V1_CBrj90j.jpg",
+    "back_image": "photos/products/CESF-WA52_V3_9nJ4s5T.jpg",
+    "is_available": true,
+    "category": 137,
+    "product_description": "54% Q-SKIN®, 38% organic cotton, 8% elastane\r\nMachine wash\r\nQ-SKIN® is a breathable, moisture-wicking fiber infused with antimicrobial silver ions to keep feet dry, cool, and odor-free\r\nStrategic terry cushioning adds impact protection, while arch compression ensures a locked-in fit from first serve to match point\r\nMade in Italy\r\nOur Style No. CESF-WA52\r\nManufacturer Style No. CSRSP005",
+    "created_date": "2026-01-13T02:46:33.220Z",
+    "modified_date": "2026-01-13T02:49:50.274Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 20,
+  "fields": {
+    "product_name": "Silvia Belt",
+    "brand": "Isabel Marant",
+    "slug": "silvia-belt",
+    "vendor": null,
+    "gender": "Women",
+    "designer": 26,
+    "price": "26114.85",
+    "front_image": "photos/products/ISAB-WA203_V2.jpg",
+    "back_image": "photos/products/ISAB-WA203_V3.jpg",
+    "is_available": true,
+    "category": 132,
+    "product_description": "Leather belt\r\nGold-tone adjustable sliding bead\r\nOS measures approx 50\" L\r\nMade in Poland\r\nOur Style No. ISAB-WA203\r\nManufacturer Style No. CE213BFA-B2A02A",
+    "created_date": "2026-01-13T02:52:35.537Z",
+    "modified_date": "2026-01-13T02:52:35.537Z"
+  }
+},
+{
+  "model": "appwomens.newproduct",
+  "pk": 21,
+  "fields": {
+    "product_name": "Skin Fetish: Sublime Perfection Concealer",
+    "brand": "PAT McGRATH LABS",
+    "slug": "skin-fetish-sublime-perfection-concealer",
+    "vendor": [
+      "ak407@gamil.com"
+    ],
+    "gender": "Women",
+    "designer": 35,
+    "price": "3061.74",
+    "front_image": "photos/products/PMCG-WU115_V1_OwROayd.jpg",
+    "back_image": "photos/products/PMCG-WU115_V4_xnHSSfB.jpg",
+    "is_available": true,
+    "category": 138,
+    "product_description": "A creamy, lightweight, full coverage concealer with a natural radiant matte finish in 36 sublime shades that brighten under the eye & hide blemishes. Flexible, breathable formulation blends with Sublime Perfection Foundation for all day wear.\r\n\r\nThe Details\r\nMedium Deep 5 - Medium deep with neutral red undertones\r\nFormulated without parabens, phthalates, sulfates\r\nCruelty free\r\nFull coverage with a natural finish\r\n5mL/ .473.2ml\r\nOur Style No. PMCG-WU115\r\nManufacturer Style No. 843004106336\r\nActual packaging and materials may vary. Please read labels, warnings, and directions before use.\r\nHow to Use\r\nFor spot correcting, place a dot from the very tip of the doe foot applicator onto the blemish and blend the edges using one or two layers as needed.\r\nApply one to three dots directly to the dark area under the eye and blend with light, smooth and even strokes\r\nTo highlight, choose a shade two-to-three shades lighter than your skin tone and blend across the high points of the face\r\nPlease note packaging may vary",
+    "created_date": "2026-01-13T02:56:18.760Z",
+    "modified_date": "2026-04-10T18:35:29.496Z"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 1,
+  "fields": {
+    "product": 6,
+    "size": "30",
+    "color": "Black",
+    "stock": 1,
+    "category_type": ""
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 8,
+  "fields": {
+    "product": 15,
+    "size": "6",
+    "color": "Bowow Sandal",
+    "stock": 0,
+    "category_type": ""
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 9,
+  "fields": {
+    "product": 15,
+    "size": "7",
+    "color": "Bowow Sandal",
+    "stock": 1,
+    "category_type": ""
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 10,
+  "fields": {
+    "product": 17,
+    "size": "36",
+    "color": "Black",
+    "stock": 3,
+    "category_type": "bags"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 13,
+  "fields": {
+    "product": 17,
+    "size": "38",
+    "color": "Black",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 15,
+  "fields": {
+    "product": 18,
+    "size": "40",
+    "color": "Olive",
+    "stock": 0,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 16,
+  "fields": {
+    "product": 3,
+    "size": "5",
+    "color": "Olive",
+    "stock": 1,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 17,
+  "fields": {
+    "product": 3,
+    "size": "6",
+    "color": "Olive",
+    "stock": 1,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 18,
+  "fields": {
+    "product": 3,
+    "size": "8",
+    "color": "Olive",
+    "stock": 1,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 19,
+  "fields": {
+    "product": 4,
+    "size": "One Size",
+    "color": "Black",
+    "stock": 1,
+    "category_type": "dresses"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 20,
+  "fields": {
+    "product": 5,
+    "size": "6",
+    "color": "White",
+    "stock": 1,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 21,
+  "fields": {
+    "product": 19,
+    "size": "One Size",
+    "color": "White",
+    "stock": 4,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 22,
+  "fields": {
+    "product": 20,
+    "size": "One Size",
+    "color": "Lether",
+    "stock": 5,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 23,
+  "fields": {
+    "product": 21,
+    "size": "One Size",
+    "color": "Medium Deep 25",
+    "stock": 3,
+    "category_type": "beauty"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 24,
+  "fields": {
+    "product": 12,
+    "size": "Free Size",
+    "color": "Black",
+    "stock": 3,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 25,
+  "fields": {
+    "product": 8,
+    "size": "One Size",
+    "color": "Black",
+    "stock": 5,
+    "category_type": ""
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 26,
+  "fields": {
+    "product": 9,
+    "size": "Free Size",
+    "color": "Brown",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 27,
+  "fields": {
+    "product": 10,
+    "size": "Free Size",
+    "color": "Brown",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 28,
+  "fields": {
+    "product": 11,
+    "size": "Free Size",
+    "color": "Red",
+    "stock": 10,
+    "category_type": "dresses"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 29,
+  "fields": {
+    "product": 13,
+    "size": "One Size",
+    "color": "Brown",
+    "stock": 0,
+    "category_type": "bags"
+  }
+},
+{
+  "model": "appwomens.productvariation",
+  "pk": 30,
+  "fields": {
+    "product": 14,
+    "size": "One Size",
+    "color": "Grey",
+    "stock": 1,
+    "category_type": "bags"
+  }
+},
+{
+  "model": "appwomens.clothing",
+  "pk": 2,
+  "fields": {
+    "product": 4,
+    "size": "L",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.clothing",
+  "pk": 3,
+  "fields": {
+    "product": 6,
+    "size": "30",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.clothing",
+  "pk": 4,
+  "fields": {
+    "product": 8,
+    "size": "30",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.clothing",
+  "pk": 8,
+  "fields": {
+    "product": 12,
+    "size": "Free Size",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.clothing",
+  "pk": 10,
+  "fields": {
+    "product": 17,
+    "size": "M",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.clothing",
+  "pk": 11,
+  "fields": {
+    "product": 18,
+    "size": "38",
+    "color": "Olive"
+  }
+},
+{
+  "model": "appwomens.clothing",
+  "pk": 16,
+  "fields": {
+    "product": 18,
+    "size": "40",
+    "color": "Olive"
+  }
+},
+{
+  "model": "appwomens.footwear",
+  "pk": 4,
+  "fields": {
+    "product": 3,
+    "size": "6",
+    "color": "Brun Fonce"
+  }
+},
+{
+  "model": "appwomens.footwear",
+  "pk": 5,
+  "fields": {
+    "product": 5,
+    "size": "5",
+    "color": "White & Black"
+  }
+},
+{
+  "model": "appwomens.footwear",
+  "pk": 6,
+  "fields": {
+    "product": 15,
+    "size": "7",
+    "color": "Light Blue"
+  }
+},
+{
+  "model": "appwomens.footwear",
+  "pk": 8,
+  "fields": {
+    "product": 3,
+    "size": "5",
+    "color": "Olive"
+  }
+},
+{
+  "model": "appwomens.footwear",
+  "pk": 9,
+  "fields": {
+    "product": 3,
+    "size": "6",
+    "color": "Olive"
+  }
+},
+{
+  "model": "appwomens.footwear",
+  "pk": 10,
+  "fields": {
+    "product": 3,
+    "size": "8",
+    "color": "Olive"
+  }
+},
+{
+  "model": "appwomens.footwear",
+  "pk": 11,
+  "fields": {
+    "product": 5,
+    "size": "6",
+    "color": "White"
+  }
+},
+{
+  "model": "appwomens.accessories",
+  "pk": 1,
+  "fields": {
+    "product": 19,
+    "size": "One Size",
+    "color": "White"
+  }
+},
+{
+  "model": "appwomens.accessories",
+  "pk": 2,
+  "fields": {
+    "product": 20,
+    "size": "One Size",
+    "color": "Lether"
+  }
+},
+{
+  "model": "appwomens.dresses",
+  "pk": 1,
+  "fields": {
+    "product": 4,
+    "size": "Free Size",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.dresses",
+  "pk": 6,
+  "fields": {
+    "product": 8,
+    "size": "30",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.dresses",
+  "pk": 7,
+  "fields": {
+    "product": 8,
+    "size": "32",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.dresses",
+  "pk": 8,
+  "fields": {
+    "product": 8,
+    "size": "34",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.dresses",
+  "pk": 10,
+  "fields": {
+    "product": 18,
+    "size": "38",
+    "color": "Olive"
+  }
+},
+{
+  "model": "appwomens.dresses",
+  "pk": 11,
+  "fields": {
+    "product": 4,
+    "size": "One Size",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.dresses",
+  "pk": 17,
+  "fields": {
+    "product": 11,
+    "size": "Free Size",
+    "color": "Red"
+  }
+},
+{
+  "model": "appwomens.bags",
+  "pk": 3,
+  "fields": {
+    "product": 17,
+    "size": "36",
+    "color": "Black"
+  }
+},
+{
+  "model": "appwomens.bags",
+  "pk": 11,
+  "fields": {
+    "product": 14,
+    "size": "One Size",
+    "color": "Grey"
+  }
+},
+{
+  "model": "appwomens.bags",
+  "pk": 12,
+  "fields": {
+    "product": 13,
+    "size": "One Size",
+    "color": "Brown"
+  }
+},
+{
+  "model": "appwomens.beautyproducts",
+  "pk": 1,
+  "fields": {
+    "product": 21,
+    "size": "One Size",
+    "color": "Medium Deep 25"
+  }
+},
+{
+  "model": "appwomens.saleitems",
+  "pk": 1,
+  "fields": {
+    "product": 4,
+    "discount_percentage": 20.0,
+    "start_date": "2025-07-11",
+    "end_date": "2025-07-15",
+    "sale_price": 8000.0
+  }
+},
+{
+  "model": "appwomens.saleitems",
+  "pk": 2,
+  "fields": {
+    "product": 14,
+    "discount_percentage": 25.0,
+    "start_date": "2026-04-10",
+    "end_date": "2026-06-19",
+    "sale_price": 11250.0
+  }
+},
+{
+  "model": "appwomens.saleitems",
+  "pk": 3,
+  "fields": {
+    "product": 13,
+    "discount_percentage": 25.0,
+    "start_date": "2026-04-10",
+    "end_date": "2026-04-17",
+    "sale_price": 19499.25
+  }
+},
+{
+  "model": "appwomens.saleitems",
+  "pk": 4,
+  "fields": {
+    "product": 11,
+    "discount_percentage": 25.0,
+    "start_date": "2026-04-10",
+    "end_date": "2026-04-17",
+    "sale_price": 44250.0
+  }
+},
+{
+  "model": "appwomens.kendalls_editions",
+  "pk": 1,
+  "fields": {
+    "edition_number": "01",
+    "edition_name": "KENDALL'S EDIT",
+    "edition_description": "Shop Kendall's curated edit of the must-have pieces from the designer collections.",
+    "edition_image": "photos/editions/u52f6x0yhh77db40ldew.jpeg"
+  }
+},
+{
+  "model": "appwomens.kendalls_editions",
+  "pk": 2,
+  "fields": {
+    "edition_number": "02",
+    "edition_name": "The Campaign",
+    "edition_description": "",
+    "edition_image": "photos/editions/wxnt8xunrse3qkc5vhsx.jpeg"
+  }
+},
+{
+  "model": "appwomens.kendalls_editions",
+  "pk": 3,
+  "fields": {
+    "edition_number": "",
+    "edition_name": "",
+    "edition_description": "",
+    "edition_image": "photos/editions/kquijlfkmkgddigtwtkv.jpeg"
+  }
+},
+{
+  "model": "appwomens.kendalls_editions",
+  "pk": 4,
+  "fields": {
+    "edition_number": "03",
+    "edition_name": "The Dress Refresh",
+    "edition_description": "",
+    "edition_image": "photos/editions/rulptxckmyxbkbiyjnzs.jpeg"
+  }
+},
+{
+  "model": "appwomens.kendalls_editions",
+  "pk": 5,
+  "fields": {
+    "edition_number": "04",
+    "edition_name": "Femininity Unraveled",
+    "edition_description": "",
+    "edition_image": "photos/editions/brtxhf0phftbdiev6mjh.jpeg"
+  }
+},
+{
+  "model": "appwomens.kendalls_editions",
+  "pk": 6,
+  "fields": {
+    "edition_number": "05",
+    "edition_name": "Second Skin",
+    "edition_description": "",
+    "edition_image": "photos/editions/042825_f_KJ_LP_05_2x_r.jpg"
+  }
+},
+{
+  "model": "appwomens.kendalls_editions",
+  "pk": 7,
+  "fields": {
+    "edition_number": "06",
+    "edition_name": "Minimalism",
+    "edition_description": "",
+    "edition_image": "photos/editions/042825_f_KJ_LP_06_2x.jpg"
+  }
+},
+{
+  "model": "appwomens.kendalls_editions",
+  "pk": 8,
+  "fields": {
+    "edition_number": "07",
+    "edition_name": "The Looks",
+    "edition_description": "",
+    "edition_image": "photos/editions/cu7ieaav0hmiqzovxwco.jpeg"
+  }
+},
+{
+  "model": "appwomens.shops",
+  "pk": 1,
+  "fields": {
+    "product": 4,
+    "is_trending": false,
+    "is_vasu_soap": true
+  }
+},
+{
+  "model": "appwomens.shops",
+  "pk": 2,
+  "fields": {
+    "product": 4,
+    "is_trending": true,
+    "is_vasu_soap": true
+  }
+},
+{
+  "model": "appwomens.shops",
+  "pk": 4,
+  "fields": {
+    "product": 6,
+    "is_trending": false,
+    "is_vasu_soap": true
+  }
+},
+{
+  "model": "appwomens.shops",
+  "pk": 5,
+  "fields": {
+    "product": 3,
+    "is_trending": true,
+    "is_vasu_soap": false
+  }
+},
+{
+  "model": "appwomens.shops",
+  "pk": 6,
+  "fields": {
+    "product": 8,
+    "is_trending": false,
+    "is_vasu_soap": true
+  }
+},
+{
+  "model": "appwomens.shops",
+  "pk": 7,
+  "fields": {
+    "product": 9,
+    "is_trending": true,
+    "is_vasu_soap": false
+  }
+}
+]

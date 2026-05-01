@@ -1,0 +1,5863 @@
+[
+{
+  "model": "aapstore.wishlist",
+  "pk": 14,
+  "fields": {
+    "user": [
+      "sachinnagar31@gmail.com"
+    ],
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 18,
+    "added_date": "2025-08-27T01:20:38.849Z"
+  }
+},
+{
+  "model": "aapstore.wishlist",
+  "pk": 15,
+  "fields": {
+    "user": [
+      "sachinnagar31@gmail.com"
+    ],
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 15,
+    "added_date": "2025-08-27T01:20:55.706Z"
+  }
+},
+{
+  "model": "aapstore.wishlist",
+  "pk": 53,
+  "fields": {
+    "user": [
+      "kamleshmodi01@outlook.com"
+    ],
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 15,
+    "added_date": "2025-10-04T02:32:09.348Z"
+  }
+},
+{
+  "model": "aapstore.wishlist",
+  "pk": 95,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 34,
+    "added_date": "2026-04-10T13:55:39.479Z"
+  }
+},
+{
+  "model": "aapstore.wishlist",
+  "pk": 96,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 12,
+    "added_date": "2026-04-10T13:55:53.797Z"
+  }
+},
+{
+  "model": "aapstore.wishlist",
+  "pk": 97,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 13,
+    "added_date": "2026-04-10T16:07:22.261Z"
+  }
+},
+{
+  "model": "aapstore.cart",
+  "pk": 173,
+  "fields": {
+    "user": [
+      "vasu1115@outlook.com"
+    ],
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 33,
+    "quantity": 1,
+    "added_date": "2026-02-22T16:50:38.371Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 13,
+  "fields": {
+    "order_id": "113",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "Sachin Nagar",
+    "mobile": "0123456789",
+    "address": "xyz",
+    "city": "Ahemdabad",
+    "district": "Ahemdabad",
+    "state": "Gujarat",
+    "country": "India",
+    "zip_code": "380016",
+    "total_price": "52070.68",
+    "payment_method": "qrcode",
+    "payment_reference": "",
+    "payment_status": "Paid",
+    "account_receipt_status": "Received in Account",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": "2026-04-21T02:11:43.364Z",
+    "status": "Processing",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2025-10-04T06:26:48.128Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 14,
+  "fields": {
+    "order_id": "114",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "Sachin Nagar",
+    "mobile": "0123456789",
+    "address": "xyz",
+    "city": "Ahemdabad",
+    "district": "Ahemdabad",
+    "state": "Gujarat",
+    "country": "India",
+    "zip_code": "380016",
+    "total_price": "199320.94",
+    "payment_method": "cash",
+    "payment_reference": "",
+    "payment_status": "Pending",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Processing",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2025-10-04T08:56:53.976Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 16,
+  "fields": {
+    "order_id": "116",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "Sachin Nagar",
+    "mobile": "0123456789",
+    "address": "xyz",
+    "city": "Ahemdabad",
+    "district": "Ahemdabad",
+    "state": "Gujarat",
+    "country": "India",
+    "zip_code": "380016",
+    "total_price": "13000.00",
+    "payment_method": "cash",
+    "payment_reference": "",
+    "payment_status": "Pending",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Processing",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2025-10-11T05:34:02.646Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 23,
+  "fields": {
+    "order_id": "123",
+    "user": [
+      "ak407@gamil.com"
+    ],
+    "full_name": "Mr. KAMLESH KUMAR GHANCHI",
+    "mobile": "07878065935",
+    "address": "mali vas sirodi",
+    "city": "Ahmedabad, Gujarat, IN",
+    "district": "Ahmedabad, Gujarat, IN",
+    "state": "घांची",
+    "country": "India",
+    "zip_code": "380016",
+    "total_price": "228670.98",
+    "payment_method": "cash",
+    "payment_reference": "",
+    "payment_status": "Pending",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Processing",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2025-10-16T16:18:14.871Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 27,
+  "fields": {
+    "order_id": "127",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "Mr. KAMLESH KUMAR GHANCHI",
+    "mobile": "07878065935",
+    "address": "mali vas sirodi",
+    "city": "sirohi",
+    "district": "sirohi",
+    "state": "rajsthan",
+    "country": "India",
+    "zip_code": "307511",
+    "total_price": "31182.40",
+    "payment_method": "upi",
+    "payment_reference": "",
+    "payment_status": "Paid",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Processing",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2025-12-06T11:40:40.578Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 28,
+  "fields": {
+    "order_id": "128",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "Mr. KAMLESH KUMAR GHANCHI",
+    "mobile": "07878065935",
+    "address": "mali vas sirodi",
+    "city": "sirohi",
+    "district": "sirohi",
+    "state": "rajsthan",
+    "country": "India",
+    "zip_code": "307511",
+    "total_price": "8750.00",
+    "payment_method": "cash",
+    "payment_reference": "",
+    "payment_status": "Paid",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Delivered",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2026-01-07T06:02:25.730Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 29,
+  "fields": {
+    "order_id": "129",
+    "user": [
+      "vasu1115@outlook.com"
+    ],
+    "full_name": "Mr. KAMLESH KUMAR GHANCHI",
+    "mobile": "07878065935",
+    "address": "mali vas sirodi",
+    "city": "sirohi",
+    "district": "sirohi",
+    "state": "rajsthan",
+    "country": "India",
+    "zip_code": "307511",
+    "total_price": "89216.33",
+    "payment_method": "cash",
+    "payment_reference": "",
+    "payment_status": "Pending",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Delivered",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2026-01-17T15:54:49.882Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 30,
+  "fields": {
+    "order_id": "130",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "Mr. KAMLESH KUMAR GHANCHI",
+    "mobile": "07878065935",
+    "address": "mali vas sirodi",
+    "city": "sirohi",
+    "district": "sirohi",
+    "state": "rajsthan",
+    "country": "India",
+    "zip_code": "307511",
+    "total_price": "1022090.00",
+    "payment_method": "cash",
+    "payment_reference": "",
+    "payment_status": "Pending",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Delivered",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2026-02-24T09:28:11.441Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 31,
+  "fields": {
+    "order_id": "131",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "Mr. KAMLESH KUMAR GHANCHI",
+    "mobile": "07878065935",
+    "address": "mali vas, Reodar Sirohi Rajasthan India307511",
+    "city": "Ahmedabad, Gujarat, India",
+    "district": "Ahmedabad, Gujarat, India",
+    "state": "Rajasthan",
+    "country": "India",
+    "zip_code": "307511",
+    "total_price": "71999.00",
+    "payment_method": "cash",
+    "payment_reference": "",
+    "payment_status": "Pending",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Delivered",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2026-02-24T09:31:07.727Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 32,
+  "fields": {
+    "order_id": "132",
+    "user": [
+      "vendor@gmail.com"
+    ],
+    "full_name": "Mr. KAMLESH KUMAR GHANCHI",
+    "mobile": "07878065935",
+    "address": "mali vas sirodi",
+    "city": "sirohi",
+    "district": "sirohi",
+    "state": "rajsthan",
+    "country": "India",
+    "zip_code": "307511",
+    "total_price": "3161.74",
+    "payment_method": "cash",
+    "payment_reference": "",
+    "payment_status": "Pending",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Delivered",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2026-03-26T17:07:17.544Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 33,
+  "fields": {
+    "order_id": "133",
+    "user": [
+      "sachinnagar21@gmail.com"
+    ],
+    "full_name": "Test User",
+    "mobile": "9876543210",
+    "address": "A",
+    "city": "B",
+    "district": "B",
+    "state": "C",
+    "country": "India",
+    "zip_code": "395006",
+    "total_price": "100.00",
+    "payment_method": "cash",
+    "payment_reference": "Cash collected on delivery",
+    "payment_status": "Paid",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Cancelled",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "Cash collected on delivery by Sachin Nagar on 06 Apr 2026, 02:55 AM.",
+    "delivery_partner": [
+      "sachinnagar31@gmail.com"
+    ],
+    "delivery_assigned_at": "2026-04-06T02:44:52.826Z",
+    "created_at": "2026-04-01T00:21:29.477Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 34,
+  "fields": {
+    "order_id": "134",
+    "user": [
+      "kapsmodi@gamil.com"
+    ],
+    "full_name": "kamlesh kumar ghanchi",
+    "mobile": "07878065935",
+    "address": "mali vas sirodi",
+    "city": "sirohi",
+    "district": "sirohi",
+    "state": "Rajasthan",
+    "country": "India",
+    "zip_code": "307511",
+    "total_price": "3161.74",
+    "payment_method": "cash",
+    "payment_reference": "Cash collected on delivery",
+    "payment_status": "Paid",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Shipped",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "Cash collected on delivery by Sachin Nagar on 06 Apr 2026, 02:43 AM.",
+    "delivery_partner": [
+      "sachinnagar31@gmail.com"
+    ],
+    "delivery_assigned_at": "2026-04-06T02:43:25.167Z",
+    "created_at": "2026-04-01T00:38:08.325Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 35,
+  "fields": {
+    "order_id": "135",
+    "user": [
+      "kapsmodi@gamil.com"
+    ],
+    "full_name": "Mr. KAMLESH KUMAR GHANCHI",
+    "mobile": "07878065935",
+    "address": "mali vas sirodi",
+    "city": "sirohi",
+    "district": "sirohi",
+    "state": "rajsthan",
+    "country": "India",
+    "zip_code": "307511",
+    "total_price": "3251.79",
+    "payment_method": "cash",
+    "payment_reference": "",
+    "payment_status": "Refunded",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Delivered",
+    "return_status": "Requested",
+    "refund_status": "Completed",
+    "refund_amount": "3251.79",
+    "refund_reference": "",
+    "refund_processed_at": "2026-04-03T16:34:20.786Z",
+    "payment_notes": "",
+    "delivery_partner": [
+      "sachinnagar31@gmail.com"
+    ],
+    "delivery_assigned_at": "2026-04-06T02:42:01.022Z",
+    "created_at": "2026-04-01T05:38:37.016Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 36,
+  "fields": {
+    "order_id": "136",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "KAMU",
+    "mobile": "7878065935",
+    "address": "Civil hospital road, Jangirpura, Ahmdabad",
+    "city": "Ahmedabad",
+    "district": "Ahmedabad",
+    "state": "Gujarat",
+    "country": "India",
+    "zip_code": "380016",
+    "total_price": "59100.00",
+    "payment_method": "cash",
+    "payment_reference": "COD",
+    "payment_status": "Pending",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Processing",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2026-04-10T14:00:13.116Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 37,
+  "fields": {
+    "order_id": "137",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "KAMU",
+    "mobile": "7878065935",
+    "address": "Civil hospital road, Jangirpura, Ahmdabad",
+    "city": "Ahmedabad",
+    "district": "Ahmedabad",
+    "state": "Gujarat",
+    "country": "India",
+    "zip_code": "380016",
+    "total_price": "19599.25",
+    "payment_method": "cash",
+    "payment_reference": "COD",
+    "payment_status": "Pending",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Processing",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2026-04-10T16:37:16.686Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 38,
+  "fields": {
+    "order_id": "138",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "KAMU",
+    "mobile": "7878065935",
+    "address": "Civil hospital road, Jangirpura, Ahmdabad",
+    "city": "Ahmedabad",
+    "district": "Ahmedabad",
+    "state": "Gujarat",
+    "country": "India",
+    "zip_code": "380016",
+    "total_price": "53000.00",
+    "payment_method": "cash",
+    "payment_reference": "COD",
+    "payment_status": "Pending",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Delivered",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2026-04-10T17:07:28.522Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 39,
+  "fields": {
+    "order_id": "139",
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "full_name": "jayesh001",
+    "mobile": "07878065935",
+    "address": "Bhinmal,  Jalor, Rajsthan",
+    "city": "Sirohi",
+    "district": "Jalore",
+    "state": "Rajasthan",
+    "country": "India",
+    "zip_code": "307501",
+    "total_price": "99710.47",
+    "payment_method": "cash",
+    "payment_reference": "COD",
+    "payment_status": "Failed",
+    "account_receipt_status": "Not Received",
+    "account_receipt_reference": "",
+    "account_receipt_confirmed_at": null,
+    "status": "Cancelled",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "Customer cancelled order on 14 Apr 2026 15:32.",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2026-04-14T15:31:42.312Z"
+  }
+},
+{
+  "model": "aapstore.order",
+  "pk": 40,
+  "fields": {
+    "order_id": "140",
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "full_name": "KAMU",
+    "mobile": "07878065935",
+    "address": "Civil hospital road, Jangirpura, Ahmdabad",
+    "city": "Ahmedabad",
+    "district": "Ahmedabad",
+    "state": "Gujarat",
+    "country": "India",
+    "zip_code": "380016",
+    "total_price": "1.50",
+    "payment_method": "qrcode",
+    "payment_reference": "611100340555",
+    "payment_status": "Paid",
+    "account_receipt_status": "Received in Account",
+    "account_receipt_reference": "611100340555",
+    "account_receipt_confirmed_at": "2026-04-21T02:09:56.361Z",
+    "status": "Processing",
+    "return_status": "No Return",
+    "refund_status": "Not Required",
+    "refund_amount": null,
+    "refund_reference": "",
+    "refund_processed_at": null,
+    "payment_notes": "",
+    "delivery_partner": null,
+    "delivery_assigned_at": null,
+    "created_at": "2026-04-21T02:07:20.727Z"
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 13,
+  "fields": {
+    "order": 13,
+    "vendor": null,
+    "price": "51970.68",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 13
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 14,
+  "fields": {
+    "order": 14,
+    "vendor": null,
+    "price": "99610.47",
+    "quantity": 2,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 33
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 16,
+  "fields": {
+    "order": 16,
+    "vendor": null,
+    "price": "8000.00",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 40
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 17,
+  "fields": {
+    "order": 16,
+    "vendor": null,
+    "price": "4900.00",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 37
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 25,
+  "fields": {
+    "order": 23,
+    "vendor": null,
+    "price": "101342.82",
+    "quantity": 2,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 31
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 26,
+  "fields": {
+    "order": 23,
+    "vendor": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "price": "12126.49",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 11
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 27,
+  "fields": {
+    "order": 23,
+    "vendor": null,
+    "price": "13858.85",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 10
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 32,
+  "fields": {
+    "order": 27,
+    "vendor": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "price": "12126.49",
+    "quantity": 2,
+    "fulfillment_status": "Rejected",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T15:20:15.244Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 11
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 33,
+  "fields": {
+    "order": 27,
+    "vendor": null,
+    "price": "6929.42",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 18
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 34,
+  "fields": {
+    "order": 28,
+    "vendor": null,
+    "price": "1750.00",
+    "quantity": 5,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 42
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 35,
+  "fields": {
+    "order": 29,
+    "vendor": null,
+    "price": "84019.26",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 8
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 36,
+  "fields": {
+    "order": 29,
+    "vendor": null,
+    "price": "5197.07",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 20
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 37,
+  "fields": {
+    "order": 30,
+    "vendor": null,
+    "price": "511045.00",
+    "quantity": 2,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 17
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 38,
+  "fields": {
+    "order": 31,
+    "vendor": null,
+    "price": "12999.00",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 15
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 39,
+  "fields": {
+    "order": 31,
+    "vendor": null,
+    "price": "59000.00",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 12
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 40,
+  "fields": {
+    "order": 32,
+    "vendor": null,
+    "price": "3061.74",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T13:33:26.320Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 21
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 41,
+  "fields": {
+    "order": 33,
+    "vendor": null,
+    "price": "100.00",
+    "quantity": 1,
+    "fulfillment_status": "Rejected",
+    "status_notes": "",
+    "status_updated_at": "2026-04-06T02:55:37.300Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 3
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 42,
+  "fields": {
+    "order": 34,
+    "vendor": null,
+    "price": "3061.74",
+    "quantity": 1,
+    "fulfillment_status": "Shipped",
+    "status_notes": "",
+    "status_updated_at": "2026-04-06T02:44:40.243Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 21
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 43,
+  "fields": {
+    "order": 35,
+    "vendor": null,
+    "price": "3151.79",
+    "quantity": 1,
+    "fulfillment_status": "Delivered",
+    "status_notes": "",
+    "status_updated_at": "2026-04-03T15:22:21.987Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 19
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 44,
+  "fields": {
+    "order": 36,
+    "vendor": null,
+    "price": "59000.00",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-10T14:00:13.128Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 12
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 45,
+  "fields": {
+    "order": 37,
+    "vendor": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "price": "19499.25",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-10T16:37:16.710Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 13
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 46,
+  "fields": {
+    "order": 38,
+    "vendor": null,
+    "price": "52900.00",
+    "quantity": 1,
+    "fulfillment_status": "Delivered",
+    "status_notes": "",
+    "status_updated_at": "2026-04-10T17:13:53.927Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 18
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 47,
+  "fields": {
+    "order": 39,
+    "vendor": null,
+    "price": "99610.47",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-14T15:31:42.327Z",
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 3
+  }
+},
+{
+  "model": "aapstore.orderitem",
+  "pk": 48,
+  "fields": {
+    "order": 40,
+    "vendor": [
+      "ak407@gamil.com"
+    ],
+    "price": "1.50",
+    "quantity": 1,
+    "fulfillment_status": "Pending",
+    "status_notes": "",
+    "status_updated_at": "2026-04-21T02:07:20.741Z",
+    "content_type": [
+      "appmens",
+      "newproduct"
+    ],
+    "object_id": 41
+  }
+},
+{
+  "model": "aapstore.productrating",
+  "pk": 1,
+  "fields": {
+    "order": 32,
+    "order_item": 40,
+    "user": [
+      "vendor@gmail.com"
+    ],
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 21,
+    "rating": 5,
+    "title": "",
+    "review": "",
+    "review_image": "",
+    "approval_status": "approved",
+    "moderation_notes": "Approved by admin.",
+    "moderated_by": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "moderated_at": "2026-04-01T00:31:04.644Z",
+    "created_at": "2026-03-26T17:26:15.783Z",
+    "updated_at": "2026-03-26T17:26:15.783Z"
+  }
+},
+{
+  "model": "aapstore.productrating",
+  "pk": 2,
+  "fields": {
+    "order": 34,
+    "order_item": 42,
+    "user": [
+      "kapsmodi@gamil.com"
+    ],
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 21,
+    "rating": 1,
+    "title": "bed product",
+    "review": "Please avoid this product",
+    "review_image": "",
+    "approval_status": "approved",
+    "moderation_notes": "Approved by admin.",
+    "moderated_by": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "moderated_at": "2026-04-01T00:44:57.005Z",
+    "created_at": "2026-04-01T00:40:13.199Z",
+    "updated_at": "2026-04-01T01:05:22.538Z"
+  }
+},
+{
+  "model": "aapstore.productrating",
+  "pk": 3,
+  "fields": {
+    "order": 35,
+    "order_item": 43,
+    "user": [
+      "kapsmodi@gamil.com"
+    ],
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 19,
+    "rating": 3,
+    "title": "",
+    "review": "",
+    "review_image": "",
+    "approval_status": "rejected",
+    "moderation_notes": "Rejected by admin.",
+    "moderated_by": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "moderated_at": "2026-04-03T16:13:48.431Z",
+    "created_at": "2026-04-01T05:39:17.161Z",
+    "updated_at": "2026-04-01T05:39:17.161Z"
+  }
+},
+{
+  "model": "aapstore.productrating",
+  "pk": 4,
+  "fields": {
+    "order": 31,
+    "order_item": 39,
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "content_type": [
+      "appwomens",
+      "newproduct"
+    ],
+    "object_id": 12,
+    "rating": 4,
+    "title": "This product is good in this price range",
+    "review": "Good and awesome product \r\nI am really happy and satisfied.",
+    "review_image": "",
+    "approval_status": "approved",
+    "moderation_notes": "Approved by admin.",
+    "moderated_by": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "moderated_at": "2026-04-21T01:56:44.169Z",
+    "created_at": "2026-04-21T01:55:54.317Z",
+    "updated_at": "2026-04-21T01:55:54.317Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "zo2nu67mtu3rajzexaxuxz353euafw1r",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:02:53.315Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 2,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:03:16.328Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 3,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:03:51.811Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 4,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:04:04.470Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 5,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password_sent/",
+    "referrer": "http://127.0.0.1:8000/reset_password/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:04:07.648Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 6,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/reset_password_sent/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:04:30.159Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 7,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:04:31.940Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 8,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password_sent/",
+    "referrer": "http://127.0.0.1:8000/reset_password/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:04:35.553Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 9,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/reset_password_sent/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:11:41.446Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 10,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:11:44.296Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 11,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password_sent/",
+    "referrer": "http://127.0.0.1:8000/reset_password/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:11:52.722Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 12,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password_sent/",
+    "referrer": "http://127.0.0.1:8000/reset_password/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:20:03.474Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 13,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/reset_password_sent/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:20:05.749Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 14,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:20:08.647Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 15,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:20:13.203Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 16,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:22:05.681Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 17,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password_sent/",
+    "referrer": "http://127.0.0.1:8000/reset_password/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:22:14.401Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 18,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset/OA/set-password/",
+    "referrer": "http://127.0.0.1:8000/reset/OA/set-password/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:22:24.522Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 19,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset/OA/set-password/",
+    "referrer": "http://127.0.0.1:8000/reset/OA/set-password/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:22:50.750Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 20,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/reset_password_complete/",
+    "referrer": "http://127.0.0.1:8000/reset/OA/set-password/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:23:10.362Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 21,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/reset/OA/set-password/",
+    "session_key": "o94pocxij0cc39693a36p678uminuxkc",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:23:17.108Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 22,
+  "fields": {
+    "user": [
+      "vasu1115@outlook.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "rmagcmnxzwj4w66szh7axixyxuy0wpa1",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:23:28.620Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 23,
+  "fields": {
+    "user": [
+      "vasu1115@outlook.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/my-account/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "rmagcmnxzwj4w66szh7axixyxuy0wpa1",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:23:37.363Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 24,
+  "fields": {
+    "user": [
+      "vasu1115@outlook.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/my-account/",
+    "session_key": "rmagcmnxzwj4w66szh7axixyxuy0wpa1",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:23:47.913Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 25,
+  "fields": {
+    "user": [
+      "vasu1115@outlook.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/reset_password_sent/",
+    "session_key": "rmagcmnxzwj4w66szh7axixyxuy0wpa1",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:24:21.340Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 26,
+  "fields": {
+    "user": [
+      "vasu1115@outlook.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/reset_password_sent/",
+    "session_key": "rmagcmnxzwj4w66szh7axixyxuy0wpa1",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:24:24.431Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 27,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "y4h3abejcgr1zy2g64ohse823lhgyy6g",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:25:06.493Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 28,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "y4h3abejcgr1zy2g64ohse823lhgyy6g",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:25:07.998Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 29,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "y4h3abejcgr1zy2g64ohse823lhgyy6g",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:25:32.263Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 30,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "y4h3abejcgr1zy2g64ohse823lhgyy6g",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:25:44.668Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 31,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "ulm9rwtbnls96sa2qk9yxg150qeonb8i",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:26:10.451Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 32,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "5cechbsbvc8da8gcxsqgq09ds1oc0qos",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:26:14.630Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 33,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "5cechbsbvc8da8gcxsqgq09ds1oc0qos",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:26:16.865Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 34,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "eg6snp964tqh6j4ac0cm1ti2vpm0t8w7",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:26:31.950Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 35,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "eg6snp964tqh6j4ac0cm1ti2vpm0t8w7",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:28:39.547Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 36,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "62akcsm2xz59hxowz14pl1u5sf2u1u5p",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:28:42.526Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 37,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "62akcsm2xz59hxowz14pl1u5sf2u1u5p",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:28:43.591Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 38,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:28:57.204Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 39,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/designers/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:29:12.628Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 40,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/clothing/",
+    "referrer": "http://127.0.0.1:8000/designers/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:29:13.549Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 41,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/shoes/",
+    "referrer": "http://127.0.0.1:8000/clothing/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:29:15.444Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 42,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/product/ballet-flat/",
+    "referrer": "http://127.0.0.1:8000/shoes/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:29:17.072Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 43,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/product/ballet-flat/",
+    "referrer": "http://127.0.0.1:8000/product/ballet-flat/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:29:18.605Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 44,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/cart/",
+    "referrer": "http://127.0.0.1:8000/product/ballet-flat/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:29:20.777Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 45,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "Checkout | VASU"
+    },
+    "created_at": "2026-04-14T15:29:37.028Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 46,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "upi"
+    },
+    "created_at": "2026-04-14T15:31:18.301Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 47,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "qrcode"
+    },
+    "created_at": "2026-04-14T15:31:19.804Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 48,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "upi"
+    },
+    "created_at": "2026-04-14T15:31:22.478Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 49,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "cash"
+    },
+    "created_at": "2026-04-14T15:31:23.717Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 50,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "upi"
+    },
+    "created_at": "2026-04-14T15:31:24.535Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 51,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "qrcode"
+    },
+    "created_at": "2026-04-14T15:31:25.429Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 52,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "upi"
+    },
+    "created_at": "2026-04-14T15:31:26.927Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 53,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "qrcode"
+    },
+    "created_at": "2026-04-14T15:31:28.245Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 54,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "cash"
+    },
+    "created_at": "2026-04-14T15:31:29.589Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 55,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_place_order_attempt",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "cash",
+      "country": "India",
+      "state": "Rajasthan"
+    },
+    "created_at": "2026-04-14T15:31:42.281Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 56,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_place_order_success",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "cash",
+      "orderId": "139"
+    },
+    "created_at": "2026-04-14T15:31:42.364Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 57,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/checkout/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:31:44.974Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 58,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/order-history/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:31:48.211Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 59,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/order-history/",
+    "referrer": "http://127.0.0.1:8000/order-history/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:32:06.993Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 60,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/order-history/",
+    "referrer": "http://127.0.0.1:8000/order-history/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:32:12.551Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 61,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/sale/",
+    "referrer": "http://127.0.0.1:8000/order-history/",
+    "session_key": "vnbwrm8u4j8utjmfu94njjy8vmx61u1e",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:33:38.614Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 62,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/sale/",
+    "session_key": "2pzz0sq4eu3fi7apzc8dn4ellurvjuui",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:33:59.686Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 63,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2pzz0sq4eu3fi7apzc8dn4ellurvjuui",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:34:01.434Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 64,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "pe2cqj0rlydn0yhn7p6ll6q8q29oq98b",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:34:13.210Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 65,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "pe2cqj0rlydn0yhn7p6ll6q8q29oq98b",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:34:58.657Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 66,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/vendor/products/men/41/edit/?source=admin",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "pe2cqj0rlydn0yhn7p6ll6q8q29oq98b",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:35:17.182Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 67,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/vendor/products/men/41/edit/?source=admin",
+    "session_key": "pe2cqj0rlydn0yhn7p6ll6q8q29oq98b",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:36:11.527Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 68,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "pe2cqj0rlydn0yhn7p6ll6q8q29oq98b",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:36:15.027Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 69,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "uec3l8l15ca8dz9r90o9otcs6xrfj39m",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:36:20.736Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 70,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "uec3l8l15ca8dz9r90o9otcs6xrfj39m",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:36:22.581Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 71,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "ft9o9e11xczftocrxzadlvfi9omfuqvx",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:36:37.706Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 72,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "ft9o9e11xczftocrxzadlvfi9omfuqvx",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:36:48.026Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 73,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/shoes/",
+    "referrer": "http://127.0.0.1:8000/mens/",
+    "session_key": "ft9o9e11xczftocrxzadlvfi9omfuqvx",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:36:49.666Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 74,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/bags/",
+    "referrer": "http://127.0.0.1:8000/mens/shoes/",
+    "session_key": "ft9o9e11xczftocrxzadlvfi9omfuqvx",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:36:51.572Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 75,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/mens/bags/",
+    "session_key": "ft9o9e11xczftocrxzadlvfi9omfuqvx",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:36:57.874Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 76,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/bags/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "ft9o9e11xczftocrxzadlvfi9omfuqvx",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:36:59.171Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 77,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/bags/",
+    "session_key": "4banaxeuc5cx7eia3atcijiutgbbzbl2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:37:07.384Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 78,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "4banaxeuc5cx7eia3atcijiutgbbzbl2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-14T15:37:10.221Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 79,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:37:18.581Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 80,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/vendor/products/men/41/edit/?source=admin",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:37:34.469Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 81,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/vendor/products/men/41/edit/?source=admin",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:38:18.229Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 82,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/sale/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:38:19.771Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 83,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/sale/",
+    "referrer": "http://127.0.0.1:8000/sale/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:38:22.161Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 84,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/",
+    "referrer": "http://127.0.0.1:8000/sale/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:38:24.450Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 85,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/sale/",
+    "referrer": "http://127.0.0.1:8000/mens/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:38:25.590Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 86,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/sale/",
+    "referrer": "http://127.0.0.1:8000/mens/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:38:37.086Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 87,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/mens/sale/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:38:42.255Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 88,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/vendor/products/men/41/edit/?source=admin",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:38:45.926Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 89,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/vendor/products/men/41/edit/?source=admin",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:38:58.360Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 90,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:39:01.274Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 91,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/sale/",
+    "referrer": "http://127.0.0.1:8000/mens/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:39:03.055Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 92,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/product/envelope-key-case/",
+    "referrer": "http://127.0.0.1:8000/mens/sale/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:39:06.483Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 93,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/product/envelope-key-case/",
+    "referrer": "http://127.0.0.1:8000/mens/product/envelope-key-case/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:39:10.727Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 94,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/cart/",
+    "referrer": "http://127.0.0.1:8000/mens/product/envelope-key-case/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:39:12.190Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 95,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/cart/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:39:15.188Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 96,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "Checkout | VASU"
+    },
+    "created_at": "2026-04-14T15:39:16.297Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 97,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "upi"
+    },
+    "created_at": "2026-04-14T15:39:37.477Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 98,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "qrcode"
+    },
+    "created_at": "2026-04-14T15:39:38.173Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 99,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "Checkout | VASU"
+    },
+    "created_at": "2026-04-14T15:41:09.885Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 100,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "Checkout | VASU"
+    },
+    "created_at": "2026-04-14T15:41:15.102Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 101,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "Checkout | VASU"
+    },
+    "created_at": "2026-04-14T15:41:16.210Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 102,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/cart/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:41:18.472Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 103,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/cart/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:41:19.565Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 104,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/cart/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:41:22.077Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 105,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "Checkout | VASU"
+    },
+    "created_at": "2026-04-14T15:41:25.399Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 106,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "Checkout | VASU"
+    },
+    "created_at": "2026-04-14T15:46:35.594Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 107,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "qrcode"
+    },
+    "created_at": "2026-04-14T15:47:13.703Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 108,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "cash"
+    },
+    "created_at": "2026-04-14T15:50:59.573Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 109,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "upi"
+    },
+    "created_at": "2026-04-14T15:51:00.619Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 110,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "card"
+    },
+    "created_at": "2026-04-14T15:51:02.272Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 111,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "user_event",
+    "event_name": "checkout_payment_method_changed",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "paymentMethod": "qrcode"
+    },
+    "created_at": "2026-04-14T15:51:05.577Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 112,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/checkout/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-14T15:51:08.710Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 113,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "es760zjg94nrn3ty1v8lof8jvxvfhc7t",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T05:56:22.076Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 114,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T05:56:32.724Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 115,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-17T05:56:34.376Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 116,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T05:58:56.463Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 117,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T06:51:03.222Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 118,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/mens/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-17T06:51:04.410Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 119,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T06:51:08.740Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 120,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=womens+product",
+    "referrer": "http://127.0.0.1:8000/mens/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T06:51:27.469Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 121,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=womens",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=womens+product",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T06:51:33.129Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 122,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=women",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=womens",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T06:51:36.565Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 123,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=women",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=womens",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T07:00:51.460Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 124,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=women",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=womens",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T07:08:21.644Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 125,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=women",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=womens",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T07:08:23.635Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 126,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=women",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=womens",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T07:12:44.219Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 127,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=women",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-17T07:15:23.319Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 128,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T07:16:18.749Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 129,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:18:29.867Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 130,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:18:43.839Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 131,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:18:50.408Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 132,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:18:51.271Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 133,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:18:51.988Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 134,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:19:09.449Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 135,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:19:41.762Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 136,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:19:54.469Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 137,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:19:55.334Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 138,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:19:55.596Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 139,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:33:29.232Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 140,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:33:30.211Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 141,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:33:31.092Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 142,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:50:54.029Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 143,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:50:57.291Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 144,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:59:46.073Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 145,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T09:59:47.049Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 146,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/product/x-lamborghini-c-k-charm/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T10:04:15.922Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 147,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T10:04:26.207Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 148,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/new/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T10:04:29.961Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 149,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/new/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-17T10:07:09.309Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 150,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:48:22.839Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 151,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/accounts/login/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "2fe5sf4p0m4qxkktxkrryhcn520m07wn",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : Sign In and Create Account"
+    },
+    "created_at": "2026-04-21T01:48:25.045Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 152,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/accounts/login/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:48:36.160Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 153,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:52:28.114Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 154,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/need-help/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "Need Help | VASU Support"
+    },
+    "created_at": "2026-04-21T01:52:56.355Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 155,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/need-help/",
+    "referrer": "http://127.0.0.1:8000/need-help/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "Need Help | VASU Support"
+    },
+    "created_at": "2026-04-21T01:54:12.199Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 156,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:54:16.309Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 157,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/order-history/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:54:21.862Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 158,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/order-history/31/rate/39/",
+    "referrer": "http://127.0.0.1:8000/order-history/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:54:30.352Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 159,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/order-history/",
+    "referrer": "http://127.0.0.1:8000/order-history/31/rate/39/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:55:55.078Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 160,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/order-history/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:56:12.029Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 161,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:56:44.466Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 162,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/new/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:56:47.939Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 163,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/designers/",
+    "referrer": "http://127.0.0.1:8000/new/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:56:50.407Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 164,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/new/",
+    "referrer": "http://127.0.0.1:8000/designers/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:56:52.097Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 165,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/product/embroidered-long-sleeve-top/",
+    "referrer": "http://127.0.0.1:8000/new/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:56:55.260Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 166,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/terms-of-service/",
+    "referrer": "http://127.0.0.1:8000/product/embroidered-long-sleeve-top/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "Terms of Service | VASU Store"
+    },
+    "created_at": "2026-04-21T01:57:18.356Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 167,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/privacy-policy/",
+    "referrer": "http://127.0.0.1:8000/terms-of-service/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "Privacy Policy | VASU Store"
+    },
+    "created_at": "2026-04-21T01:57:23.173Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 168,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/need-help/",
+    "referrer": "http://127.0.0.1:8000/privacy-policy/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "Need Help | VASU Support"
+    },
+    "created_at": "2026-04-21T01:57:26.408Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 169,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/privacy-policy/",
+    "referrer": "http://127.0.0.1:8000/need-help/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "Privacy Policy | VASU Store"
+    },
+    "created_at": "2026-04-21T01:57:37.329Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 170,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/cookie-policy/",
+    "referrer": "http://127.0.0.1:8000/privacy-policy/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "Cookie Policy | VASU Store"
+    },
+    "created_at": "2026-04-21T01:57:48.296Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 171,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/dresses/",
+    "referrer": "http://127.0.0.1:8000/cookie-policy/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:58:01.186Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 172,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/kendall/",
+    "referrer": "http://127.0.0.1:8000/dresses/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:58:06.040Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 173,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/new/",
+    "referrer": "http://127.0.0.1:8000/kendall/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:58:22.612Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 174,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/",
+    "referrer": "http://127.0.0.1:8000/new/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:58:24.549Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 175,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/mens/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:58:26.106Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 176,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/new/?q=tie",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:58:32.008Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 177,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/product/embroidered-long-sleeve-top/",
+    "referrer": "http://127.0.0.1:8000/new/?q=tie",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:58:34.654Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 178,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/new/?q=tie",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:58:48.045Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 179,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/new/?q=tie",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:58:57.904Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 180,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/?product_q=Embroidered+Long+Sleeve+Top",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:59:07.648Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 181,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/vendor/products/women/12/edit/?source=admin",
+    "referrer": "http://127.0.0.1:8000/admin-control/?product_q=Embroidered+Long+Sleeve+Top",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:59:14.787Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 182,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/vendor/products/women/12/edit/?source=admin",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:59:36.950Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 183,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/?product_q=tie",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T01:59:58.034Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 184,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/product/embroidered-long-sleeve-top/",
+    "referrer": "http://127.0.0.1:8000/admin-control/?product_q=tie",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:00:23.906Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 185,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/",
+    "referrer": "http://127.0.0.1:8000/product/embroidered-long-sleeve-top/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:01:13.779Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 186,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=tie",
+    "referrer": "http://127.0.0.1:8000/mens/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:01:18.341Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 187,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=tie&discount=20",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=tie",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:01:30.491Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 188,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=tie&discount=",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=tie&discount=20",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:01:32.705Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 189,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/?q=tie&discount=&sort=price_high",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=tie&discount=",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:01:37.387Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 190,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/designers/",
+    "referrer": "http://127.0.0.1:8000/mens/new/?q=tie&discount=&sort=price_high",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:01:40.288Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 191,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/clothing/",
+    "referrer": "http://127.0.0.1:8000/mens/designers/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:01:47.121Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 192,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/product/room-fever-t-shirt/",
+    "referrer": "http://127.0.0.1:8000/mens/clothing/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:01:53.499Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 193,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/clothing/",
+    "referrer": "http://127.0.0.1:8000/mens/designers/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:02:06.777Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 194,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/shoes/",
+    "referrer": "http://127.0.0.1:8000/mens/clothing/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:02:36.766Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 195,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/designers/",
+    "referrer": "http://127.0.0.1:8000/mens/shoes/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:02:47.527Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 196,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/clothing/",
+    "referrer": "http://127.0.0.1:8000/mens/designers/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:02:48.523Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 197,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/designers/",
+    "referrer": "http://127.0.0.1:8000/mens/clothing/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:03:32.507Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 198,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/mens/new/",
+    "referrer": "http://127.0.0.1:8000/mens/designers/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:03:34.204Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 199,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/cart/",
+    "referrer": "http://127.0.0.1:8000/mens/new/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:03:56.567Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 200,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "Checkout | VASU"
+    },
+    "created_at": "2026-04-21T02:04:15.331Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 201,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/cart/",
+    "referrer": "http://127.0.0.1:8000/mens/new/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:05:26.231Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 202,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:05:40.565Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 203,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/vendor/products/men/41/edit/?source=admin",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:05:44.213Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 204,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/vendor/products/men/41/edit/?source=admin",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:06:01.651Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 205,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/sale/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:06:03.469Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 206,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/vendor/products/men/41/edit/?source=admin",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:06:06.025Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 207,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/vendor/products/men/41/edit/?source=admin",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:06:10.917Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 208,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/vendor/products/men/41/edit/?source=admin",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:06:17.867Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 209,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/cart/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:06:26.281Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 210,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/checkout/",
+    "referrer": "http://127.0.0.1:8000/cart/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "Checkout | VASU"
+    },
+    "created_at": "2026-04-21T02:06:27.950Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 211,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/checkout/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:07:22.337Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 212,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/",
+    "referrer": "http://127.0.0.1:8000/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:07:26.505Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 213,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/payments/",
+    "referrer": "http://127.0.0.1:8000/admin-control/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:07:46.585Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 214,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/payments/",
+    "referrer": "http://127.0.0.1:8000/admin-control/payments/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:09:57.010Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 215,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/payments/?q=&payment_method=qrcode&payment_status=&account_receipt_status=&return_status=&refund_status=",
+    "referrer": "http://127.0.0.1:8000/admin-control/payments/",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:11:03.591Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 216,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/admin-control/payments/?q=&payment_method=qrcode&payment_status=&account_receipt_status=&return_status=&refund_status=",
+    "referrer": "http://127.0.0.1:8000/admin-control/payments/?q=&payment_method=qrcode&payment_status=&account_receipt_status=&return_status=&refund_status=",
+    "session_key": "a6rrhfp5pd8chcip5q8koo1u10ny6ub2",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:11:43.675Z"
+  }
+},
+{
+  "model": "aapstore.userevent",
+  "pk": 217,
+  "fields": {
+    "user": null,
+    "event_type": "page_view",
+    "event_name": "page_view",
+    "page_path": "/",
+    "referrer": "http://127.0.0.1:8000/admin-control/payments/?q=&payment_method=qrcode&payment_status=&account_receipt_status=&return_status=&refund_status=",
+    "session_key": "rzzu1323x0xgc63dnj2e0wueu7ljr6jt",
+    "anonymous_id": "b4fc5873-b7a9-4919-836c-68b9d357ca5d",
+    "ip_address": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0",
+    "properties": {
+      "title": "VASU : The Online Destination for Premier Luxury Fashion"
+    },
+    "created_at": "2026-04-21T02:11:52.209Z"
+  }
+},
+{
+  "model": "aapstore.userprofile",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "profile_picture": "userprofile/7422488_h0xAsaK.jpg",
+    "address_line_1": "Civil hospital road, Jangirpura",
+    "address_line_2": "Ahmdabad",
+    "city": "Ahmedabad",
+    "district": "",
+    "state": "Gujarat",
+    "country": "India",
+    "postal_code": ""
+  }
+},
+{
+  "model": "aapstore.userprofile",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "ak407@gamil.com"
+    ],
+    "profile_picture": "",
+    "address_line_1": "",
+    "address_line_2": "",
+    "city": "",
+    "district": "",
+    "state": "",
+    "country": "",
+    "postal_code": ""
+  }
+},
+{
+  "model": "aapstore.userprofile",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "vasu1115@outlook.com"
+    ],
+    "profile_picture": "userprofile/a1.png",
+    "address_line_1": "mali vas sirodi",
+    "address_line_2": "",
+    "city": "sirohi",
+    "district": "",
+    "state": "rajsthan",
+    "country": "India",
+    "postal_code": ""
+  }
+},
+{
+  "model": "aapstore.userprofile",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "vendor@gmail.com"
+    ],
+    "profile_picture": "",
+    "address_line_1": "",
+    "address_line_2": "",
+    "city": "",
+    "district": "",
+    "state": "",
+    "country": "",
+    "postal_code": ""
+  }
+},
+{
+  "model": "aapstore.userprofile",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "kapsmodi@gamil.com"
+    ],
+    "profile_picture": "userprofile/hero.png",
+    "address_line_1": "Sirodi Bus Stand",
+    "address_line_2": "Ambika Complex",
+    "city": "Sirohi",
+    "district": "Sirohi",
+    "state": "Rajasthan",
+    "country": "India",
+    "postal_code": "307511"
+  }
+},
+{
+  "model": "aapstore.userprofile",
+  "pk": 6,
+  "fields": {
+    "user": [
+      "naresh123@gmail.com"
+    ],
+    "profile_picture": "",
+    "address_line_1": "",
+    "address_line_2": "",
+    "city": "",
+    "district": "",
+    "state": "",
+    "country": "India",
+    "postal_code": ""
+  }
+},
+{
+  "model": "aapstore.userprofile",
+  "pk": 7,
+  "fields": {
+    "user": [
+      "jayesh123@gmail.com"
+    ],
+    "profile_picture": "",
+    "address_line_1": "",
+    "address_line_2": "",
+    "city": "",
+    "district": "",
+    "state": "",
+    "country": "India",
+    "postal_code": ""
+  }
+},
+{
+  "model": "aapstore.userprofile",
+  "pk": 8,
+  "fields": {
+    "user": [
+      "jayesh1234@gmail.com"
+    ],
+    "profile_picture": "",
+    "address_line_1": "",
+    "address_line_2": "",
+    "city": "",
+    "district": "",
+    "state": "",
+    "country": "India",
+    "postal_code": ""
+  }
+},
+{
+  "model": "aapstore.userprofile",
+  "pk": 9,
+  "fields": {
+    "user": [
+      "jayesh12345@gmail.com"
+    ],
+    "profile_picture": "",
+    "address_line_1": "",
+    "address_line_2": "",
+    "city": "",
+    "district": "",
+    "state": "",
+    "country": "India",
+    "postal_code": ""
+  }
+}
+]

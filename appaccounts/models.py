@@ -20,6 +20,7 @@ class MyAccountManager(BaseUserManager):
             username=username,
             password=password,
             account_type=Account.AccountType.ADMIN,
+            email_verified=True,
             **extra_fields,
         )
         user.is_admin = True
@@ -43,6 +44,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     account_type = models.CharField(max_length=20, choices=AccountType.choices, default=AccountType.CUSTOMER)
     date_joined = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(auto_now=True)
+    email_verified = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

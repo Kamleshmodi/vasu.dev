@@ -1,0 +1,347 @@
+[
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$8wqoe9nouKQRPxlYWaOeDM$u+zMjlZWHx7qMpJ1JXpFI/VERpQ4KE3JaoV8/rd8HaU=",
+      "email": "kamleshmodi7878@gmail.com",
+      "username": "KAMU",
+      "account_type": "admin",
+      "date_joined": "2025-07-03T07:24:13.937Z",
+      "last_login": "2026-04-21T01:48:35.381Z",
+      "email_verified": true,
+      "is_admin": true,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$TQxEp1UMdAo6dAQtSZ24Jp$jSzJwFk2cLftdANKtCIkQQLPzslvbZH5e8nQJqcvxis=",
+      "email": "sachinnagar21@gmail.com",
+      "username": "sachin",
+      "account_type": "customer",
+      "date_joined": "2025-07-18T12:53:40.849Z",
+      "last_login": "2026-04-01T00:21:29.518Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$uPs9YqwWr6QedE8NnzwbaG$s+k6sFWK5qmMEV1v8DVYlq7D7eW1Bdy8ghXOiEOARSI=",
+      "email": "ashishjamnani001@gmail.com",
+      "username": "Ashish",
+      "account_type": "customer",
+      "date_joined": "2025-07-18T15:51:53.866Z",
+      "last_login": "2025-07-18T15:51:53.866Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$w25UcndJf9TYhhQ5YekQFl$7QBIWuf4ELS5sGVJ+HhPZcweDRghlrTj/ZjjehOxYxQ=",
+      "email": "ashok@gamil.com",
+      "username": "Ashok",
+      "account_type": "customer",
+      "date_joined": "2025-07-18T16:00:13.691Z",
+      "last_login": "2025-07-18T16:31:03.403Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$STI5tUxjzdyj7xky5w4yuR$9MDKPGv651+J5FfD4w77loRMwnAyTZktTwSLZ4RqsQ0=",
+      "email": "priya@gmail.com",
+      "username": "Priya",
+      "account_type": "customer",
+      "date_joined": "2025-07-19T03:28:22.510Z",
+      "last_login": "2025-10-04T05:48:21.890Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$sDfAZRbcqNS39WmblGFLHY$kSQQPWEfy53S4tJVvnrn5f8Rlm9UvkmY70SBnNONKEk=",
+      "email": "hetal01@gmail.com",
+      "username": "Hetal",
+      "account_type": "customer",
+      "date_joined": "2025-07-19T04:56:21.153Z",
+      "last_login": "2025-08-22T13:00:05.786Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$rK1W37opW4WhsB6z13qo0p$XF4yiliGkyLqX8uOps7oi4oXtsnRnudgvVyN5dOADgA=",
+      "email": "kapsmodi@gamil.com",
+      "username": "Kalpesh",
+      "account_type": "customer",
+      "date_joined": "2025-07-22T15:33:21.577Z",
+      "last_login": "2026-04-10T18:24:29.240Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$bLncX1Ji5u2Gb5eziciFbN$iu+yxOh0YayEVCT1/jY4U9p/XxWofyEs2X0+t705yT8=",
+      "email": "vasu1115@outlook.com",
+      "username": "VASU",
+      "account_type": "admin",
+      "date_joined": "2025-08-22T02:40:05.420Z",
+      "last_login": "2026-04-14T15:27:27.020Z",
+      "email_verified": true,
+      "is_admin": true,
+      "is_active": true,
+      "is_staff": true,
+      "is_superuser": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$oqobOUzjKYs96xiKDU6Nk9$9d6luLfm36ko2967hEPeNfO64RFeCO/rsYluOQqWZ0g=",
+      "email": "vendor@gmail.com",
+      "username": "kaps Y",
+      "account_type": "vendor",
+      "date_joined": "2025-08-22T15:44:59.836Z",
+      "last_login": "2026-04-10T18:30:14.928Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$l6ErrbxvcrNYVjo6yFXEDU$kwm5YPi5Nw/OfwtusT7CZgVSu5k2VqkuKLPUPrxyo1w=",
+      "email": "sachinnagar31@gmail.com",
+      "username": "Sachin Nagar",
+      "account_type": "delivery_partner",
+      "date_joined": "2025-08-27T01:18:57.641Z",
+      "last_login": "2026-04-10T18:18:46.742Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$quIdmiHWSDEz3tTyIwzy4q$Z8z1JnyDkYvLTcUWx7lK8ST6j3KlsDxuEi9D5vl/Dnk=",
+      "email": "kamleshmodi01@outlook.com",
+      "username": "Borana",
+      "account_type": "customer",
+      "date_joined": "2025-09-15T13:02:32.192Z",
+      "last_login": "2025-10-04T02:10:29.485Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$R1I7upyW42DEmrPMoBynAj$uyN5XVTzH7xGUr5aS1HsWy7p3xfVDbqbY7jD29buicM=",
+      "email": "abcd@gmail.com",
+      "username": "Abcd",
+      "account_type": "customer",
+      "date_joined": "2025-09-15T13:10:21.851Z",
+      "last_login": "2025-09-15T13:10:51.803Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$M5vEAgIH5b94kSwcflV7fi$3WjzNfKcMp8b97ZRvhukSqey+YP7ReeN4X3vQx2D91M=",
+      "email": "ak407@gamil.com",
+      "username": "Ashok Modi",
+      "account_type": "vendor",
+      "date_joined": "2025-10-16T16:15:05.849Z",
+      "last_login": "2026-04-10T18:36:18.397Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$602Z1T1Uf5lpBJGPcBTXHN$3250TCh6oWeh2E6XWfj3JKttWDSMf53K2F1wlAirgbQ=",
+      "email": "naresh123@gmail.com",
+      "username": "Naresh Modi",
+      "account_type": "vendor",
+      "date_joined": "2026-04-11T12:59:10.596Z",
+      "last_login": "2026-04-11T13:07:56.475Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$mVIEB8hqt2pLfV4jh19fDR$VIlGtwYaM87qDQ8opwKBhyoEYmQYC0A3tECKyfemHLM=",
+      "email": "jayesh123@gmail.com",
+      "username": "jayesh",
+      "account_type": "customer",
+      "date_joined": "2026-04-14T07:25:52.525Z",
+      "last_login": "2026-04-14T07:25:52.525Z",
+      "email_verified": false,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$1XIVOz8H9hHZ00tgxVyAsi$rRproJht3L6brnarF6dVTuKavsL9J71MjGox1YvEtQk=",
+      "email": "jayesh1234@gmail.com",
+      "username": "jayesh001",
+      "account_type": "customer",
+      "date_joined": "2026-04-14T13:48:10.872Z",
+      "last_login": "2026-04-14T15:36:37.327Z",
+      "email_verified": true,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.account",
+    "fields": {
+      "password": "pbkdf2_sha256$1200000$I9MJ0lsCtTZfXPDgR456qs$Rmfu+1KfcVHLEqgEBNDCcRjRGe8p3FKiPowCqegBADI=",
+      "email": "jayesh12345@gmail.com",
+      "username": "jayesh002",
+      "account_type": "customer",
+      "date_joined": "2026-04-14T14:46:08.512Z",
+      "last_login": "2026-04-14T14:46:08.512Z",
+      "email_verified": false,
+      "is_admin": false,
+      "is_active": true,
+      "is_staff": false,
+      "is_superuser": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "appaccounts.vendorprofile",
+    "pk": 1,
+    "fields": {
+      "user": [
+        "ak407@gamil.com"
+      ],
+      "business_name": "Ashok Modi",
+      "contact_email": "ak407@gamil.com",
+      "contact_phone": "",
+      "bio": ""
+    }
+  },
+  {
+    "model": "appaccounts.vendorprofile",
+    "pk": 2,
+    "fields": {
+      "user": [
+        "vendor@gmail.com"
+      ],
+      "business_name": "kaps Y",
+      "contact_email": "vendor@gmail.com",
+      "contact_phone": "",
+      "bio": ""
+    }
+  },
+  {
+    "model": "appaccounts.vendorprofile",
+    "pk": 3,
+    "fields": {
+      "user": [
+        "naresh123@gmail.com"
+      ],
+      "business_name": "Naresh Modi",
+      "contact_email": "naresh123@gmail.com",
+      "contact_phone": "",
+      "bio": ""
+    }
+  }
+]

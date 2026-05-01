@@ -1,0 +1,3310 @@
+[
+{
+  "model": "appmens.newproduct",
+  "pk": 3,
+  "fields": {
+    "product_name": "Shorts",
+    "brand": "BALENCIAGA",
+    "slug": "shorts",
+    "vendor": null,
+    "designer": 32,
+    "gender": "Mens",
+    "description": "Self: 100% cotton.   \r\nContrast Fabric: 100% polyester.     \r\nMachine wash.    \r\nElastic waistband with interior drawstring closure.   \r\nSide seam pockets.  \r\nMidweight brushed french terry fabric\r\nMade in Portugal\r\nOur Style No. BALF-MF39\r\nManufacturer Style No. 826385TSVH31041\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "86184.71",
+    "front_image": "photos/products/agsvsy4gs7obs6l1jrqq.jpeg",
+    "back_image": "photos/products/hdvcoeoqhkpctdvz4o1m.jpeg",
+    "is_available": true,
+    "category": 23,
+    "created_date": "2025-07-13T05:01:01.704Z",
+    "modified_date": "2025-07-13T12:46:29.366Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 4,
+  "fields": {
+    "product_name": "Tracksuit Jacket",
+    "brand": "BALENCIAGA",
+    "slug": "tracksuit-jacket",
+    "vendor": null,
+    "designer": 32,
+    "gender": "Mens",
+    "description": "Self: 100% cotton.  \r\nLining: 100% polyester. \r\nDry clean only. \r\nFront zip closure. \r\n2 zip pockets.  \r\nEmbroidered logo detail at chest. \r\nMidweight ripstop fabric with tricot lining.  \r\nMade in Italy. \r\nOur Style No. BALF-MO114. \r\nManufacturer Style No. 839092TSM021000.  \r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "212213.59",
+    "front_image": "photos/products/l3ml0tnlw5065qc6pllf_oDLbCRx.jpeg",
+    "back_image": "photos/products/jgwtj4bgrzsr5jdfa7zk_5NJAqUi.jpeg",
+    "is_available": true,
+    "category": 113,
+    "created_date": "2025-07-13T15:46:08.390Z",
+    "modified_date": "2025-07-13T15:46:53.328Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 5,
+  "fields": {
+    "product_name": "Large Fit Bomber Jaket",
+    "brand": "BALENCIAGA",
+    "slug": "large-fit-bomber-jaket",
+    "vendor": null,
+    "designer": 33,
+    "gender": "Mens",
+    "description": "Self: 100% polyamide\r\nLining 1: 100% polyester\r\nLining 2: 100% cotton\r\nDry clean only\r\nFront zip closure\r\n3-pocket styling with additional interior pocket\r\nEmbroidered logo detail at chest\r\nHeavyweight ripstop fabric\r\nMade in Italy\r\nOur Style No. BALF-MO116\r\nManufacturer Style No. 839101TOO041000\r\nModel is wearing size 48. View detailed measurements of this item.",
+    "price": "272846.03",
+    "front_image": "photos/products/mhluh7qoljikaapmewbg.jpeg",
+    "back_image": "photos/products/jhjumrtlustginqm4xe8.jpeg",
+    "is_available": true,
+    "category": 113,
+    "created_date": "2025-07-13T16:17:28.175Z",
+    "modified_date": "2025-07-13T16:17:28.175Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 6,
+  "fields": {
+    "product_name": "Passport Phone Holder",
+    "brand": "BALENCIAGA",
+    "slug": "passport-phone-holder",
+    "vendor": null,
+    "designer": 33,
+    "gender": "Mens",
+    "description": "Soft textured calfskin exterior and leather interior\r\nWrap around zip closure\r\nOne main compartment\r\nOne back pocket\r\n3 interior card slots\r\nDetachable crossbody strap\r\nBalenciaga logo and two trompe l'oeil tickets printed at front\r\nMeasures approx 13 cm W x 20 cm H x 2 cm D\r\nShoulder strap with a 55 cm drop\r\nMade in Italy\r\nOur Style No. BALF-MY209\r\nManufacturer Style No. 7877332AA3R1108",
+    "price": "99610.47",
+    "front_image": "photos/products/BALF-MY209_V1.jpg",
+    "back_image": "photos/products/BALF-MY209_V2.jpg",
+    "is_available": true,
+    "category": 114,
+    "created_date": "2025-07-13T16:21:11.985Z",
+    "modified_date": "2025-07-13T16:21:11.985Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 7,
+  "fields": {
+    "product_name": "Short Sleeve Shirt",
+    "brand": "MISSONI",
+    "slug": "short-sleeve-shirt",
+    "vendor": null,
+    "designer": 29,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nFront button closure\r\nSingle chest pocket\r\nLightweight twill fabric\r\nMade in Romania\r\nOur Style No. MSON-MS26\r\nManufacturer Style No. US25WJ03\r\nModel is wearing size 48. View detailed measurements of this item.",
+    "price": "53703.03",
+    "front_image": "photos/products/fbyajtulkusxjxgvsbsl.jpeg",
+    "back_image": "photos/products/prdtet7x6dxqhhvoosvw.jpeg",
+    "is_available": true,
+    "category": 115,
+    "created_date": "2025-07-13T16:25:25.125Z",
+    "modified_date": "2025-07-13T16:56:24.505Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 8,
+  "fields": {
+    "product_name": "Short Sleeve shirt",
+    "brand": "MISSONI",
+    "slug": "short-sleeve--shirt",
+    "vendor": null,
+    "designer": 33,
+    "gender": "Mens",
+    "description": "100% cotton\r\nHand wash\r\nFront button closure\r\nSingle chest pocket\r\nNotched collar\r\nLightweight knit fabric\r\nMade in Italy\r\nOur Style No. MSON-MS27\r\nManufacturer Style No. US25WJ04\r\nModel is wearing size 48. View detailed measurements of this item.",
+    "price": "84019.26",
+    "front_image": "photos/products/y3cuxfeejpisvypcrppd.jpeg",
+    "back_image": "photos/products/onlkgoc8smhcos3az7gl.jpeg",
+    "is_available": true,
+    "category": 115,
+    "created_date": "2025-07-13T16:28:27.305Z",
+    "modified_date": "2025-07-13T16:56:09.982Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 9,
+  "fields": {
+    "product_name": "Rive Gauche",
+    "brand": "SAINT LAURENT",
+    "slug": "rive-gauche",
+    "vendor": null,
+    "designer": 29,
+    "gender": "Mens",
+    "description": "Canvas exterior with rivet trim and canvas interior\r\nTop snap button closure\r\nOne main compartment\r\nOne interior zip and one interior slip pocket\r\nMeasures approx 46 cm W x 34 cm H x 18 cm D\r\nShoulder strap with a 18 cm drop\r\nThis item is not available to ship to Indonesia\r\nMade in Italy\r\nOur Style No. SLAU-MY240\r\nManufacturer Style No. 822883-FAEG2-3269",
+    "price": "181897.38",
+    "front_image": "photos/products/SLAU-MY240_V1.jpg",
+    "back_image": "photos/products/SLAU-MY240_V2.jpg",
+    "is_available": true,
+    "category": 116,
+    "created_date": "2025-07-13T16:31:39.932Z",
+    "modified_date": "2025-07-13T16:31:39.932Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 10,
+  "fields": {
+    "product_name": "Cloudnova 2",
+    "brand": "ON",
+    "slug": "cloudnova-2",
+    "vendor": null,
+    "designer": 1,
+    "gender": "Mens",
+    "description": "Mesh upper and rubber sole\r\nMade in Vietnam\r\nLace-up front\r\nPerforated microfiber tongue\r\nSoft Zero-Gravity foam midsole for comfort\r\nFlexible nylon blend Speedboard for energy return\r\nOur Style No. ONF-MZ388\r\nManufacturer Style No. 3ME30210108",
+    "price": "13858.85",
+    "front_image": "photos/products/csg7jotsaaetwn2ddzhm.jpeg",
+    "back_image": "photos/products/suijlrnw1xauwxyhqxpr.jpeg",
+    "is_available": true,
+    "category": 117,
+    "created_date": "2025-07-13T16:35:52.144Z",
+    "modified_date": "2025-07-13T16:55:46.862Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 11,
+  "fields": {
+    "product_name": "Cloudnova Form 2",
+    "brand": "ON",
+    "slug": "cloudnova-form-2",
+    "vendor": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "designer": 39,
+    "gender": "Mens",
+    "description": "Mesh knit upper with rubber sole\r\nMade in Vietnam\r\nLace-up front\r\nPerforated microfiber tongue\r\nSoft Zero-Gravity foam midsole for comfort\r\nFlexible, nylon blend Speedboard for energy return\r\nOur Style No. ONF-MZ390\r\nManufacturer Style No. 3ME30150924",
+    "price": "12126.49",
+    "front_image": "photos/products/co3uut8hogi9loj3xwn7.jpeg",
+    "back_image": "photos/products/tilnrjej9trqk2j3yl2d.jpeg",
+    "is_available": true,
+    "category": 117,
+    "created_date": "2025-07-13T16:39:00.404Z",
+    "modified_date": "2026-04-10T15:54:45.502Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 12,
+  "fields": {
+    "product_name": "1981 Painter Decorator Trouser",
+    "brand": "Acne Studios",
+    "slug": "1981-painter-decorator-trouser",
+    "vendor": null,
+    "designer": 34,
+    "gender": "Mens",
+    "description": "00% organic cotton\r\nMachine wash\r\nButton fly\r\n5-pocket styling\r\nFaux paint splatter design throughout\r\nMidweight denim fabric\r\nMade in Italy\r\nOur Style No. ACNE-MJ129\r\nManufacturer Style No. CK0133\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "69294.24",
+    "front_image": "photos/products/b9pqvbfdjnywvummufum.jpeg",
+    "back_image": "photos/products/cdo4y2smg5juvuykobzn.jpeg",
+    "is_available": true,
+    "category": 118,
+    "created_date": "2025-07-13T16:43:27.445Z",
+    "modified_date": "2025-07-13T16:55:01.214Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 13,
+  "fields": {
+    "product_name": "Bowling Bag L",
+    "brand": "adidas by Wales Bonner",
+    "slug": "bowling-bag-l",
+    "vendor": null,
+    "designer": 29,
+    "gender": "Mens",
+    "description": "100% cow suede. Dual direction top zipper closure. One main compartment. Interior slip pocket. Interior zipper pocket. Detachable leather shoulder strap. Volume: 17.5 L. Measures approx 45 cm W x 22 cm H x 19 cm D. Made in Vietnam. Our Style No. ASBF-MY5. Manufacturer Style No. JM8892.",
+    "price": "51970.68",
+    "front_image": "photos/products/jpnl9hzydfyja7hg6v0a.jpeg",
+    "back_image": "photos/products/vkogutlsrguygwz379cv.jpeg",
+    "is_available": true,
+    "category": 119,
+    "created_date": "2025-07-13T16:46:36.150Z",
+    "modified_date": "2025-07-13T16:46:36.150Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 14,
+  "fields": {
+    "product_name": "Cityscape Short",
+    "brand": "AMIRI",
+    "slug": "cityscape-short",
+    "vendor": null,
+    "designer": 35,
+    "gender": "Mens",
+    "description": "100% cotton\r\nDo not wash\r\nDrawstring closure\r\nSide seam pockets\r\nRibbed hem\r\nHeavyweight knit fabric\r\nItem not sold as a set\r\nMade in Italy\r\nOur Style No. AMIF-MF114\r\nManufacturer Style No. AMKNSH1040\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "99610.47",
+    "front_image": "photos/products/hynod0q3bwbozoyjnw52.jpeg",
+    "back_image": "photos/products/v78dibtpqz9zosl3igad.jpeg",
+    "is_available": true,
+    "category": 120,
+    "created_date": "2025-07-13T17:22:21.190Z",
+    "modified_date": "2025-07-13T17:22:21.190Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 15,
+  "fields": {
+    "product_name": "Sailor Zip Hoodie",
+    "brand": "Basketcase",
+    "slug": "sailor-zip-hoodie",
+    "vendor": null,
+    "designer": 35,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMade in Mexico of imported materials\r\nMachine wash\r\nFront zip closure\r\n2-pocket styling\r\nMidweight fleece fabric\r\nOur Style No. BTCF-MK4\r\nManufacturer Style No. SAILOR\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "17323.56",
+    "front_image": "photos/products/wwjln1khq4cedktlzc6p.jpeg",
+    "back_image": "photos/products/hoxb5f6ixbdbjhmv80pc.jpeg",
+    "is_available": true,
+    "category": 121,
+    "created_date": "2025-07-13T17:24:42.859Z",
+    "modified_date": "2025-07-13T17:24:42.859Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 16,
+  "fields": {
+    "product_name": "Scarab Crew Neck Sweatshirt",
+    "brand": "Basketcase",
+    "slug": "scarab-crew-neck-sweatshirt",
+    "vendor": null,
+    "designer": 35,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nPull-on styling\r\nFront and back print graphic\r\nMidweight fleece fabric\r\nMade in US\r\nOur Style No. BTCF-MK5\r\nManufacturer Style No. SCARAB\r\nModel is wearing size M. View detailed measurements of this item",
+    "price": "15591.20",
+    "front_image": "photos/products/euxohpi2aaqtpmfkja04.jpeg",
+    "back_image": "photos/products/bghomxbvw3svw73yhkxf.jpeg",
+    "is_available": true,
+    "category": 122,
+    "created_date": "2025-07-13T17:26:39.361Z",
+    "modified_date": "2025-07-13T17:26:39.361Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 17,
+  "fields": {
+    "product_name": "Basketcase",
+    "brand": "Factory Work Jacket",
+    "slug": "basketcase",
+    "vendor": null,
+    "designer": 1,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nFront zip closure\r\n3-pocket styling\r\nFront and back print graphic\r\nLogo detailing at chest\r\nMidweight canvas fabric\r\nMade in China\r\nOur Style No. BTCF-MO2\r\nManufacturer Style No. FACTORY\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "19055.92",
+    "front_image": "photos/products/oud35ampyac4odgzruil.jpeg",
+    "back_image": "photos/products/lxg5vzacxvzmirektsio.jpeg",
+    "is_available": true,
+    "category": 113,
+    "created_date": "2025-07-13T17:29:28.688Z",
+    "modified_date": "2025-07-13T17:29:28.688Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 18,
+  "fields": {
+    "product_name": "August Tee",
+    "brand": "BASKETCASE",
+    "slug": "august-tee",
+    "vendor": null,
+    "designer": 1,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nFront and back print graphic\r\nMidweight jersey fabric\r\nMade in US\r\nOur Style No. BTCF-MS10\r\nManufacturer Style No. AUGUST\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "6929.42",
+    "front_image": "photos/products/fuyjbtdr0mfe4fd1ohpn.jpeg",
+    "back_image": "photos/products/lsckf41ecrbh5cutnqri.jpeg",
+    "is_available": true,
+    "category": 123,
+    "created_date": "2025-07-14T05:36:27.376Z",
+    "modified_date": "2025-07-14T05:36:27.376Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 19,
+  "fields": {
+    "product_name": "Moony Calf Corriere Messenger Bag",
+    "brand": "BOTTEGA VENETA",
+    "slug": "moony-calf-corriere-messenger-bag",
+    "vendor": null,
+    "designer": 35,
+    "gender": "Mens",
+    "description": "Grained calf leather exterior with Intrecciato trims and canvas lining\r\nTop zip closure\r\nOne main compartment\r\nSingle interior zipped pocket and two flat open pockets\r\nDouble adjustable strap with key ring and Intrecciato leather tab\r\nMeasures approx 39 cm W x 29 cm H x 37 cm D\r\nShoulder strap with a 47 cm drop\r\nMade in Italy\r\nOur Style No. BOTT-MY258\r\nManufacturer Style No. 826852-V5H90-8803",
+    "price": "31182406.00",
+    "front_image": "photos/products/k5vhxebmgoc6vrfzvror.jpeg",
+    "back_image": "photos/products/yzniuel8sofki3qfdhz6.jpeg",
+    "is_available": true,
+    "category": 124,
+    "created_date": "2025-07-14T05:49:27.371Z",
+    "modified_date": "2025-07-14T05:49:27.371Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 20,
+  "fields": {
+    "product_name": "Vertical Horse T-Shirt",
+    "brand": "BY PARRA",
+    "slug": "vertical-horse-t-shirt",
+    "vendor": null,
+    "designer": 34,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nFront graphic\r\nMidweight jersey fabric\r\nMade in Portugal\r\nOur Style No. BYPF-MS45\r\nManufacturer Style No. 53505\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "5197.07",
+    "front_image": "photos/products/ipuodip7ptlvcl5b8yhi.jpeg",
+    "back_image": "photos/products/odx4lqvym8fnfr1nfgeo.jpeg",
+    "is_available": true,
+    "category": 123,
+    "created_date": "2025-07-14T05:51:38.418Z",
+    "modified_date": "2025-07-14T05:51:38.419Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 21,
+  "fields": {
+    "product_name": "Room Fever T-Shirt",
+    "brand": "BY PARRA",
+    "slug": "room-fever-t-shirt",
+    "vendor": null,
+    "designer": 35,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nFront graphic\r\nMidweight jersey fabric\r\nMade in Portugal\r\nOur Style No. BYPF-MS46\r\nManufacturer Style No. 53510\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "5197.07",
+    "front_image": "photos/products/zhaminodbvqgnag83kix.jpeg",
+    "back_image": "photos/products/zhaminodbvqgnag83kix_ry5W2VX.jpeg",
+    "is_available": true,
+    "category": 123,
+    "created_date": "2025-07-14T05:58:20.265Z",
+    "modified_date": "2025-07-14T05:58:20.265Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 22,
+  "fields": {
+    "product_name": "Chair Baller T-Shirt",
+    "brand": "BY PARRA",
+    "slug": "chair-baller-t-shirt",
+    "vendor": null,
+    "designer": 35,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nFront graphic\r\nMidweight jersey fabric\r\nMade in Portugal\r\nOur Style No. BYPF-MS47\r\nManufacturer Style No. 53516\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "5630.16",
+    "front_image": "photos/products/fq5m7invfxr1swqu5hks.jpeg",
+    "back_image": "photos/products/dgpccnmumizyy9fpetm4.jpeg",
+    "is_available": true,
+    "category": 123,
+    "created_date": "2025-07-14T06:01:48.965Z",
+    "modified_date": "2025-07-14T06:01:48.965Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 23,
+  "fields": {
+    "product_name": "Your Face Long Sleeve T-Shirt",
+    "brand": "BY PARRA",
+    "slug": "your-face-long-sleeve-t-shirt",
+    "vendor": null,
+    "designer": 1,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nGraphic details throughout\r\nMidweight jersey fabric\r\nMade in Portugal\r\nOur Style No. BYPF-MS48\r\nManufacturer Style No. 53521\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "9094.87",
+    "front_image": "photos/products/vhkkdi4klbkw35rovgd9.jpeg",
+    "back_image": "photos/products/amg0pnydcg3hbscz3wmb.jpeg",
+    "is_available": true,
+    "category": 125,
+    "created_date": "2025-07-14T06:05:05.985Z",
+    "modified_date": "2025-07-14T06:05:05.985Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 24,
+  "fields": {
+    "product_name": "Splashed Polo Shirt",
+    "brand": "BY PARRA",
+    "slug": "splashed-polo-shirt",
+    "vendor": null,
+    "designer": 34,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nQuarter button closure\r\nLogo path detail\r\nMidweight pique fabric\r\nMade in Portugal\r\nOur Style No. BYPF-MS49\r\nManufacturer Style No. 53530\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "12126.49",
+    "front_image": "photos/products/hdujztn1qzponqavfd3m.jpeg",
+    "back_image": "photos/products/xzr2qjyftqguhtiduxyy.jpeg",
+    "is_available": true,
+    "category": 123,
+    "created_date": "2025-07-14T06:10:20.642Z",
+    "modified_date": "2025-07-14T06:10:20.642Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 25,
+  "fields": {
+    "product_name": "Vertical Horse Short Sleeve Shirt",
+    "brand": "BY PARRA",
+    "slug": "vertical-horse-short-sleeve-shirt",
+    "vendor": null,
+    "designer": 35,
+    "gender": "Mens",
+    "description": "55% cotton, 45% hemp\r\nMachine wash\r\nFront button closure\r\nEmbroidered front graphic\r\nLightweight twill fabric\r\nMade in Portugal\r\nOur Style No. BYPF-MS50\r\nManufacturer Style No. 53540\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "16457.38",
+    "front_image": "photos/products/nekxpc1y4mmux1jlqqrc.jpeg",
+    "back_image": "photos/products/ipefyq4he0ke6pcc0kna.jpeg",
+    "is_available": true,
+    "category": 115,
+    "created_date": "2025-07-14T16:31:47.190Z",
+    "modified_date": "2025-07-14T16:31:47.190Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 26,
+  "fields": {
+    "product_name": "Splashed Swim Shorts",
+    "brand": "BY PARRA",
+    "slug": "splashed-swim-shorts",
+    "vendor": null,
+    "designer": 35,
+    "gender": "Mens",
+    "description": "100% polyester\r\nMachine wash\r\nPull-on styling with elastic waistband\r\nSide seam pockets\r\nMidweight swimwear fabric\r\nMade in China\r\nOur Style No. BYPF-MX8\r\nManufacturer Style No. 53535",
+    "price": "16457.38",
+    "front_image": "photos/products/lwmgghdswmqwphkyevd1.jpeg",
+    "back_image": "photos/products/ipuodip7ptlvcl5b8yhi_kCfvqXM.jpeg",
+    "is_available": true,
+    "category": 126,
+    "created_date": "2025-07-14T16:37:20.283Z",
+    "modified_date": "2025-12-06T09:42:12.304Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 27,
+  "fields": {
+    "product_name": "Knit Tie",
+    "brand": "FEAR OF GOD",
+    "slug": "knit-tie",
+    "vendor": null,
+    "designer": 36,
+    "gender": "Mens",
+    "description": "00% merino wool\r\nHand wash\r\nMade in Italy\r\nOur Style No. FEAF-MA35\r\nManufacturer Style No. FG25FW74-740LAW-001",
+    "price": "19489.00",
+    "front_image": "photos/products/abtsgtixkeyyztqsmbuc.jpeg",
+    "back_image": "photos/products/ij1hdbv62te6pzq1ai0l.jpeg",
+    "is_available": true,
+    "category": 127,
+    "created_date": "2025-07-14T16:40:37.485Z",
+    "modified_date": "2025-12-06T09:41:53.265Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 28,
+  "fields": {
+    "product_name": "Wide Leg Denim Jeans",
+    "brand": "GIVENCHY",
+    "slug": "wide-leg-denim-jeans",
+    "vendor": null,
+    "designer": 37,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nButton fly\r\n5-pocket styling\r\nRigid denim fabric\r\nMade in Romania\r\nOur Style No. GIVE-MJ49\r\nManufacturer Style No. BM51MM5004401\r\nModel is wearing size 32. View detailed measurements of this item.",
+    "price": "95279.58",
+    "front_image": "photos/products/rr1rmgfebimae1wq2asc.jpeg",
+    "back_image": "photos/products/rr1rmgfebimae1wq2asc_2qgHGJD.jpeg",
+    "is_available": true,
+    "category": 128,
+    "created_date": "2025-07-14T16:46:03.516Z",
+    "modified_date": "2025-12-06T09:41:25.280Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 29,
+  "fields": {
+    "product_name": "Twisted Seam Denim Jeans",
+    "brand": "GIVENCHY",
+    "slug": "twisted-seam-denim-jeans",
+    "vendor": null,
+    "designer": 37,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nButton fly\r\n5-pocket styling\r\nRigid denim fabric\r\nMade in Italy\r\nOur Style No. GIVE-MJ50\r\nManufacturer Style No. BM51MN516L401\r\nModel is wearing size 32. View detailed measurements of this item.",
+    "price": "99610.47",
+    "front_image": "photos/products/yioepd5txx89mvd8tn8x.jpeg",
+    "back_image": "photos/products/dzg6i1ubx3rf6bwke8fq.jpeg",
+    "is_available": true,
+    "category": 128,
+    "created_date": "2025-07-14T16:48:20.850Z",
+    "modified_date": "2025-07-14T16:48:20.850Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 30,
+  "fields": {
+    "product_name": "Cargo Patch Pocket Pants",
+    "brand": "GIVENCHY",
+    "slug": "cargo-patch-pocket-pants",
+    "vendor": [
+      "kamleshmodi7878@gmail.com"
+    ],
+    "designer": 38,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nZip fly with button closure\r\n7-pocket styling\r\nMidweight canvas fabric\r\nMade in Italy\r\nOur Style No. GIVE-MP97\r\nManufacturer Style No. BM51M2164Q250\r\nModel is wearing size 48. View detailed measurements of this item.",
+    "price": "125595.81",
+    "front_image": "photos/products/fewf9c9frjkiktsnjswc.jpeg",
+    "back_image": "photos/products/ifhtev12sjcew52vdmuj.jpeg",
+    "is_available": true,
+    "category": 129,
+    "created_date": "2025-07-14T16:50:50.413Z",
+    "modified_date": "2026-04-10T15:58:35.619Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 31,
+  "fields": {
+    "product_name": "Bowling Shirt",
+    "brand": "GIVENCHY",
+    "slug": "bowling-shirt",
+    "vendor": null,
+    "designer": 38,
+    "gender": "Mens",
+    "description": "100% viscose\r\nDry clean only\r\nFront button closure\r\nLightweight twill fabric\r\nMade in Italy\r\nOur Style No. GIVE-MS433\r\nManufacturer Style No. BM61621674401\r\nModel is wearing size 38. View detailed measurements of this item.",
+    "price": "101342.82",
+    "front_image": "photos/products/ezlb0slgbjukxbikweqe.jpeg",
+    "back_image": "photos/products/rvk1hyf7k9fq4sszbwh2.jpeg",
+    "is_available": true,
+    "category": 115,
+    "created_date": "2025-07-14T16:58:32.477Z",
+    "modified_date": "2025-12-06T09:40:35.416Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 32,
+  "fields": {
+    "product_name": "Short Sleeve Polo",
+    "brand": "GIVENCHY",
+    "slug": "short-sleeve-polo",
+    "vendor": null,
+    "designer": 37,
+    "gender": "Mens",
+    "description": "100% cotton\r\nMachine wash\r\nPartial front button closure\r\n1-pocket styling with logo detail\r\nMidweight pique fabric\r\nMade in Italy\r\nOur Style No. GIVE-MS435\r\nManufacturer Style No. BML00G3YRD001\r\nModel is wearing size M. View detailed measurements of this item",
+    "price": "101342.82",
+    "front_image": "photos/products/ifhtev12sjcew52vdmuj_el8jrMl.jpeg",
+    "back_image": "photos/products/nys6wfmshbxtl09enttg.jpeg",
+    "is_available": true,
+    "category": 130,
+    "created_date": "2025-07-14T17:01:16.383Z",
+    "modified_date": "2025-12-06T09:39:59.761Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 33,
+  "fields": {
+    "product_name": "Rhett Jacket",
+    "brand": "NILI LOTAN",
+    "slug": "rhett-jacket",
+    "vendor": null,
+    "designer": 38,
+    "gender": "Mens",
+    "description": "Self: 80% cotton, 20% polyamide\r\nLining: 100% cotton\r\nDry clean only\r\nHidden front zip closure with snap button overlay\r\n4-pocket styling\r\nSnap button cuffs\r\nMidweight twill fabric with retractable hoodie\r\nMade in Portugal\r\nOur Style No. NILF-MO5\r\nManufacturer Style No. 22049-W790\r\nModel is wearing size M. View detailed measurements of this item.",
+    "price": "99610.47",
+    "front_image": "photos/products/sannxhojzjnkcjnyocfh.jpeg",
+    "back_image": "photos/products/o4zhvzs5kto2aeotzroq.jpeg",
+    "is_available": true,
+    "category": 113,
+    "created_date": "2025-07-14T17:03:39.106Z",
+    "modified_date": "2025-12-06T09:39:49.130Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 34,
+  "fields": {
+    "product_name": "Classic Watch",
+    "brand": "D1 MILANO",
+    "slug": "classic-watch",
+    "vendor": null,
+    "designer": 30,
+    "gender": "Mens",
+    "description": "Polished silver and gold-tone steel case\r\nStretch stainless steel belt\r\nWater resistant up to 50 meters\r\nMade in China\r\nOur Style No. TAKA-ML3\r\nManufacturer Style No. sva.0003SS25",
+    "price": "15899.00",
+    "front_image": "photos/products/bxu9gbawqsvax96m5qxk.jpeg",
+    "back_image": "photos/products/zrettye3ballr8aglcjz.jpeg",
+    "is_available": true,
+    "category": 131,
+    "created_date": "2025-10-10T15:43:17.974Z",
+    "modified_date": "2025-10-10T15:44:02.090Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 35,
+  "fields": {
+    "product_name": "Watch",
+    "brand": "D1 MILANO",
+    "slug": "watch",
+    "vendor": null,
+    "designer": 29,
+    "gender": "Mens",
+    "description": "Polycarbonate case and strap\r\nMade in China\r\nBrass dial, indexes, and hands\r\nHidden butterfly clasp\r\nBlack polycarbonate bezel\r\n5ATM water resistance\r\nCase measures approx 40.5mm\r\nBand measures approx 11.5mm\r\nOur Style No. D1MF-ML3\r\nManufacturer Style No. D1-PHBJSH",
+    "price": "15899.00",
+    "front_image": "photos/products/twxkd1xud4tbf1zekm5m.jpeg",
+    "back_image": "photos/products/t0e5gxtrdqys9hmhq6pl.jpeg",
+    "is_available": true,
+    "category": 131,
+    "created_date": "2025-10-10T15:47:51.108Z",
+    "modified_date": "2025-12-06T08:54:21.076Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 36,
+  "fields": {
+    "product_name": "Automatico 41.5 Mm Watch",
+    "brand": "D1 MILANO",
+    "slug": "automatico-415-mm-watch",
+    "vendor": null,
+    "designer": 1,
+    "gender": "Mens",
+    "description": "Stainless steel case and band\r\nMade in China\r\nBrass dial, indexes, and hands\r\nHidden butterfly clasp\r\nWhite sunray dial\r\n5ATM water resistance\r\nCase measures approx 41.5mm\r\nBand measures approx 9.80mm\r\nOur Style No. D1MF-ML9\r\nManufacturer Style No. D1-ATBJ16",
+    "price": "12899.00",
+    "front_image": "photos/products/r1k0rna6pud9qtadxdzk.jpeg",
+    "back_image": "photos/products/kqp8w4hgvzw5qnexv6eu.jpeg",
+    "is_available": true,
+    "category": 131,
+    "created_date": "2025-10-10T15:53:37.782Z",
+    "modified_date": "2025-12-06T08:43:52.651Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 37,
+  "fields": {
+    "product_name": "MA 4cm Enamel Belt",
+    "brand": "AMIRI",
+    "slug": "ma-4cm-enamel-belt",
+    "vendor": null,
+    "designer": 1,
+    "gender": "Mens",
+    "description": "100% leather\r\nDetachable anchor buckle\r\nReversable design\r\nSize 85 measures approx 107 cm L x 4 cm H\r\nMade in Italy\r\nOur Style No. AMIF-MA187\r\nManufacturer Style No. AMACBL1027",
+    "price": "4900.00",
+    "front_image": "photos/products/AMIF-MA187_V1.jpg",
+    "back_image": "photos/products/AMIF-MA187_V3.jpg",
+    "is_available": true,
+    "category": 132,
+    "created_date": "2025-10-10T16:04:01.021Z",
+    "modified_date": "2025-10-10T16:04:01.021Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 38,
+  "fields": {
+    "product_name": "Lightweight Cap",
+    "brand": "ON",
+    "slug": "lightweight-cap",
+    "vendor": null,
+    "designer": 36,
+    "gender": "Mens",
+    "description": "100% recycled polyester\r\nHand wash\r\nTonal logo detail at side\r\nPerforated sides\r\nAdjustable back strap\r\nBrim measures approx 7 cm in length\r\nOS measures approx 66 cm in circumference\r\nMade in Vietnam\r\nOur Style No. ONF-MA34\r\nManufacturer Style No. 2UF10330553",
+    "price": "4500.00",
+    "front_image": "photos/products/ONF-MA34_V1.jpg",
+    "back_image": "photos/products/ONF-MA34_V2.jpg",
+    "is_available": true,
+    "category": 133,
+    "created_date": "2025-10-10T16:07:42.905Z",
+    "modified_date": "2025-12-06T08:43:29.297Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 39,
+  "fields": {
+    "product_name": "Ripstop Geese Logo Snapback",
+    "brand": "Every Other Thursday",
+    "slug": "ripstop-geese-logo-snapback",
+    "vendor": null,
+    "designer": 38,
+    "gender": "Mens",
+    "description": "100% cotton\r\nHand wash\r\nFront embroidered logo detail\r\nVentilating eyelets at top\r\nTwill fabric\r\nAdjustable back strap\r\nBrim measures approx 6 cm in length\r\nOS measures approx 66 cm in circumference\r\nMade in China\r\nOur Style No. EDAF-MA1\r\nManufacturer Style No. 353-1025-60010",
+    "price": "440.00",
+    "front_image": "photos/products/EDAF-MA1_V1.jpg",
+    "back_image": "photos/products/EDAF-MA1_V3.jpg",
+    "is_available": true,
+    "category": 133,
+    "created_date": "2025-10-10T16:09:19.127Z",
+    "modified_date": "2025-12-06T08:41:43.634Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 40,
+  "fields": {
+    "product_name": "x Lamborghini C K Charm",
+    "brand": "BALENCIAGA",
+    "slug": "x-lamborghini-c-k-charm",
+    "vendor": [
+      "ak407@gamil.com"
+    ],
+    "designer": 33,
+    "gender": "Mens",
+    "description": "Creative director since 2015, Demna Gvasalia continues Balenciaga’s tradition of extreme experimentation, bringing his uniquely subversive vision to the storied French house. Merging the worlds of streetwear and high fashion, and blatantly disregarding industry conventions, Gvasalia reconfigures the label’s archival pieces with signature exaggerated silhouettes, asymmetric cuts, and acid colorways. Androgynous blazers, trench coats, and wool overcoats are cut in oversized shapes, while t-shirts,",
+    "price": "8000.00",
+    "front_image": "photos/products/BALF-MA177_V1.jpg",
+    "back_image": "photos/products/BALF-MA177_V2.jpg",
+    "is_available": true,
+    "category": 134,
+    "created_date": "2025-10-10T16:12:09.755Z",
+    "modified_date": "2026-04-10T18:35:07.294Z"
+  }
+},
+{
+  "model": "appmens.newproduct",
+  "pk": 41,
+  "fields": {
+    "product_name": "Envelope Key Case",
+    "brand": "Saint Laurent",
+    "slug": "envelope-key-case",
+    "vendor": [
+      "ak407@gamil.com"
+    ],
+    "designer": 1,
+    "gender": "Mens",
+    "description": "Grained leather exterior and interior\r\nTop flap with snap button closure\r\nOne main compartment\r\nBuilt in key ring\r\nMeasures approx 9 cm W x 6 cm H x 1 cm D\r\nThis item is not available to ship to Indonesia\r\nMade in Italy\r\nOur Style No. SLAU-MA90\r\nManufacturer Style No. 844678-AACIA-1000",
+    "price": "5000.00",
+    "front_image": "photos/products/SLAU-MA90_V1.jpg",
+    "back_image": "photos/products/SLAU-MA90_V2.jpg",
+    "is_available": true,
+    "category": 135,
+    "created_date": "2025-10-10T16:25:41.433Z",
+    "modified_date": "2026-04-21T02:06:17.552Z"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 1,
+  "fields": {
+    "product": 3,
+    "size": "25",
+    "color": "Faded Washed Black",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 4,
+  "fields": {
+    "product": 4,
+    "size": "S",
+    "color": "Black",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 5,
+  "fields": {
+    "product": 5,
+    "size": "S",
+    "color": "Black",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 6,
+  "fields": {
+    "product": 6,
+    "size": "One Size",
+    "color": "Balenciaga Grey",
+    "stock": 5,
+    "category_type": "bags"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 7,
+  "fields": {
+    "product": 7,
+    "size": "46",
+    "color": "Multicolor",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 8,
+  "fields": {
+    "product": 7,
+    "size": "48",
+    "color": "Multicolor",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 9,
+  "fields": {
+    "product": 7,
+    "size": "50",
+    "color": "Multicolor",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 10,
+  "fields": {
+    "product": 7,
+    "size": "52",
+    "color": "Multicolor",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 11,
+  "fields": {
+    "product": 8,
+    "size": "46",
+    "color": "Multicolor",
+    "stock": 4,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 12,
+  "fields": {
+    "product": 8,
+    "size": "48",
+    "color": "Multicolor",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 13,
+  "fields": {
+    "product": 8,
+    "size": "50",
+    "color": "Multicolor",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 14,
+  "fields": {
+    "product": 8,
+    "size": "52",
+    "color": "Multicolor",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 15,
+  "fields": {
+    "product": 9,
+    "size": "One Size",
+    "color": "Beige",
+    "stock": 0,
+    "category_type": "bags"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 16,
+  "fields": {
+    "product": 10,
+    "size": "6",
+    "color": "All White",
+    "stock": 4,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 17,
+  "fields": {
+    "product": 10,
+    "size": "7",
+    "color": "All White",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 18,
+  "fields": {
+    "product": 10,
+    "size": "8",
+    "color": "All White",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 19,
+  "fields": {
+    "product": 10,
+    "size": "9",
+    "color": "All White",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 20,
+  "fields": {
+    "product": 10,
+    "size": "10",
+    "color": "All White",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 21,
+  "fields": {
+    "product": 10,
+    "size": "11",
+    "color": "All White",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 22,
+  "fields": {
+    "product": 10,
+    "size": "12",
+    "color": "All White",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 23,
+  "fields": {
+    "product": 10,
+    "size": "13",
+    "color": "All White",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 24,
+  "fields": {
+    "product": 11,
+    "size": "6",
+    "color": "White & Ivory",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 25,
+  "fields": {
+    "product": 11,
+    "size": "7",
+    "color": "White & Ivory",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 26,
+  "fields": {
+    "product": 11,
+    "size": "8",
+    "color": "White & Ivory",
+    "stock": 2,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 27,
+  "fields": {
+    "product": 11,
+    "size": "9",
+    "color": "White & Ivory",
+    "stock": 2,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 28,
+  "fields": {
+    "product": 11,
+    "size": "10",
+    "color": "White & Ivory",
+    "stock": 2,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 29,
+  "fields": {
+    "product": 11,
+    "size": "11",
+    "color": "White & Ivory",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 30,
+  "fields": {
+    "product": 11,
+    "size": "12",
+    "color": "White & Ivory",
+    "stock": 5,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 32,
+  "fields": {
+    "product": 12,
+    "size": "S",
+    "color": "White & Multi",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 33,
+  "fields": {
+    "product": 12,
+    "size": "M",
+    "color": "White & Multi",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 34,
+  "fields": {
+    "product": 12,
+    "size": "L",
+    "color": "White & Multi",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 35,
+  "fields": {
+    "product": 12,
+    "size": "XL/1X",
+    "color": "White & Multi",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 36,
+  "fields": {
+    "product": 12,
+    "size": "XXL/2X",
+    "color": "White & Multi",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 37,
+  "fields": {
+    "product": 13,
+    "size": "One Size",
+    "color": "Brown",
+    "stock": 5,
+    "category_type": "bags"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 38,
+  "fields": {
+    "product": 14,
+    "size": "S",
+    "color": "Multi",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 39,
+  "fields": {
+    "product": 14,
+    "size": "M",
+    "color": "Multi",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 40,
+  "fields": {
+    "product": 14,
+    "size": "L",
+    "color": "Multi",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 41,
+  "fields": {
+    "product": 14,
+    "size": "XL/1X",
+    "color": "Multi",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 42,
+  "fields": {
+    "product": 15,
+    "size": "S",
+    "color": "Heather Grey",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 43,
+  "fields": {
+    "product": 15,
+    "size": "M",
+    "color": "Heather Grey",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 44,
+  "fields": {
+    "product": 15,
+    "size": "L",
+    "color": "Heather Grey",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 45,
+  "fields": {
+    "product": 15,
+    "size": "XL",
+    "color": "Heather Grey",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 46,
+  "fields": {
+    "product": 16,
+    "size": "S",
+    "color": "Vintage Yellow",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 47,
+  "fields": {
+    "product": 16,
+    "size": "M",
+    "color": "Vintage Yellow",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 48,
+  "fields": {
+    "product": 16,
+    "size": "L",
+    "color": "Vintage Yellow",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 49,
+  "fields": {
+    "product": 16,
+    "size": "XL",
+    "color": "Vintage Yellow",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 50,
+  "fields": {
+    "product": 17,
+    "size": "S",
+    "color": "Vintage Black",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 51,
+  "fields": {
+    "product": 17,
+    "size": "M",
+    "color": "Vintage Black",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 52,
+  "fields": {
+    "product": 17,
+    "size": "L",
+    "color": "Vintage Black",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 53,
+  "fields": {
+    "product": 17,
+    "size": "XL",
+    "color": "Vintage Black",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 54,
+  "fields": {
+    "product": 18,
+    "size": "S",
+    "color": "White",
+    "stock": 0,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 55,
+  "fields": {
+    "product": 18,
+    "size": "M",
+    "color": "White",
+    "stock": 0,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 56,
+  "fields": {
+    "product": 18,
+    "size": "L",
+    "color": "White",
+    "stock": 0,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 57,
+  "fields": {
+    "product": 18,
+    "size": "XL",
+    "color": "White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 58,
+  "fields": {
+    "product": 19,
+    "size": "One Size",
+    "color": "Black $ Silver",
+    "stock": 1,
+    "category_type": "bags"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 59,
+  "fields": {
+    "product": 20,
+    "size": "S",
+    "color": "Green",
+    "stock": 0,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 60,
+  "fields": {
+    "product": 20,
+    "size": "M",
+    "color": "Green",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 61,
+  "fields": {
+    "product": 20,
+    "size": "L",
+    "color": "Green",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 62,
+  "fields": {
+    "product": 20,
+    "size": "XL/1X",
+    "color": "Green",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 63,
+  "fields": {
+    "product": 21,
+    "size": "S",
+    "color": "White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 64,
+  "fields": {
+    "product": 21,
+    "size": "M",
+    "color": "White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 65,
+  "fields": {
+    "product": 21,
+    "size": "L",
+    "color": "White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 66,
+  "fields": {
+    "product": 21,
+    "size": "XL/1X",
+    "color": "White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 67,
+  "fields": {
+    "product": 22,
+    "size": "S",
+    "color": "Heather Grey",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 68,
+  "fields": {
+    "product": 22,
+    "size": "M",
+    "color": "Heather Grey",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 69,
+  "fields": {
+    "product": 22,
+    "size": "L",
+    "color": "Heather Grey",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 70,
+  "fields": {
+    "product": 22,
+    "size": "XL/1X",
+    "color": "Heather Grey",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 71,
+  "fields": {
+    "product": 23,
+    "size": "S",
+    "color": "White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 72,
+  "fields": {
+    "product": 23,
+    "size": "M",
+    "color": "White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 73,
+  "fields": {
+    "product": 23,
+    "size": "L",
+    "color": "White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 74,
+  "fields": {
+    "product": 23,
+    "size": "XL/1X",
+    "color": "White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 75,
+  "fields": {
+    "product": 24,
+    "size": "S",
+    "color": "Pine Green",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 76,
+  "fields": {
+    "product": 24,
+    "size": "M",
+    "color": "Pine Green",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 77,
+  "fields": {
+    "product": 24,
+    "size": "L",
+    "color": "Pine Green",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 78,
+  "fields": {
+    "product": 24,
+    "size": "XL/1X",
+    "color": "Pine Green",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 79,
+  "fields": {
+    "product": 25,
+    "size": "S",
+    "color": "Off White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 80,
+  "fields": {
+    "product": 25,
+    "size": "M",
+    "color": "Off White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 81,
+  "fields": {
+    "product": 25,
+    "size": "L",
+    "color": "Off White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 82,
+  "fields": {
+    "product": 25,
+    "size": "XL/1X",
+    "color": "Off White",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 83,
+  "fields": {
+    "product": 26,
+    "size": "S",
+    "color": "Burgundy",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 84,
+  "fields": {
+    "product": 26,
+    "size": "M",
+    "color": "Burgundy",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 85,
+  "fields": {
+    "product": 26,
+    "size": "L",
+    "color": "Burgundy",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 86,
+  "fields": {
+    "product": 26,
+    "size": "XL/1X",
+    "color": "Burgundy",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 87,
+  "fields": {
+    "product": 27,
+    "size": "One Size",
+    "color": "Black",
+    "stock": 5,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 88,
+  "fields": {
+    "product": 28,
+    "size": "30",
+    "color": "Dark Blue",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 89,
+  "fields": {
+    "product": 28,
+    "size": "31",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 90,
+  "fields": {
+    "product": 28,
+    "size": "32",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 91,
+  "fields": {
+    "product": 28,
+    "size": "33",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 92,
+  "fields": {
+    "product": 28,
+    "size": "34",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 93,
+  "fields": {
+    "product": 28,
+    "size": "35",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 94,
+  "fields": {
+    "product": 28,
+    "size": "35",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 95,
+  "fields": {
+    "product": 29,
+    "size": "30",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 96,
+  "fields": {
+    "product": 29,
+    "size": "31",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 97,
+  "fields": {
+    "product": 29,
+    "size": "32",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 98,
+  "fields": {
+    "product": 29,
+    "size": "33",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 99,
+  "fields": {
+    "product": 29,
+    "size": "34",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 100,
+  "fields": {
+    "product": 29,
+    "size": "35",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 101,
+  "fields": {
+    "product": 29,
+    "size": "36",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 102,
+  "fields": {
+    "product": 30,
+    "size": "46",
+    "color": "Beige",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 103,
+  "fields": {
+    "product": 30,
+    "size": "48",
+    "color": "Beige",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 104,
+  "fields": {
+    "product": 30,
+    "size": "50",
+    "color": "Beige",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 105,
+  "fields": {
+    "product": 30,
+    "size": "52",
+    "color": "Beige",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 106,
+  "fields": {
+    "product": 30,
+    "size": "54",
+    "color": "Beige",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 107,
+  "fields": {
+    "product": 31,
+    "size": "38",
+    "color": "Dark Blue",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 108,
+  "fields": {
+    "product": 31,
+    "size": "39",
+    "color": "Dark Blue",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 109,
+  "fields": {
+    "product": 31,
+    "size": "40",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 110,
+  "fields": {
+    "product": 31,
+    "size": "41",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 111,
+  "fields": {
+    "product": 31,
+    "size": "42",
+    "color": "Dark Blue",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 112,
+  "fields": {
+    "product": 32,
+    "size": "38",
+    "color": "Dark Blue",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 113,
+  "fields": {
+    "product": 33,
+    "size": "S",
+    "color": "Black",
+    "stock": 5,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 114,
+  "fields": {
+    "product": 33,
+    "size": "M",
+    "color": "Black",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 115,
+  "fields": {
+    "product": 33,
+    "size": "L",
+    "color": "Black",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 116,
+  "fields": {
+    "product": 33,
+    "size": "XL/1X",
+    "color": "Black",
+    "stock": 1,
+    "category_type": "clothing"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 117,
+  "fields": {
+    "product": 34,
+    "size": "One Size",
+    "color": "Black",
+    "stock": 1,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 118,
+  "fields": {
+    "product": 35,
+    "size": "One Size",
+    "color": "Black",
+    "stock": 5,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 119,
+  "fields": {
+    "product": 36,
+    "size": "One Size",
+    "color": "White",
+    "stock": 5,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 120,
+  "fields": {
+    "product": 37,
+    "size": "80",
+    "color": "Black",
+    "stock": 5,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 121,
+  "fields": {
+    "product": 38,
+    "size": "One Size",
+    "color": "Black",
+    "stock": 5,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 122,
+  "fields": {
+    "product": 39,
+    "size": "One Size",
+    "color": "Black",
+    "stock": 5,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 123,
+  "fields": {
+    "product": 40,
+    "size": "One Size",
+    "color": "Black",
+    "stock": 5,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 124,
+  "fields": {
+    "product": 41,
+    "size": "One Size",
+    "color": "Black",
+    "stock": 4,
+    "category_type": "accessories"
+  }
+},
+{
+  "model": "appmens.productvariation",
+  "pk": 126,
+  "fields": {
+    "product": 11,
+    "size": "13",
+    "color": "White & Ivory",
+    "stock": 1,
+    "category_type": "footwear"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 5,
+  "fields": {
+    "product": 3,
+    "size": "S",
+    "color": "Faded Washed Black"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 6,
+  "fields": {
+    "product": 3,
+    "size": "M",
+    "color": "Faded Washed Black"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 7,
+  "fields": {
+    "product": 3,
+    "size": "30",
+    "color": "Faded Washed Black"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 8,
+  "fields": {
+    "product": 3,
+    "size": "30",
+    "color": "Black"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 9,
+  "fields": {
+    "product": 4,
+    "size": "S",
+    "color": "Black"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 10,
+  "fields": {
+    "product": 5,
+    "size": "S",
+    "color": "Black"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 81,
+  "fields": {
+    "product": 27,
+    "size": "One Size",
+    "color": "Black"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 102,
+  "fields": {
+    "product": 7,
+    "size": "46",
+    "color": "Multicolor"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 103,
+  "fields": {
+    "product": 7,
+    "size": "48",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 104,
+  "fields": {
+    "product": 7,
+    "size": "50",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 105,
+  "fields": {
+    "product": 7,
+    "size": "52",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 106,
+  "fields": {
+    "product": 8,
+    "size": "46",
+    "color": "Multicolor"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 107,
+  "fields": {
+    "product": 8,
+    "size": "48",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 108,
+  "fields": {
+    "product": 8,
+    "size": "50",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 109,
+  "fields": {
+    "product": 8,
+    "size": "52",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 110,
+  "fields": {
+    "product": 12,
+    "size": "S",
+    "color": "White & Multi"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 111,
+  "fields": {
+    "product": 12,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 112,
+  "fields": {
+    "product": 12,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 113,
+  "fields": {
+    "product": 12,
+    "size": "XL/1X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 114,
+  "fields": {
+    "product": 12,
+    "size": "XXL/2X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 118,
+  "fields": {
+    "product": 14,
+    "size": "S",
+    "color": "Multi"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 119,
+  "fields": {
+    "product": 14,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 120,
+  "fields": {
+    "product": 14,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 121,
+  "fields": {
+    "product": 14,
+    "size": "XL/1X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 126,
+  "fields": {
+    "product": 15,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 127,
+  "fields": {
+    "product": 15,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 128,
+  "fields": {
+    "product": 15,
+    "size": "XL",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 132,
+  "fields": {
+    "product": 16,
+    "size": "S",
+    "color": "Vintage Yellow"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 133,
+  "fields": {
+    "product": 16,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 134,
+  "fields": {
+    "product": 16,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 135,
+  "fields": {
+    "product": 16,
+    "size": "XL",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 139,
+  "fields": {
+    "product": 17,
+    "size": "S",
+    "color": "Vintage Black"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 140,
+  "fields": {
+    "product": 17,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 141,
+  "fields": {
+    "product": 17,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 142,
+  "fields": {
+    "product": 17,
+    "size": "XL",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 146,
+  "fields": {
+    "product": 18,
+    "size": "S",
+    "color": "White"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 147,
+  "fields": {
+    "product": 18,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 148,
+  "fields": {
+    "product": 18,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 149,
+  "fields": {
+    "product": 18,
+    "size": "XL",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 153,
+  "fields": {
+    "product": 20,
+    "size": "S",
+    "color": "Green"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 154,
+  "fields": {
+    "product": 20,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 155,
+  "fields": {
+    "product": 20,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 156,
+  "fields": {
+    "product": 20,
+    "size": "XL/1X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 160,
+  "fields": {
+    "product": 21,
+    "size": "S",
+    "color": "White"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 161,
+  "fields": {
+    "product": 21,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 162,
+  "fields": {
+    "product": 21,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 163,
+  "fields": {
+    "product": 21,
+    "size": "XL/1X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 167,
+  "fields": {
+    "product": 22,
+    "size": "S",
+    "color": "Heather Grey"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 168,
+  "fields": {
+    "product": 22,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 169,
+  "fields": {
+    "product": 22,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 170,
+  "fields": {
+    "product": 22,
+    "size": "XL/1X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 174,
+  "fields": {
+    "product": 23,
+    "size": "S",
+    "color": "White"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 175,
+  "fields": {
+    "product": 23,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 176,
+  "fields": {
+    "product": 23,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 177,
+  "fields": {
+    "product": 23,
+    "size": "XL/1X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 181,
+  "fields": {
+    "product": 24,
+    "size": "S",
+    "color": "Pine Green"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 182,
+  "fields": {
+    "product": 24,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 183,
+  "fields": {
+    "product": 24,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 184,
+  "fields": {
+    "product": 24,
+    "size": "XL/1X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 188,
+  "fields": {
+    "product": 25,
+    "size": "S",
+    "color": "Off White"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 189,
+  "fields": {
+    "product": 25,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 190,
+  "fields": {
+    "product": 25,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 191,
+  "fields": {
+    "product": 25,
+    "size": "XL/1X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 195,
+  "fields": {
+    "product": 26,
+    "size": "S",
+    "color": "Burgundy"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 196,
+  "fields": {
+    "product": 26,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 197,
+  "fields": {
+    "product": 26,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 198,
+  "fields": {
+    "product": 26,
+    "size": "XL/1X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 204,
+  "fields": {
+    "product": 28,
+    "size": "30",
+    "color": "Dark Blue"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 205,
+  "fields": {
+    "product": 28,
+    "size": "31",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 206,
+  "fields": {
+    "product": 28,
+    "size": "32",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 207,
+  "fields": {
+    "product": 28,
+    "size": "33",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 208,
+  "fields": {
+    "product": 28,
+    "size": "34",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 209,
+  "fields": {
+    "product": 28,
+    "size": "35",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 210,
+  "fields": {
+    "product": 28,
+    "size": "35",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 231,
+  "fields": {
+    "product": 31,
+    "size": "38",
+    "color": "Dark Blue"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 232,
+  "fields": {
+    "product": 31,
+    "size": "39",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 233,
+  "fields": {
+    "product": 31,
+    "size": "40",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 234,
+  "fields": {
+    "product": 31,
+    "size": "41",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 235,
+  "fields": {
+    "product": 31,
+    "size": "42",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 240,
+  "fields": {
+    "product": 33,
+    "size": "S",
+    "color": "Black"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 241,
+  "fields": {
+    "product": 33,
+    "size": "M",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 242,
+  "fields": {
+    "product": 33,
+    "size": "L",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 243,
+  "fields": {
+    "product": 33,
+    "size": "XL/1X",
+    "color": null
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 244,
+  "fields": {
+    "product": 30,
+    "size": "46",
+    "color": "Beige"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 245,
+  "fields": {
+    "product": 30,
+    "size": "48",
+    "color": "Beige"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 246,
+  "fields": {
+    "product": 30,
+    "size": "50",
+    "color": "Beige"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 247,
+  "fields": {
+    "product": 30,
+    "size": "52",
+    "color": "Beige"
+  }
+},
+{
+  "model": "appmens.clothing",
+  "pk": 248,
+  "fields": {
+    "product": 30,
+    "size": "54",
+    "color": "Beige"
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 36,
+  "fields": {
+    "product": 10,
+    "size": "6",
+    "color": "All White"
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 37,
+  "fields": {
+    "product": 10,
+    "size": "7",
+    "color": null
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 38,
+  "fields": {
+    "product": 10,
+    "size": "8",
+    "color": null
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 39,
+  "fields": {
+    "product": 10,
+    "size": "9",
+    "color": null
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 40,
+  "fields": {
+    "product": 10,
+    "size": "10",
+    "color": null
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 41,
+  "fields": {
+    "product": 10,
+    "size": "11",
+    "color": null
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 42,
+  "fields": {
+    "product": 10,
+    "size": "12",
+    "color": null
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 43,
+  "fields": {
+    "product": 10,
+    "size": "13",
+    "color": null
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 106,
+  "fields": {
+    "product": 11,
+    "size": "6",
+    "color": "White & Ivory"
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 107,
+  "fields": {
+    "product": 11,
+    "size": "7",
+    "color": "White & Ivory"
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 108,
+  "fields": {
+    "product": 11,
+    "size": "8",
+    "color": "White & Ivory"
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 109,
+  "fields": {
+    "product": 11,
+    "size": "9",
+    "color": "White & Ivory"
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 110,
+  "fields": {
+    "product": 11,
+    "size": "10",
+    "color": "White & Ivory"
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 111,
+  "fields": {
+    "product": 11,
+    "size": "11",
+    "color": "White & Ivory"
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 112,
+  "fields": {
+    "product": 11,
+    "size": "12",
+    "color": "White & Ivory"
+  }
+},
+{
+  "model": "appmens.footwear",
+  "pk": 113,
+  "fields": {
+    "product": 11,
+    "size": "13",
+    "color": "White & Ivory"
+  }
+},
+{
+  "model": "appmens.accessories",
+  "pk": 1,
+  "fields": {
+    "product": 34,
+    "color": "Black",
+    "size": null
+  }
+},
+{
+  "model": "appmens.accessories",
+  "pk": 2,
+  "fields": {
+    "product": 35,
+    "color": "Black",
+    "size": "Full Size"
+  }
+},
+{
+  "model": "appmens.accessories",
+  "pk": 3,
+  "fields": {
+    "product": 36,
+    "color": "White",
+    "size": null
+  }
+},
+{
+  "model": "appmens.accessories",
+  "pk": 4,
+  "fields": {
+    "product": 37,
+    "color": "Black",
+    "size": null
+  }
+},
+{
+  "model": "appmens.accessories",
+  "pk": 5,
+  "fields": {
+    "product": 27,
+    "color": "Black",
+    "size": null
+  }
+},
+{
+  "model": "appmens.accessories",
+  "pk": 6,
+  "fields": {
+    "product": 38,
+    "color": "Black",
+    "size": null
+  }
+},
+{
+  "model": "appmens.accessories",
+  "pk": 7,
+  "fields": {
+    "product": 39,
+    "color": "Black",
+    "size": null
+  }
+},
+{
+  "model": "appmens.accessories",
+  "pk": 8,
+  "fields": {
+    "product": 40,
+    "color": "Black",
+    "size": null
+  }
+},
+{
+  "model": "appmens.accessories",
+  "pk": 15,
+  "fields": {
+    "product": 41,
+    "color": "Black",
+    "size": "One Size"
+  }
+},
+{
+  "model": "appmens.bags",
+  "pk": 3,
+  "fields": {
+    "product": 6,
+    "color": "Balenciaga Grey",
+    "size": null
+  }
+},
+{
+  "model": "appmens.bags",
+  "pk": 4,
+  "fields": {
+    "product": 9,
+    "color": "Beige",
+    "size": null
+  }
+},
+{
+  "model": "appmens.bags",
+  "pk": 5,
+  "fields": {
+    "product": 13,
+    "color": "Brown",
+    "size": null
+  }
+},
+{
+  "model": "appmens.bags",
+  "pk": 6,
+  "fields": {
+    "product": 19,
+    "color": "Black $ Silver",
+    "size": null
+  }
+},
+{
+  "model": "appmens.saleitems",
+  "pk": 1,
+  "fields": {
+    "product": 33,
+    "discount_percentage": 25.0,
+    "start_date": "2025-07-20",
+    "end_date": "2025-07-31",
+    "sale_price": "59000.00"
+  }
+},
+{
+  "model": "appmens.saleitems",
+  "pk": 2,
+  "fields": {
+    "product": 11,
+    "discount_percentage": 10.0,
+    "start_date": "2026-04-10",
+    "end_date": "2026-04-17",
+    "sale_price": "10913.84"
+  }
+},
+{
+  "model": "appmens.saleitems",
+  "pk": 3,
+  "fields": {
+    "product": 30,
+    "discount_percentage": 10.0,
+    "start_date": "2026-04-10",
+    "end_date": "2026-04-17",
+    "sale_price": "113036.23"
+  }
+},
+{
+  "model": "appmens.saleitems",
+  "pk": 4,
+  "fields": {
+    "product": 41,
+    "discount_percentage": 99.97,
+    "start_date": "2026-04-14",
+    "end_date": "2026-04-21",
+    "sale_price": "1.50"
+  }
+},
+{
+  "model": "appmens.happenings",
+  "pk": 1,
+  "fields": {
+    "title": "Special  Launches",
+    "description": "A Curated Collection Of Noteworthy Releases And Collaborations",
+    "image": "photos/mens_features/m5e7ycdsgwnh3wtxxxgj.jpeg"
+  }
+},
+{
+  "model": "appmens.happenings",
+  "pk": 2,
+  "fields": {
+    "title": "",
+    "description": "Sporty & Rich x adidas Originals",
+    "image": "photos/mens_features/hid89q8txjbwrgqxxozl.jpeg"
+  }
+},
+{
+  "model": "appmens.happenings",
+  "pk": 3,
+  "fields": {
+    "title": "",
+    "description": "A$AP ROCKY x RAY-BAN",
+    "image": "photos/mens_features/rx4faeiiziccybhdxkr4.jpeg"
+  }
+},
+{
+  "model": "appmens.happenings",
+  "pk": 4,
+  "fields": {
+    "title": "FWRD Thinking",
+    "description": "An Inside Look At The People, Events, And Happenings Of FWRD MAN",
+    "image": "photos/mens_features/rlha383inka2nusbzcyd.jpeg"
+  }
+},
+{
+  "model": "appmens.happenings",
+  "pk": 5,
+  "fields": {
+    "title": "",
+    "description": "Max Siegelman and Karoline Spenning have crafted a brand rooted in legacy, culture, and purpose-driven design.",
+    "image": "photos/mens_features/jpw3wqaaxljdcvgdbtud.jpeg"
+  }
+},
+{
+  "model": "appmens.happenings",
+  "pk": 6,
+  "fields": {
+    "title": "",
+    "description": "How d4vd Found Stardom",
+    "image": "photos/mens_features/ajampukbs4mwrvyjnfj6.jpeg"
+  }
+},
+{
+  "model": "appmens.happenings",
+  "pk": 7,
+  "fields": {
+    "title": "Featured Shops",
+    "description": "A Curated Collection Of Noteworthy Releases And Collaborations",
+    "image": "photos/mens_features/np1sihrklw7wxocumsja.jpeg"
+  }
+},
+{
+  "model": "appmens.happenings",
+  "pk": 8,
+  "fields": {
+    "title": "",
+    "description": "Heading West",
+    "image": "photos/mens_features/rexdjah1rmqwffvni2gb.jpeg"
+  }
+},
+{
+  "model": "appmens.happenings",
+  "pk": 9,
+  "fields": {
+    "title": "",
+    "description": "Most Wanted",
+    "image": "photos/mens_features/rdgvweonuyz98ymn3z2b.jpeg"
+  }
+}
+]

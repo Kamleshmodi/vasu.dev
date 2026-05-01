@@ -4,13 +4,37 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <title>VASU : The Online Destination for Premier Luxury Fashion</title>
+    <title>{% block meta_title %}VASU : The Online Destination for Premier Luxury Fashion{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}{{ seo_default_description }}{% endblock %}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ seo_site_name }}">
+    <meta property="og:title" content="{% block og_title %}VASU : The Online Destination for Premier Luxury Fashion{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}{{ seo_default_description }}{% endblock %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ seo_default_og_image }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}VASU : The Online Destination for Premier Luxury Fashion{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}{{ seo_default_description }}{% endblock %}">
+    <meta name="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{{ seo_default_og_image }}">
+    {% if google_site_verification %}
+    <meta name="google-site-verification" content="{{ google_site_verification }}">
+    {% endif %}
+    {% if bing_site_verification %}
+    <meta name="msvalidate.01" content="{{ bing_site_verification }}">
+    {% endif %}
     <link rel="icon" href="{% static 'image/logo/logo.png' %}" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/mens/home/navbar.css' %}">
     <link rel="stylesheet" href="{% static 'css/mens/home/product.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cookie_consent.css' %}">
     <script src="{% static 'js/home.js' %}" defer></script>
+    <script src="{% static 'js/cookie_consent.js' %}" defer></script>
+    {% if analytics_tracking_enabled %}
+    <script src="{% static 'js/analytics_tracking.js' %}" defer></script>
+    {% endif %}
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <!-- Paste this in <head> -->
@@ -111,6 +135,7 @@
     {% endblock %}
 
     {% include 'mens/includes/footer.html' %}
+    {% include 'includes/cookie_consent_banner.html' %}
     
 </body>
 </html>

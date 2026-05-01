@@ -1,0 +1,1924 @@
+[
+{
+  "model": "aapcategory.category",
+  "pk": 1,
+  "fields": {
+    "category_name": "ALAIYA",
+    "slug": "alaiya-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 2,
+  "fields": {
+    "category_name": "Accessories",
+    "slug": "accessories-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 3,
+  "fields": {
+    "category_name": "ActiveWear",
+    "slug": "activewear-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 4,
+  "fields": {
+    "category_name": "Bags",
+    "slug": "bags-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 5,
+  "fields": {
+    "category_name": "Beauty",
+    "slug": "beauty-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 6,
+  "fields": {
+    "category_name": "Denim",
+    "slug": "denim-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 7,
+  "fields": {
+    "category_name": "Home",
+    "slug": "home-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 8,
+  "fields": {
+    "category_name": "Hodies & Sweatshirts",
+    "slug": "hodies-sweatshirts-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 9,
+  "fields": {
+    "category_name": "Intimates",
+    "slug": "intimates-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 10,
+  "fields": {
+    "category_name": "Jackets & Coats",
+    "slug": "jackets-coats-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 11,
+  "fields": {
+    "category_name": "Jewelry",
+    "slug": "jewelry-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 12,
+  "fields": {
+    "category_name": "Jumpsuits",
+    "slug": "jumpsuits-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 13,
+  "fields": {
+    "category_name": "Jumpsuits & Rompers",
+    "slug": "jumpsuits-rompers-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 14,
+  "fields": {
+    "category_name": "Leather",
+    "slug": "leather-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 15,
+  "fields": {
+    "category_name": "Lounge",
+    "slug": "lounge-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 16,
+  "fields": {
+    "category_name": "Loungewear",
+    "slug": "loungewear-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 17,
+  "fields": {
+    "category_name": "Misc",
+    "slug": "misc-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 18,
+  "fields": {
+    "category_name": "Pants",
+    "slug": "pants-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 19,
+  "fields": {
+    "category_name": "Polos",
+    "slug": "polos-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 20,
+  "fields": {
+    "category_name": "Pre-owned",
+    "slug": "pre-owned-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 21,
+  "fields": {
+    "category_name": "Shirts",
+    "slug": "shirts-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 22,
+  "fields": {
+    "category_name": "Shoes",
+    "slug": "shoes-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 23,
+  "fields": {
+    "category_name": "Shorts",
+    "slug": "shorts-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 24,
+  "fields": {
+    "category_name": "Skirts",
+    "slug": "skirts-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 25,
+  "fields": {
+    "category_name": "Sweaters & Knits",
+    "slug": "sweaters-knits-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 26,
+  "fields": {
+    "category_name": "Swinssuits & Cover-Ups",
+    "slug": "swinssuits-cover-ups-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 28,
+  "fields": {
+    "category_name": "Tops",
+    "slug": "tops-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 29,
+  "fields": {
+    "category_name": "Activewear",
+    "slug": "activewear-women-1",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 30,
+  "fields": {
+    "category_name": "Blouses",
+    "slug": "blouses-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 31,
+  "fields": {
+    "category_name": "Dresses",
+    "slug": "dresses-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 32,
+  "fields": {
+    "category_name": "Hoodies & Sweatshirts",
+    "slug": "hoodies-sweatshirts-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 33,
+  "fields": {
+    "category_name": "Wrap",
+    "slug": "wrap-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 34,
+  "fields": {
+    "category_name": "White",
+    "slug": "white-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 35,
+  "fields": {
+    "category_name": "Tank",
+    "slug": "tank-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 36,
+  "fields": {
+    "category_name": "T-Shirts",
+    "slug": "t-shirts-women-1",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 37,
+  "fields": {
+    "category_name": "Sweater",
+    "slug": "sweater-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 38,
+  "fields": {
+    "category_name": "Strapless",
+    "slug": "strapless-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 39,
+  "fields": {
+    "category_name": "Slip",
+    "slug": "slip-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 40,
+  "fields": {
+    "category_name": "Sleeveless",
+    "slug": "sleeveless-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 41,
+  "fields": {
+    "category_name": "Short Sleeve",
+    "slug": "short-sleeve-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 42,
+  "fields": {
+    "category_name": "Shirt Dress",
+    "slug": "shirt-dress-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 43,
+  "fields": {
+    "category_name": "Shift",
+    "slug": "shift-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 44,
+  "fields": {
+    "category_name": "Pre-Owned",
+    "slug": "pre-owned-women-1",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 45,
+  "fields": {
+    "category_name": "One Shoulder",
+    "slug": "one-shoulder-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 46,
+  "fields": {
+    "category_name": "Off The Shoulder",
+    "slug": "off-the-shoulder-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 47,
+  "fields": {
+    "category_name": "Mini",
+    "slug": "mini-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 48,
+  "fields": {
+    "category_name": "Midi",
+    "slug": "midi-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 49,
+  "fields": {
+    "category_name": "Mid",
+    "slug": "mid-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 50,
+  "fields": {
+    "category_name": "Maxi",
+    "slug": "maxi-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 51,
+  "fields": {
+    "category_name": "Long Sleeve",
+    "slug": "long-sleeve-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 52,
+  "fields": {
+    "category_name": "Lace",
+    "slug": "lace-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 53,
+  "fields": {
+    "category_name": "Halter",
+    "slug": "halter-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 54,
+  "fields": {
+    "category_name": "Gowns",
+    "slug": "gowns-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 55,
+  "fields": {
+    "category_name": "Floral",
+    "slug": "floral-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 56,
+  "fields": {
+    "category_name": "Fit & Flare",
+    "slug": "fit-flare-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 57,
+  "fields": {
+    "category_name": "Embellished & Sequined",
+    "slug": "embellished-sequined-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 58,
+  "fields": {
+    "category_name": "Cut-Out",
+    "slug": "cut-out-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 59,
+  "fields": {
+    "category_name": "Cocktail",
+    "slug": "cocktail-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 60,
+  "fields": {
+    "category_name": "Bustier",
+    "slug": "bustier-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 61,
+  "fields": {
+    "category_name": "Bodycon",
+    "slug": "bodycon-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 62,
+  "fields": {
+    "category_name": "Blazer",
+    "slug": "blazer-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 63,
+  "fields": {
+    "category_name": "Black",
+    "slug": "black-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 64,
+  "fields": {
+    "category_name": "Asymmetrical",
+    "slug": "asymmetrical-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 65,
+  "fields": {
+    "category_name": "Boots",
+    "slug": "boots-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 66,
+  "fields": {
+    "category_name": "Espadrilles",
+    "slug": "espadrilles-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 67,
+  "fields": {
+    "category_name": "Flats",
+    "slug": "flats-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 68,
+  "fields": {
+    "category_name": "Heels",
+    "slug": "heels-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 69,
+  "fields": {
+    "category_name": "Loafers",
+    "slug": "loafers-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 70,
+  "fields": {
+    "category_name": "Mules",
+    "slug": "mules-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 71,
+  "fields": {
+    "category_name": "Sandals",
+    "slug": "sandals-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 72,
+  "fields": {
+    "category_name": "Slingbacks",
+    "slug": "slingbacks-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 73,
+  "fields": {
+    "category_name": "Slippers",
+    "slug": "slippers-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 74,
+  "fields": {
+    "category_name": "Sneakers",
+    "slug": "sneakers-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 75,
+  "fields": {
+    "category_name": "Wedges",
+    "slug": "wedges-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 76,
+  "fields": {
+    "category_name": "Wallets",
+    "slug": "wallets-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 77,
+  "fields": {
+    "category_name": "Travel & Luggage",
+    "slug": "travel-luggage-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 78,
+  "fields": {
+    "category_name": "Totes",
+    "slug": "totes-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 79,
+  "fields": {
+    "category_name": "Top Handle",
+    "slug": "top-handle-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 80,
+  "fields": {
+    "category_name": "Straw Bags",
+    "slug": "straw-bags-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 81,
+  "fields": {
+    "category_name": "Small Leather Goods",
+    "slug": "small-leather-goods-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 82,
+  "fields": {
+    "category_name": "Shoulder Bags",
+    "slug": "shoulder-bags-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 83,
+  "fields": {
+    "category_name": "Satchels",
+    "slug": "satchels-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 84,
+  "fields": {
+    "category_name": "Mini Bags",
+    "slug": "mini-bags-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 85,
+  "fields": {
+    "category_name": "Messenger & Duffel",
+    "slug": "messenger-duffel-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 86,
+  "fields": {
+    "category_name": "Keychains & Bag Charms",
+    "slug": "keychains-bag-charms-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 87,
+  "fields": {
+    "category_name": "Hobos",
+    "slug": "hobos-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 88,
+  "fields": {
+    "category_name": "Crossbody",
+    "slug": "crossbody-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 89,
+  "fields": {
+    "category_name": "Clutches",
+    "slug": "clutches-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 90,
+  "fields": {
+    "category_name": "Bucket",
+    "slug": "bucket-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 91,
+  "fields": {
+    "category_name": "Belt Bag",
+    "slug": "belt-bag-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 92,
+  "fields": {
+    "category_name": "Backpacks",
+    "slug": "backpacks-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 93,
+  "fields": {
+    "category_name": "Watches",
+    "slug": "watches-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 94,
+  "fields": {
+    "category_name": "Tech Accessories",
+    "slug": "tech-accessories-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 95,
+  "fields": {
+    "category_name": "Sunglasses & Eyewear",
+    "slug": "sunglasses-eyewear-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 96,
+  "fields": {
+    "category_name": "Scarves & Gloves",
+    "slug": "scarves-gloves-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 97,
+  "fields": {
+    "category_name": "Protective Face Masks",
+    "slug": "protective-face-masks-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 98,
+  "fields": {
+    "category_name": "Hosiery & Socks",
+    "slug": "hosiery-socks-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 99,
+  "fields": {
+    "category_name": "Hats",
+    "slug": "hats-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 100,
+  "fields": {
+    "category_name": "Hair Accessories",
+    "slug": "hair-accessories-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 101,
+  "fields": {
+    "category_name": "Gifts",
+    "slug": "gifts-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 102,
+  "fields": {
+    "category_name": "Belts",
+    "slug": "belts-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 103,
+  "fields": {
+    "category_name": "Active",
+    "slug": "active-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 104,
+  "fields": {
+    "category_name": "Long Dress",
+    "slug": "long-dress-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 105,
+  "fields": {
+    "category_name": "Saint Laurent",
+    "slug": "saint-laurent-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 106,
+  "fields": {
+    "category_name": "Pants",
+    "slug": "pants-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 107,
+  "fields": {
+    "category_name": "Maxi Skirts",
+    "slug": "maxi-skirts-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 108,
+  "fields": {
+    "category_name": "Bodysuit",
+    "slug": "bodysuit-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 109,
+  "fields": {
+    "category_name": "Top",
+    "slug": "top-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 110,
+  "fields": {
+    "category_name": "Hobo Bag",
+    "slug": "hobo-bag-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 111,
+  "fields": {
+    "category_name": "Classical Shirts",
+    "slug": "classical-shirts-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 112,
+  "fields": {
+    "category_name": "Leather Mini Dress",
+    "slug": "leather-mini-dress-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 113,
+  "fields": {
+    "category_name": "Jacket",
+    "slug": "jacket-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 114,
+  "fields": {
+    "category_name": "Passport Phone Holder",
+    "slug": "passport-phone-holder-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 115,
+  "fields": {
+    "category_name": "Short Sleeve Shirt",
+    "slug": "short-sleeve-shirt-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 116,
+  "fields": {
+    "category_name": "Hand Bag",
+    "slug": "hand-bag-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 117,
+  "fields": {
+    "category_name": "Lase Shoes",
+    "slug": "lase-shoes-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 118,
+  "fields": {
+    "category_name": "Trouser",
+    "slug": "trouser-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 119,
+  "fields": {
+    "category_name": "100% cow suede",
+    "slug": "100-cow-suede-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 120,
+  "fields": {
+    "category_name": "Shorts",
+    "slug": "shorts-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 121,
+  "fields": {
+    "category_name": "Zip Hoodie",
+    "slug": "zip-hoodie-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 122,
+  "fields": {
+    "category_name": "Neck Sweatshirt",
+    "slug": "neck-sweatshirt-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 123,
+  "fields": {
+    "category_name": "T-Shirts",
+    "slug": "t-shirts-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 124,
+  "fields": {
+    "category_name": "Moony Calf Bag",
+    "slug": "moony-calf-bag-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 125,
+  "fields": {
+    "category_name": "Long Sleeve T-Shirt",
+    "slug": "long-sleeve-t-shirt-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 126,
+  "fields": {
+    "category_name": "Swim Shorts",
+    "slug": "swim-shorts-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 127,
+  "fields": {
+    "category_name": "Tie",
+    "slug": "tie-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 128,
+  "fields": {
+    "category_name": "Jeans",
+    "slug": "jeans-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 129,
+  "fields": {
+    "category_name": "Cargo Pants",
+    "slug": "cargo-pants-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 130,
+  "fields": {
+    "category_name": "POLO",
+    "slug": "polo-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 131,
+  "fields": {
+    "category_name": "Watches",
+    "slug": "watches-men",
+    "description": "Classic Watch",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 132,
+  "fields": {
+    "category_name": "Belts",
+    "slug": "belts-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 133,
+  "fields": {
+    "category_name": "Cap",
+    "slug": "cap-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 134,
+  "fields": {
+    "category_name": "Keychains",
+    "slug": "keychains-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 135,
+  "fields": {
+    "category_name": "Key Case",
+    "slug": "key-case-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 136,
+  "fields": {
+    "category_name": "Fragrance",
+    "slug": "fragrance-men",
+    "description": "",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 137,
+  "fields": {
+    "category_name": "Soaks",
+    "slug": "soaks-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.category",
+  "pk": 138,
+  "fields": {
+    "category_name": "Lipstick",
+    "slug": "lipstick-women",
+    "description": "",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 1,
+  "fields": {
+    "name": "KAMLESH",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 2,
+  "fields": {
+    "name": "KAMLESH_W",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 3,
+  "fields": {
+    "name": "Azzedine Alaïa",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 4,
+  "fields": {
+    "name": "AMINA MUADDI",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 5,
+  "fields": {
+    "name": "ALAÏA",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 6,
+  "fields": {
+    "name": "Balenciaga",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 7,
+  "fields": {
+    "name": "Bottega Veneta",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 8,
+  "fields": {
+    "name": "Chloe",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 9,
+  "fields": {
+    "name": "Gianvito Rossi",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 10,
+  "fields": {
+    "name": "Givenchy",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 11,
+  "fields": {
+    "name": "Manolo Blahnik",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 12,
+  "fields": {
+    "name": "Saint Laurent",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 13,
+  "fields": {
+    "name": "The Row",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 14,
+  "fields": {
+    "name": "TOM FORD",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 15,
+  "fields": {
+    "name": "Valentino Garavani",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 16,
+  "fields": {
+    "name": "FWRD Renew",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 17,
+  "fields": {
+    "name": "Jacquemus",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 18,
+  "fields": {
+    "name": "Loewe",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 19,
+  "fields": {
+    "name": "BALMAIN",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 20,
+  "fields": {
+    "name": "Burberry",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 21,
+  "fields": {
+    "name": "VERSACE",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 22,
+  "fields": {
+    "name": "&Daughter",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 23,
+  "fields": {
+    "name": "19/99 Beauty",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 24,
+  "fields": {
+    "name": "27 87",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 25,
+  "fields": {
+    "name": "111Skin",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 26,
+  "fields": {
+    "name": "23CARAT",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 27,
+  "fields": {
+    "name": "54 Celsius",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 28,
+  "fields": {
+    "name": "Demna Gvasalia",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 29,
+  "fields": {
+    "name": "Rive Gauche",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 30,
+  "fields": {
+    "name": "Jean Touitou",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 31,
+  "fields": {
+    "name": "Hubert de",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 32,
+  "fields": {
+    "name": "Creative director since 2015,",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 33,
+  "fields": {
+    "name": "Demna Gvasalia",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 34,
+  "fields": {
+    "name": "Acne Studios",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 35,
+  "fields": {
+    "name": "A-listers",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 36,
+  "fields": {
+    "name": "Jerry Lorenzo",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 37,
+  "fields": {
+    "name": "Matthew M. Williams",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 38,
+  "fields": {
+    "name": "Hubert de Givenchy",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 39,
+  "fields": {
+    "name": "KAMU",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 40,
+  "fields": {
+    "name": "KAMU",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 41,
+  "fields": {
+    "name": "Alexander McQueen",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 42,
+  "fields": {
+    "name": "Carolina Herrera",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 43,
+  "fields": {
+    "name": "Donatella Versace",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 44,
+  "fields": {
+    "name": "Gabriela Hearst",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 45,
+  "fields": {
+    "name": "Isabel Marant",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 46,
+  "fields": {
+    "name": "Maria Grazia Chiuri",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 47,
+  "fields": {
+    "name": "Miuccia Prada",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 48,
+  "fields": {
+    "name": "Phoebe Philo",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 49,
+  "fields": {
+    "name": "Sarah Burton",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 50,
+  "fields": {
+    "name": "Simone Rocha",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 51,
+  "fields": {
+    "name": "Stella McCartney",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 52,
+  "fields": {
+    "name": "Tory Burch",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 53,
+  "fields": {
+    "name": "Victoria Beckham",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 54,
+  "fields": {
+    "name": "Vivienne Westwood",
+    "gender": "women"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 55,
+  "fields": {
+    "name": "Brunello Cucinelli",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 56,
+  "fields": {
+    "name": "Dries Van Noten",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 57,
+  "fields": {
+    "name": "Giorgio Armani",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 58,
+  "fields": {
+    "name": "Haider Ackermann",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 59,
+  "fields": {
+    "name": "Hedi Slimane",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 60,
+  "fields": {
+    "name": "Heron Preston",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 61,
+  "fields": {
+    "name": "Jonathan Anderson",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 62,
+  "fields": {
+    "name": "Kim Jones",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 63,
+  "fields": {
+    "name": "Nigo",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 64,
+  "fields": {
+    "name": "Ralph Lauren",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 65,
+  "fields": {
+    "name": "Rick Owens",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 66,
+  "fields": {
+    "name": "TOM FORD",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 67,
+  "fields": {
+    "name": "Thom Browne",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 68,
+  "fields": {
+    "name": "Virgil Abloh",
+    "gender": "men"
+  }
+},
+{
+  "model": "aapcategory.designer",
+  "pk": 69,
+  "fields": {
+    "name": "Yohji Yamamoto",
+    "gender": "men"
+  }
+}
+]

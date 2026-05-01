@@ -1,0 +1,29 @@
+{% extends 'womens/base.html' %}
+{% block meta_title %}Terms of Service | {{ business_name }}{% endblock %}
+{% block meta_description %}Review the main rules for accounts, orders, payments, reviews, returns, and platform usage on {{ business_name }}.{% endblock %}
+{% block og_title %}Terms of Service | {{ business_name }}{% endblock %}
+{% block og_description %}Review the main rules for accounts, orders, payments, reviews, returns, and platform usage on {{ business_name }}.{% endblock %}
+{% block twitter_title %}Terms of Service | {{ business_name }}{% endblock %}
+{% block twitter_description %}Review the main rules for accounts, orders, payments, reviews, returns, and platform usage on {{ business_name }}.{% endblock %}
+{% block content %}
+<section class="container py-5" style="max-width: 900px; line-height: 1.75;">
+    <h1 class="mb-3">{{ page_title }}</h1>
+    <p class="text-muted">Last updated: {{ last_updated }}</p>
+    <p>{{ page_summary }}</p>
+
+    <h2 class="h4 mt-4">Account Use</h2>
+    <p>Users must provide accurate information, protect account credentials, and avoid unlawful or abusive use of the platform.</p>
+
+    <h2 class="h4 mt-4">Orders and Payments</h2>
+    <p>Placing an order confirms intent to purchase. Prices, stock, discounts, and payment status are subject to validation and fraud checks.</p>
+
+    <h2 class="h4 mt-4">Returns and Refunds</h2>
+    <p>Returns and refunds follow the current policy visible during checkout and order support interactions.</p>
+
+    <h2 class="h4 mt-4">Content and Reviews</h2>
+    <p>Customers are responsible for review content. {{ business_name }} may moderate or remove content that violates policy or law.</p>
+
+    <h2 class="h4 mt-4">Contact</h2>
+    <p>Email: <a href="mailto:{{ contact_email }}" data-track-event="support_email_clicked" data-track-props='{"location":"terms_of_service"}'>{{ contact_email }}</a><br>Phone: <a href="tel:{{ support_phone_tel }}" data-track-event="support_phone_clicked" data-track-props='{"location":"terms_of_service"}'>{{ support_phone_display }}</a></p>
+</section>
+{% endblock %}

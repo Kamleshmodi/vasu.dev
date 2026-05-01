@@ -38,15 +38,15 @@
             </div>
             <div class="footer-col">
                 <h4>&nbsp;</h4>
-                <a href="{% url 'womens_sale' %}">The Loyalty Program</a>
-                <a href="{% url 'womens_new' %}">Ambassador Program</a>
-                <a href="{% url 'womens_designers' %}">Affiliate</a>
-                <a href="{% url 'womens_shops' %}">Stores</a>
-                <a href="{% url 'my_account' %}">Careers</a>
+                <a href="{% url 'mens_sale' %}">The Loyalty Program</a>
+                <a href="{% url 'mens_new' %}">Ambassador Program</a>
+                <a href="{% url 'mens_designers' %}">Affiliate</a>
+                <a href="{% url 'mens_home' %}">Stores</a>
+                <a href="{% url 'need_help' %}">Careers</a>
             </div>
             <div class="footer-col">
                 <h4>NEWSLETTER</h4>
-                <p>Be the first to know about new arrivals, sales & promos by submitting your email. You can opt out at any time. <a href="#">privacy policy</a></p>
+                <p>Be the first to know about new arrivals, sales & promos by submitting your email. You can opt out at any time. <a href="{% url 'privacy_policy' %}">privacy policy</a></p>
                 <div class="newsletter">
                     <input type="email" placeholder="Sign up for our weekly emails">
                     <button>&rarr;</button>
@@ -54,23 +54,23 @@
             </div>
             <div class="footer-col">
                 <h4>JOIN US</h4>
-                <a href="https://facebook.com">Facebook</a>
-                <a href="https://instagram.com">Instagram</a>
-                <a href="https://youtube.com">YouTube</a>
-                <a href="#">X</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer">X</a>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p id="p">2026 © Vasu Store, Inc. All Rights Reserved.</p>
             <div class="footer-links">
-                <a href="#">Terms</a>
-                <a href="#">Privacy</a>
-                <a href="#">Accessibility Statement</a>
-                <a href="#">Cookie Preferences</a>
-                <a href="#">CA Privacy Rights</a>
-                <a href="#">CA Supply Chains</a>
-                <a href="#">Your Privacy Choices - CA</a>
+                <a href="{% url 'terms_of_service' %}">Terms</a>
+                <a href="{% url 'privacy_policy' %}">Privacy</a>
+                <a href="{% url 'need_help' %}">Accessibility Statement</a>
+                <a href="{% url 'cookie_policy' %}" class="cookie-preferences-link">Cookie Preferences</a>
+                <a href="{% url 'privacy_policy' %}">CA Privacy Rights</a>
+                <a href="{% url 'terms_of_service' %}">CA Supply Chains</a>
+                <a href="{% url 'cookie_policy' %}">Your Privacy Choices - CA</a>
             </div>
         </div>
     </footer>

@@ -3,11 +3,7 @@ from pathlib import Path
 from django.core.management.utils import get_random_secret_key
 from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
-
-try:
-    import dj_database_url
-except ImportError:  # pragma: no cover - optional in local dev until installed
-    dj_database_url = None
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -54,6 +50,10 @@ def env_float(name, default=0.0):
 
 
 DEBUG = env_bool('DEBUG', True)
+GOOGLE_OAUTH_CLIENT_ID = os.getenv('GOOGLE_OAUTH_CLIENT_ID', '').strip()
+GOOGLE_OAUTH_CLIENT_SECRET = os.getenv('GOOGLE_OAUTH_CLIENT_SECRET', '').strip()
+GOOGLE_OAUTH_CONFIGURED_WITH_ENV = bool(GOOGLE_OAUTH_CLIENT_ID and GOOGLE_OAUTH_CLIENT_SECRET)
+GOOGLE_OAUTH_ENABLED = True
 
 
 def build_secret_key():
@@ -76,11 +76,30 @@ def build_secret_key():
 
 SECRET_KEY = build_secret_key()
 
-ALLOWED_HOSTS = env_list('ALLOWED_HOSTS', ['127.0.0.1', 'localhost', 'testserver'])
+
+def build_allowed_hosts():
+    configured_hosts = env_list('ALLOWED_HOSTS')
+    render_hostname = os.getenv('RENDER_EXTERNAL_HOSTNAME', '').strip()
+    if render_hostname:
+        configured_hosts.append(render_hostname)
+    if DEBUG:
+        configured_hosts.extend(['127.0.0.1', 'localhost', 'testserver'])
+    hosts = list(dict.fromkeys(configured_hosts))
+    if not DEBUG and not hosts:
+        raise ImproperlyConfigured(
+            'ALLOWED_HOSTS is required when DEBUG=False. Set it to your Render/custom domain.'
+        )
+    return hosts
+
+
+ALLOWED_HOSTS = build_allowed_hosts()
 
 
 def build_csrf_trusted_origins():
     configured_origins = env_list('CSRF_TRUSTED_ORIGINS')
+    render_hostname = os.getenv('RENDER_EXTERNAL_HOSTNAME', '').strip()
+    if render_hostname:
+        configured_origins.append(f'https://{render_hostname}')
     if DEBUG:
         configured_origins.extend([
             'http://localhost',
@@ -99,9 +118,15 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
     'appwomens.apps.AppwomensConfig',
     'appmens.apps.AppmensConfig',
     'appaccounts',
@@ -116,6 +141,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -137,6 +163,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'vasu.context_processors.seo_context',
                 'aapcategory.context_product.memu_links',
                 'aapstore.context_processors.cart_wishlist_count',
             ],
@@ -147,24 +174,41 @@ TEMPLATES = [
 WSGI_APPLICATION = 'vasu.wsgi.application'
 
 AUTH_USER_MODEL = 'appaccounts.Account'
+SITE_ID = env_int('SITE_ID', 1)
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+ACCOUNT_ADAPTER = 'appaccounts.adapters.VasuAccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'appaccounts.adapters.VasuSocialAccountAdapter'
+LOGIN_URL = 'login_register'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_SIGNUP_FIELDS = ['email*', 'username*', 'password1*', 'password2*']
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+SOCIALACCOUNT_EMAIL_REQUIRED = True
+SOCIALACCOUNT_QUERY_EMAIL = True
+SOCIALACCOUNT_AUTO_SIGNUP = True
+SOCIALACCOUNT_LOGIN_ON_GET = True
 
 DATABASE_URL = os.getenv('DATABASE_URL', '').strip()
 
-if DATABASE_URL and dj_database_url is not None:
-    DATABASES = {
-        'default': dj_database_url.parse(
-            DATABASE_URL,
-            conn_max_age=env_int('DB_CONN_MAX_AGE', 600),
-            ssl_require=env_bool('DB_SSL_REQUIRE', not DEBUG),
-        )
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+if not DATABASE_URL:
+    raise ImproperlyConfigured(
+        'DATABASE_URL is required. Configure Neon PostgreSQL; SQLite fallback is disabled.'
+    )
+
+DATABASES = {
+    'default': dj_database_url.parse(
+        DATABASE_URL,
+        conn_max_age=env_int('DB_CONN_MAX_AGE', 600),
+        conn_health_checks=env_bool('DB_CONN_HEALTH_CHECKS', True),
+        ssl_require=env_bool('DB_SSL_REQUIRE', True),
+    )
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -192,6 +236,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
+MEDIA_ALLOWED_PATH_PREFIXES = ('photos', 'userprofile')
+SERVE_MEDIA_FILES = env_bool('SERVE_MEDIA_FILES', True)
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
@@ -229,6 +275,9 @@ EMAIL_USE_SSL = env_bool('EMAIL_USE_SSL', True)
 EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', '')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', '')
 DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', EMAIL_HOST_USER or 'webmaster@localhost')
+
+if DEBUG and (not EMAIL_HOST_USER or not EMAIL_HOST_PASSWORD):
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 JAZZMIN_SETTINGS = {
     "site_title" : "VASU",
@@ -287,9 +336,45 @@ JAZZMIN_UI_TWEAKS = {
     "dark_mode_theme": "flatly",
 }
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-OPENAI_CHAT_ENABLED = env_bool("OPENAI_CHAT_ENABLED", False)
-OPENAI_CHAT_MODEL = os.getenv("OPENAI_CHAT_MODEL", "").strip()
-OPENAI_CHAT_TIMEOUT = env_float("OPENAI_CHAT_TIMEOUT", 6.0)
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "").strip()
+GEMINI_CHAT_MODEL = os.getenv("GEMINI_CHAT_MODEL", "gemini-2.0-flash").strip()
+GEMINI_CHAT_ENABLED = env_bool("GEMINI_CHAT_ENABLED", bool(GEMINI_API_KEY and GEMINI_CHAT_MODEL))
+GEMINI_CHAT_TIMEOUT = env_float("GEMINI_CHAT_TIMEOUT", 8.0)
+
+# Backward compatibility aliases for existing references.
+OPENAI_API_KEY = GEMINI_API_KEY
+OPENAI_CHAT_MODEL = GEMINI_CHAT_MODEL
+OPENAI_CHAT_ENABLED = GEMINI_CHAT_ENABLED
+OPENAI_CHAT_TIMEOUT = GEMINI_CHAT_TIMEOUT
 PAYMENT_UPI_ID = os.getenv("PAYMENT_UPI_ID", "7878065935@ptyes").strip()
 PAYMENT_UPI_NAME = os.getenv("PAYMENT_UPI_NAME", "VASU").strip()
+ANALYTICS_TRACKING_ENABLED = env_bool('ANALYTICS_TRACKING_ENABLED', True)
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': os.getenv("GOOGLE_OAUTH_CLIENT_ID"),
+            'secret': os.getenv("GOOGLE_OAUTH_CLIENT_SECRET"),
+            'key': '',
+        },
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        },
+    }
+}
+
+LOGIN_RATE_LIMIT_ATTEMPTS = env_int('LOGIN_RATE_LIMIT_ATTEMPTS', 5)
+LOGIN_RATE_LIMIT_WINDOW_SECONDS = env_int('LOGIN_RATE_LIMIT_WINDOW_SECONDS', 900)
+LOGIN_RATE_LIMIT_BLOCK_SECONDS = env_int('LOGIN_RATE_LIMIT_BLOCK_SECONDS', 900)
+SEO_SITE_NAME = os.getenv('SEO_SITE_NAME', 'VASU Store').strip()
+SEO_DEFAULT_DESCRIPTION = os.getenv(
+    'SEO_DEFAULT_DESCRIPTION',
+    'VASU is a luxury fashion store for women and men featuring designer collections, secure checkout, and premium support.',
+).strip()
+SEO_DEFAULT_OG_IMAGE = os.getenv('SEO_DEFAULT_OG_IMAGE', '/static/image/logo/logo-transparent.png').strip()
+GOOGLE_SITE_VERIFICATION = os.getenv('GOOGLE_SITE_VERIFICATION', '').strip()
+BING_SITE_VERIFICATION = os.getenv('BING_SITE_VERIFICATION', '').strip()
+SUPPORT_EMAIL = os.getenv('SUPPORT_EMAIL', DEFAULT_FROM_EMAIL or 'support@localhost').strip()
+PASSWORD_RESET_DOMAIN = os.getenv('PASSWORD_RESET_DOMAIN', '').strip()
+PASSWORD_RESET_PROTOCOL = os.getenv('PASSWORD_RESET_PROTOCOL', '').strip().lower()

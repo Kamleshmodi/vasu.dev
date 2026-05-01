@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.utils import timezone
 from django.contrib.contenttypes.models import ContentType
-from .models import Product, Variation, Wishlist, Cart, Gender, Order, OrderItem, ProductRating
+from .models import Product, Variation, Wishlist, Cart, Gender, Order, OrderItem, ProductRating, UserEvent, SupportRequest
 
 # ---------- Product Image Preview (Helper Function) ----------
 def preview_image(obj):
@@ -187,4 +187,44 @@ class ProductRatingAdmin(admin.ModelAdmin):
 
 # Register any remaining models
 # admin.site.register(Gender)
+
+
+@admin.register(UserEvent)
+class UserEventAdmin(admin.ModelAdmin):
+    list_display = ('created_at', 'event_type', 'event_name', 'user', 'page_path', 'anonymous_id')
+    list_filter = ('event_type', 'created_at')
+    search_fields = ('event_name', 'page_path', 'user__email', 'user__username', 'anonymous_id', 'session_key')
+    readonly_fields = (
+        'created_at',
+        'event_type',
+        'event_name',
+        'user',
+        'page_path',
+        'referrer',
+        'session_key',
+        'anonymous_id',
+        'ip_address',
+        'user_agent',
+        'properties',
+    )
+
+    def has_add_permission(self, request):
+        return False
+
+
+@admin.register(SupportRequest)
+class SupportRequestAdmin(admin.ModelAdmin):
+    list_display = (
+        'ticket_id',
+        'created_at',
+        'request_type',
+        'severity',
+        'status',
+        'name',
+        'email',
+        'order',
+    )
+    list_filter = ('request_type', 'severity', 'status', 'created_at')
+    search_fields = ('ticket_id', 'subject', 'message', 'email', 'name', 'order__order_id')
+    readonly_fields = ('ticket_id', 'created_at', 'updated_at', 'reporter_user', 'ip_address', 'user_agent')
 

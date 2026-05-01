@@ -29,25 +29,25 @@
         <div class="footer-columns">
             <div class="footer-col">
                 <h4>VASU</h4>
-                <a href="#">Customer Care</a>
-                <a href="#">Track Your Order</a>
-                <a href="#">Shipping & Returns</a>
-                <a href="#">Gift Certificates</a>
-                <a href="#">About Us</a>
-                <a href="#">562-407-3230</a>
-                <a href="#">Live Chat</a>
+                <a href="{% url 'need_help' %}">Customer Care</a>
+                <a href="{% url 'order_history' %}">Track Your Order</a>
+                <a href="{% url 'need_help' %}">Shipping & Returns</a>
+                <a href="{% url 'need_help' %}">Gift Certificates</a>
+                <a href="{% url 'womens_home' %}">About Us</a>
+                <a href="tel:7878065935">7878065935</a>
+                <a href="javascript:void(0);" onclick="toggleChat()">Live Chat</a>
             </div>
             <div class="footer-col">
                 <h4>&nbsp;</h4>
-                <a href="#">The Loyalty Program</a>
-                <a href="#">Ambassador Program</a>
-                <a href="#">Affiliate</a>
-                <a href="#">Stores</a>
-                <a href="#">Careers</a>
+                <a href="{% url 'womens_sale' %}">The Loyalty Program</a>
+                <a href="{% url 'womens_new' %}">Ambassador Program</a>
+                <a href="{% url 'womens_designers' %}">Affiliate</a>
+                <a href="{% url 'womens_shops' %}">Stores</a>
+                <a href="{% url 'need_help' %}">Careers</a>
             </div>
             <div class="footer-col">
                 <h4>NEWSLETTER</h4>
-                <p>Be the first to know about new arrivals, sales & promos by submitting your email. You can opt out at any time. <a href="#">privacy policy</a></p>
+                <p>Be the first to know about new arrivals, sales & promos by submitting your email. You can opt out at any time. <a href="{% url 'privacy_policy' %}">privacy policy</a></p>
                 <div class="newsletter">
                     <input type="email" placeholder="Sign up for our weekly emails">
                     <button>&rarr;</button>
@@ -55,29 +55,29 @@
             </div>
             <div class="footer-col">
                 <h4>JOIN US</h4>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">YouTube</a>
-                <a href="#">X</a>
-                <a href="#">Pinterest</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
             </div>
             <div class="footer-col">
                 <h4>OUR APPS</h4>
-                <a href="#">iPhone</a>
-                <a href="#">iPad</a>
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">iPhone</a>
+                <a href="https://www.apple.com/ipad/" target="_blank" rel="noopener noreferrer">iPad</a>
             </div>
         </div>
 
         <div class="footer-bottom">
             <p id="p">2025 © Eminent, Inc. (a Revolve Group company). All Rights Reserved.</p>
             <div class="footer-links">
-                <a href="#">Terms</a>
-                <a href="#">Privacy</a>
-                <a href="#">Accessibility Statement</a>
-                <a href="#">Cookie Preferences</a>
-                <a href="#">CA Privacy Rights</a>
-                <a href="#">CA Supply Chains</a>
-                <a href="#">Your Privacy Choices - CA</a>
+                <a href="{% url 'terms_of_service' %}">Terms</a>
+                <a href="{% url 'privacy_policy' %}">Privacy</a>
+                <a href="{% url 'need_help' %}">Accessibility Statement</a>
+                <a href="{% url 'cookie_policy' %}" class="cookie-preferences-link">Cookie Preferences</a>
+                <a href="{% url 'privacy_policy' %}">CA Privacy Rights</a>
+                <a href="{% url 'terms_of_service' %}">CA Supply Chains</a>
+                <a href="{% url 'cookie_policy' %}">Your Privacy Choices - CA</a>
             </div>
         </div>
     </footer>

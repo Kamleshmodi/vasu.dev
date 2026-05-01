@@ -1,0 +1,38 @@
+<div id="cookie-consent-banner" class="cookie-consent-banner" hidden>
+    <div class="cookie-consent-content">
+        <p>
+            We use necessary cookies to keep VASU secure and functional. Optional analytics and marketing cookies are used only with your consent.
+            <a href="{% url 'cookie_policy' %}">Learn more</a>.
+        </p>
+        <div class="cookie-consent-actions">
+            <button type="button" id="cookie-reject-btn" class="cookie-btn cookie-btn-light">Reject Optional</button>
+            <button type="button" id="cookie-manage-btn" class="cookie-btn cookie-btn-outline">Manage</button>
+            <button type="button" id="cookie-accept-btn" class="cookie-btn cookie-btn-dark">Accept All</button>
+        </div>
+    </div>
+</div>
+
+<div id="cookie-preferences-modal" class="cookie-preferences-modal" hidden>
+    <div class="cookie-preferences-card" role="dialog" aria-modal="true" aria-labelledby="cookie-preferences-title">
+        <h3 id="cookie-preferences-title">Cookie Preferences</h3>
+        <p>Control optional cookies below. Necessary cookies are always enabled for login, checkout, and security.</p>
+
+        <label class="cookie-pref-item cookie-pref-required">
+            <input type="checkbox" checked disabled>
+            <span>Necessary cookies (always active)</span>
+        </label>
+        <label class="cookie-pref-item">
+            <input type="checkbox" id="cookie-analytics-input">
+            <span>Analytics cookies</span>
+        </label>
+        <label class="cookie-pref-item">
+            <input type="checkbox" id="cookie-marketing-input">
+            <span>Marketing cookies</span>
+        </label>
+
+        <div class="cookie-modal-actions">
+            <button type="button" id="cookie-cancel-btn" class="cookie-btn cookie-btn-light">Cancel</button>
+            <button type="button" id="cookie-save-btn" class="cookie-btn cookie-btn-dark">Save Preferences</button>
+        </div>
+    </div>
+</div>

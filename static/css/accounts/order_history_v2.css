@@ -74,7 +74,31 @@
 }
 
 .order-actions-head {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     text-align: right;
+}
+
+.cancel-order-form {
+    margin: 0;
+}
+
+.cancel-order-btn {
+    background: #f7d8d9;
+    border: 1px solid #e0a7a9;
+    border-radius: 999px;
+    color: #7f1d24;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 14px;
+    transition: background 0.2s ease;
+}
+
+.cancel-order-btn:hover {
+    background: #efc1c4;
 }
 
 .order-card-body {
@@ -214,6 +238,7 @@
     }
 
     .order-actions-head {
+        align-items: flex-start;
         text-align: left;
     }
 

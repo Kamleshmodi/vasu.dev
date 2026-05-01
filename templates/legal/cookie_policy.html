@@ -1,0 +1,26 @@
+{% extends 'womens/base.html' %}
+{% block meta_title %}Cookie Policy | {{ business_name }}{% endblock %}
+{% block meta_description %}See which necessary, analytics, and marketing cookies {{ business_name }} uses and how visitors can manage consent.{% endblock %}
+{% block og_title %}Cookie Policy | {{ business_name }}{% endblock %}
+{% block og_description %}See which necessary, analytics, and marketing cookies {{ business_name }} uses and how visitors can manage consent.{% endblock %}
+{% block twitter_title %}Cookie Policy | {{ business_name }}{% endblock %}
+{% block twitter_description %}See which necessary, analytics, and marketing cookies {{ business_name }} uses and how visitors can manage consent.{% endblock %}
+{% block content %}
+<section class="container py-5" style="max-width: 900px; line-height: 1.75;">
+    <h1 class="mb-3">{{ page_title }}</h1>
+    <p class="text-muted">Last updated: {{ last_updated }}</p>
+    <p>{{ page_summary }}</p>
+
+    <h2 class="h4 mt-4">Cookie Categories</h2>
+    <p><strong>Strictly Necessary</strong>: Session and CSRF protection cookies ({{ session_cookie_name }}, {{ csrf_cookie_name }}) that are required for login, checkout, and security.</p>
+    <p><strong>Preferences</strong>: Saved display and consent preferences.</p>
+    <p><strong>Analytics/Marketing</strong>: Optional cookies only enabled after explicit consent.</p>
+
+    <h2 class="h4 mt-4">Manage Consent</h2>
+    <p>Consent preference key used in your browser storage: <code>{{ cookie_consent_storage_key }}</code>.</p>
+    <p>You can accept all, reject optional categories, or update preferences any time from the cookie banner controls.</p>
+
+    <h2 class="h4 mt-4">Contact</h2>
+    <p>For cookie or privacy requests contact <a href="mailto:{{ contact_email }}" data-track-event="support_email_clicked" data-track-props='{"location":"cookie_policy"}'>{{ contact_email }}</a>.</p>
+</section>
+{% endblock %}

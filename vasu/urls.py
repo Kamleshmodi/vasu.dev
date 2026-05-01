@@ -1,22 +1,40 @@
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
+from django.urls import re_path
 from django.contrib.auth import views as auth_views
+from django.contrib.sitemaps.views import sitemap
 from django.views.generic import TemplateView
+from appaccounts.forms import VasuPasswordResetForm
 from . import views
+from .views import health_check
+from .sitemaps import sitemaps
 
 urlpatterns = [
+    path("healthz", health_check),
+    re_path(r'^media/(?P<path>.+)$', views.serve_media, name='serve_media'),
+    path('robots.txt', views.robots_txt, name='robots_txt'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='sitemap_index'),
+
     path('admin/', admin.site.urls),
     path('accounts/', include('appaccounts.urls')),
 
     # ---------- COMMON ----------
     path('login/', views.Login, name='login'),
     path('need-help/', views.NeedHelp, name='need_help'),
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
+    path('terms-of-service/', views.terms_of_service, name='terms_of_service'),
+    path('cookie-policy/', views.cookie_policy, name='cookie_policy'),
   
 
     # ---------- PASSWORD RESET ----------
-    path('reset_password/', auth_views.PasswordResetView.as_view(template_name="accounts/password_reset.html"), name="reset_password"),
+    path(
+        'reset_password/',
+        auth_views.PasswordResetView.as_view(
+            template_name="accounts/password_reset.html",
+            form_class=VasuPasswordResetForm,
+        ),
+        name="reset_password",
+    ),
     path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name="accounts/password_reset_sent.html"), name="password_reset_done"),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name="accounts/password_reset_form.html"), name="password_reset_confirm"),
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name="accounts/password_reset_complete.html"), name="password_reset_complete"),
@@ -66,10 +84,12 @@ urlpatterns = [
     path('checkout/', views.checkout, name='checkout'),
     path('api/address-options/', views.address_options_api, name='address_options_api'),
     path('api/validate-postal-code/', views.validate_postal_code_api, name='validate_postal_code_api'),
+    path('api/track-event/', views.track_event_api, name='track_event_api'),
     path('api/place-order/', views.place_order_api, name='place_order_api'),
     path('confirm/', TemplateView.as_view(template_name='order_confirm.html'), name='order_confirm'),
 
     path('order-history/', views.order_history, name='order_history'),
+    path('order-history/<int:order_id>/cancel/', views.cancel_order, name='cancel_order'),
     path('order-history/<int:order_id>/rate/<int:item_id>/', views.rate_order_item, name='rate_order_item'),
     path('my-account/', views.my_account, name='my_account'),
     path('edit-profile/', views.edit_profile, name='edit_profile'),
@@ -97,7 +117,4 @@ urlpatterns = [
    
 
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

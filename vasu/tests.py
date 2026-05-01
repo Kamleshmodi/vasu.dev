@@ -1,18 +1,20 @@
 import json
 import shutil
-import tempfile
 from datetime import timedelta
 from decimal import Decimal
+from pathlib import Path
 
+from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
+from django.core import mail
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import Client, TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
 
 from aapcategory.models import Category, Designer
-from aapstore.models import Cart, Order, OrderItem, ProductRating
+from aapstore.models import Cart, Order, OrderItem, ProductRating, SupportRequest, UserEvent
 from appwomens.models import NewProduct, ProductVariation, SaleItems as WomenSaleItems
 
 
@@ -33,8 +35,13 @@ SMALL_GIF = (
 class VasuViewTests(TestCase):
     @classmethod
     def setUpClass(cls):
-        cls._temp_media_root = tempfile.mkdtemp(prefix='vasu-test-media-')
-        cls._media_override = override_settings(MEDIA_ROOT=cls._temp_media_root)
+        test_media_parent = Path(settings.BASE_DIR) / '.tmp-test-media'
+        test_media_parent.mkdir(exist_ok=True)
+        test_media_root = test_media_parent / cls.__name__
+        shutil.rmtree(test_media_root, ignore_errors=True)
+        test_media_root.mkdir(parents=True, exist_ok=True)
+        cls._temp_media_root = test_media_root
+        cls._media_override = override_settings(MEDIA_ROOT=str(cls._temp_media_root))
         cls._media_override.enable()
         super().setUpClass()
 
@@ -122,7 +129,7 @@ class VasuViewTests(TestCase):
             state='Gujarat',
             country='India',
             zip_code='395006',
-            total_price=Decimal('2099.00'),
+            total_price=Decimal('1999.00'),
             payment_method=payment_method,
             payment_reference=payment_reference,
             status=status,
@@ -183,7 +190,7 @@ class VasuViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, self.product.product_name)
 
-    @override_settings(OPENAI_CHAT_ENABLED=False, OPENAI_API_KEY='', OPENAI_CHAT_MODEL='')
+    @override_settings(GEMINI_CHAT_ENABLED=False, GEMINI_API_KEY='', GEMINI_CHAT_MODEL='')
     def test_chatbot_search_returns_matching_products(self):
         response = self.client.get(reverse('chatbot_search'), {'query': 'dress'})
 
@@ -194,7 +201,7 @@ class VasuViewTests(TestCase):
         self.assertEqual(payload['products'][0]['name'], self.product.product_name)
         self.assertIn('I found matching products', payload['message'])
 
-    @override_settings(OPENAI_CHAT_ENABLED=False, OPENAI_API_KEY='', OPENAI_CHAT_MODEL='')
+    @override_settings(GEMINI_CHAT_ENABLED=False, GEMINI_API_KEY='', GEMINI_CHAT_MODEL='')
     def test_chatbot_search_handles_shipping_questions_without_products(self):
         response = self.client.get(reverse('chatbot_search'), {'query': 'shipping info'})
 
@@ -202,13 +209,96 @@ class VasuViewTests(TestCase):
         payload = response.json()
         self.assertFalse(payload['found'])
         self.assertEqual(payload['products'], [])
-        self.assertIn('Shipping:', payload['message'])
+        self.assertIn('shipping', payload['message'].lower())
+
+    @override_settings(GEMINI_CHAT_ENABLED=False, GEMINI_API_KEY='', GEMINI_CHAT_MODEL='')
+    def test_chatbot_search_combines_support_and_product_results(self):
+        response = self.client.get(reverse('chatbot_search'), {'query': 'shipping dress'})
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertTrue(payload['found'])
+        self.assertGreaterEqual(len(payload['products']), 1)
+        self.assertEqual(payload['products'][0]['name'], self.product.product_name)
+        self.assertIn('shipping', payload['message'].lower())
+        self.assertIn('matching products', payload['message'])
+
+    @override_settings(GEMINI_CHAT_ENABLED=False, GEMINI_API_KEY='', GEMINI_CHAT_MODEL='')
+    def test_chatbot_search_handles_hinglish_support_question(self):
+        response = self.client.get(reverse('chatbot_search'), {'query': 'order kaise karu'})
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertFalse(payload['found'])
+        self.assertEqual(payload['products'], [])
+        self.assertIn('order', payload['message'].lower())
+
+    @override_settings(GEMINI_CHAT_ENABLED=False, GEMINI_API_KEY='', GEMINI_CHAT_MODEL='')
+    def test_chatbot_search_no_match_returns_helpful_fallback(self):
+        response = self.client.get(reverse('chatbot_search'), {'query': 'zxyqv random unmatched'})
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertFalse(payload['found'])
+        self.assertEqual(payload['products'], [])
+        self.assertIn('exact product match', payload['message'])
+        self.assertIn('shipping', payload['message'].lower())
+
+    @override_settings(GEMINI_CHAT_ENABLED=False, GEMINI_API_KEY='', GEMINI_CHAT_MODEL='')
+    def test_chatbot_search_vendor_account_query_returns_admin_guidance(self):
+        response = self.client.get(reverse('chatbot_search'), {'query': 'how to contact admin for vendor account'})
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertFalse(payload['found'])
+        self.assertEqual(payload['products'], [])
+        self.assertIn('vendor account', payload['message'].lower())
+        self.assertIn('need help', payload['message'].lower())
+
+    @override_settings(GEMINI_CHAT_ENABLED=False, GEMINI_API_KEY='', GEMINI_CHAT_MODEL='')
+    def test_chatbot_search_greeting_returns_welcome_without_no_match_text(self):
+        response = self.client.get(reverse('chatbot_search'), {'query': 'hey good morning'})
+
+        self.assertEqual(response.status_code, 200)
+        payload = response.json()
+        self.assertFalse(payload['found'])
+        self.assertEqual(payload['products'], [])
+        self.assertIn('welcome', payload['message'].lower())
+        self.assertNotIn('exact product match', payload['message'].lower())
 
     def test_health_check_returns_ok(self):
         response = self.client.get(reverse('health_check'))
 
         self.assertEqual(response.status_code, 200)
         self.assertJSONEqual(response.content, {'status': 'ok'})
+
+    @override_settings(DEBUG=False, SERVE_MEDIA_FILES=True)
+    def test_uploaded_media_is_served_when_debug_is_disabled(self):
+        response = self.client.get(self.product.front_image.url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response['Content-Type'], 'image/gif')
+        self.assertEqual(b''.join(response.streaming_content), SMALL_GIF)
+
+    @override_settings(DEBUG=False, SERVE_MEDIA_FILES=True)
+    def test_media_route_blocks_non_upload_paths(self):
+        response = self.client.get('/media/.env')
+
+        self.assertEqual(response.status_code, 404)
+
+    def test_robots_txt_contains_sitemap(self):
+        response = self.client.get(reverse('robots_txt'))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'User-agent: *')
+        self.assertContains(response, 'Sitemap:')
+        self.assertIn('/sitemap.xml', response.content.decode('utf-8'))
+
+    def test_sitemap_xml_is_available(self):
+        response = self.client.get(reverse('sitemap_index'))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, '<urlset', html=False)
 
     def test_profile_pages_render_with_custom_account_model(self):
         self.client.force_login(self.user)
@@ -220,6 +310,63 @@ class VasuViewTests(TestCase):
         self.assertEqual(edit_profile_response.status_code, 200)
         self.assertContains(my_account_response, self.user.username)
         self.assertContains(edit_profile_response, 'Email Address')
+
+    def test_need_help_page_renders_support_form(self):
+        response = self.client.get(reverse('need_help'))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Submit Support or Bug Report')
+        self.assertContains(response, 'Bug Report')
+
+    @override_settings(SUPPORT_EMAIL='support@example.com')
+    def test_need_help_page_uses_configured_support_email(self):
+        response = self.client.get(reverse('need_help'))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'support@example.com')
+        self.assertContains(response, 'support_email_clicked')
+        self.assertContains(response, 'support_phone_clicked')
+
+    @override_settings(
+        EMAIL_BACKEND='django.core.mail.backends.locmem.EmailBackend',
+        DEFAULT_FROM_EMAIL='noreply@example.com',
+        SUPPORT_EMAIL='support@example.com',
+    )
+    def test_need_help_submission_creates_ticket_and_sends_emails(self):
+        self.client.force_login(self.user)
+        order, _ = self.create_order_with_item(
+            payment_method=Order.PaymentMethod.UPI,
+            payment_reference='123456789012',
+        )
+
+        response = self.client.post(
+            reverse('need_help'),
+            data={
+                'request_type': SupportRequest.RequestType.BUG,
+                'severity': SupportRequest.Severity.HIGH,
+                'name': 'Test User',
+                'email': 'tester@example.com',
+                'subject': 'Checkout fails for UPI',
+                'message': 'Steps: Open checkout, choose UPI, submit valid UTR, still got random failure once.',
+                'page_url': 'https://example.com/checkout/',
+                'order_reference': str(order.order_id),
+            },
+        )
+
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse('need_help'))
+        self.assertEqual(SupportRequest.objects.count(), 1)
+
+        support_request = SupportRequest.objects.latest('id')
+        self.assertTrue(support_request.ticket_id.startswith('SR-'))
+        self.assertEqual(support_request.request_type, SupportRequest.RequestType.BUG)
+        self.assertEqual(support_request.severity, SupportRequest.Severity.HIGH)
+        self.assertEqual(support_request.reporter_user, self.user)
+        self.assertEqual(support_request.order, order)
+
+        self.assertEqual(len(mail.outbox), 2)
+        self.assertIn(support_request.ticket_id, mail.outbox[0].subject)
+        self.assertIn(support_request.ticket_id, mail.outbox[1].subject)
 
     def test_place_order_api_requires_csrf_token(self):
         client = Client(enforce_csrf_checks=True)
@@ -261,6 +408,75 @@ class VasuViewTests(TestCase):
             {'success': False, 'error': 'Unsupported payment method selected.'},
         )
 
+    @override_settings(GOOGLE_SITE_VERIFICATION='google-test-token', BING_SITE_VERIFICATION='bing-test-token')
+    def test_home_page_renders_search_engine_verification_meta_tags(self):
+        response = self.client.get(reverse('home'))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'google-site-verification')
+        self.assertContains(response, 'google-test-token')
+        self.assertContains(response, 'msvalidate.01')
+        self.assertContains(response, 'bing-test-token')
+
+    def test_track_event_api_creates_user_event_for_authenticated_user(self):
+        self.client.force_login(self.user)
+
+        response = self.client.post(
+            reverse('track_event_api'),
+            data=json.dumps(
+                {
+                    'eventType': 'user_event',
+                    'eventName': 'wishlist_add_clicked',
+                    'pagePath': '/new/',
+                    'referrer': 'https://example.com/source',
+                    'anonymousId': 'anon-test-001',
+                    'properties': {'catalog': 'women'},
+                }
+            ),
+            content_type='application/json',
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(UserEvent.objects.count(), 1)
+        tracked_event = UserEvent.objects.latest('id')
+        self.assertEqual(tracked_event.user, self.user)
+        self.assertEqual(tracked_event.event_type, UserEvent.EventType.USER_EVENT)
+        self.assertEqual(tracked_event.event_name, 'wishlist_add_clicked')
+        self.assertEqual(tracked_event.page_path, '/new/')
+        self.assertEqual(tracked_event.properties.get('catalog'), 'women')
+
+    def test_track_event_api_creates_page_view_for_anonymous_user(self):
+        response = self.client.post(
+            reverse('track_event_api'),
+            data=json.dumps(
+                {
+                    'eventType': 'page_view',
+                    'eventName': 'page_view',
+                    'pagePath': '/mens/',
+                    'anonymousId': 'anon-public-001',
+                    'properties': {'title': 'Men Home'},
+                }
+            ),
+            content_type='application/json',
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(UserEvent.objects.count(), 1)
+        tracked_event = UserEvent.objects.latest('id')
+        self.assertIsNone(tracked_event.user)
+        self.assertEqual(tracked_event.event_type, UserEvent.EventType.PAGE_VIEW)
+        self.assertEqual(tracked_event.page_path, '/mens/')
+
+    def test_track_event_api_rejects_missing_event_name(self):
+        response = self.client.post(
+            reverse('track_event_api'),
+            data=json.dumps({'eventType': 'user_event'}),
+            content_type='application/json',
+        )
+
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(UserEvent.objects.count(), 0)
+
     def test_place_order_api_stores_payment_reference_for_upi_orders(self):
         self.client.force_login(self.user)
         self.add_product_to_cart()
@@ -291,6 +507,66 @@ class VasuViewTests(TestCase):
         self.assertEqual(order.payment_status, Order.PaymentStatus.PAID)
         self.assertEqual(order.account_receipt_status, Order.AccountReceiptStatus.PENDING)
         self.assertEqual(order.account_receipt_reference, '123456789012')
+
+    def test_place_order_api_stores_payment_reference_for_card_orders(self):
+        self.client.force_login(self.user)
+        self.add_product_to_cart()
+
+        response = self.client.post(
+            reverse('place_order_api'),
+            data=json.dumps(
+                {
+                    'fullName': 'Test User',
+                    'mobile': '9876543210',
+                    'address': '123 Test Street',
+                    'country': 'India',
+                    'state': 'Gujarat',
+                    'district': 'Surat',
+                    'city': 'Surat',
+                    'zipCode': '395006',
+                    'paymentMethod': 'card',
+                    'transactionId': 'CARD_MANUAL_12345',
+                }
+            ),
+            content_type='application/json',
+        )
+
+        self.assertEqual(response.status_code, 200)
+        order = Order.objects.latest('id')
+        self.assertEqual(order.payment_method, Order.PaymentMethod.CARD)
+        self.assertEqual(order.payment_reference, 'CARD_MANUAL_12345')
+        self.assertEqual(order.payment_status, Order.PaymentStatus.PAID)
+        self.assertEqual(order.account_receipt_status, Order.AccountReceiptStatus.PENDING)
+        self.assertEqual(order.account_receipt_reference, 'CARD_MANUAL_12345')
+
+    def test_place_order_api_rejects_missing_card_payment_reference(self):
+        self.client.force_login(self.user)
+        self.add_product_to_cart()
+
+        response = self.client.post(
+            reverse('place_order_api'),
+            data=json.dumps(
+                {
+                    'fullName': 'Test User',
+                    'mobile': '9876543210',
+                    'address': '123 Test Street',
+                    'country': 'India',
+                    'state': 'Gujarat',
+                    'district': 'Surat',
+                    'city': 'Surat',
+                    'zipCode': '395006',
+                    'paymentMethod': 'card',
+                    'transactionId': '',
+                }
+            ),
+            content_type='application/json',
+        )
+
+        self.assertEqual(response.status_code, 400)
+        self.assertJSONEqual(
+            response.content,
+            {'success': False, 'error': 'Payment reference is required for this payment method.'},
+        )
 
     def test_address_options_api_returns_state_data(self):
         response = self.client.get(reverse('address_options_api'), {'country': 'India'})
@@ -450,7 +726,7 @@ class VasuViewTests(TestCase):
                 'account_receipt_reference': 'BANK-123456',
                 'return_status': Order.ReturnStatus.COMPLETED,
                 'refund_status': Order.RefundStatus.COMPLETED,
-                'refund_amount': '2099.00',
+                'refund_amount': '1999.00',
                 'refund_reference': 'RF-123456',
                 'payment_notes': 'Customer return received and refund sent.',
             },
@@ -463,7 +739,7 @@ class VasuViewTests(TestCase):
         self.assertEqual(order.account_receipt_reference, 'BANK-123456')
         self.assertEqual(order.return_status, Order.ReturnStatus.COMPLETED)
         self.assertEqual(order.refund_status, Order.RefundStatus.COMPLETED)
-        self.assertEqual(order.refund_amount, Decimal('2099.00'))
+        self.assertEqual(order.refund_amount, Decimal('1999.00'))
         self.assertEqual(order.refund_reference, 'RF-123456')
         self.assertEqual(order.payment_notes, 'Customer return received and refund sent.')
         self.assertIsNotNone(order.refund_processed_at)
@@ -684,3 +960,80 @@ class VasuViewTests(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, order.order_id)
+
+    def test_order_history_shows_download_invoice_action(self):
+        self.client.force_login(self.user)
+        order, _ = self.create_order_with_item()
+
+        response = self.client.get(reverse('order_history'))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'Download Invoice')
+        self.assertContains(response, reverse('view_invoice', args=[order.id]))
+        self.assertContains(response, 'invoice_download_clicked')
+        self.assertContains(response, 'order_cancel_clicked')
+
+    @override_settings(SUPPORT_EMAIL='support@example.com')
+    def test_customer_can_view_invoice(self):
+        self.client.force_login(self.user)
+        order, _ = self.create_order_with_item()
+
+        response = self.client.get(reverse('view_invoice', args=[order.id]))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'INVOICE')
+        self.assertContains(response, order.order_id)
+        self.assertContains(response, 'support@example.com')
+
+    def test_customer_can_cancel_cash_order(self):
+        order, _ = self.create_order_with_item(
+            payment_method=Order.PaymentMethod.CASH,
+            payment_reference='COD',
+        )
+        variation = self.product.variations.first()
+        variation.stock = 4
+        variation.save(update_fields=['stock'])
+
+        self.client.force_login(self.user)
+        response = self.client.post(reverse('cancel_order', args=[order.id]))
+
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse('order_history'))
+        order.refresh_from_db()
+        variation.refresh_from_db()
+
+        self.assertEqual(order.status, Order.Status.CANCELLED)
+        self.assertEqual(order.payment_status, Order.PaymentStatus.FAILED)
+        self.assertEqual(order.account_receipt_status, Order.AccountReceiptStatus.NOT_RECEIVED)
+        self.assertIn('Customer cancelled order', order.payment_notes)
+        self.assertEqual(variation.stock, 5)
+
+    def test_customer_cancel_prepaid_order_marks_refund_in_process(self):
+        order, _ = self.create_order_with_item(
+            payment_method=Order.PaymentMethod.UPI,
+            payment_reference='123456789012',
+        )
+
+        self.client.force_login(self.user)
+        response = self.client.post(reverse('cancel_order', args=[order.id]))
+
+        self.assertEqual(response.status_code, 302)
+        order.refresh_from_db()
+        self.assertEqual(order.status, Order.Status.CANCELLED)
+        self.assertEqual(order.payment_status, Order.PaymentStatus.REFUND_IN_PROCESS)
+        self.assertEqual(order.refund_status, Order.RefundStatus.PENDING)
+
+    def test_customer_cannot_cancel_delivered_order(self):
+        order, _ = self.create_order_with_item(
+            status=Order.Status.DELIVERED,
+            payment_method=Order.PaymentMethod.UPI,
+            payment_reference='123456789012',
+        )
+
+        self.client.force_login(self.user)
+        response = self.client.post(reverse('cancel_order', args=[order.id]))
+
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse('order_history'))
+        order.refresh_from_db()
+        self.assertEqual(order.status, Order.Status.DELIVERED)

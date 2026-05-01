@@ -132,7 +132,6 @@
                         <span><strong>Country:</strong> {{ order.country }}</span>
                         <span><strong>Payment Ref:</strong> {{ order.payment_reference|default:"-" }}</span>
                         <span><strong>Items Subtotal:</strong> Rs. {{ order.subtotal|floatformat:2|intcomma }}</span>
-                        <span><strong>Shipping:</strong> Rs. {{ order.shipping_amount|floatformat:2|intcomma }}</span>
                     </div>
 
                     {% if order.has_price_mismatch %}

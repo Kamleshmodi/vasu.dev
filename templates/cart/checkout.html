@@ -5,8 +5,16 @@
     {% load humanize %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
+    <title>Checkout | VASU</title>
+    <meta name="description" content="Secure checkout for your VASU order with multiple payment methods and delivery address verification.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/cookie_consent.css' %}">
+    <script src="{% static 'js/cookie_consent.js' %}" defer></script>
+    {% if analytics_tracking_enabled %}
+    <script src="{% static 'js/analytics_tracking.js' %}" defer></script>
+    {% endif %}
     <style>
         body {
             font-family: "Segoe UI", Arial, sans-serif;
@@ -746,10 +754,6 @@
                             <span>Included</span>
                         </div>
                         {% endif %}
-                        <div class="order-item">
-                            <span>Shipping</span>
-                            <span>Rs. 100.00</span>
-                        </div>
                         </div>
                         <div class="total">
                             <span>Total</span>
@@ -771,25 +775,25 @@
         <div class="footer-columns">
             <div class="footer-col">
                 <h4>VASU</h4>
-                <a href="#">Customer Care</a>
-                <a href="#">Track Your Order</a>
-                <a href="#">Shipping & Returns</a>
-                <a href="#">Gift Certificates</a>
-                <a href="#">About Us</a>
-                <a href="#">562-407-3230</a>
-                <a href="#">Live Chat</a>
+                <a href="{% url 'need_help' %}">Customer Care</a>
+                <a href="{% url 'order_history' %}">Track Your Order</a>
+                <a href="{% url 'need_help' %}">Shipping & Returns</a>
+                <a href="{% url 'need_help' %}">Gift Certificates</a>
+                <a href="{% url 'womens_home' %}">About Us</a>
+                <a href="tel:7878065935">7878065935</a>
+                <a href="{% url 'need_help' %}">Live Chat</a>
             </div>
             <div class="footer-col">
                 <h4>&nbsp;</h4>
-                <a href="#">The Loyalty Program</a>
-                <a href="#">Ambassador Program</a>
-                <a href="#">Affiliate</a>
-                <a href="#">Stores</a>
-                <a href="#">Careers</a>
+                <a href="{% url 'womens_sale' %}">The Loyalty Program</a>
+                <a href="{% url 'womens_new' %}">Ambassador Program</a>
+                <a href="{% url 'womens_designers' %}">Affiliate</a>
+                <a href="{% url 'womens_shops' %}">Stores</a>
+                <a href="{% url 'need_help' %}">Careers</a>
             </div>
             <div class="footer-col">
                 <h4>NEWSLETTER</h4>
-                <p>Be the first to know about new arrivals, sales & promos by submitting your email. You can opt out at any time. <a href="#">privacy policy</a></p>
+                <p>Be the first to know about new arrivals, sales & promos by submitting your email. You can opt out at any time. <a href="{% url 'privacy_policy' %}">privacy policy</a></p>
                 <div class="newsletter">
                     <input type="email" placeholder="Sign up for our weekly emails">
                     <button>&rarr;</button>
@@ -797,31 +801,32 @@
             </div>
             <div class="footer-col">
                 <h4>JOIN US</h4>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">YouTube</a>
-                <a href="#">X</a>
-                <a href="#">Pinterest</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
             </div>
             <div class="footer-col">
                 <h4>OUR APPS</h4>
-                <a href="#">iPhone</a>
-                <a href="#">iPad</a>
+                <a href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">iPhone</a>
+                <a href="https://www.apple.com/ipad/" target="_blank" rel="noopener noreferrer">iPad</a>
             </div>
         </div>
         <div class="footer-bottom">
             <p id="p">2025 © Eminent, Inc. (a Revolve Group company). All Rights Reserved.</p>
             <div class="footer-links">
-                <a href="#">Terms</a>
-                <a href="#">Privacy</a>
-                <a href="#">Accessibility Statement</a>
-                <a href="#">Cookie Preferences</a>
-                <a href="#">CA Privacy Rights</a>
-                <a href="#">CA Supply Chains</a>
-                <a href="#">Your Privacy Choices - CA</a>
+                <a href="{% url 'terms_of_service' %}">Terms</a>
+                <a href="{% url 'privacy_policy' %}">Privacy</a>
+                <a href="{% url 'need_help' %}">Accessibility Statement</a>
+                <a href="{% url 'cookie_policy' %}" class="cookie-preferences-link">Cookie Preferences</a>
+                <a href="{% url 'privacy_policy' %}">CA Privacy Rights</a>
+                <a href="{% url 'terms_of_service' %}">CA Supply Chains</a>
+                <a href="{% url 'cookie_policy' %}">Your Privacy Choices - CA</a>
             </div>
         </div>
     </footer>
+    {% include 'includes/cookie_consent_banner.html' %}
 
     <!-- Success Modal -->
     <div id="confirmation-modal" class="confirmation-modal">
@@ -873,6 +878,13 @@
         
         const csrftoken = getCookie('csrftoken');
 
+        function trackUserEvent(eventName, properties) {
+            if (typeof window.vasuTrackEvent !== 'function') {
+                return;
+            }
+            window.vasuTrackEvent(eventName, properties || {});
+        }
+
         // Helper function to show errors
         function showError(msg) {
             errorMessage.innerText = msg;
@@ -893,6 +905,10 @@
                 } else if (this.value === 'qrcode') {
                     qrcodeDetails.classList.add('active');
                 }
+
+                trackUserEvent('checkout_payment_method_changed', {
+                    paymentMethod: this.value,
+                });
             });
         });
 
@@ -990,6 +1006,12 @@
                 transactionId: transactionId, // Sending the validated UTR/Transaction info to backend
                 totalPrice: parseFloat('{{ total_price }}')
             };
+
+            trackUserEvent('checkout_place_order_attempt', {
+                paymentMethod: paymentMethod,
+                country: requestBody.country,
+                state: requestBody.state,
+            });
             
             placeOrderButton.innerText = "Processing...";
             placeOrderButton.disabled = true;
@@ -1006,9 +1028,17 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
+                    trackUserEvent('checkout_place_order_success', {
+                        paymentMethod: paymentMethod,
+                        orderId: data.order_id || '',
+                    });
                     // Show the confirmation modal on success
                     confirmationModal.style.display = 'flex';
                 } else {
+                    trackUserEvent('checkout_place_order_failed', {
+                        paymentMethod: paymentMethod,
+                        reason: data.error || 'unknown',
+                    });
                     showError('Order placement failed: ' + data.error);
                     placeOrderButton.innerText = "Place Order";
                     placeOrderButton.disabled = false;
@@ -1016,6 +1046,9 @@
             })
             .catch(error => {
                 console.error('Error:', error);
+                trackUserEvent('checkout_place_order_error', {
+                    paymentMethod: paymentMethod,
+                });
                 showError('An error occurred. Please try again.');
                 placeOrderButton.innerText = "Place Order";
                 placeOrderButton.disabled = false;

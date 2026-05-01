@@ -1,8 +1,165 @@
 {% extends 'womens/base.html' %}
 {% load static %}
 
+{% block meta_title %}Need Help | VASU Support{% endblock %}
+{% block meta_description %}Contact VASU support for order help, payment questions, bug reports, feature requests, and customer feedback.{% endblock %}
+{% block og_title %}Need Help | VASU Support{% endblock %}
+{% block og_description %}Contact VASU support for order help, payment questions, bug reports, feature requests, and customer feedback.{% endblock %}
+{% block twitter_title %}Need Help | VASU Support{% endblock %}
+{% block twitter_description %}Contact VASU support for order help, payment questions, bug reports, feature requests, and customer feedback.{% endblock %}
+
 {% block content %}
+<div class="container py-5">
+	<div class="row g-4">
+		<div class="col-lg-4">
+			<div class="card shadow-sm border-0 h-100">
+				<div class="card-body">
+					<p class="text-uppercase text-muted small mb-2">Support</p>
+					<h2 class="h4 mb-3">Contact VASU Team</h2>
+					<p class="mb-3 text-muted">Need help with orders, payments, account access, or found a bug? Share details and we will track it with a ticket ID.</p>
 
+					<ul class="list-unstyled mb-0">
+						<li class="mb-2">
+							<strong>Email:</strong>
+							<a href="mailto:{{ support_email }}" class="text-decoration-none" data-track-event="support_email_clicked" data-track-props='{"location":"need_help"}'>{{ support_email }}</a>
+						</li>
+						<li class="mb-2">
+							<strong>Phone:</strong>
+							<a href="tel:{{ support_phone_tel }}" class="text-decoration-none" data-track-event="support_phone_clicked" data-track-props='{"location":"need_help"}'>{{ support_phone_display }}</a>
+						</li>
+						<li class="mb-0">
+							<strong>Types:</strong>
+							Support, Bug Report, Feedback, Feature Request
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
+		<div class="col-lg-8">
+			<div class="card shadow-sm border-0">
+				<div class="card-body p-4 p-md-5">
+					<p class="text-uppercase text-muted small mb-2">Feedback Loop</p>
+					<h1 class="h3 mb-4">Submit Support or Bug Report</h1>
+
+					<form method="post" action="{% url 'need_help' %}" novalidate>
+						{% csrf_token %}
+
+						{% if support_form.non_field_errors %}
+						<div class="alert alert-danger" role="alert">
+							{% for error in support_form.non_field_errors %}
+							<div>{{ error }}</div>
+							{% endfor %}
+						</div>
+						{% endif %}
+
+						<div class="row g-3">
+							<div class="col-md-6">
+								<label class="form-label" for="{{ support_form.request_type.id_for_label }}">Request Type</label>
+								{{ support_form.request_type }}
+								{% if support_form.request_type.errors %}
+								<div class="text-danger small mt-1">{{ support_form.request_type.errors.0 }}</div>
+								{% endif %}
+							</div>
+							<div class="col-md-6">
+								<label class="form-label" for="{{ support_form.severity.id_for_label }}">Severity</label>
+								{{ support_form.severity }}
+								{% if support_form.severity.errors %}
+								<div class="text-danger small mt-1">{{ support_form.severity.errors.0 }}</div>
+								{% endif %}
+							</div>
+
+							<div class="col-md-6">
+								<label class="form-label" for="{{ support_form.name.id_for_label }}">Name</label>
+								{{ support_form.name }}
+								{% if support_form.name.errors %}
+								<div class="text-danger small mt-1">{{ support_form.name.errors.0 }}</div>
+								{% endif %}
+							</div>
+							<div class="col-md-6">
+								<label class="form-label" for="{{ support_form.email.id_for_label }}">Email</label>
+								{{ support_form.email }}
+								{% if support_form.email.errors %}
+								<div class="text-danger small mt-1">{{ support_form.email.errors.0 }}</div>
+								{% endif %}
+							</div>
+
+							<div class="col-md-8">
+								<label class="form-label" for="{{ support_form.subject.id_for_label }}">Subject</label>
+								{{ support_form.subject }}
+								{% if support_form.subject.errors %}
+								<div class="text-danger small mt-1">{{ support_form.subject.errors.0 }}</div>
+								{% endif %}
+							</div>
+							<div class="col-md-4">
+								<label class="form-label" for="{{ support_form.order_reference.id_for_label }}">{{ support_form.order_reference.label }}</label>
+								{{ support_form.order_reference }}
+								{% if support_form.order_reference.help_text %}
+								<div class="form-text">{{ support_form.order_reference.help_text }}</div>
+								{% endif %}
+								{% if support_form.order_reference.errors %}
+								<div class="text-danger small mt-1">{{ support_form.order_reference.errors.0 }}</div>
+								{% endif %}
+							</div>
+
+							<div class="col-12">
+								<label class="form-label" for="{{ support_form.message.id_for_label }}">Message</label>
+								{{ support_form.message }}
+								{% if support_form.message.errors %}
+								<div class="text-danger small mt-1">{{ support_form.message.errors.0 }}</div>
+								{% endif %}
+							</div>
+
+							<div class="col-12">
+								<label class="form-label" for="{{ support_form.page_url.id_for_label }}">Page URL (optional)</label>
+								{{ support_form.page_url }}
+								{% if support_form.page_url.errors %}
+								<div class="text-danger small mt-1">{{ support_form.page_url.errors.0 }}</div>
+								{% endif %}
+							</div>
+						</div>
+
+						<div class="mt-4 d-flex align-items-center gap-3">
+							<button type="submit" class="btn btn-dark px-4" data-track-event="support_request_submitted">Submit Request</button>
+							<span class="text-muted small">You will receive an email confirmation with ticket ID.</span>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			{% if recent_support_requests %}
+			<div class="card shadow-sm border-0 mt-4">
+				<div class="card-body p-4">
+					<h3 class="h5 mb-3">Your Recent Requests</h3>
+					<div class="table-responsive">
+						<table class="table table-sm align-middle mb-0">
+							<thead>
+								<tr>
+									<th>Ticket</th>
+									<th>Type</th>
+									<th>Status</th>
+									<th>Subject</th>
+									<th>Created</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for ticket in recent_support_requests %}
+								<tr>
+									<td>{{ ticket.ticket_id }}</td>
+									<td>{{ ticket.get_request_type_display }}</td>
+									<td>{{ ticket.get_status_display }}</td>
+									<td>{{ ticket.subject }}</td>
+									<td>{{ ticket.created_at|date:"d M Y H:i" }}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
 
 {% endblock %}

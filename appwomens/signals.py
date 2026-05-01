@@ -4,6 +4,9 @@ from .models import ProductVariation, Clothing, Footwear, Dresses, Accessories, 
 
 @receiver(post_save, sender=ProductVariation)
 def auto_sync_category(sender, instance, **kwargs):
+    if kwargs.get('raw'):
+        return
+
     type_value = (instance.category_type or '').strip().lower()
     product = instance.product
 

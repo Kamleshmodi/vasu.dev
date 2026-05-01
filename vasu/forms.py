@@ -1,6 +1,6 @@
 from django import forms
 from appaccounts.models import Account
-from aapstore.models import UserProfile 
+from aapstore.models import Order, SupportRequest, UserProfile 
 from .address_utils import (
     DELIVERY_COUNTRY,
     get_address_options,
@@ -130,3 +130,58 @@ class UserProfileForm(forms.ModelForm):
             self.add_error('postal_code', validation_message)
 
         return cleaned_data
+
+
+class SupportRequestForm(forms.ModelForm):
+    order_reference = forms.CharField(
+        required=False,
+        max_length=40,
+        label='Order ID (optional)',
+        help_text='If your issue is related to an order, share Order ID for faster support.',
+    )
+
+    class Meta:
+        model = SupportRequest
+        fields = ['request_type', 'severity', 'name', 'email', 'subject', 'message', 'page_url']
+        widgets = {
+            'request_type': forms.Select(attrs={'class': 'form-select'}),
+            'severity': forms.Select(attrs={'class': 'form-select'}),
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your full name'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'you@example.com'}),
+            'subject': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Issue summary'}),
+            'message': forms.Textarea(
+                attrs={
+                    'class': 'form-control',
+                    'rows': 5,
+                    'placeholder': 'Describe your issue in detail. For bug reports include steps to reproduce.',
+                }
+            ),
+            'page_url': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'https://... (optional)'}),
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['order_reference'].widget.attrs.update({'class': 'form-control', 'placeholder': 'e.g. 10124'})
+        self.linked_order = None
+
+    def clean_message(self):
+        message = (self.cleaned_data.get('message') or '').strip()
+        if len(message) < 15:
+            raise forms.ValidationError('Please provide a little more detail (minimum 15 characters).')
+        return message
+
+    def clean_order_reference(self):
+        raw_reference = str(self.cleaned_data.get('order_reference') or '').strip()
+        if not raw_reference:
+            return ''
+
+        normalized = ''.join(ch for ch in raw_reference if ch.isdigit())
+        if not normalized:
+            raise forms.ValidationError('Order ID should contain digits only.')
+
+        order = Order.objects.filter(order_id=normalized).first() or Order.objects.filter(id=normalized).first()
+        if not order:
+            raise forms.ValidationError('No matching order found for this Order ID.')
+
+        self.linked_order = order
+        return normalized

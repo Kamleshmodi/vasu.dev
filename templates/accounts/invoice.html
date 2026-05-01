@@ -44,9 +44,9 @@
             </div>
             <div style="text-align: right;">
                 <h3>VASU Store</h3>
-                Email: vasu1115@outlook.com<br>
-                Phone: +91 7878065935<br>
-                Website: www.vasustore.com
+                Email: {{ support_email }}<br>
+                Phone: {{ support_phone_display }}<br>
+                Website: {{ website_host }}
             </div>
         </div>
 
@@ -94,11 +94,6 @@
                     </td>
                 </tr>
                 {% endfor %}
-                <tr>
-                    <td colspan="3" class="text-right">Shipping</td>
-                    <td class="text-right">Rs. {{ shipping_charge }}</td>
-                </tr>
-                
                 <tr style="font-weight: bold; background-color: #f9f9f9;">
                     <td colspan="3" class="text-right">Grand Total:</td>
                     <td class="text-right">₹{{ order.total_price }}</td>
