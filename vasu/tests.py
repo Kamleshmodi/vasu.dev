@@ -3,19 +3,22 @@ import shutil
 from datetime import timedelta
 from decimal import Decimal
 from pathlib import Path
+from unittest.mock import patch
 
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
+from django.core.exceptions import ImproperlyConfigured
 from django.core import mail
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.test import Client, TestCase, override_settings
+from django.test import Client, SimpleTestCase, TestCase, override_settings
 from django.urls import reverse
 from django.utils import timezone
 
 from aapcategory.models import Category, Designer
 from aapstore.models import Cart, Order, OrderItem, ProductRating, SupportRequest, UserEvent
 from appwomens.models import NewProduct, ProductVariation, SaleItems as WomenSaleItems
+from vasu import settings as vasu_settings
 
 
 SMALL_GIF = (
@@ -23,6 +26,24 @@ SMALL_GIF = (
     b'\xff\xff\xff!\xf9\x04\x01\x00\x00\x00\x00,\x00'
     b'\x00\x00\x00\x01\x00\x01\x00\x00\x02\x02D\x01\x00;'
 )
+
+
+class SettingsSafetyTests(SimpleTestCase):
+    def test_collectstatic_can_use_ephemeral_secret_key_in_production_mode(self):
+        with patch.object(vasu_settings, 'DEBUG', False):
+            with patch.dict(vasu_settings.os.environ, {'SECRET_KEY': ''}, clear=False):
+                with patch.object(vasu_settings.sys, 'argv', ['manage.py', 'collectstatic']):
+                    secret_key = vasu_settings.build_secret_key()
+
+        self.assertTrue(secret_key)
+        self.assertNotEqual(secret_key, 'django-insecure-vasu-local-development-secret-key')
+
+    def test_runserver_still_requires_real_secret_key_in_production_mode(self):
+        with patch.object(vasu_settings, 'DEBUG', False):
+            with patch.dict(vasu_settings.os.environ, {'SECRET_KEY': ''}, clear=False):
+                with patch.object(vasu_settings.sys, 'argv', ['manage.py', 'runserver']):
+                    with self.assertRaises(ImproperlyConfigured):
+                        vasu_settings.build_secret_key()
 
 
 @override_settings(

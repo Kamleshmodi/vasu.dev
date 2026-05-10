@@ -1,4 +1,5 @@
 import os
+import sys
 from pathlib import Path
 from django.core.management.utils import get_random_secret_key
 from django.core.exceptions import ImproperlyConfigured
@@ -54,6 +55,13 @@ GOOGLE_OAUTH_CLIENT_ID = os.getenv('GOOGLE_OAUTH_CLIENT_ID', '').strip()
 GOOGLE_OAUTH_CLIENT_SECRET = os.getenv('GOOGLE_OAUTH_CLIENT_SECRET', '').strip()
 GOOGLE_OAUTH_CONFIGURED_WITH_ENV = bool(GOOGLE_OAUTH_CLIENT_ID and GOOGLE_OAUTH_CLIENT_SECRET)
 GOOGLE_OAUTH_ENABLED = True
+DEPLOYMENT_MANAGEMENT_COMMANDS = {'collectstatic', 'migrate'}
+
+
+def is_deployment_management_command():
+    if len(sys.argv) < 2 or Path(sys.argv[0]).name != 'manage.py':
+        return False
+    return sys.argv[1].strip().lower() in DEPLOYMENT_MANAGEMENT_COMMANDS
 
 
 def build_secret_key():
@@ -69,6 +77,10 @@ def build_secret_key():
         return configured_key
     if DEBUG:
         return 'django-insecure-vasu-local-development-secret-key'
+    if is_deployment_management_command():
+        # Render build and pre-deploy commands do not sign user-facing data, so
+        # they can use an ephemeral key until the real production secret exists.
+        return get_random_secret_key()
     raise ImproperlyConfigured(
         'Set a strong SECRET_KEY in your environment before running with DEBUG=False.'
     )
