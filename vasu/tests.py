@@ -29,6 +29,16 @@ SMALL_GIF = (
 
 
 class SettingsSafetyTests(SimpleTestCase):
+    def test_render_generated_secret_key_is_accepted_in_production_mode(self):
+        render_secret = 'B0jrphAPOY7pg92AN0c9MN4yecczLMdwnx4OkA1KFUk='
+
+        with patch.object(vasu_settings, 'DEBUG', False):
+            with patch.dict(vasu_settings.os.environ, {'SECRET_KEY': render_secret}, clear=False):
+                with patch.object(vasu_settings.sys, 'argv', ['manage.py', 'runserver']):
+                    secret_key = vasu_settings.build_secret_key()
+
+        self.assertEqual(secret_key, render_secret)
+
     def test_collectstatic_can_use_ephemeral_secret_key_in_production_mode(self):
         with patch.object(vasu_settings, 'DEBUG', False):
             with patch.dict(vasu_settings.os.environ, {'SECRET_KEY': ''}, clear=False):

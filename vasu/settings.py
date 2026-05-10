@@ -66,10 +66,16 @@ def is_deployment_management_command():
 
 def build_secret_key():
     configured_key = os.getenv('SECRET_KEY', '').strip()
+    known_placeholders = {
+        'replace-this-with-a-long-random-secret-key',
+        'changeme',
+        'secret',
+    }
     is_strong = (
-        len(configured_key) >= 50
+        len(configured_key) >= 32
         and len(set(configured_key)) >= 5
         and not configured_key.startswith('django-insecure-')
+        and configured_key.lower() not in known_placeholders
     )
     # In local development we prefer a stable key over regenerating one on
     # every reload, otherwise sessions and CSRF tokens break between requests.
